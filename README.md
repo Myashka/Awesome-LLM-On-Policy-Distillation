@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-97-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-98-blue" alt="Papers">
   <img src="https://img.shields.io/badge/Last%20Updated-April%202026-green" alt="Last Updated">
 </p>
 
@@ -107,6 +107,7 @@ On-Policy Distillation
 
 | Paper | Date | Resources |
 |-------|:----:|:---:|
+| 🟡 [SCOPE: Signal-Calibrated On-Policy Distillation Enhancement with Dual-Path Adaptive Weighting](https://arxiv.org/abs/2604.10688) | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/machine981/SCOPE) |
 | 🟡 [Stable-OPD: Length Inflation and Stabilization Strategies for Large Language Models](https://arxiv.org/abs/2604.08527) | 2026 |  |
 | 🟡 [HY-Embodied-0.5: Embodied Foundation Models for Real-World Agents](https://arxiv.org/abs/2604.07430) | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/Tencent-Hunyuan/HY-Embodied) |
 | 🟡 [On-Policy Distillation of Language Models for Autonomous Vehicle Motion Planning](https://arxiv.org/abs/2604.07944) | 2026 |  |
