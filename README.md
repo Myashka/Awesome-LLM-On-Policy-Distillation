@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-94-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-92-blue" alt="Papers">
   <img src="https://img.shields.io/badge/Last%20Updated-April%202026-green" alt="Last Updated">
 </p>
 
@@ -42,7 +42,6 @@
   <summary>📑 <b>Table of Contents</b></summary>
   <ol>
     <li><a href="#-taxonomy">Taxonomy</a></li>
-    <li><a href="#-background--foundations">Background & Foundations</a></li>
     <li><a href="#-token-level-on-policy-methods">Token-Level On-Policy Methods</a></li>
     <li><a href="#-sequence-level--hybrid-methods">Sequence-Level & Hybrid Methods</a></li>
     <li><a href="#-black-box-on-policy-distillation">Black-Box On-Policy Distillation</a></li>
@@ -79,22 +78,6 @@ On-Policy Distillation
     ├── Sequence-Level ── Trajectory reward
     └── Hybrid ──────── Mixed granularity
 ```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
----
-
-## 📚 Background & Foundations
-
-| Paper | Date | Resources |
-|-------|:----:|:---:|
-| 🟢 [Let's Verify Step by Step](https://arxiv.org/abs/2305.20050) | 2024 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/openai/prm800k) |
-| 🟢 [f-Divergence Minimization for Sequence-Level Knowledge Distillation](https://arxiv.org/abs/2307.15190) | 2023 |  |
-| 🟢 [The False Promise of Imitating Proprietary LLMs](https://arxiv.org/abs/2305.15717) | 2023 |  |
-| 🟢 [Training Compute-Optimal Large Language Models](https://arxiv.org/abs/2203.15556) | 2022 |  |
-| 🟢 [Sequence-Level Knowledge Distillation](https://arxiv.org/abs/1606.07947) | 2016 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/harvardnlp/seq2seq-attn) |
-| 🟢 [Distilling the Knowledge in a Neural Network](https://arxiv.org/abs/1503.02531) | 2015 |  |
-| 🟢 [A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning](https://arxiv.org/abs/1011.0686) | 2011 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
