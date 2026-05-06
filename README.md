@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-102-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-103-blue" alt="Papers">
   <img src="https://img.shields.io/badge/Last%20Updated-May%202026-green" alt="Last Updated">
 </p>
 
@@ -219,6 +219,7 @@ On-Policy Distillation
 | 🟢 [Rethinking Large Language Model Distillation: A Constrained Markov Decision Process Perspective](https://arxiv.org/abs/2509.22921) <br><sub>📐 Qwen2.5-1.5B-Math / Llama-3.2-3B → Qwen2.5-7B-Math / Llama-3.2-11B</sub> | 2025 |  |
 | 🟢 [KETCHUP: K-Step Return Estimation for Sequential Knowledge Distillation](https://arxiv.org/abs/2504.19024) <br><sub>📐 T5-Base 250M → FLAN-T5-XL 3B</sub> | 2025 |  |
 | 🟡 [MAD-OPD: Multi-Agent Debate-driven On-Policy Distillation](https://arxiv.org/abs/2605.01347) <br><sub>📐 Qwen3-1.7B–14B / Qwen3.5-3B → Multiple teacher debate ensemble (confidence-weighted JSD/RKL; OPAD step-level agentic sampling)</sub> | 2026 |  |
+| 🟡 [Uni-OPD: Unifying On-Policy Distillation with a Dual-Perspective Recipe](https://arxiv.org/abs/2605.03677) <br><sub>📐 Qwen3-4B / Qwen3-VL-4B-Instruct → Qwen3-30B-A3B / domain-RL teachers (dual-perspective: offline difficulty-aware + online correctness-aware data balancing + outcome-guided margin calibration for teacher reliability)</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/WenjinHou/Uni-OPD) |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
