@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-100-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-102-blue" alt="Papers">
   <img src="https://img.shields.io/badge/Last%20Updated-May%202026-green" alt="Last Updated">
 </p>
 
@@ -218,6 +218,7 @@ On-Policy Distillation
 | 🟢 [Explain in Your Own Words: Improving Reasoning via Token-Selective Dual Knowledge Distillation](https://arxiv.org/abs/2603.13260) <br><sub>📐 Qwen2.5-1.5B / Gemma-2-2B / Qwen3-1.7B → Qwen2.5-14B / Gemma-2-9B / Qwen3-8B</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/kmswin1/TSD-KD) |
 | 🟢 [Rethinking Large Language Model Distillation: A Constrained Markov Decision Process Perspective](https://arxiv.org/abs/2509.22921) <br><sub>📐 Qwen2.5-1.5B-Math / Llama-3.2-3B → Qwen2.5-7B-Math / Llama-3.2-11B</sub> | 2025 |  |
 | 🟢 [KETCHUP: K-Step Return Estimation for Sequential Knowledge Distillation](https://arxiv.org/abs/2504.19024) <br><sub>📐 T5-Base 250M → FLAN-T5-XL 3B</sub> | 2025 |  |
+| 🟡 [MAD-OPD: Multi-Agent Debate-driven On-Policy Distillation](https://arxiv.org/abs/2605.01347) <br><sub>📐 Qwen3-1.7B–14B / Qwen3.5-3B → Multiple teacher debate ensemble (confidence-weighted JSD/RKL; OPAD step-level agentic sampling)</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -358,6 +359,7 @@ On-Policy Distillation
 | 🟢 [Retaining by Doing: The Role of On-Policy Data in Mitigating Forgetting](https://arxiv.org/abs/2510.18874) <br><sub>📐 Llama-3.1-8B / Llama-3.2-1B → Llama-3.3-70B</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/princeton-pli/retaining-by-doing) |
 | 🟢 [Distillation Scaling Laws](https://arxiv.org/abs/2502.08606) <br><sub>📐 143M–1.4B → 975M–12.6B (scaling law study)</sub> | 2025 |  |
 | 🟡 [PRISM: Pre-alignment via Black-box On-policy Distillation for Multimodal Reinforcement Learning](https://arxiv.org/abs/2604.28123) <br><sub>📐 Qwen3-VL-4B/8B → Gemini 3 Flash demos (adversarial MoE discriminator for multimodal pre-alignment)</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/XIAO4579/PRISM) |
+| 🟡 [MSD: Multilingual Self-Distillation for Safety Alignment](https://arxiv.org/abs/2605.02971) <br><sub>📐 Qwen2.5-7B-Instruct / Llama-3.1-8B-Instruct → Self (English CoT as privileged context; Dual-Perspective Safety Weighting for cross-lingual safety transfer)</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
