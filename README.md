@@ -458,6 +458,14 @@ On-Policy Distillation
 | [📐 Key Equations](resources/key-equations.md) | Quick reference for core OPD loss functions |
 | [📋 Changelog](CHANGELOG.md) | What's new — paper additions by date |
 
+## 📖 Related Surveys
+
+| Paper | Venue | Focus | Link |
+|-------|-------|-------|------|
+| Knowledge Distillation: A Survey | IJCV 2021 | Comprehensive KD survey (response/feature/relation-based), 5000+ citations | [![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/2006.05525) |
+| A Survey on Knowledge Distillation of Large Language Models | arXiv 2024 | LLM-specific KD covering algorithm, skill, and verticalization | [![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/2402.13116) [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/Tebmer/Awesome-Knowledge-Distillation-of-LLMs) |
+| A Survey of On-Policy Distillation for Large Language Models | COLM 2026 (submitted) | First dedicated OPD survey: unified f-divergence framework, 97 methods | [![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/2604.00626) |
+
 ---
 
 ## 🤝 Contributing
