@@ -27,7 +27,7 @@ Traditional off-policy distillation (e.g., SFT on teacher demonstrations) suffer
 
 **On-policy distillation (OPD)** solves this by forcing the student to generate trajectories from its own distribution, and then evaluating those trajectories using a teacher model, reward model, or verifier. The student learns to correct its *own* mistakes in its *own* state space.
 
-With the rise of reasoning models (System 2 thinking) in 2024–2026, long chains of thought exacerbate compounding errors. Off-policy SFT is no longer sufficient. OPD has become the indispensable post-training paradigm for scaling reasoning, adopted by frontier models like Qwen3, Gemma-2, Nemotron, and MiMo.
+With the rise of reasoning models (System 2 thinking) in 2024–2026, long chains of thought exacerbate compounding errors. Off-policy SFT is no longer sufficient. OPD has become the indispensable post-training paradigm for scaling reasoning, adopted by frontier models like DeepSeek-V4, Qwen3, Gemma-2, Nemotron, and MiMo.
 
 <p align="center">
   📖 <b>Survey Paper:</b> <a href="https://arxiv.org/abs/2604.00626">A Survey of On-Policy Distillation for Large Language Models</a>
@@ -85,7 +85,7 @@ With the rise of reasoning models (System 2 thinking) in 2024–2026, long chain
 
 New to On-Policy Distillation? Start here.
 
-- **"If you only read 3 papers":** [GKD](https://arxiv.org/abs/2306.13649) (Foundation) + [MiniLLM](https://arxiv.org/abs/2306.08543) (Framework) + [Qwen3 Technical Report](https://arxiv.org/abs/2505.09388) (Industrial OPD at scale).
+- **"If you only read 3 papers":** [GKD](https://arxiv.org/abs/2306.13649) (Foundation) + [MiniLLM](https://arxiv.org/abs/2306.08543) (Framework) + [DeepSeek-V4 Technical Report](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/DeepSeek_V4.pdf) (Industrial OPD at scale).
 - **"If you need to reproduce fast":** Check out the code for [Uni-OPD](https://github.com/WenjinHou/Uni-OPD) or [MiniLLM](https://github.com/microsoft/LMOps/tree/main/minillm).
 - **"If you work on math reasoning":** Follow the trajectory: [OPSD](https://arxiv.org/abs/2601.18734) → [RLKD](https://arxiv.org/abs/2505.16142) → [SCOPE](https://arxiv.org/abs/2604.10688).
 - **"If you build multi-turn agents":** Look into [TCOD](https://arxiv.org/abs/2604.24005) (temporal curriculum) or [Skill-SD](https://arxiv.org/abs/2604.10674) (skill-conditioned self-distillation).
@@ -110,7 +110,7 @@ Can you access the teacher's full logits?
 2. **The Self-Distillation Boom**: Teacher-free on-policy methods (SDPO, SDZero, SRPO) are dominating, relying on rule-based verifiers or reward models rather than white-box teacher models.
 3. **Token Importance**: Papers like TIP, SCOPE, and SelecTKD revealed that applying KD loss to 100% of tokens is inefficient. Selecting the top 20-50% high-entropy/divergence tokens achieves parity.
 4. **Agentic OPD**: Methods like TCOD and Skill-SD specifically address the massive compounding errors in multi-turn environments and long-horizon tool use.
-5. **Industrial Adoption**: The latest frontier models—Qwen3, Nemotron, Gemma-2, and MiMo—have fully integrated OPD into their post-training pipelines.
+5. **Industrial Adoption**: The latest frontier models—DeepSeek-V4, Qwen3, Nemotron, Gemma-2, and MiMo—have fully integrated OPD into their post-training pipelines.
 6. **Diversity Collapse**: A critical finding from SCOPE: while OPD drastically improves Pass@1, it severely harms Pass@k due to diversity collapse, prompting new hybrid objective designs.
 
 ## 🗺️ Taxonomy
@@ -378,6 +378,7 @@ On-Policy Distillation
 | Paper | Date | Resources |
 |-------|:----:|:---:|
 | 🟢 [DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning](https://arxiv.org/abs/2501.12948) <br><sub>📐 Qwen2.5-1.5B–32B / Llama-3-8B–70B → DeepSeek-R1 671B | ⚠️ Off-policy SFT distillation; included as the dominant baseline that OPD methods improve upon</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/deepseek-ai/DeepSeek-R1) [![Model](https://img.shields.io/badge/Model-🤗-yellow)](https://huggingface.co/deepseek-ai/DeepSeek-R1) |
+| 🟢 [DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/DeepSeek_V4.pdf) <br><sub>📐 DeepSeek-V4-Pro 1.6T / V4-Flash 284B → Domain-specific RL experts (multi-domain OPD consolidation via reverse-KL)</sub> | 2026 | [![Model](https://img.shields.io/badge/Model-🤗-yellow)](https://huggingface.co/collections/deepseek-ai/deepseek-v4) |
 | 🟢 [Qwen3 Technical Report](https://arxiv.org/abs/2505.09388) <br><sub>📐 Qwen3 series → Qwen3 (larger, on-policy logit KD)</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/QwenLM/Qwen3) [![Model](https://img.shields.io/badge/Model-🤗-yellow)](https://huggingface.co/collections/Qwen/qwen3-67dd247413f0e2e4f653967f) |
 | 🟢 [Gemma 2: Improving Open Language Models at a Practical Size](https://arxiv.org/abs/2408.00118) <br><sub>📐 Gemma-2-2B/9B → Gemma-2-27B (online KD in pre-training)</sub> | 2024 | [![Model](https://img.shields.io/badge/Model-🤗-yellow)](https://huggingface.co/google/gemma-2-27b) |
 | 🟢 [MiMo-V2-Flash Technical Report](https://arxiv.org/abs/2601.02780) <br><sub>📐 MiMo-V2-Flash 309B MoE → Self (multi-teacher MOPD)</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/XiaomiMiMo/MiMo-V2-Flash) [![Model](https://img.shields.io/badge/Model-🤗-yellow)](https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash) |
