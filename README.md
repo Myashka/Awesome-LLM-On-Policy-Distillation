@@ -27,7 +27,7 @@ Traditional off-policy distillation (e.g., SFT on teacher demonstrations) suffer
 
 **On-policy distillation (OPD)** solves this by forcing the student to generate trajectories from its own distribution, and then evaluating those trajectories using a teacher model, reward model, or verifier. The student learns to correct its *own* mistakes in its *own* state space.
 
-With the rise of reasoning models (System 2 thinking) in 2024–2026, long chains of thought exacerbate compounding errors. Off-policy SFT is no longer sufficient. OPD has become the indispensable post-training paradigm for scaling reasoning, adopted by frontier models like DeepSeek-R1, Qwen3, and Gemma-2.
+With the rise of reasoning models (System 2 thinking) in 2024–2026, long chains of thought exacerbate compounding errors. Off-policy SFT is no longer sufficient. OPD has become the indispensable post-training paradigm for scaling reasoning, adopted by frontier models like Qwen3, Gemma-2, Nemotron, and MiMo.
 
 <p align="center">
   📖 <b>Survey Paper:</b> <a href="https://arxiv.org/abs/2604.00626">A Survey of On-Policy Distillation for Large Language Models</a>
@@ -110,7 +110,7 @@ Can you access the teacher's full logits?
 2. **The Self-Distillation Boom**: Teacher-free on-policy methods (SDPO, SDZero, SRPO) are dominating, relying on rule-based verifiers or reward models rather than white-box teacher models.
 3. **Token Importance**: Papers like TIP, SCOPE, and SelecTKD revealed that applying KD loss to 100% of tokens is inefficient. Selecting the top 20-50% high-entropy/divergence tokens achieves parity.
 4. **Agentic OPD**: Methods like TCOD, Skill-SD, and ThinkTuning specifically address the massive compounding errors in multi-turn environments and long-horizon tool use.
-5. **Industrial Adoption**: The latest frontier models—Qwen3, DeepSeek-R1, Nemotron, and MiMo—have fully integrated OPD into their reasoning reinforcement pipelines.
+5. **Industrial Adoption**: The latest frontier models—Qwen3, Nemotron, Gemma-2, and MiMo—have fully integrated OPD into their post-training pipelines.
 6. **Diversity Collapse**: A critical finding from SCOPE: while OPD drastically improves Pass@1, it severely harms Pass@k due to diversity collapse, prompting new hybrid objective designs.
 
 ## 🗺️ Taxonomy
