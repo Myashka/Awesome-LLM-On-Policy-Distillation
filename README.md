@@ -38,6 +38,7 @@ With the rise of reasoning models (System 2 thinking) in 2024–2026, long chain
 </p>
 
 <p align="center">
+  <img src="figures/taxonomy.mmd" alt="Taxonomy" width="100%">
 </p>
 
 ---
@@ -442,6 +443,20 @@ On-Policy Distillation
 | 7 | **The KD-RL Alternation Loop** | How do we optimally interleave imitation (KD) and exploration (RL)? <br>**Direction**: Co-evolving teacher-student dynamics where the teacher updates via RL and immediately distills to a faster student. See: *KDRL (2025)*, *Co-Evolving Policy Distillation (2026)*. |
 | 8 | **Beyond Benchmarks** | Overfitting to static reasoning benchmarks is accelerated by on-policy exploration. <br>**Direction**: Dynamic adversarial testing, open-ended task generation during training, and real-world execution verification. |
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+---
+
+## 📂 Additional Resources
+
+| Resource | Description |
+|----------|-------------|
+| [📚 Reading Order](resources/reading-order.md) | Curated 4-level path from foundations to frontier |
+| [🛠️ Codebases](resources/codebases.md) | All open-source implementations, organized by method |
+| [📊 Benchmarks](resources/benchmarks.md) | Performance data, compute costs, and evaluation guides |
+| [📐 Key Equations](resources/key-equations.md) | Quick reference for core OPD loss functions |
+| [📋 Changelog](CHANGELOG.md) | What's new — paper additions by date |
 
 ---
 
