@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-103%2B-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-106%2B-blue" alt="Papers">
   <img src="https://img.shields.io/badge/Last%20Updated-May%202026-green" alt="Last Updated">
 </p>
 
@@ -191,6 +191,7 @@ On-Policy Distillation
 
 | Paper | Date | Resources |
 |-------|:----:|:---:|
+| 🟢 [Healthcare AI GYM: Turn-level Truncated On-Policy Distillation for Medical Agents](https://arxiv.org/abs/2605.02943) <br><sub>📐 TT-OPD: EMA teacher + outcome-privileged hints + turn-level KL for multi-turn agentic distillation stability</sub> | 2026 |  |
 | 🟢 [Unifying On-Policy Distillation with a Dual-Perspective Recipe](https://arxiv.org/abs/2605.03677) <br><sub>📐 Uni-OPD: student exploration (difficulty+correctness-aware) + teacher reliability (outcome-guided margin)</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/WenjinHou/Uni-OPD) |
 | 🟢 [Temporal Curriculum in On-Policy Distillation for Multi-turn Agents](https://arxiv.org/abs/2604.24005) <br><sub>📐 TCOD: temporal curriculum for autonomous agent OPD</sub> | 2026 |  |
 | 🟢 [Pre-alignment via Black-box On-policy Distillation for Multimodal RL](https://arxiv.org/abs/2604.28123) <br><sub>📐 PRISM: adversarial MoE discriminator, logit-free OPD as pre-alignment before RLVR</sub> | 2026 |  |
@@ -280,6 +281,7 @@ On-Policy Distillation
 
 | Paper | Date | Resources |
 |-------|:----:|:---:|
+| 🟢 [Preference-Based Self-Distillation: Beyond KL Matching via Reward Regularization](https://arxiv.org/abs/2605.05040) <br><sub>📐 PBSD: reward-reweighted teacher target + preference gap optimization with on-policy student sampling</sub> | 2026 |  |
 | 🟢 [Multilingual Self-Distillation for Safety Alignment](https://arxiv.org/abs/2605.02971) <br><sub>📐 MSD: English CoT as privileged context + Dual-Perspective Safety Weighting for cross-lingual safety</sub> | 2026 |  |
 | 🟢 [On-Policy Self-Distillation for GUI Grounding](https://arxiv.org/abs/2605.00642) <br><sub>📐 GUI-SD: visual privileged context (bounding box + Gaussian soft mask) + entropy-guided token weighting</sub> | 2026 |  |
 | 🟢 [OPSDL: On-Policy Self-Distillation for Long-Context Language Models](https://arxiv.org/abs/2604.17535) <br><sub>📐 Qwen2.5-Instruct-7B–32B → Self (short-context as privileged teacher for long-context, per-token reverse-KL)</sub> | 2026 |  |
