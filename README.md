@@ -85,7 +85,7 @@ With the rise of reasoning models (System 2 thinking) in 2024–2026, long chain
 
 New to On-Policy Distillation? Start here.
 
-- **"If you only read 3 papers":** [GKD](https://arxiv.org/abs/2306.13649) (Foundation) + [MiniLLM](https://arxiv.org/abs/2306.08543) (Framework) + [DeepSeek-R1](https://arxiv.org/abs/2501.12948) (Industrial standard).
+- **"If you only read 3 papers":** [GKD](https://arxiv.org/abs/2306.13649) (Foundation) + [MiniLLM](https://arxiv.org/abs/2306.08543) (Framework) + [Qwen3 Technical Report](https://arxiv.org/abs/2505.09388) (Industrial OPD at scale).
 - **"If you need to reproduce fast":** Check out the code for [Uni-OPD](https://github.com/WenjinHou/Uni-OPD) or [MiniLLM](https://github.com/microsoft/LMOps/tree/main/minillm).
 - **"If you work on math reasoning":** Follow the trajectory: [OPSD](https://arxiv.org/abs/2601.18734) → [RLKD](https://arxiv.org/abs/2505.16142) → [SCOPE](https://arxiv.org/abs/2604.10688).
 - **"If you build multi-turn agents":** Look into [Skill-SD](https://arxiv.org/abs/2604.10674) or [TCOD/ThinkTuning](https://arxiv.org/abs/2508.07616).
