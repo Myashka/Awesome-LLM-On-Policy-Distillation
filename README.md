@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-103-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-112-blue" alt="Papers">
   <img src="https://img.shields.io/badge/Last%20Updated-May%202026-green" alt="Last Updated">
 </p>
 
@@ -122,6 +122,8 @@ On-Policy Distillation
 > The student generates on-policy responses while a teacher model provides supervision signals. This section covers methods where a distinct teacher model guides training.
 
 ### §4.1 Objective Functions & Divergence Optimization
+- 🟢 **Multi-Agent Debate-driven On-Policy Distillation** (arXiv 2026). *Wang et al.* [[Paper]](https://arxiv.org/abs/2605.01347)
+  - Multiple teacher debate for confidence-weighted token supervision and step-level sampling (OPAD) for agentic stability.
 
 > Methods that focus on designing or optimizing the divergence/loss function used between teacher and student distributions during on-policy distillation — including reverse-KL, adaptive KL variants, score matching, and novel divergence objectives.
 
@@ -146,6 +148,14 @@ On-Policy Distillation
 ---
 
 ### §4.2 Training Dynamics & Signal Reliability
+- 🟢 **Temporal Curriculum in On-Policy Distillation for Multi-turn Agents** (arXiv 2026). *Chen et al.* [[Paper]](https://arxiv.org/abs/2604.24005)
+  - Temporal curriculum OPD for autonomous agents.
+- 🟢 **Pre-alignment via Black-box On-policy Distillation for Multimodal RL** (arXiv 2026). *Wang et al.* [[Paper]](https://arxiv.org/abs/2604.28123)
+  - Adversarial MoE discriminator, logit-free OPD as pre-alignment before RLVR.
+- 🟢 **Partial-Solution Adaptive Interpolated Training for Self-Distilled Reasoners** (arXiv 2026). *Wang et al.* [[Paper]](https://arxiv.org/abs/2604.26573)
+  - Rollout-reference overlap + energy interpolation on OPSD.
+- 🟢 **Unifying On-Policy Distillation with a Dual-Perspective Recipe** (arXiv 2026). *Hou et al.* [[Paper]](https://arxiv.org/abs/2605.03677) [[Code]](https://github.com/WenjinHou/Uni-OPD)
+  - Unifies student exploration (difficulty-aware + correctness-aware balancing) and teacher reliability (outcome-guided margin calibration).
 
 > Methods addressing the stability, efficiency, and reliability of training signals during on-policy distillation — including adaptive token weighting, curriculum-based approaches, and strategies to handle noisy or uninformative supervision.
 
@@ -225,6 +235,10 @@ On-Policy Distillation
 > Methods where the student improves from its own outputs without a separate external teacher model. The "teacher" signal comes from privileged information, self-play dynamics, or external feedback.
 
 ### §5.1 Privileged Information
+- 🟢 **Multilingual Self-Distillation for Safety Alignment** (arXiv 2026). *Qin et al.* [[Paper]](https://arxiv.org/abs/2605.02971)
+  - Uses English CoT as privileged context with Dual-Perspective Safety Weighting (DPSW) for cross-lingual safety transfer.
+- 🟢 **On-Policy Self-Distillation for GUI Grounding** (arXiv 2026). *Zhang et al.* [[Paper]](https://arxiv.org/abs/2605.00642)
+  - Visual privileged context (bounding box + Gaussian soft mask) and entropy-guided token weighting for GUI grounding.
 
 > The student accesses privileged context (e.g., oracle reasoning chains, longer thinking tokens, gated context) during training that is unavailable at inference time, distilling this advantage into its base weights.
 
@@ -245,6 +259,8 @@ On-Policy Distillation
 ---
 
 ### §5.2 Self-Play
+- 🟢 **Interpolative Rényi Iterative Self-play** (arXiv 2026). *Author et al.* [[Paper]](https://arxiv.org/abs/2604.20933)
+  - Rényi divergence unified framework for SPIN/SPACE/SPIF.
 
 > The model improves by playing against itself or iteratively generating and learning from its own outputs, without any external teacher or reward model.
 
@@ -260,6 +276,8 @@ On-Policy Distillation
 ---
 
 ### §5.3 External Feedback
+- 🟢 **Co-Evolving Policy Distillation** (arXiv 2026). *Gu et al.* [[Paper]](https://arxiv.org/abs/2604.27083)
+  - Bidirectional parallel RLVR branches + interleaved mutual OPD co-evolution.
 
 > Self-distillation methods that leverage external feedback signals — reward models, verifiers, or text-based feedback — to guide the student's self-improvement without a white-box teacher.
 
