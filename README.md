@@ -38,7 +38,25 @@ With the rise of reasoning models (System 2 thinking) in 2024–2026, long chain
 </p>
 
 <p align="center">
-  <img src="figures/taxonomy.mmd" alt="Taxonomy" width="100%">
+
+```mermaid
+graph TD
+    Root[On-Policy Distillation]
+    Root --> TG["§4 Teacher-Guided OPD"]
+    Root --> SD["§5 Self-Distillation"]
+    Root --> UO["§6 Understanding OPD"]
+    Root --> AS["§7 Applications & Systems"]
+    Root --> OP["§8 Open Problems"]
+    TG --> TG1["§4.1 Divergence Optimization"]
+    TG --> TG2["§4.2 Training Dynamics"]
+    TG --> TG3["§4.3 Cross-Architecture"]
+    TG --> TG4["§4.4 Info Constraints"]
+    TG --> TG5["§4.5 Beyond Matching"]
+    SD --> SD1["§5.1 Privileged Info"]
+    SD --> SD2["§5.2 Self-Play"]
+    SD --> SD3["§5.3 External Feedback"]
+```
+
 </p>
 
 ---
@@ -75,6 +93,9 @@ With the rise of reasoning models (System 2 thinking) in 2024–2026, long chain
       </ul>
     </li>
     <li><a href="#8-open-problems">§8 Open Problems</a></li>
+    <li><a href="#-additional-resources">📂 Additional Resources</a></li>
+    <li><a href="#-related-surveys">📖 Related Surveys</a></li>
+    <li><a href="#-faq">❓ FAQ</a></li>
     <li><a href="#-contributing">Contributing</a></li>
     <li><a href="#-citation">Citation</a></li>
   </ol>
@@ -452,6 +473,7 @@ On-Policy Distillation
 
 | Resource | Description |
 |----------|-------------|
+| [⚡ Method Comparison](resources/method-comparison.md) | At-a-glance matrix: pick the right method for your use case |
 | [📚 Reading Order](resources/reading-order.md) | Curated 4-level path from foundations to frontier |
 | [🛠️ Codebases](resources/codebases.md) | All open-source implementations, organized by method |
 | [📊 Benchmarks](resources/benchmarks.md) | Performance data, compute costs, and evaluation guides |
@@ -468,13 +490,99 @@ On-Policy Distillation
 
 ---
 
+## ❓ FAQ
+
+<details>
+<summary><b>What's the difference between OPD and RLHF/RLVR?</b></summary>
+
+Both are on-policy (student generates its own data), but they differ in supervision:
+- **RLHF/RLVR**: Scalar reward signal (sparse, 1 bit per episode)
+- **OPD**: Dense token-level signal from teacher distributions (thousands of bits per episode)
+
+OPD is typically 3-10x more sample-efficient than RLVR because every token gets a gradient, not just the final outcome.
+</details>
+
+<details>
+<summary><b>When should I use OPD vs. off-policy SFT?</b></summary>
+
+| Scenario | Recommendation |
+|----------|---------------|
+| Short generations (< 100 tokens) | Off-policy SFT is fine |
+| Long reasoning chains (> 500 tokens) | OPD strongly preferred |
+| Student is much weaker than teacher | Start with SFT warm-up, then OPD |
+| No teacher available | Self-distillation (OPSD, SDZero) |
+| Compute-constrained | Lightning OPD (offline, 4x faster) |
+</details>
+
+<details>
+<summary><b>Which divergence should I use: Forward-KL, Reverse-KL, or JSD?</b></summary>
+
+- **Reverse-KL** (default): Best for math/code where you want the student to commit to one solution path (mode-seeking)
+- **Forward-KL**: Better for open-ended generation where diversity matters (mode-covering)
+- **JSD**: A safe middle ground; bounded gradients, symmetric
+- **Adaptive (AKL/HPD)**: Let the model switch per-token based on entropy; best overall if you have the engineering budget
+</details>
+
+<details>
+<summary><b>How much compute does OPD need compared to SFT?</b></summary>
+
+Standard OPD requires ~4x the compute of SFT (due to student rollouts + teacher scoring). Lightning OPD reduces this to ~1x by precomputing teacher scores on SFT rollouts. TIP further reduces cost by only computing KD loss on the top 20% important tokens.
+</details>
+
+<details>
+<summary><b>Can I do OPD without a teacher model?</b></summary>
+
+Yes! Self-distillation methods (OPSD, SDZero, SDPO) require no external teacher. They use the student's own outputs under different conditions (privileged context, multiple samples, or reward models) as the supervision signal.
+</details>
+
+<details>
+<summary><b>What's the typical training pipeline for OPD?</b></summary>
+
+```
+Base Model → SFT warm-up (1-2 epochs) → OPD (3-5 epochs) → Final Model
+                                              │
+                                    Student rollouts → Teacher scoring → KL loss
+```
+
+Key hyperparameters: temperature (τ=1-2), learning rate (1e-6 to 5e-6), rollout length (matched to task), KL coefficient.
+</details>
+
+---
+
 ## 🤝 Contributing
 
-We welcome contributions! Please submit a **Pull Request** with:
+We welcome contributions! Please submit a **Pull Request** or **Issue** with:
 
-- 📎 Paper title, arXiv link, and date
-- 📝 Brief description of the key contribution
-- 📂 Correct category placement
+### Adding a Paper
+
+Use this template in your PR:
+
+```markdown
+**Paper:** [Title](arXiv link)
+**Date:** YYYY-MM-DD
+**Category:** §4.1 / §4.2 / §5.1 / etc.
+**Key Contribution:** One-line description
+**Models:** Teacher → Student (e.g., Qwen3-32B → Qwen3-4B)
+**Code:** [GitHub link] (if available)
+```
+
+### Inclusion Criteria
+
+✅ **Include if:**
+- The method has an explicit on-policy sampling component (student generates rollouts)
+- It provides direct insights for OPD (analysis, failure modes, theory)
+- It's a hybrid method with genuine on-policy elements
+
+❌ **Exclude if:**
+- Pure off-policy SFT (training on static teacher demonstrations)
+- Pure RL without distillation signal (e.g., vanilla PPO/GRPO)
+- Non-LLM domains (vision-only, speech-only without language)
+
+### Other Contributions
+- 🐛 Bug fixes (broken links, wrong categories)
+- 📝 Improved descriptions
+- 📊 New benchmark results
+- 🛠️ New code implementations
 
 ---
 
@@ -498,5 +606,9 @@ If you find this collection helpful, please consider citing our survey:
 **⭐ If you find this repository useful, please star it! ⭐**
 
 *Last updated: May 2026*
+
+<a href="https://star-history.com/#nick7nlp/Awesome-LLM-On-Policy-Distillation&Date">
+  <img src="https://api.star-history.com/svg?repos=nick7nlp/Awesome-LLM-On-Policy-Distillation&type=Date" width="600" alt="Star History Chart">
+</a>
 
 </div>
