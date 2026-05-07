@@ -17,13 +17,17 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-112-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-101%2B-blue" alt="Papers">
   <img src="https://img.shields.io/badge/Last%20Updated-May%202026-green" alt="Last Updated">
 </p>
 
-<p align="center">
-  On-policy distillation trains the student on its <b>own</b> generated outputs rather than the teacher's, eliminating exposure bias and enabling learning from self-generated mistakes. This paradigm has become central to modern LLM post-training pipelines.
-</p>
+## 🤔 Why On-Policy?
+
+Traditional off-policy distillation (e.g., SFT on teacher demonstrations) suffers from **exposure bias** and **train-test mismatch**: the student learns to predict the next token given perfect teacher prefixes, but during inference, it must condition on its own flawed generations. Errors compound rapidly.
+
+**On-policy distillation (OPD)** solves this by forcing the student to generate trajectories from its own distribution, and then evaluating those trajectories using a teacher model, reward model, or verifier. The student learns to correct its *own* mistakes in its *own* state space.
+
+With the rise of reasoning models (System 2 thinking) in 2024–2026, long chains of thought exacerbate compounding errors. Off-policy SFT is no longer sufficient. OPD has become the indispensable post-training paradigm for scaling reasoning, adopted by frontier models like DeepSeek-R1, Qwen3, and Gemma-2.
 
 <p align="center">
   📖 <b>Survey Paper:</b> <a href="https://arxiv.org/abs/2604.00626">A Survey of On-Policy Distillation for Large Language Models</a>
@@ -41,7 +45,10 @@
 <details>
   <summary>📑 <b>Table of Contents</b></summary>
   <ol>
-    <li><a href="#%EF%B8%8F-taxonomy">Taxonomy</a></li>
+        <li><a href="#-why-on-policy">🤔 Why On-Policy?</a></li>
+    <li><a href="#-quick-start-guide">🧭 Quick-Start Guide</a></li>
+    <li><a href="#-trends--highlights-2025-2026">🔥 Trends & Highlights (2025-2026)</a></li>
+<li><a href="#%EF%B8%8F-taxonomy">Taxonomy</a></li>
     <li><a href="#4-teacher-guided-opd">§4 Teacher-Guided OPD</a>
       <ul>
         <li><a href="#41-objective-functions--divergence-optimization">§4.1 Objective Functions & Divergence Optimization</a></li>
@@ -73,6 +80,38 @@
 </details>
 
 ---
+
+## 🧭 Quick-Start Guide
+
+New to On-Policy Distillation? Start here.
+
+- **"If you only read 3 papers":** [GKD](https://arxiv.org/abs/2306.13649) (Foundation) + [MiniLLM](https://arxiv.org/abs/2306.08543) (Framework) + [DeepSeek-R1](https://arxiv.org/abs/2501.12948) (Industrial standard).
+- **"If you need to reproduce fast":** Check out the code for [Uni-OPD](https://github.com/WenjinHou/Uni-OPD) or [MiniLLM](https://github.com/microsoft/LMOps/tree/main/minillm).
+- **"If you work on math reasoning":** Follow the trajectory: [OPSD](https://arxiv.org/abs/2601.18734) → [RLKD](https://arxiv.org/abs/2505.16142) → [SCOPE](https://arxiv.org/abs/2604.10688).
+- **"If you build multi-turn agents":** Look into [Skill-SD](https://arxiv.org/abs/2604.10674) or [TCOD/ThinkTuning](https://arxiv.org/abs/2508.07616).
+
+### 💡 Practitioner's Decision Tree
+
+```text
+Can you access the teacher's full logits?
+├── Yes → Teacher-Guided OPD (§4)
+│   ├── Same tokenizer? → GKD / TAID / DistiLLM
+│   ├── Different tokenizer? → ULD / DSKD (§4.3)
+│   └── API outputs only? → Lion / GAD / OVD (§4.4)
+└── No → Self-Distillation (§5)
+    ├── Have a Verifier/RM? → SDPO / SDZero / RLSD (§5.3)
+    ├── Have privileged context? → OPSD / π-Play (§5.1)
+    └── Pure self-iteration? → SPIN / On-Policy SFT (§5.2)
+```
+
+## 🔥 Trends & Highlights (2025-2026)
+
+1. **From RKL to Adaptive**: The field initially defaulted to Reverse-KL (mode-seeking). Recent work shifted toward adaptive switching (AKL, HPD, token-level gates) to balance exploration and guidance.
+2. **The Self-Distillation Boom**: Teacher-free on-policy methods (SDPO, SDZero, SRPO) are dominating, relying on rule-based verifiers or reward models rather than white-box teacher models.
+3. **Token Importance**: Papers like TIP, SCOPE, and SelecTKD revealed that applying KD loss to 100% of tokens is inefficient. Selecting the top 20-50% high-entropy/divergence tokens achieves parity.
+4. **Agentic OPD**: Methods like TCOD, Skill-SD, and ThinkTuning specifically address the massive compounding errors in multi-turn environments and long-horizon tool use.
+5. **Industrial Adoption**: The latest frontier models—Qwen3, DeepSeek-R1, Nemotron, and MiMo—have fully integrated OPD into their reasoning reinforcement pipelines.
+6. **Diversity Collapse**: A critical finding from SCOPE: while OPD drastically improves Pass@1, it severely harms Pass@k due to diversity collapse, prompting new hybrid objective designs.
 
 ## 🗺️ Taxonomy
 
@@ -122,6 +161,8 @@ On-Policy Distillation
 > The student generates on-policy responses while a teacher model provides supervision signals. This section covers methods where a distinct teacher model guides training.
 
 ### §4.1 Objective Functions & Divergence Optimization
+
+> 💡 **Core tension**: Reverse-KL (mode-seeking) vs Forward-KL (mode-covering). The field moved from "always use RKL" (GKD era) to adaptive switching (AKL, HPD, SAGE) as diversity collapse became apparent.
 - 🟢 **Multi-Agent Debate-driven On-Policy Distillation** (arXiv 2026). *Wang et al.* [[Paper]](https://arxiv.org/abs/2605.01347)
   - Multiple teacher debate for confidence-weighted token supervision and step-level sampling (OPAD) for agentic stability.
 
@@ -148,6 +189,8 @@ On-Policy Distillation
 ---
 
 ### §4.2 Training Dynamics & Signal Reliability
+
+> 💡 **Core insight**: Not all tokens are worth distilling. The core tension is filtering out noise while maintaining signal density. 2026 methods dynamically discard 50-80% of tokens based on entropy or divergence.
 - 🟢 **Temporal Curriculum in On-Policy Distillation for Multi-turn Agents** (arXiv 2026). *Chen et al.* [[Paper]](https://arxiv.org/abs/2604.24005)
   - Temporal curriculum OPD for autonomous agents.
 - 🟢 **Pre-alignment via Black-box On-policy Distillation for Multimodal RL** (arXiv 2026). *Wang et al.* [[Paper]](https://arxiv.org/abs/2604.28123)
@@ -179,6 +222,8 @@ On-Policy Distillation
 
 ### §4.3 Representation Alignment across Architectures
 
+> 💡 **Core insight**: Distilling across heterogeneous model families breaks standard logit matching. Solutions have evolved from vocabulary projection to universal logit alignment and dual-space contrastive frameworks.
+
 > Methods that align student and teacher representations when they differ in architecture, vocabulary, or tokenization — enabling distillation across heterogeneous model families.
 
 | Paper | Date | Resources |
@@ -191,6 +236,8 @@ On-Policy Distillation
 ---
 
 ### §4.4 Distillation under Information Constraints
+
+> 💡 **Core tension**: Learning from sparse signals when teacher weights are locked. Modern methods rely on verbal feedback, adversarial discriminators, or preference optimization over sampled outputs rather than logit alignment.
 
 > Methods that operate when full teacher logits are unavailable — including black-box (API-only) distillation, verbal/output-only feedback, and off-policy guidance scenarios.
 
@@ -208,6 +255,8 @@ On-Policy Distillation
 ---
 
 ### §4.5 Supervision beyond Distribution Matching
+
+> 💡 **Core insight**: Pure distribution matching is insufficient for reasoning. By integrating RL objectives (PPO/GRPO) with KD, students maximize explicit rewards (e.g., math correctness) while using the teacher for dense shaping.
 
 > Methods that go beyond token-level distribution matching by incorporating reinforcement learning objectives, reward signals, or combined RL+KD frameworks to guide the student toward higher-quality outputs.
 
@@ -235,6 +284,8 @@ On-Policy Distillation
 > Methods where the student improves from its own outputs without a separate external teacher model. The "teacher" signal comes from privileged information, self-play dynamics, or external feedback.
 
 ### §5.1 Privileged Information
+
+> 💡 **Core insight**: The student gets a "cheat sheet" during training. By conditioning on oracle contexts, longer thought chains, or unmasked bounding boxes, the student distills privileged knowledge into its base weights.
 - 🟢 **Multilingual Self-Distillation for Safety Alignment** (arXiv 2026). *Qin et al.* [[Paper]](https://arxiv.org/abs/2605.02971)
   - Uses English CoT as privileged context with Dual-Perspective Safety Weighting (DPSW) for cross-lingual safety transfer.
 - 🟢 **On-Policy Self-Distillation for GUI Grounding** (arXiv 2026). *Zhang et al.* [[Paper]](https://arxiv.org/abs/2605.00642)
@@ -259,6 +310,8 @@ On-Policy Distillation
 ---
 
 ### §5.2 Self-Play
+
+> 💡 **Core insight**: Pure self-play without external rewards. The model iteratively refines its own distribution by treating its past iterations as baselines, forcing the current policy to pull away from historical mistakes.
 - 🟢 **Interpolative Rényi Iterative Self-play** (arXiv 2026). *Author et al.* [[Paper]](https://arxiv.org/abs/2604.20933)
   - Rényi divergence unified framework for SPIN/SPACE/SPIF.
 
@@ -276,6 +329,8 @@ On-Policy Distillation
 ---
 
 ### §5.3 External Feedback
+
+> 💡 **Core insight**: The dominant paradigm for scalable reasoning. The student explores on-policy, but the target signal comes from an objective verifier (e.g., Python executor, math rule) or a reward model, bridging RLHF and KD.
 - 🟢 **Co-Evolving Policy Distillation** (arXiv 2026). *Gu et al.* [[Paper]](https://arxiv.org/abs/2604.27083)
   - Bidirectional parallel RLVR branches + interleaved mutual OPD co-evolution.
 
@@ -373,17 +428,16 @@ On-Policy Distillation
 
 ## §8 Open Problems
 
-| # | Problem | Description |
-|:-:|---------|-------------|
-| 1 | **Scaling Laws** | No equivalent of Chinchilla for OPD; the student rollout cost adds a new compute axis |
-| 2 | **Teacher Calibration** | Teacher logits may be miscalibrated on student-generated OOD prefixes |
-| 3 | **Dynamic Curriculum** | Principled difficulty scheduling that adapts as the student improves |
-| 4 | **Cross-Architecture OPD** | Distilling across model families with different tokenizers |
-| 5 | **Agent OPD** | Multi-step, tool-using agents with delayed feedback |
-| 6 | **Multimodal OPD** | Extending to vision-language and speech models |
-| 7 | **KD-RL Loop** | Principled alternation between distillation and RL phases |
-| 8 | **Beyond Benchmarks** | Dynamic adversarial testing for true generalization |
-
+| # | Problem | Description & Direction |
+|:-:|---------|-------------------------|
+| 1 | **Scaling Laws for OPD** | Unlike Chinchilla laws for pre-training, OPD scaling must account for *rollout compute*. What is the optimal compute allocation between generating trajectories vs. optimizing them? <br>**Direction**: Characterizing the Pareto frontier of student sampling budget vs. teacher scoring cost. See: *Distillation Scaling Laws (2025)*. |
+| 2 | **Teacher Calibration on OOD** | When a student generates a flawed trajectory (Out-Of-Distribution for the teacher), the teacher's next-token logits become miscalibrated and unreliable. <br>**Direction**: Training teachers to provide robust recovery signals, or dynamically ignoring teacher logits when entropy spikes. |
+| 3 | **Dynamic & Temporal Curricula** | Static difficulty leads to either reward hacking (too easy) or gradient noise (too hard). <br>**Direction**: Principled difficulty scheduling that smoothly transitions from teacher-guided matching to open-ended RL exploration. See: *PACED (2026)*, *Temporal Curriculum (2026)*. |
+| 4 | **Cross-Architecture Divergence** | Aligning models with radically different latent spaces (e.g., Dense vs MoE, different tokenizers) remains lossy. <br>**Direction**: Moving beyond logit matching to cross-modal representation alignment or universal latent distillation frameworks. See: *ULD (2024)*, *DSKD (2025)*. |
+| 5 | **Agentic & Long-Horizon OPD** | Multi-step tool use suffers from massive delayed feedback. Token-level KD is myopic for long-horizon goals. <br>**Direction**: K-step return estimation, skill-conditioned distillation, and debate-driven verification for compounding environments. See: *Skill-SD (2026)*, *KETCHUP (2025)*. |
+| 6 | **Diversity Collapse (Pass@k)** | OPD strongly optimizes for Pass@1 (mode-seeking) but drastically shrinks the generation manifold, hurting Pass@k and exploration. <br>**Direction**: Hybrid FKL/RKL objectives, entropy-regularized distillation, and temperature-scaled sampling. See: *SCOPE (2026)*. |
+| 7 | **The KD-RL Alternation Loop** | How do we optimally interleave imitation (KD) and exploration (RL)? <br>**Direction**: Co-evolving teacher-student dynamics where the teacher updates via RL and immediately distills to a faster student. See: *KDRL (2025)*, *Co-Evolving Policy Distillation (2026)*. |
+| 8 | **Beyond Benchmarks** | Overfitting to static reasoning benchmarks is accelerated by on-policy exploration. <br>**Direction**: Dynamic adversarial testing, open-ended task generation during training, and real-world execution verification. |
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
@@ -417,6 +471,6 @@ If you find this collection helpful, please consider citing our survey:
 
 **⭐ If you find this repository useful, please star it! ⭐**
 
-*Last updated: April 2026*
+*Last updated: May 2026*
 
 </div>
