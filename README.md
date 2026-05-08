@@ -572,6 +572,14 @@ On-Policy Distillation (Survey V2 Structure)
 | [📐 Key Equations](resources/key-equations.md) | Quick reference for core OPD loss functions |
 | [📋 Changelog](CHANGELOG.md) | What's new — paper additions by date |
 
+### 📝 Blog Posts & External Essays
+
+> Non-paper writings that shaped the OPD community. These sit alongside the formal literature and are often cited in the survey itself.
+
+| Post | Author / Org | Year | Why Read It |
+|------|-------------|:---:|---|
+| [**On-Policy Distillation**](https://www.thinkingmachines.ai/blog/on-policy-distillation/) ([cited in §4](https://arxiv.org/abs/2604.00626)) | Kevin Lu / [Thinking Machines Lab](https://thinkingmachines.ai/) | 2025 | The most accessible OPD explainer written to date. Proposes per-token reverse KL using RL infrastructure (one-line change from KL-regularized RL), publishes a reference implementation in the [Tinker cookbook](https://github.com/thinking-machines-lab/tinker-cookbook), and matches Qwen3's RL result at a fraction of the GPU hours. Popularized the *"grandmaster grades each of your moves"* chess analogy that now anchors every OPD intro talk. |
+
 ## ❓ FAQ
 
 <details>
