@@ -1,5 +1,9 @@
 <a name="readme-top"></a>
 
+<p align="center">
+  <img src="assets/opd-hero.png" alt="On-Policy Distillation: Teacher-Student Loop" width="900">
+</p>
+
 <div align="center">
   <a href="https://github.com/nick7nlp/Awesome-LLM-On-Policy-Distillation/stargazers"><img src="https://img.shields.io/github/stars/nick7nlp/Awesome-LLM-On-Policy-Distillation?style=for-the-badge" alt="Stars"></a>
   <a href="https://github.com/nick7nlp/Awesome-LLM-On-Policy-Distillation/network/members"><img src="https://img.shields.io/github/forks/nick7nlp/Awesome-LLM-On-Policy-Distillation?style=for-the-badge" alt="Forks"></a>
@@ -29,25 +33,6 @@ Traditional off-policy distillation (e.g., SFT on teacher demonstrations) suffer
 **On-policy distillation (OPD)** solves this by forcing the student to generate trajectories from its own distribution, and then evaluating those trajectories using a teacher model, reward model, or verifier. The student learns to correct its *own* mistakes in its *own* state space.
 
 With the rise of reasoning models (System 2 thinking) in 2024–2026, long chains of thought exacerbate compounding errors. Off-policy SFT is no longer sufficient. OPD has become the indispensable post-training paradigm for scaling reasoning, adopted by frontier models like DeepSeek-V4, Qwen3, Gemma-2, Nemotron, and MiMo.
-
-### 🔁 How OPD Differs from Off-Policy SFT
-
-```mermaid
-flowchart LR
-    subgraph OFF["📕 Off-Policy SFT"]
-        direction LR
-        T1["Teacher<br/>generates<br/>rollouts"] --> T2["Fixed<br/>dataset"]
-        T2 --> T3["Student<br/>trained on<br/>teacher prefixes"]
-        T3 -->|"❌ Exposure bias<br/>❌ Train/test mismatch<br/>❌ O(εT²) error"| T4["Student"]
-    end
-    subgraph ON["🚀 On-Policy Distillation"]
-        direction LR
-        S1["Student<br/>generates<br/>rollouts"] --> S2["Teacher<br/>scores<br/>each token"]
-        S2 --> S3["KL / reward<br/>loss at every<br/>student state"]
-        S3 -->|"✅ Matches inference<br/>✅ Linear O(εT) error<br/>✅ Interactive correction"| S1
-    end
-    OFF -.->|"scales to<br/>long reasoning"| ON
-```
 
 <p align="center">
   📖 <b>Survey Paper:</b> <a href="https://arxiv.org/abs/2604.00626">A Survey of On-Policy Distillation for Large Language Models</a>
