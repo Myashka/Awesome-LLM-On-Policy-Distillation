@@ -22,11 +22,11 @@
   <img src="https://img.shields.io/badge/Survey-V2%20118%20cites-orange" alt="Survey V2">
 </p>
 
-## 🤔 Why On-Policy?
-
 <p align="center">
   <img src="assets/opd-overview.png" alt="On-Policy Distillation: Teacher-Student Loop" width="640">
 </p>
+
+## 🤔 Why On-Policy?
 
 Traditional off-policy distillation (e.g., SFT on teacher demonstrations) suffers from **exposure bias** and **train-test mismatch**: the student learns to predict the next token given perfect teacher prefixes, but during inference, it must condition on its own flawed generations. Errors compound rapidly.
 
