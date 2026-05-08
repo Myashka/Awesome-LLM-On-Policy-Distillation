@@ -169,16 +169,16 @@ Training unstable or inefficient?
 
 | # | Paper | Why Read It |
 |:-:|-------|-------------|
-| 1 | [**GKD** (Google DeepMind, 2023)](https://arxiv.org/abs/2306.13649) | The canonical on-policy KD formulation for LLMs. DAgger analogy, unified loss over F-KL / R-KL / JSD. The starting point of modern OPD. |
-| 2 | [**MiniLLM** (2023)](https://arxiv.org/abs/2306.08543) | Shows Reverse-KL beats Forward-KL for mode-seeking small students. The paper that made RKL the default OPD objective. |
+| 1 | [**On-Policy Distillation of Language Models** (ICLR 2024, method: **GKD**)](https://arxiv.org/abs/2306.13649) | The canonical on-policy KD formulation for LLMs. DAgger analogy, unified loss over F-KL / R-KL / JSD. The starting point of modern OPD. |
+| 2 | [**MiniLLM** (ICLR 2024)](https://arxiv.org/abs/2306.08543) | Shows Reverse-KL beats Forward-KL for mode-seeking small students. The paper that made RKL the default OPD objective. |
 | 3 | [**f-Divergence KD** (ACL 2023)](https://arxiv.org/abs/2307.15190) | The unifying f-divergence framework for sequence-level KD. Subsumes KL, RKL, JSD, $\alpha$-divergence under one lens. Essential theory. |
-| 4 | [**AKL / Rethinking KL** (COLING 2024)](https://arxiv.org/abs/2404.02657) | First principled *adaptive* divergence: switches between F-KL and R-KL per token based on entropy. Opens the adaptive-divergence line (§4.2). |
+| 4 | [**Rethinking KL for LLM KD** (COLING 2025, method: **AKL**)](https://arxiv.org/abs/2404.02657) | First principled *adaptive* divergence for LLM distillation: shows F-KL and R-KL focus on head and tail regions of the output distribution, and proposes AKL to mix them adaptively. Opens the adaptive-divergence line (§4.2). |
 | 5 | [**DistiLLM** (ICML 2024)](https://arxiv.org/abs/2402.03898) | Skew-KL + on-policy rollout scheduling. Shows that careful mixing of student and teacher trajectories is critical; a template for production OPD pipelines. |
-| 6 | [**SPIN** (2024)](https://arxiv.org/abs/2401.01335) | Self-play as OPD without an external teacher. Current model vs. previous iteration; foundation of the self-distillation (§5.3) branch. |
-| 7 | [**OPSD** (2026)](https://arxiv.org/abs/2601.18734) | Canonical privileged-information method. Oracle answer as privileged context, KL to unprivileged student. Defines the §5.3.1 paradigm. |
+| 6 | [**SPIN** (ICML 2024)](https://arxiv.org/abs/2401.01335) | Self-play as OPD without an external teacher. Current model vs. previous iteration; foundation of the self-distillation (§5.3) branch. |
+| 7 | [**Self-Distilled Reasoner** (2026, method: **OPSD**)](https://arxiv.org/abs/2601.18734) | Canonical privileged-information method. Oracle answer as privileged context, KL to unprivileged student. Defines the §5.3.1 paradigm. |
 | 8 | [**Speculative KD** (ICLR 2025)](https://arxiv.org/abs/2410.11325) | Interleaved teacher-student sampling bridges the exposure-bias gap elegantly. Influential design pattern for on-policy trajectory construction. |
 | 9 | [**AlignDistil** (ACL 2025)](https://arxiv.org/abs/2503.02832) | Reframes token-level alignment as adaptive OPD: reward signals become divergence weights. Key bridge between RLHF-style objectives and distillation. |
-| 10 | [**Rethinking OPD** (2026)](https://arxiv.org/abs/2604.13016) | Two necessary conditions for OPD to succeed plus a taxonomy of failure modes. Reads as a field guide for "what can go wrong and why." |
+| 10 | [**Rethinking On-Policy Distillation** (2026)](https://arxiv.org/abs/2604.13016) | Two necessary conditions for OPD to succeed plus a taxonomy of failure modes. Reads as a field guide for "what can go wrong and why." |
 
 <details>
 <summary>📖 <b>Recommended Reading Order for Different Backgrounds</b></summary>
