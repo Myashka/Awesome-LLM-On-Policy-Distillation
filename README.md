@@ -99,14 +99,22 @@ New to On-Policy Distillation? Start here.
 
 ```text
 Can you access the teacher's full logits?
-├── Yes → Teacher-Guided OPD (§4)
-│   ├── Same tokenizer? → GKD / TAID / DistiLLM
-│   ├── Different tokenizer? → ULD / DSKD (§4.3)
-│   └── API outputs only? → Lion / GAD / OVD (§4.4)
-└── No → Self-Distillation (§5)
-    ├── Have a Verifier/RM? → SDPO / SDZero / RLSD (§5.3)
-    ├── Have privileged context? → OPSD / π-Play (§5.1)
-    └── Pure self-iteration? → SPIN / On-Policy SFT (§5.2)
+├── Yes → White-Box Signal (§5.1)
+│   ├── Same tokenizer? → GKD / MiniLLM / DistiLLM (§4.1, §5.1)
+│   ├── Different tokenizer? → ULD / DSKD (§5.1)
+│   └── API outputs only? → Lion / GAD / OVD / PRISM (§5.2)
+└── No → Self-Distillation (§5.3)
+    ├── Have a Verifier / RM? → SDPO / SD-ZERO / RLSD (§5.3.3)
+    ├── Have privileged context? → OPSD / PAINT / PBSD / TT-OPD (§5.3.1)
+    └── Pure self-iteration? → SPIN / IRIS / On-Policy SFT (§5.3.2)
+
+Which objective should the optimizer use?
+├── Fixed, simple baseline → Forward/Reverse KL, JSD (§4.1)
+├── Token/position adaptive → AKL / ToDi / DDT / EDGE (§4.2)
+└── Reward-shaped → G-OPD / RLAD / KDRL / AlignDistil / MAD-OPD (§4.3)
+
+Training unstable or inefficient?
+└── Dynamics toolbox → TIP / SCOPE / TCOD / Uni-OPD / PACED / Lightning-OPD (§6)
 ```
 
 ## 🔥 Trends & Highlights (2025-2026)
@@ -463,7 +471,7 @@ On-Policy Distillation (Survey V3 Structure)
 |-------|-------|-------|------|
 | Knowledge Distillation: A Survey | IJCV 2021 | Comprehensive KD survey (response/feature/relation-based), 5000+ citations | [![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/2006.05525) |
 | A Survey on Knowledge Distillation of Large Language Models | arXiv 2024 | LLM-specific KD covering algorithm, skill, and verticalization | [![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/2402.13116) [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/Tebmer/Awesome-Knowledge-Distillation-of-LLMs) |
-| A Survey of On-Policy Distillation for Large Language Models | COLM 2026 (submitted) | First dedicated OPD survey: unified f-divergence framework, 97 methods | [![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/2604.00626) |
+| A Survey of On-Policy Distillation for Large Language Models | COLM 2026 (submitted) | First dedicated OPD survey: unified $f$-divergence framework, 104 methods across 13 subcategories | [![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/2604.00626) |
 
 ---
 

@@ -2,7 +2,7 @@
 
 At-a-glance comparison of key OPD methods. Use this to pick the right method for your use case.
 
-## Teacher-Guided Methods
+## White-Box / Teacher-Guided Methods (§4–§5.1)
 
 | Method | Divergence | Token Selection | Speed | Best For | Key Insight |
 |--------|-----------|-----------------|-------|----------|-------------|
@@ -15,7 +15,7 @@ At-a-glance comparison of key OPD methods. Use this to pick the right method for
 | **Lightning OPD** | RKL | All tokens | **4×** | Speed priority | Offline — no live teacher needed |
 | **TAID** | Adaptive | Curriculum | 1× | Large gap | Progressive capacity-aware scheduling |
 
-## Self-Distillation Methods
+## Self-Distillation Methods (§5.3)
 
 | Method | Signal Source | Needs Teacher? | Best For | Key Insight |
 |--------|-------------|----------------|----------|-------------|

@@ -2,7 +2,7 @@
 
 Ready-to-run implementations for on-policy distillation research, extracted from the Awesome List.
 
-## §4 Teacher-Guided OPD
+## §4–§5 Objective Functions, White-Box & Black-Box OPD
 
 | Method | Description | Link |
 |--------|-------------|------|
@@ -29,7 +29,7 @@ Ready-to-run implementations for on-policy distillation research, extracted from
 | **DistiLLM** | Streamlined Distillation | [jongwooko/distillm](https://github.com/jongwooko/distillm) |
 | **DistiLLM-2** | Contrastive Approach Boosts Distillation | [jongwooko/distillm-2](https://github.com/jongwooko/distillm-2) |
 
-## §5 Self-Distillation
+## §5.3 Self-Distillation
 
 | Method | Description | Link |
 |--------|-------------|------|
@@ -42,7 +42,7 @@ Ready-to-run implementations for on-policy distillation research, extracted from
 | **SDPO** | RL via Self-Distillation | [lasgroup/SDPO](https://github.com/lasgroup/SDPO) |
 | **Semantic Soft Bootstrapping**| Long Context Reasoning without RL | [purbeshmitra/semantic-soft-bootstrapping](https://github.com/purbeshmitra/semantic-soft-bootstrapping) |
 
-## §6 Understanding OPD
+## §7 Understanding OPD
 
 | Method | Description | Link |
 |--------|-------------|------|
@@ -51,7 +51,7 @@ Ready-to-run implementations for on-policy distillation research, extracted from
 | **Survey (Tebmer)** | Awesome Knowledge Distillation of LLMs | [Tebmer/Awesome-Knowledge-Distillation-of-LLMs](https://github.com/Tebmer/Awesome-Knowledge-Distillation-of-LLMs) |
 | **Distilling Step-by-Step** | Outperforming larger LLMs with rationales | [google-research/distilling-step-by-step](https://github.com/google-research/distilling-step-by-step) |
 
-## §7 Applications & Systems
+## §8 Applications, Systems & Emerging Domains
 
 | Method | Description | Link |
 |--------|-------------|------|

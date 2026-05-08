@@ -19,7 +19,7 @@ Thanks for your interest in contributing! This repository tracks the rapidly gro
 Please include:
 - **Paper:** Title + arXiv link
 - **Date:** Publication date
-- **Category:** Which section it belongs to (§4.1, §4.2, §5.1, etc.)
+- **Category:** Which section it belongs to (§4.1 / §4.2 / §4.3 / §5.1 / §5.2 / §5.3.1 / §5.3.2 / §5.3.3 / §6 / §7 / §8.x)
 - **Key Contribution:** One-line summary
 - **Models:** Teacher → Student configuration
 - **Code:** GitHub link (if available)
@@ -42,18 +42,19 @@ Please include:
 
 | Section | Focus |
 |---------|-------|
-| §4.1 | Divergence/loss function design (KL variants, score matching) |
-| §4.2 | Training dynamics (weighting, curriculum, stability, efficiency) |
-| §4.3 | Cross-architecture alignment (different tokenizers, model families) |
-| §4.4 | Black-box / information-constrained distillation |
-| §4.5 | RL-augmented, reward-guided, beyond distribution matching |
-| §5.1 | Self-distillation via privileged information |
-| §5.2 | Self-play and iterative self-improvement |
-| §5.3 | External feedback (reward models, verifiers) |
-| §6 | Theory, analysis, failure modes |
-| §7.1 | Industrial deployment and tech reports |
-| §7.2 | System optimization (speculative decoding, efficiency) |
-| §7.3 | Emerging domains (vision-language, embodied, audio) |
+| §4.1 | Fixed divergence objectives (KL / reverse-KL / JSD / concrete score) |
+| §4.2 | Adaptive divergence objectives (AKL, ToDi, DDT, DASD, EDGE, relaxed / stable targets) |
+| §4.3 | RL-augmented objectives (reward-shaped KD, DPO-based alignment, debate ensembles) |
+| §5.1 | White-box logit supervision (incl. cross-tokenizer / dual-space alignment) |
+| §5.2 | Black-box and API-constrained distillation (verbal / score / adversarial) |
+| §5.3.1 | Self-distillation via privileged information |
+| §5.3.2 | Self-play and iterative self-improvement |
+| §5.3.3 | External feedback (reward models, verifiers, text critiques) |
+| §6 | Training dynamics and efficiency (token/sample weighting, curriculum, stability) |
+| §7 | Understanding OPD (theory, analysis, failure modes, calibration) |
+| §8.1 | Industrial deployment and technical reports |
+| §8.2 | Emerging domains (multimodal, embodied, medical, DP, continual) |
+| §8.3 | System-level integration (speculative decoding, inference efficiency) |
 
 ## Other Ways to Contribute
 
