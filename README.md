@@ -144,12 +144,6 @@ Training unstable or inefficient?
   <img src="assets/evolution-timeline.png" alt="Evolution Timeline of On-Policy Distillation (2015 - 2026)" width="900">
 </p>
 
-### 📊 Method Distribution Across Sections
-
-<p align="center">
-  <img src="assets/method-distribution.png" alt="Distribution of 109 OPD Papers by Survey Section" width="720">
-</p>
-
 ## 🆕 Latest Additions (last ∼ 2 weeks)
 
 > Papers added since May 1, 2026 via the daily OPD scout. 🔍 emoji marks methods we **deeply read** (notes on file) before classification.
