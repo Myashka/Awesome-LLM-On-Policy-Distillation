@@ -17,8 +17,9 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-106%2B-blue" alt="Papers">
-  <img src="https://img.shields.io/badge/Last%20Updated-May%202026-green" alt="Last Updated">
+  <img src="https://img.shields.io/badge/Papers-104-blue" alt="Papers">
+  <img src="https://img.shields.io/github/last-commit/nick7nlp/Awesome-LLM-On-Policy-Distillation?label=Last%20Updated&color=green" alt="Last Updated">
+  <img src="https://img.shields.io/badge/Survey-V2%20118%20cites-orange" alt="Survey V2">
 </p>
 
 ## 🤔 Why On-Policy?
@@ -45,6 +46,7 @@ With the rise of reasoning models (System 2 thinking) in 2024–2026, long chain
     <li><a href="#-why-on-policy">Why On-Policy?</a></li>
     <li><a href="#-quick-start-guide">Quick-Start Guide</a></li>
     <li><a href="#-trends--highlights-2025-2026">Trends &amp; Highlights</a></li>
+    <li><a href="#-latest-additions-last--2-weeks">🆕 Latest Additions</a></li>
     <li><a href="#%EF%B8%8F-taxonomy">Taxonomy</a></li>
     <li><a href="#4-objective-functions-and-optimization">§4 Objective Functions &amp; Optimization</a>
       <ul>
@@ -67,7 +69,13 @@ With the rise of reasoning models (System 2 thinking) in 2024–2026, long chain
       </ul>
     </li>
     <li><a href="#6-training-dynamics-and-efficiency">§6 Training Dynamics &amp; Efficiency</a></li>
-    <li><a href="#7-understanding-opd">§7 Understanding OPD</a></li>
+    <li><a href="#7-understanding-opd">§7 Understanding OPD</a>
+      <ul>
+        <li><a href="#71-success-conditions--empirical-analyses">§7.1 Success Conditions</a></li>
+        <li><a href="#72-failure-modes--diagnostics">§7.2 Failure Modes</a></li>
+        <li><a href="#73-unified-theoretical-perspectives">§7.3 Unified Theory</a></li>
+      </ul>
+    </li>
     <li><a href="#8-applications-systems-and-emerging-domains">§8 Applications, Systems &amp; Emerging Domains</a>
       <ul>
         <li><a href="#81-industrial-deployment">§8.1 Industrial Deployment</a></li>
@@ -126,12 +134,31 @@ Training unstable or inefficient?
 5. **Industrial Adoption**: The latest frontier models—DeepSeek-V4, Qwen3, Nemotron, Gemma-2, and MiMo—have fully integrated OPD into their post-training pipelines.
 6. **Diversity Collapse**: A critical finding from SCOPE: while OPD drastically improves Pass@1, it severely harms Pass@k due to diversity collapse, prompting new hybrid objective designs.
 
+## 🆕 Latest Additions (last ∼ 2 weeks)
+
+> Papers added since May 1, 2026 via the daily OPD scout. 🔍 emoji marks methods we **deeply read** (notes on file) before classification.
+
+| Paper | § Section | Why It's Interesting |
+|-------|:---:|---|
+| 🔍 [PBSD: Preference-Based Self-Distillation (Beyond KL Matching via Reward Regularization)](https://arxiv.org/abs/2605.05040) | §5.3.1 + §4.3 | First OPD method that replaces pure KL with a *preference gap* objective; teacher target is reward-reweighted before on-policy student sampling. Bridges reward-shaped KD and self-distillation. |
+| 🔍 [TT-OPD: Turn-level Truncated OPD for Medical Agents (Healthcare AI GYM)](https://arxiv.org/abs/2605.02943) | §5.3.1 + §7.2 + §8.2 | EMA teacher + outcome-privileged hints + **turn-level** KL truncation; first systematic study of multi-turn agentic distillation stability, with dedicated medical domain benchmark. |
+| [Uni-OPD: Unified Dual-Perspective OPD Framework](https://arxiv.org/abs/2605.03677) | §6 | Unifies token-level weighting and sample-level weighting under a single dual-perspective objective. |
+| [MAD-OPD: Multi-Agent Debate-driven OPD](https://arxiv.org/abs/2605.01347) | §5.3.3 | Multi-teacher debate produces confidence-weighted token supervision (OPAD); ensembling with cheap verifiers. |
+| [MSD: Multilingual Self-Distillation for Safety](https://arxiv.org/abs/2605.02971) | §5.3.1 | English CoT as privileged context + Dual-Perspective Safety Weighting for cross-lingual safety transfer. |
+| [GUI-SD: On-Policy Self-Distillation for GUI Grounding](https://arxiv.org/abs/2605.00642) | §5.3.1 + §8.2 | Visual privileged context (bbox + Gaussian soft mask) + entropy-guided token weighting on screenshots. |
+| [PRISM: Pre-alignment via Black-box OPD for Multimodal RL](https://arxiv.org/abs/2604.28123) | §5.2 + §6 | Adversarial MoE discriminator; logit-free OPD as pre-alignment stage before RLVR. |
+| [CoPD: Co-evolution On-Policy Distillation](https://arxiv.org/abs/2604.27083) | §5.3.2 + §8.1 | Parallel RLVR expert training with interleaved bidirectional OPD — experts teach each other *during* training, not after. |
+| [PAINT: Partial-solution Adaptive Interpolated Training](https://arxiv.org/abs/2604.26573) | §6.2 | Rollout-reference overlap + energy interpolation on OPSD; tackles student-teacher gap without a full teacher. |
+| [TCOD: Temporal Curriculum OPD](https://arxiv.org/abs/2604.24005) | §6.2 + §8.2 | Temporal curriculum for multi-turn agents; handles compounding errors in long-horizon tool use. |
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## 🗺️ Taxonomy
 
-> Organized to mirror the [OPD Survey V3 (116 citations)](https://arxiv.org/abs/2604.00626) section structure.
+> Organized to mirror the [OPD Survey V2 (118 citations)](https://arxiv.org/abs/2604.00626) section structure.
 
 ```
-On-Policy Distillation (Survey V3 Structure)
+On-Policy Distillation (Survey V2 Structure)
 │
 ├── §4 Objective Functions & Optimization
 │   ├── §4.1 Fixed Divergence Objectives
@@ -358,18 +385,37 @@ On-Policy Distillation (Survey V3 Structure)
 
 ## §7 Understanding OPD
 
-> Empirical analyses, theoretical studies, failure-mode diagnostics, and calibration studies that explain when and why on-policy distillation works (or fails).
+> When and why on-policy distillation works (or fails). Three lenses: conditions for success, failure modes & diagnostics, and unifying theory. Aligned with Sections 7.1–7.3 of the survey.
+
+### §7.1 Success Conditions & Empirical Analyses
+
+> What practical regimes make OPD reliably beat SFT / off-policy KD? Scaling with teacher size, training signal density, data regime.
+
+| Paper | Date | Resources |
+|-------|:----:|:---:|
+| 🟢 [Why Knowledge Distillation Works in Generative Models: A Minimal Working Explanation](https://arxiv.org/abs/2505.13111) <br><sub>📐 SmolLM2-135M → SmolLM2-360M (theory + empirical)</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/csm9493/kd-minimal-explanation) |
+| 🟢 [Rethinking On-Policy Distillation of Large Language Models: Phenomenology, Mechanism, and Recipe](https://arxiv.org/abs/2604.13016) <br><sub>📐 Qwen3-1.7B → DeepSeek-R1-Distill-7B / Qwen3-4B etc.</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/thunlp/OPD) |
+
+### §7.2 Failure Modes & Diagnostics
+
+> Characterizations of OPD pathologies (reasoning degradation, miscalibration, exposure-bias-in-disguise) and simple fixes.
 
 | Paper | Date | Resources |
 |-------|:----:|:---:|
 | 🟢 [Why Does Self-Distillation (Sometimes) Degrade the Reasoning Capability of LLMs?](https://arxiv.org/abs/2603.24472) <br><sub>📐 Qwen3-8B / DeepSeek-Distill-7B / Olmo3-7B → Self</sub> | 2026 |  |
 | 🟢 [Revisiting On-Policy Distillation: Empirical Failure Modes and Simple Fixes](https://arxiv.org/abs/2603.25562) <br><sub>📐 Qwen2.5-7B-Instruct → OpenThinker3-7B / GiGPO-Qwen2.5-7B</sub> | 2026 |  |
-| 🟢 [Rethinking On-Policy Distillation of Large Language Models: Phenomenology, Mechanism, and Recipe](https://arxiv.org/abs/2604.13016) <br><sub>📐 Qwen3-1.7B → DeepSeek-R1-Distill-7B / Qwen3-4B etc.</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/thunlp/OPD) |
-| 🟢 [The Illusion of Certainty: Decoupling Capability and Calibration in On-Policy Distillation](https://arxiv.org/abs/2604.16830) <br><sub>📐 Qwen3-0.6B–32B → Self (CaOPD: discovers miscalibration scaling law, proposes calibration-aware OPD)</sub> | 2026 |  |
-| 🟢 [Why Knowledge Distillation Works in Generative Models: A Minimal Working Explanation](https://arxiv.org/abs/2505.13111) <br><sub>📐 SmolLM2-135M → SmolLM2-360M (theory + empirical)</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/csm9493/kd-minimal-explanation) |
+| 🟢 [The Illusion of Certainty: Decoupling Capability and Calibration in On-Policy Distillation](https://arxiv.org/abs/2604.16830) <br><sub>📐 Qwen3-0.6B–32B → Self (CaOPD: miscalibration scaling law + calibration-aware OPD)</sub> | 2026 |  |
+
+### §7.3 Unified Theoretical Perspectives
+
+> Attempts to place OPD within a coherent theoretical frame — imitation learning, RL, information geometry, statistical learning.
+
+| Paper | Date | Resources |
+|-------|:----:|:---:|
 | 🟢 [A Note on Hybrid Online Reinforcement and Imitation Learning for LLMs: Formulations and Algorithms](https://arxiv.org/abs/2512.23097) <br><sub>📐 Theoretical (no specific models)</sub> | 2025 |  |
-| 🟢 [A Survey on Knowledge Distillation of Large Language Models](https://arxiv.org/abs/2402.13116) | 2024 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/Tebmer/Awesome-Knowledge-Distillation-of-LLMs) |
-| 🟢 [Distilling Step-by-Step! Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes](https://arxiv.org/abs/2305.02301) <br><sub>📐 T5-Small/Base → PaLM-540B (step-by-step rationales)</sub> | 2023 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/google-research/distilling-step-by-step) |
+| 🟢 [Distilling Step-by-Step! Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes](https://arxiv.org/abs/2305.02301) <br><sub>📐 T5-Small/Base → PaLM-540B (step-by-step rationales; seminal rationale-distillation motivation)</sub> | 2023 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/google-research/distilling-step-by-step) |
+
+> 📚 *[A Survey on Knowledge Distillation of Large Language Models](https://arxiv.org/abs/2402.13116) (2024)* is a broader KD survey that overlaps with ours; it's listed under **[Related Surveys](#-related-surveys)** rather than here.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -381,15 +427,16 @@ On-Policy Distillation (Survey V3 Structure)
 
 ### §8.1 Industrial Deployment
 
-> Large-scale technical reports and production systems that use OPD as a core post-training component: DeepSeek-R1, Qwen3, Gemma 2, MiMo-V2, Nemotron-Cascade 2, KAT-Coder-V2, ORBIT.
+> Large-scale technical reports and production systems that use OPD as a core post-training component: DeepSeek-V4, DeepSeek-R1, Qwen3, Gemma 2, MiMo-V2, Nemotron-Cascade 2, KAT-Coder-V2, ORBIT.
 
 | Paper | Date | Resources |
 |-------|:----:|:---:|
+| 🟢 [DeepSeek-V4 Technical Report: Towards Highly Efficient Million-Token Context Intelligence](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/DeepSeek_V4.pdf) <br><sub>📐 10+ domain experts (1.6T each) → DeepSeek-V4-Pro 1.6T MoE · full-vocabulary multi-teacher R-KL; replaces mixed-RL stage of V3.2 with pure OPD consolidation</sub> | 2026 | [![Model](https://img.shields.io/badge/Model-🤗-yellow)](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro) |
 | 🟢 [MiMo-V2-Flash Technical Report](https://arxiv.org/abs/2601.02780) <br><sub>📐 MiMo-V2-Flash 309B MoE → Self (multi-teacher MOPD)</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/XiaomiMiMo/MiMo-V2-Flash) [![Model](https://img.shields.io/badge/Model-🤗-yellow)](https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash) |
 | 🟢 [ORBIT: On-policy Exploration-Exploitation for Controllable Multi-Budget Reasoning](https://arxiv.org/abs/2601.08310) <br><sub>📐 DeepSeek-Distill-Qwen-1.5B / Qwen3-4B-Thinking / Nemotron-7B → Self (multi-teacher OPD fusion)</sub> | 2026 |  |
 | 🟢 [Nemotron-Cascade 2: Post-Training LLMs with Cascade RL and Multi-Domain On-Policy Distillation](https://arxiv.org/abs/2603.19220) <br><sub>📐 Nemotron-Cascade-2-30B-A3B → Self (multi-ckpt MOPD)</sub> | 2026 |  |
 | 🟢 [KAT-Coder-V2 Technical Report](https://arxiv.org/abs/2603.27703) <br><sub>📐 KAT-Coder-V2 (proprietary multi-expert pipeline)</sub> | 2026 |  |
-| 🟢 [DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning](https://arxiv.org/abs/2501.12948) <br><sub>📐 Qwen2.5-1.5B–32B / Llama-3-8B–70B → DeepSeek-R1 671B | ⚠️ Off-policy SFT distillation; included as the dominant baseline that OPD methods improve upon</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/deepseek-ai/DeepSeek-R1) [![Model](https://img.shields.io/badge/Model-🤗-yellow)](https://huggingface.co/deepseek-ai/DeepSeek-R1) |
+| 🟢 [DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning](https://arxiv.org/abs/2501.12948) <br><sub>📐 Qwen2.5-1.5B–32B / Llama-3-8B–70B → DeepSeek-R1 671B · ⚠️ off-policy SFT baseline (OPD reference point, §7.4)</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/deepseek-ai/DeepSeek-R1) [![Model](https://img.shields.io/badge/Model-🤗-yellow)](https://huggingface.co/deepseek-ai/DeepSeek-R1) |
 | 🟢 [Qwen3 Technical Report](https://arxiv.org/abs/2505.09388) <br><sub>📐 Qwen3 series → Qwen3 (larger, on-policy logit KD)</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/QwenLM/Qwen3) [![Model](https://img.shields.io/badge/Model-🤗-yellow)](https://huggingface.co/collections/Qwen/qwen3-67dd247413f0e2e4f653967f) |
 | 🟢 [Gemma 2: Improving Open Language Models at a Practical Size](https://arxiv.org/abs/2408.00118) <br><sub>📐 Gemma-2-2B/9B → Gemma-2-27B (online KD in pre-training)</sub> | 2024 | [![Model](https://img.shields.io/badge/Model-🤗-yellow)](https://huggingface.co/google/gemma-2-27b) |
 
@@ -422,12 +469,15 @@ On-Policy Distillation (Survey V3 Structure)
 
 ### §8.3 System-Level Integration
 
-> System-level optimization via OPD: speculative decoding, draft model training, inference-efficiency pipelines that wrap distillation into end-to-end deployment stacks.
+> System-level optimization via OPD: speculative decoding, draft model training, full-vocabulary logit-caching systems that wrap distillation into end-to-end deployment stacks.
 
 | Paper | Date | Resources |
 |-------|:----:|:---:|
 | 🟢 [Speculative Knowledge Distillation: Bridging the Teacher-Student Gap Through Interleaved Sampling](https://arxiv.org/abs/2410.11325) <br><sub>📐 Gemma-2B / Qwen-0.5B → Gemma-7B / Qwen-7B</sub> | 2024 |  |
 | 🟢 [DistillSpec: Improving Speculative Decoding via Knowledge Distillation](https://arxiv.org/abs/2310.08461) <br><sub>📐 T5-Small → T5-XL (on-policy KD for speculative decoding)</sub> | 2023 |  |
+
+> 🔗 **See also**: [DeepSeek-V4 Technical Report](#81-industrial-deployment) (§8.1) — full-vocabulary multi-teacher OPD with hidden-state caching + FP4-QAT, the most detailed public account of trillion-parameter OPD systems engineering; surveyed as the canonical §8.3 system-level work.  
+> Open-source frameworks commonly integrated into OPD pipelines (not paper-indexed here): [OpenRLHF](https://github.com/OpenRLHF/OpenRLHF), [veRL](https://github.com/volcengine/verl), [vLLM](https://github.com/vllm-project/vllm), [TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
