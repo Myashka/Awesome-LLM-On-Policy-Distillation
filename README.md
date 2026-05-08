@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <p align="center">
-  <img src="assets/opd-hero.png" alt="On-Policy Distillation: Teacher-Student Loop" width="900">
+  <img src="assets/opd-hero.jpg" alt="On-Policy Distillation: Teacher-Student Loop" width="900">
 </p>
 
 <div align="center">
