@@ -90,7 +90,6 @@ With the rise of reasoning models (System 2 thinking) in 2024–2026, long chain
     </li>
     <li><a href="#9-open-problems">§9 Open Problems</a></li>
     <li><a href="#-additional-resources">Additional Resources</a></li>
-    <li><a href="#-related-surveys">Related Surveys</a></li>
     <li><a href="#-faq">FAQ</a></li>
     <li><a href="#-contributing">Contributing</a></li>
     <li><a href="#-citation">Citation</a></li>
@@ -513,8 +512,6 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [A Note on Hybrid Online Reinforcement and Imitation Learning for LLMs: Formulations and Algorithms](https://arxiv.org/abs/2512.23097) <br><sub>📐 Theoretical (no specific models)</sub> | 2025 |  |
 | 🟢 [Distilling Step-by-Step! Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes](https://arxiv.org/abs/2305.02301) <br><sub>📐 T5-Small/Base → PaLM-540B (step-by-step rationales; seminal rationale-distillation motivation)</sub> | 2023 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/google-research/distilling-step-by-step) |
 
-> 📚 *[A Survey on Knowledge Distillation of Large Language Models](https://arxiv.org/abs/2402.13116) (2024)* is a broader KD survey that overlaps with ours; it's listed under **[Related Surveys](#-related-surveys)** rather than here.
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
@@ -612,16 +609,6 @@ On-Policy Distillation (Survey V2 Structure)
 | [📊 Benchmarks](resources/benchmarks.md) | Performance data, compute costs, and evaluation guides |
 | [📐 Key Equations](resources/key-equations.md) | Quick reference for core OPD loss functions |
 | [📋 Changelog](CHANGELOG.md) | What's new — paper additions by date |
-
-## 📖 Related Surveys
-
-| Paper | Venue | Focus | Link |
-|-------|-------|-------|------|
-| Knowledge Distillation: A Survey | IJCV 2021 | Comprehensive KD survey (response/feature/relation-based), 5000+ citations | [![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/2006.05525) |
-| A Survey on Knowledge Distillation of Large Language Models | arXiv 2024 | LLM-specific KD covering algorithm, skill, and verticalization | [![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/2402.13116) [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/Tebmer/Awesome-Knowledge-Distillation-of-LLMs) |
-| A Survey of On-Policy Distillation for Large Language Models | COLM 2026 (submitted) | First dedicated OPD survey: unified $f$-divergence framework, 109 methods across 13 subcategories | [![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/2604.00626) |
-
----
 
 ## ❓ FAQ
 
