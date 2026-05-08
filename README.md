@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-108-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-109-blue" alt="Papers">
   <img src="https://img.shields.io/github/last-commit/nick7nlp/Awesome-LLM-On-Policy-Distillation?label=Last%20Updated&color=green" alt="Last Updated">
   <img src="https://img.shields.io/badge/Survey-V2%20118%20cites-orange" alt="Survey V2">
 </p>
@@ -29,6 +29,25 @@ Traditional off-policy distillation (e.g., SFT on teacher demonstrations) suffer
 **On-policy distillation (OPD)** solves this by forcing the student to generate trajectories from its own distribution, and then evaluating those trajectories using a teacher model, reward model, or verifier. The student learns to correct its *own* mistakes in its *own* state space.
 
 With the rise of reasoning models (System 2 thinking) in 2024–2026, long chains of thought exacerbate compounding errors. Off-policy SFT is no longer sufficient. OPD has become the indispensable post-training paradigm for scaling reasoning, adopted by frontier models like DeepSeek-V4, Qwen3, Gemma-2, Nemotron, and MiMo.
+
+### 🔁 How OPD Differs from Off-Policy SFT
+
+```mermaid
+flowchart LR
+    subgraph OFF["📕 Off-Policy SFT"]
+        direction LR
+        T1["Teacher<br/>generates<br/>rollouts"] --> T2["Fixed<br/>dataset"]
+        T2 --> T3["Student<br/>trained on<br/>teacher prefixes"]
+        T3 -->|"❌ Exposure bias<br/>❌ Train/test mismatch<br/>❌ O(εT²) error"| T4["Student"]
+    end
+    subgraph ON["🚀 On-Policy Distillation"]
+        direction LR
+        S1["Student<br/>generates<br/>rollouts"] --> S2["Teacher<br/>scores<br/>each token"]
+        S2 --> S3["KL / reward<br/>loss at every<br/>student state"]
+        S3 -->|"✅ Matches inference<br/>✅ Linear O(εT) error<br/>✅ Interactive correction"| S1
+    end
+    OFF -.->|"scales to<br/>long reasoning"| ON
+```
 
 <p align="center">
   📖 <b>Survey Paper:</b> <a href="https://arxiv.org/abs/2604.00626">A Survey of On-Policy Distillation for Large Language Models</a>
@@ -47,6 +66,7 @@ With the rise of reasoning models (System 2 thinking) in 2024–2026, long chain
     <li><a href="#-quick-start-guide">Quick-Start Guide</a></li>
     <li><a href="#-trends--highlights-2025-2026">Trends &amp; Highlights</a></li>
     <li><a href="#-latest-additions-last--2-weeks">🆕 Latest Additions</a></li>
+    <li><a href="#-hall-of-fame--10-must-read-opd-papers">🏆 Hall of Fame</a></li>
     <li><a href="#%EF%B8%8F-taxonomy">Taxonomy</a></li>
     <li><a href="#4-objective-functions-and-optimization">§4 Objective Functions &amp; Optimization</a>
       <ul>
@@ -134,6 +154,35 @@ Training unstable or inefficient?
 5. **Industrial Adoption**: The latest frontier models—DeepSeek-V4, Qwen3, Nemotron, Gemma-2, and MiMo—have fully integrated OPD into their post-training pipelines.
 6. **Diversity Collapse**: A critical finding from SCOPE: while OPD drastically improves Pass@1, it severely harms Pass@k due to diversity collapse, prompting new hybrid objective designs.
 
+### ⏳ Evolution Timeline
+
+```mermaid
+timeline
+    title From Classical KD to Modern OPD
+    2015 : Hinton KD<br/>soft targets
+    2018-2020 : ImitKD, BRIO<br/>early on-policy KD
+    2023 : GKD (DAgger for LLMs)<br/>MiniLLM (RKL)<br/>Lion, f-KD
+    2024 : AKL (adaptive)<br/>SPIN (self-play)<br/>Gemma-2 (pre-train KD)<br/>DistiLLM / ToDi
+    2025 : DeepSeek-R1 (off-policy SFT)<br/>TAID / SCOPE / TIP<br/>Skill-SD (agentic)
+    2026 : DeepSeek-V4 (multi-teacher OPD)<br/>TCOD / MAD-OPD<br/>PBSD / TT-OPD / Uni-OPD
+```
+
+### 📊 Method Distribution Across Sections
+
+```mermaid
+pie showData
+    title Papers by Primary Section (107 arXiv entries + 2 tech reports = 109)
+    "§4.1 Fixed Divergence" : 4
+    "§4.2 Adaptive Divergence" : 7
+    "§4.3 RL-Augmented" : 14
+    "§5.1 White-Box" : 8
+    "§5.2 Black-Box" : 7
+    "§5.3 Self-Distillation" : 26
+    "§6 Training Dynamics" : 12
+    "§7 Understanding" : 7
+    "§8 Applications/Emerging" : 22
+```
+
 ## 🆕 Latest Additions (last ∼ 2 weeks)
 
 > Papers added since May 1, 2026 via the daily OPD scout. 🔍 emoji marks methods we **deeply read** (notes on file) before classification.
@@ -153,9 +202,70 @@ Training unstable or inefficient?
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## 🏆 Hall of Fame — 10 Must-Read OPD Papers
+
+> Start here if you're new to the field. These 10 papers cover the theoretical foundations, representative methods, and landmark industrial applications of OPD.
+
+| # | Paper | Why Read It |
+|:-:|-------|-------------|
+| 1 | [**GKD** (Google DeepMind, 2023)](https://arxiv.org/abs/2306.13649) | The canonical on-policy KD formulation for LLMs. DAgger analogy, unified loss over F-KL/R-KL/JSD. |
+| 2 | [**MiniLLM** (2023)](https://arxiv.org/abs/2306.08543) | Shows Reverse-KL beats Forward-KL for mode-seeking small students. The paper that made RKL the default. |
+| 3 | [**f-Divergence KD** (ACL 2023)](https://arxiv.org/abs/2307.15190) | The unifying f-divergence framework for sequence-level KD. Subsumes KL, RKL, JSD, $\alpha$-divergence under one lens. |
+| 4 | [**On-Policy Distillation** (Thinking Machines, 2025)](https://thinkingmachines.ai/blog/on-policy-distillation/) | The blog post that coined the term. Required reading. |
+| 5 | [**DeepSeek-R1** (2025)](https://arxiv.org/abs/2501.12948) | The off-policy counterexample. Explains when pure SFT distillation wins (large teacher, small student, diverse traces). |
+| 6 | [**Gemma-2** (2024)](https://arxiv.org/abs/2408.00118) | OPD at industrial scale: 27B → 9B → 2B cascade. KD during pre-training. |
+| 7 | [**OPSD** (2026)](https://arxiv.org/abs/2601.18734) | The canonical privileged-information method. Oracle answer as privileged context, KL to unprivileged student. |
+| 8 | [**SPIN** (2024)](https://arxiv.org/abs/2401.01335) | The self-play foundation. Current model vs. previous model iterations. |
+| 9 | [**Rethinking OPD** (2026)](https://arxiv.org/abs/2604.13016) | Two necessary conditions for OPD to succeed. Reads as a "what can go wrong" field guide. |
+| 10 | [**DeepSeek-V4** (2026)](https://huggingface.co/deepseek-ai/DeepSeek-V4) | State-of-the-art industrial OPD: multi-domain expert fusion via full-vocab reverse-KL. |
+
+<details>
+<summary>📖 <b>Recommended Reading Order for Different Backgrounds</b></summary>
+
+- **ML Researcher (theory-first):** 3 → 1 → 2 → 9 → 7
+- **Industry Practitioner (deployment-first):** 4 → 6 → 10 → 5 → 1
+- **Student / Newcomer:** 4 → 1 → 2 → 5 → 7
+- **Agentic / Multi-turn focus:** 4 → 1 → 7 → 9 → Skill-SD → TT-OPD
+
+</details>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## 🗺️ Taxonomy
 
 > Organized to mirror the [OPD Survey V2 (118 citations)](https://arxiv.org/abs/2604.00626) section structure.
+
+### 🎨 Visual Map
+
+```mermaid
+mindmap
+  root((On-Policy<br/>Distillation))
+    §4 Objectives
+      §4.1 Fixed Divergence<br/>KL, RKL, JSD
+      §4.2 Adaptive Divergence<br/>AKL, ToDi, DDT
+      §4.3 RL-Augmented<br/>G-OPD, KDRL, RLAD
+    §5 Signal Source
+      §5.1 White-Box<br/>full logits
+      §5.2 Black-Box<br/>API, verbal
+      §5.3 Self-Distillation
+        §5.3.1 Privileged Info<br/>OPSD, GATES, TT-OPD
+        §5.3.2 Self-Play<br/>SPIN, IRIS, PAINT
+        §5.3.3 External Feedback<br/>SDPO, SRPO, RLSD
+    §6 Training Dynamics
+      Token weighting
+      Curriculum<br/>TCOD, Uni-OPD
+      Compute-optimal<br/>Lightning-OPD
+    §7 Understanding
+      Success conditions
+      Failure modes<br/>TT-OPD, SCOPE
+      Unified theory<br/>f-divergence
+    §8 Applications
+      §8.1 Industrial<br/>DeepSeek-V4, Gemma-2
+      §8.2 Emerging<br/>multimodal, agentic
+      §8.3 System-level<br/>vLLM, Verl
+```
+
+### 📜 Full Tree
 
 ```
 On-Policy Distillation (Survey V2 Structure)
@@ -276,6 +386,7 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [PromptKD: Distilling Student-Friendly Knowledge for Generative Language Models via Prompt Tuning](https://arxiv.org/abs/2402.12842) <br><sub>📐 GPT-2 120M–760M / OPT/Llama-7B → GPT-2 XL / OPT-13B / Llama-13B</sub> | 2024 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/gmkim-ai/PromptKD) |
 | 🟢 [Delta Knowledge Distillation for Large Language Models](https://arxiv.org/abs/2509.14526) <br><sub>📐 Base-to-Instruct delta signal isolation for white-box logit distillation</sub> | 2025 |  |
 | 🟢 [TAID: Temporally Adaptive Interpolated Distillation for Efficient Knowledge Transfer in Language Models](https://arxiv.org/abs/2501.16937) <br><sub>📐 GPT-2 / Phi-3 / Llama-3 (progressive target revelation via temporal interpolation)</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/SakanaAI/TAID) |
+| 🟢 [MiniPLM: Knowledge Distillation for Pre-Training Language Models](https://arxiv.org/abs/2410.17215) <br><sub>📐 Pre-training KD via difference sampling; teacher-ref divergence selects training instances</sub> | 2024 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -523,7 +634,7 @@ On-Policy Distillation (Survey V2 Structure)
 |-------|-------|-------|------|
 | Knowledge Distillation: A Survey | IJCV 2021 | Comprehensive KD survey (response/feature/relation-based), 5000+ citations | [![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/2006.05525) |
 | A Survey on Knowledge Distillation of Large Language Models | arXiv 2024 | LLM-specific KD covering algorithm, skill, and verticalization | [![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/2402.13116) [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/Tebmer/Awesome-Knowledge-Distillation-of-LLMs) |
-| A Survey of On-Policy Distillation for Large Language Models | COLM 2026 (submitted) | First dedicated OPD survey: unified $f$-divergence framework, 108 methods across 13 subcategories | [![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/2604.00626) |
+| A Survey of On-Policy Distillation for Large Language Models | COLM 2026 (submitted) | First dedicated OPD survey: unified $f$-divergence framework, 109 methods across 13 subcategories | [![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/2604.00626) |
 
 ---
 
