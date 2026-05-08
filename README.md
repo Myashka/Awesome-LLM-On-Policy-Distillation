@@ -1,9 +1,5 @@
 <a name="readme-top"></a>
 
-<p align="center">
-  <img src="assets/opd-hero.jpg" alt="On-Policy Distillation: Teacher-Student Loop" width="900">
-</p>
-
 <div align="center">
   <a href="https://github.com/nick7nlp/Awesome-LLM-On-Policy-Distillation/stargazers"><img src="https://img.shields.io/github/stars/nick7nlp/Awesome-LLM-On-Policy-Distillation?style=for-the-badge" alt="Stars"></a>
   <a href="https://github.com/nick7nlp/Awesome-LLM-On-Policy-Distillation/network/members"><img src="https://img.shields.io/github/forks/nick7nlp/Awesome-LLM-On-Policy-Distillation?style=for-the-badge" alt="Forks"></a>
@@ -27,6 +23,10 @@
 </p>
 
 ## 🤔 Why On-Policy?
+
+<p align="center">
+  <img src="assets/opd-hero.png" alt="On-Policy Distillation: Teacher-Student Loop" width="640">
+</p>
 
 Traditional off-policy distillation (e.g., SFT on teacher demonstrations) suffers from **exposure bias** and **train-test mismatch**: the student learns to predict the next token given perfect teacher prefixes, but during inference, it must condition on its own flawed generations. Errors compound rapidly.
 
