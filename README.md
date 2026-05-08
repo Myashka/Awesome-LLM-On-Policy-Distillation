@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-104-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-108-blue" alt="Papers">
   <img src="https://img.shields.io/github/last-commit/nick7nlp/Awesome-LLM-On-Policy-Distillation?label=Last%20Updated&color=green" alt="Last Updated">
   <img src="https://img.shields.io/badge/Survey-V2%20118%20cites-orange" alt="Survey V2">
 </p>
@@ -142,13 +142,13 @@ Training unstable or inefficient?
 |-------|:---:|---|
 | 🔍 [PBSD: Preference-Based Self-Distillation (Beyond KL Matching via Reward Regularization)](https://arxiv.org/abs/2605.05040) | §5.3.1 + §4.3 | First OPD method that replaces pure KL with a *preference gap* objective; teacher target is reward-reweighted before on-policy student sampling. Bridges reward-shaped KD and self-distillation. |
 | 🔍 [TT-OPD: Turn-level Truncated OPD for Medical Agents (Healthcare AI GYM)](https://arxiv.org/abs/2605.02943) | §5.3.1 + §7.2 + §8.2 | EMA teacher + outcome-privileged hints + **turn-level** KL truncation; first systematic study of multi-turn agentic distillation stability, with dedicated medical domain benchmark. |
-| [Uni-OPD: Unified Dual-Perspective OPD Framework](https://arxiv.org/abs/2605.03677) | §6 | Unifies token-level weighting and sample-level weighting under a single dual-perspective objective. |
-| [MAD-OPD: Multi-Agent Debate-driven OPD](https://arxiv.org/abs/2605.01347) | §5.3.3 | Multi-teacher debate produces confidence-weighted token supervision (OPAD); ensembling with cheap verifiers. |
+| [Uni-OPD: Unified Dual-Perspective OPD Framework](https://arxiv.org/abs/2605.03677) | §6.2 | Unifies token-level weighting and sample-level weighting under a single dual-perspective objective. |
+| [MAD-OPD: Multi-Agent Debate-driven OPD](https://arxiv.org/abs/2605.01347) | §5.1 + §6.1 + §8.2 | Multi-teacher debate produces confidence-weighted token supervision (OPAD); ensembling with cheap verifiers. |
 | [MSD: Multilingual Self-Distillation for Safety](https://arxiv.org/abs/2605.02971) | §5.3.1 | English CoT as privileged context + Dual-Perspective Safety Weighting for cross-lingual safety transfer. |
 | [GUI-SD: On-Policy Self-Distillation for GUI Grounding](https://arxiv.org/abs/2605.00642) | §5.3.1 + §8.2 | Visual privileged context (bbox + Gaussian soft mask) + entropy-guided token weighting on screenshots. |
-| [PRISM: Pre-alignment via Black-box OPD for Multimodal RL](https://arxiv.org/abs/2604.28123) | §5.2 + §6 | Adversarial MoE discriminator; logit-free OPD as pre-alignment stage before RLVR. |
-| [CoPD: Co-evolution On-Policy Distillation](https://arxiv.org/abs/2604.27083) | §5.3.2 + §8.1 | Parallel RLVR expert training with interleaved bidirectional OPD — experts teach each other *during* training, not after. |
-| [PAINT: Partial-solution Adaptive Interpolated Training](https://arxiv.org/abs/2604.26573) | §6.2 | Rollout-reference overlap + energy interpolation on OPSD; tackles student-teacher gap without a full teacher. |
+| [PRISM: Pre-alignment via Black-box OPD for Multimodal RL](https://arxiv.org/abs/2604.28123) | §5.2 + §6.2 | Adversarial MoE discriminator; logit-free OPD as pre-alignment stage before RLVR. |
+| [CoPD: Co-evolution On-Policy Distillation](https://arxiv.org/abs/2604.27083) | §5.3.3 + §8.1 | Parallel RLVR expert training with interleaved bidirectional OPD — experts teach each other *during* training, not after. |
+| [PAINT: Partial-solution Adaptive Interpolated Training](https://arxiv.org/abs/2604.26573) | §5.3.2 + §6.2 | Rollout-reference overlap + energy interpolation on OPSD; tackles student-teacher gap without a full teacher. |
 | [TCOD: Temporal Curriculum OPD](https://arxiv.org/abs/2604.24005) | §6.2 + §8.2 | Temporal curriculum for multi-turn agents; handles compounding errors in long-horizon tool use. |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -274,6 +274,8 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [MiniLLM: On-Policy Distillation of Large Language Models](https://arxiv.org/abs/2306.08543) <br><sub>📐 GPT-2 120M–760M → GPT-2 1.5B / GPT-J 6B / OPT-13B</sub> | 2024 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/microsoft/LMOps/tree/main/minillm) |
 | 🟢 [Revisiting Knowledge Distillation for Autoregressive Language Models](https://arxiv.org/abs/2402.11890) <br><sub>📐 OPT-125M / Pythia-410M / LLaMA-68M → OPT-6.7B / Pythia-2.8B / LLaMA-7B (ATKD, adaptive token teaching)</sub> | 2024 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/WHU-ZQH/ATKD) |
 | 🟢 [PromptKD: Distilling Student-Friendly Knowledge for Generative Language Models via Prompt Tuning](https://arxiv.org/abs/2402.12842) <br><sub>📐 GPT-2 120M–760M / OPT/Llama-7B → GPT-2 XL / OPT-13B / Llama-13B</sub> | 2024 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/gmkim-ai/PromptKD) |
+| 🟢 [Delta Knowledge Distillation for Large Language Models](https://arxiv.org/abs/2509.14526) <br><sub>📐 Base-to-Instruct delta signal isolation for white-box logit distillation</sub> | 2025 |  |
+| 🟢 [TAID: Temporally Adaptive Interpolated Distillation for Efficient Knowledge Transfer in Language Models](https://arxiv.org/abs/2501.16937) <br><sub>📐 GPT-2 / Phi-3 / Llama-3 (progressive target revelation via temporal interpolation)</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/SakanaAI/TAID) |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -521,7 +523,7 @@ On-Policy Distillation (Survey V2 Structure)
 |-------|-------|-------|------|
 | Knowledge Distillation: A Survey | IJCV 2021 | Comprehensive KD survey (response/feature/relation-based), 5000+ citations | [![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/2006.05525) |
 | A Survey on Knowledge Distillation of Large Language Models | arXiv 2024 | LLM-specific KD covering algorithm, skill, and verticalization | [![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/2402.13116) [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/Tebmer/Awesome-Knowledge-Distillation-of-LLMs) |
-| A Survey of On-Policy Distillation for Large Language Models | COLM 2026 (submitted) | First dedicated OPD survey: unified $f$-divergence framework, 104 methods across 13 subcategories | [![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/2604.00626) |
+| A Survey of On-Policy Distillation for Large Language Models | COLM 2026 (submitted) | First dedicated OPD survey: unified $f$-divergence framework, 108 methods across 13 subcategories | [![Paper](https://img.shields.io/badge/Paper-arXiv-red)](https://arxiv.org/abs/2604.00626) |
 
 ---
 
