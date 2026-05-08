@@ -39,7 +39,7 @@ With the rise of reasoning models (System 2 thinking) in 2024–2026, long chain
 </p>
 
 <p align="center">
-  🟢 = Covered in our <a href="https://arxiv.org/abs/2604.00626">survey paper</a> &nbsp;|&nbsp; 🟡 = Borderline/Hybrid
+  🟢 = Covered in our <a href="https://arxiv.org/abs/2604.00626">survey paper</a> &nbsp;|&nbsp; 🟡 = Indexed here, pending inclusion in the next survey revision
 </p>
 
 ---
