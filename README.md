@@ -19,7 +19,7 @@
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
   <img src="https://img.shields.io/badge/Papers-113-blue" alt="Papers">
   <img src="https://img.shields.io/github/last-commit/nick7nlp/Awesome-LLM-On-Policy-Distillation?label=Last%20Updated&color=green" alt="Last Updated">
-  <img src="https://img.shields.io/badge/Survey-V2%20118%20cites-orange" alt="Survey V2">
+  <img src="https://img.shields.io/badge/Survey-V2%20124%20cites-orange" alt="Survey V2">
 </p>
 
 <p align="center">
@@ -214,7 +214,7 @@ Training unstable or inefficient?
 
 ## 🗺️ Taxonomy
 
-> Organized to mirror the [OPD Survey V2 (118 citations)](https://arxiv.org/abs/2604.00626) section structure.
+> Organized to mirror the [OPD Survey V2 (124 citations)](https://arxiv.org/abs/2604.00626) section structure.
 
 ### 📜 Full Tree
 
@@ -481,6 +481,7 @@ On-Policy Distillation (Survey V2 Structure)
 | Paper | Date | Resources |
 |-------|:----:|:---:|
 | 🟢 [A Note on Hybrid Online Reinforcement and Imitation Learning for LLMs: Formulations and Algorithms](https://arxiv.org/abs/2512.23097) <br><sub>📐 Theoretical (no specific models)</sub> | 2025 |  |
+| 🟢 [f-Divergence Minimization for Sequence-Level Knowledge Distillation](https://arxiv.org/abs/2307.15190) <br><sub>📐 GPT-2 / OPT families (unifying f-divergence framework: subsumes KL, RKL, JSD, α-divergence under one lens)</sub> | 2023 |  |
 | 🟢 [Distilling Step-by-Step! Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes](https://arxiv.org/abs/2305.02301) <br><sub>📐 T5-Small/Base → PaLM-540B (step-by-step rationales; seminal rationale-distillation motivation)</sub> | 2023 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/google-research/distilling-step-by-step) |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
