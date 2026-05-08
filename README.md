@@ -146,7 +146,9 @@ Training unstable or inefficient?
 
 ## 🆕 Latest Additions (last ∼ 2 weeks)
 
-> Papers added since May 1, 2026 via the daily OPD scout. 🔍 emoji marks methods we **deeply read** (notes on file) before classification.
+> Tracks papers added by the daily OPD scout. Split into two views so readers can see both **what's already integrated** into Survey V2 and **what's queued for the next revision**. 🔍 emoji marks methods we **deeply read** (notes on file) before classification.
+
+### ✅ Recently Added — already in Survey V2 (118 citations)
 
 | Paper | § Section | Why It's Interesting |
 |-------|:---:|---|
@@ -160,6 +162,16 @@ Training unstable or inefficient?
 | [CoPD: Co-evolution On-Policy Distillation](https://arxiv.org/abs/2604.27083) | §5.3.3 + §8.1 | Parallel RLVR expert training with interleaved bidirectional OPD — experts teach each other *during* training, not after. |
 | [PAINT: Partial-solution Adaptive Interpolated Training](https://arxiv.org/abs/2604.26573) | §5.3.2 + §6.2 | Rollout-reference overlap + energy interpolation on OPSD; tackles student-teacher gap without a full teacher. |
 | [TCOD: Temporal Curriculum OPD](https://arxiv.org/abs/2604.24005) | §6.2 + §8.2 | Temporal curriculum for multi-turn agents; handles compounding errors in long-horizon tool use. |
+
+### 🚧 Not Yet in Survey — queued for the next revision
+
+> Newly confirmed OPD papers that the scout has indexed here but that **have not yet been integrated** into the survey's LaTeX body. They'll be folded into the next Survey revision (V2.1+). PRs welcome.
+
+<!-- LATEST_PENDING:START -->
+
+_No pending papers. All confirmed OPD work from the last 2 weeks is already integrated into Survey V2._
+
+<!-- LATEST_PENDING:END -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
