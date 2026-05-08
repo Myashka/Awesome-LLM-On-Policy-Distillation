@@ -140,32 +140,15 @@ Training unstable or inefficient?
 
 ### ⏳ Evolution Timeline
 
-```mermaid
-timeline
-    title From Classical KD to Modern OPD
-    2015 : Hinton KD<br/>soft targets
-    2018-2020 : ImitKD, BRIO<br/>early on-policy KD
-    2023 : GKD (DAgger for LLMs)<br/>MiniLLM (RKL)<br/>Lion, f-KD
-    2024 : AKL (adaptive)<br/>SPIN (self-play)<br/>Gemma-2 (pre-train KD)<br/>DistiLLM / ToDi
-    2025 : DeepSeek-R1 (off-policy SFT)<br/>TAID / SCOPE / TIP<br/>Skill-SD (agentic)
-    2026 : DeepSeek-V4 (multi-teacher OPD)<br/>TCOD / MAD-OPD<br/>PBSD / TT-OPD / Uni-OPD
-```
+<p align="center">
+  <img src="assets/evolution-timeline.png" alt="Evolution Timeline of On-Policy Distillation (2015 - 2026)" width="900">
+</p>
 
 ### 📊 Method Distribution Across Sections
 
-```mermaid
-pie showData
-    title Papers by Primary Section (107 arXiv entries + 2 tech reports = 109)
-    "§4.1 Fixed Divergence" : 4
-    "§4.2 Adaptive Divergence" : 7
-    "§4.3 RL-Augmented" : 14
-    "§5.1 White-Box" : 8
-    "§5.2 Black-Box" : 7
-    "§5.3 Self-Distillation" : 26
-    "§6 Training Dynamics" : 12
-    "§7 Understanding" : 7
-    "§8 Applications/Emerging" : 22
-```
+<p align="center">
+  <img src="assets/method-distribution.png" alt="Distribution of 109 OPD Papers by Survey Section" width="720">
+</p>
 
 ## 🆕 Latest Additions (last ∼ 2 weeks)
 
@@ -221,33 +204,9 @@ pie showData
 
 ### 🎨 Visual Map
 
-```mermaid
-mindmap
-  root((On-Policy<br/>Distillation))
-    §4 Objectives
-      §4.1 Fixed Divergence<br/>KL, RKL, JSD
-      §4.2 Adaptive Divergence<br/>AKL, ToDi, DDT
-      §4.3 RL-Augmented<br/>G-OPD, KDRL, RLAD
-    §5 Signal Source
-      §5.1 White-Box<br/>full logits
-      §5.2 Black-Box<br/>API, verbal
-      §5.3 Self-Distillation
-        §5.3.1 Privileged Info<br/>OPSD, GATES, TT-OPD
-        §5.3.2 Self-Play<br/>SPIN, IRIS, PAINT
-        §5.3.3 External Feedback<br/>SDPO, SRPO, RLSD
-    §6 Training Dynamics
-      Token weighting
-      Curriculum<br/>TCOD, Uni-OPD
-      Compute-optimal<br/>Lightning-OPD
-    §7 Understanding
-      Success conditions
-      Failure modes<br/>TT-OPD, SCOPE
-      Unified theory<br/>f-divergence
-    §8 Applications
-      §8.1 Industrial<br/>DeepSeek-V4, Gemma-2
-      §8.2 Emerging<br/>multimodal, agentic
-      §8.3 System-level<br/>vLLM, Verl
-```
+<p align="center">
+  <img src="assets/taxonomy-mindmap.png" alt="OPD Taxonomy Mindmap (5 main branches)" width="900">
+</p>
 
 ### 📜 Full Tree
 
