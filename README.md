@@ -165,28 +165,31 @@ Training unstable or inefficient?
 
 ## 🏆 Hall of Fame — 10 Must-Read OPD Papers
 
-> Start here if you're new to the field. These 10 papers cover the theoretical foundations, representative methods, and landmark industrial applications of OPD.
+> Start here if you're new to the field. These 10 papers focus on **OPD methodological contributions** with the highest conceptual influence: foundational formulations, representative method families, and the most cited OPD-specific theory/critique works. Industrial deployment reports (DeepSeek-V4, Gemma-2, Qwen3, etc.) and the off-policy baseline (DeepSeek-R1) are covered in their own sections.
 
 | # | Paper | Why Read It |
 |:-:|-------|-------------|
-| 1 | [**GKD** (Google DeepMind, 2023)](https://arxiv.org/abs/2306.13649) | The canonical on-policy KD formulation for LLMs. DAgger analogy, unified loss over F-KL/R-KL/JSD. |
-| 2 | [**MiniLLM** (2023)](https://arxiv.org/abs/2306.08543) | Shows Reverse-KL beats Forward-KL for mode-seeking small students. The paper that made RKL the default. |
-| 3 | [**f-Divergence KD** (ACL 2023)](https://arxiv.org/abs/2307.15190) | The unifying f-divergence framework for sequence-level KD. Subsumes KL, RKL, JSD, $\alpha$-divergence under one lens. |
-| 4 | [**On-Policy Distillation** (Thinking Machines, 2025)](https://thinkingmachines.ai/blog/on-policy-distillation/) | The blog post that coined the term. Required reading. |
-| 5 | [**DeepSeek-R1** (2025)](https://arxiv.org/abs/2501.12948) | The off-policy counterexample. Explains when pure SFT distillation wins (large teacher, small student, diverse traces). |
-| 6 | [**Gemma-2** (2024)](https://arxiv.org/abs/2408.00118) | OPD at industrial scale: 27B → 9B → 2B cascade. KD during pre-training. |
-| 7 | [**OPSD** (2026)](https://arxiv.org/abs/2601.18734) | The canonical privileged-information method. Oracle answer as privileged context, KL to unprivileged student. |
-| 8 | [**SPIN** (2024)](https://arxiv.org/abs/2401.01335) | The self-play foundation. Current model vs. previous model iterations. |
-| 9 | [**Rethinking OPD** (2026)](https://arxiv.org/abs/2604.13016) | Two necessary conditions for OPD to succeed. Reads as a "what can go wrong" field guide. |
-| 10 | [**DeepSeek-V4** (2026)](https://huggingface.co/deepseek-ai/DeepSeek-V4) | State-of-the-art industrial OPD: multi-domain expert fusion via full-vocab reverse-KL. |
+| 1 | [**GKD** (Google DeepMind, 2023)](https://arxiv.org/abs/2306.13649) | The canonical on-policy KD formulation for LLMs. DAgger analogy, unified loss over F-KL / R-KL / JSD. The starting point of modern OPD. |
+| 2 | [**MiniLLM** (2023)](https://arxiv.org/abs/2306.08543) | Shows Reverse-KL beats Forward-KL for mode-seeking small students. The paper that made RKL the default OPD objective. |
+| 3 | [**f-Divergence KD** (ACL 2023)](https://arxiv.org/abs/2307.15190) | The unifying f-divergence framework for sequence-level KD. Subsumes KL, RKL, JSD, $\alpha$-divergence under one lens. Essential theory. |
+| 4 | [**AKL / Rethinking KL** (COLING 2024)](https://arxiv.org/abs/2404.02657) | First principled *adaptive* divergence: switches between F-KL and R-KL per token based on entropy. Opens the adaptive-divergence line (§4.2). |
+| 5 | [**DistiLLM** (ICML 2024)](https://arxiv.org/abs/2402.03898) | Skew-KL + on-policy rollout scheduling. Shows that careful mixing of student and teacher trajectories is critical; a template for production OPD pipelines. |
+| 6 | [**SPIN** (2024)](https://arxiv.org/abs/2401.01335) | Self-play as OPD without an external teacher. Current model vs. previous iteration; foundation of the self-distillation (§5.3) branch. |
+| 7 | [**OPSD** (2026)](https://arxiv.org/abs/2601.18734) | Canonical privileged-information method. Oracle answer as privileged context, KL to unprivileged student. Defines the §5.3.1 paradigm. |
+| 8 | [**Speculative KD** (ICLR 2025)](https://arxiv.org/abs/2410.11325) | Interleaved teacher-student sampling bridges the exposure-bias gap elegantly. Influential design pattern for on-policy trajectory construction. |
+| 9 | [**AlignDistil** (ACL 2025)](https://arxiv.org/abs/2503.02832) | Reframes token-level alignment as adaptive OPD: reward signals become divergence weights. Key bridge between RLHF-style objectives and distillation. |
+| 10 | [**Rethinking OPD** (2026)](https://arxiv.org/abs/2604.13016) | Two necessary conditions for OPD to succeed plus a taxonomy of failure modes. Reads as a field guide for "what can go wrong and why." |
 
 <details>
 <summary>📖 <b>Recommended Reading Order for Different Backgrounds</b></summary>
 
-- **ML Researcher (theory-first):** 3 → 1 → 2 → 9 → 7
-- **Industry Practitioner (deployment-first):** 4 → 6 → 10 → 5 → 1
-- **Student / Newcomer:** 4 → 1 → 2 → 5 → 7
-- **Agentic / Multi-turn focus:** 4 → 1 → 7 → 9 → Skill-SD → TT-OPD
+- **ML Researcher (theory-first):** 3 → 1 → 2 → 4 → 10
+- **Practitioner (methods-first):** 1 → 5 → 8 → 7 → 9
+- **Newcomer:** 1 → 2 → 6 → 7 → 10
+- **Self-distillation focus:** 6 → 7 → 9 → 10
+- **Divergence / objective theory:** 3 → 2 → 4 → 9
+
+> Large-scale industrial reports that *use* OPD in production (DeepSeek-V4, Gemma-2, Qwen3, Nemotron-Cascade, MiMo-V2) are collected separately under **[§8.1 Industrial Deployment](#81-industrial-deployment)** since they are system papers rather than OPD method contributions. The off-policy baseline DeepSeek-R1 is discussed in **§7.4** as the counter-example that motivates OPD.
 
 </details>
 
@@ -195,12 +198,6 @@ Training unstable or inefficient?
 ## 🗺️ Taxonomy
 
 > Organized to mirror the [OPD Survey V2 (118 citations)](https://arxiv.org/abs/2604.00626) section structure.
-
-### 🎨 Visual Map
-
-<p align="center">
-  <img src="assets/taxonomy-mindmap.png" alt="OPD Taxonomy Mindmap (5 main branches)" width="900">
-</p>
 
 ### 📜 Full Tree
 
