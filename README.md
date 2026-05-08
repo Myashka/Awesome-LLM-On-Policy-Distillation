@@ -169,15 +169,15 @@ Training unstable or inefficient?
 
 | # | Paper | Why Read It |
 |:-:|-------|-------------|
-| 1 | [**On-Policy Distillation of Language Models** (ICLR 2024, method: **GKD**)](https://arxiv.org/abs/2306.13649) | The canonical on-policy KD formulation for LLMs. DAgger analogy, unified loss over F-KL / R-KL / JSD. The starting point of modern OPD. |
-| 2 | [**MiniLLM** (ICLR 2024)](https://arxiv.org/abs/2306.08543) | Shows Reverse-KL beats Forward-KL for mode-seeking small students. The paper that made RKL the default OPD objective. |
-| 3 | [**f-Divergence KD** (ACL 2023)](https://arxiv.org/abs/2307.15190) | The unifying f-divergence framework for sequence-level KD. Subsumes KL, RKL, JSD, $\alpha$-divergence under one lens. Essential theory. |
-| 4 | [**Rethinking KL for LLM KD** (COLING 2025, method: **AKL**)](https://arxiv.org/abs/2404.02657) | First principled *adaptive* divergence for LLM distillation: shows F-KL and R-KL focus on head and tail regions of the output distribution, and proposes AKL to mix them adaptively. Opens the adaptive-divergence line (§4.2). |
-| 5 | [**DistiLLM** (ICML 2024)](https://arxiv.org/abs/2402.03898) | Skew-KL + on-policy rollout scheduling. Shows that careful mixing of student and teacher trajectories is critical; a template for production OPD pipelines. |
-| 6 | [**SPIN** (ICML 2024)](https://arxiv.org/abs/2401.01335) | Self-play as OPD without an external teacher. Current model vs. previous iteration; foundation of the self-distillation (§5.3) branch. |
+| 1 | [**On-Policy Distillation of Language Models** (2023, method: **GKD**)](https://arxiv.org/abs/2306.13649) | The canonical on-policy KD formulation for LLMs. DAgger analogy, unified loss over F-KL / R-KL / JSD. The starting point of modern OPD. |
+| 2 | [**MiniLLM** (2023)](https://arxiv.org/abs/2306.08543) | Shows Reverse-KL beats Forward-KL for mode-seeking small students. The paper that made RKL the default OPD objective. |
+| 3 | [**f-Divergence KD** (2023)](https://arxiv.org/abs/2307.15190) | The unifying f-divergence framework for sequence-level KD. Subsumes KL, RKL, JSD, $\alpha$-divergence under one lens. Essential theory. |
+| 4 | [**Rethinking KL for LLM KD** (2024, method: **AKL**)](https://arxiv.org/abs/2404.02657) | First principled *adaptive* divergence for LLM distillation: shows F-KL and R-KL focus on head and tail regions of the output distribution, and proposes AKL to mix them adaptively. Opens the adaptive-divergence line (§4.2). |
+| 5 | [**DistiLLM** (2024)](https://arxiv.org/abs/2402.03898) | Skew-KL + on-policy rollout scheduling. Shows that careful mixing of student and teacher trajectories is critical; a template for production OPD pipelines. |
+| 6 | [**SPIN** (2024)](https://arxiv.org/abs/2401.01335) | Self-play as OPD without an external teacher. Current model vs. previous iteration; foundation of the self-distillation (§5.3) branch. |
 | 7 | [**Self-Distilled Reasoner** (2026, method: **OPSD**)](https://arxiv.org/abs/2601.18734) | Canonical privileged-information method. Oracle answer as privileged context, KL to unprivileged student. Defines the §5.3.1 paradigm. |
-| 8 | [**Speculative KD** (ICLR 2025)](https://arxiv.org/abs/2410.11325) | Interleaved teacher-student sampling bridges the exposure-bias gap elegantly. Influential design pattern for on-policy trajectory construction. |
-| 9 | [**AlignDistil** (ACL 2025)](https://arxiv.org/abs/2503.02832) | Reframes token-level alignment as adaptive OPD: reward signals become divergence weights. Key bridge between RLHF-style objectives and distillation. |
+| 8 | [**Speculative KD** (2024)](https://arxiv.org/abs/2410.11325) | Interleaved teacher-student sampling bridges the exposure-bias gap elegantly. Influential design pattern for on-policy trajectory construction. |
+| 9 | [**AlignDistil** (2025)](https://arxiv.org/abs/2503.02832) | Reframes token-level alignment as adaptive OPD: reward signals become divergence weights. Key bridge between RLHF-style objectives and distillation. |
 | 10 | [**Rethinking On-Policy Distillation** (2026)](https://arxiv.org/abs/2604.13016) | Two necessary conditions for OPD to succeed plus a taxonomy of failure modes. Reads as a field guide for "what can go wrong and why." |
 
 <details>
@@ -252,8 +252,8 @@ On-Policy Distillation (Survey V2 Structure)
 | Paper | Date | Resources |
 |-------|:----:|:---:|
 | 🟢 [DistiLLM-2: A Contrastive Approach Boosts the Distillation of LLMs](https://arxiv.org/abs/2503.07067) <br><sub>📐 Qwen2-1.5B / Gemma-2-2B → Qwen2-7B / Gemma-2-9B</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/jongwooko/distillm-2) |
-| 🟢 [Distillation of Large Language Models via Concrete Score Matching](https://arxiv.org/abs/2509.25837) <br><sub>📐 GPT-2 0.1B–0.3B → GPT-2 1.5B / OpenLLaMA-7B</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/aailab-kaist/CSD) |
-| 🟢 [On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes](https://arxiv.org/abs/2306.13649) <br><sub>📐 T5-Small/Base/Large → T5-XL 3B</sub> | 2024 |  |
+| 🟢 [Distillation of Large Language Models via Concrete Score Matching](https://arxiv.org/abs/2509.25837) <br><sub>📐 GPT-2 0.1B–0.3B → GPT-2 1.5B / OpenLLaMA-7B</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/aailab-kaist/CSD) |
+| 🟢 [On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes](https://arxiv.org/abs/2306.13649) <br><sub>📐 T5-Small/Base/Large → T5-XL 3B</sub> | 2023 |  |
 | 🟢 [DistiLLM: Towards Streamlined Distillation for Large Language Models](https://arxiv.org/abs/2402.03898) <br><sub>📐 GPT-2 (student) → GPT-2 XL (teacher)</sub> | 2024 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/jongwooko/distillm) |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -272,7 +272,7 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [Entropy-Aware On-Policy Distillation of Language Models](https://arxiv.org/abs/2603.07079) <br><sub>📐 Qwen3-0.6B/1.7B/4B → Qwen3-8B</sub> | 2026 |  |
 | 🟢 [Scaling Reasoning Efficiently via Relaxed On-Policy Distillation](https://arxiv.org/abs/2603.11137) <br><sub>📐 DeepSeek-R1-Distill-Qwen-1.5B → SkyWork-OR1-7B/32B</sub> | 2026 |  |
 | 🟢 [ToDi: Token-wise Distillation via Fine-Grained Divergence Control](https://arxiv.org/abs/2505.16297) <br><sub>📐 GPT-2 120M / TinyLLaMA-1.1B → GPT-2 1.5B / LLaMA2-7B</sub> | 2025 |  |
-| 🟢 [Rethinking Kullback-Leibler Divergence in Knowledge Distillation for Large Language Models](https://arxiv.org/abs/2404.02657) <br><sub>📐 GPT-2 120M / TinyLLaMA → GPT-2 1.5B / LLaMA-6.7B</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/wutaiqiang/LLM_KD_AKL) |
+| 🟢 [Rethinking Kullback-Leibler Divergence in Knowledge Distillation for Large Language Models](https://arxiv.org/abs/2404.02657) <br><sub>📐 GPT-2 120M / TinyLLaMA → GPT-2 1.5B / LLaMA-6.7B</sub> | 2024 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/wutaiqiang/LLM_KD_AKL) |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -292,12 +292,12 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [Multi-Agent Debate-driven On-Policy Distillation](https://arxiv.org/abs/2605.01347) <br><sub>📐 Multiple teacher debate for confidence-weighted token supervision (OPAD)</sub> | 2026 |  |
 | 🟢 [AlignDistil: Token-Level Language Model Alignment as Adaptive Policy Distillation](https://arxiv.org/abs/2503.02832) <br><sub>📐 Qwen2-1.5B / Qwen2.5-1.5B-Instruct → Self (AlignDistil)</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/songmzhang/AlignDistil) |
 | 🟢 [Learning to Reason under Off-Policy Guidance](https://arxiv.org/abs/2504.14945) <br><sub>📐 Qwen2.5-Math-7B → Self; RM: off-policy DeepSeek-R1</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/ElliottYan/LUFFY) |
-| 🟢 [KETCHUP: K-Step Return Estimation for Sequential Knowledge Distillation](https://arxiv.org/abs/2504.19024) <br><sub>📐 T5-Base 250M → FLAN-T5-XL 3B</sub> | 2026 |  |
+| 🟢 [KETCHUP: K-Step Return Estimation for Sequential Knowledge Distillation](https://arxiv.org/abs/2504.19024) <br><sub>📐 T5-Base 250M → FLAN-T5-XL 3B</sub> | 2025 |  |
 | 🟢 [RLKD: Distilling LLMs' Reasoning via Reinforcement Learning](https://arxiv.org/abs/2505.16142) <br><sub>📐 Qwen2.5-Math-7B / R1-Distill-Qwen-7B → DeepSeek-R1 traces (RLKD)</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/xsc1234/RLKD) |
 | 🟢 [KDRL: Post-Training Reasoning LLMs via Unified Knowledge Distillation and Reinforcement Learning](https://arxiv.org/abs/2506.02208) <br><sub>📐 R1-Distill-Qwen-1.5B → Skywork-OR1-Math-7B (KDRL)</sub> | 2025 |  |
 | 🟢 [From Correction to Mastery: Reinforced Distillation of Large Language Model Agents](https://arxiv.org/abs/2509.14257) <br><sub>📐 Qwen2.5-7B / Qwen3-8B → Self (SCoRe, agent)</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/modelscope/easydistill) |
 | 🟢 [Rethinking Large Language Model Distillation: A Constrained Markov Decision Process Perspective](https://arxiv.org/abs/2509.22921) <br><sub>📐 Qwen2.5-1.5B-Math / Llama-3.2-3B → Qwen2.5-7B-Math / Llama-3.2-11B</sub> | 2025 |  |
-| 🟢 [SuperCorrect: Advancing Small LLM Reasoning with Thought Template Distillation and Self-Correction](https://arxiv.org/abs/2410.09008) <br><sub>📐 Llama-3-8B / Qwen-7B / DeepSeekMath-7B → larger teacher LLMs (thought template + DPO)</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/YangLing0818/SuperCorrect-llm) [![Model](https://img.shields.io/badge/Model-🤗-yellow)](https://huggingface.co/BitStarWalkin/SuperCorrect-7B) |
+| 🟢 [SuperCorrect: Advancing Small LLM Reasoning with Thought Template Distillation and Self-Correction](https://arxiv.org/abs/2410.09008) <br><sub>📐 Llama-3-8B / Qwen-7B / DeepSeekMath-7B → larger teacher LLMs (thought template + DPO)</sub> | 2024 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/YangLing0818/SuperCorrect-llm) [![Model](https://img.shields.io/badge/Model-🤗-yellow)](https://huggingface.co/BitStarWalkin/SuperCorrect-7B) |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -313,14 +313,14 @@ On-Policy Distillation (Survey V2 Structure)
 
 | Paper | Date | Resources |
 |-------|:----:|:---:|
-| 🟢 [Towards Cross-Tokenizer Distillation: the Universal Logit Distillation Loss for LLMs](https://arxiv.org/abs/2402.12030) <br><sub>📐 Various students → Various teachers (cross-tokenizer ULD)</sub> | 2025 |  |
+| 🟢 [Towards Cross-Tokenizer Distillation: the Universal Logit Distillation Loss for LLMs](https://arxiv.org/abs/2402.12030) <br><sub>📐 Various students → Various teachers (cross-tokenizer ULD)</sub> | 2024 |  |
 | 🟢 [A Dual-Space Framework for General Knowledge Distillation of Large Language Models](https://arxiv.org/abs/2504.11426) <br><sub>📐 GPT-2 120M / TinyLLaMA-1.1B → GPT-2 1.5B / Qwen2-1.5B</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/songmzhang/DSKDv2) |
-| 🟢 [MiniLLM: Knowledge Distillation of Large Language Models](https://arxiv.org/abs/2306.08543) <br><sub>📐 GPT-2 120M–760M → GPT-2 1.5B / GPT-J 6B / OPT-13B</sub> | 2024 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/microsoft/LMOps/tree/main/minillm) |
+| 🟢 [MiniLLM: Knowledge Distillation of Large Language Models](https://arxiv.org/abs/2306.08543) <br><sub>📐 GPT-2 120M–760M → GPT-2 1.5B / GPT-J 6B / OPT-13B</sub> | 2023 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/microsoft/LMOps/tree/main/minillm) |
 | 🟢 [Revisiting Knowledge Distillation for Autoregressive Language Models](https://arxiv.org/abs/2402.11890) <br><sub>📐 OPT-125M / Pythia-410M / LLaMA-68M → OPT-6.7B / Pythia-2.8B / LLaMA-7B (ATKD, adaptive token teaching)</sub> | 2024 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/WHU-ZQH/ATKD) |
 | 🟢 [PromptKD: Distilling Student-Friendly Knowledge for Generative Language Models via Prompt Tuning](https://arxiv.org/abs/2402.12842) <br><sub>📐 GPT-2 120M–760M / OPT/Llama-7B → GPT-2 XL / OPT-13B / Llama-13B</sub> | 2024 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/gmkim-ai/PromptKD) |
 | 🟢 [Delta Knowledge Distillation for Large Language Models](https://arxiv.org/abs/2509.14526) <br><sub>📐 Base-to-Instruct delta signal isolation for white-box logit distillation</sub> | 2025 |  |
 | 🟢 [TAID: Temporally Adaptive Interpolated Distillation for Efficient Knowledge Transfer in Language Models](https://arxiv.org/abs/2501.16937) <br><sub>📐 GPT-2 / Phi-3 / Llama-3 (progressive target revelation via temporal interpolation)</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/SakanaAI/TAID) |
-| 🟢 [MiniPLM: Knowledge Distillation for Pre-Training Language Models](https://arxiv.org/abs/2410.17215) <br><sub>📐 Pre-training KD via difference sampling; teacher-ref divergence selects training instances</sub> | 2025 |  |
+| 🟢 [MiniPLM: Knowledge Distillation for Pre-Training Language Models](https://arxiv.org/abs/2410.17215) <br><sub>📐 Pre-training KD via difference sampling; teacher-ref divergence selects training instances</sub> | 2024 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -423,7 +423,7 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [Co-Evolving Policy Distillation](https://arxiv.org/abs/2604.27083) <br><sub>📐 CoPD: bidirectional parallel RLVR branches + interleaved mutual OPD co-evolution</sub> | 2026 |  |
 | 🟢 [Unifying On-Policy Distillation with a Dual-Perspective Recipe](https://arxiv.org/abs/2605.03677) <br><sub>📐 Uni-OPD: student exploration (difficulty+correctness-aware) + teacher reliability (outcome-guided margin)</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/WenjinHou/Uni-OPD) |
 | 🟢 [AdaSwitch: Balancing Exploration and Guidance in Knowledge Distillation via Adaptive Switching](https://arxiv.org/abs/2510.07842) <br><sub>📐 Qwen2.5-0.5B / Llama-3.1-1B / Gemma-2B → Qwen2.5-3B / Llama-3.1-3B / Gemma-7B</sub> | 2025 |  |
-| 🟢 [LLM-Oriented Token-Adaptive Knowledge Distillation](https://arxiv.org/abs/2510.11615) <br><sub>📐 Qwen2-1.5B / OpenLLaMA2-3B → Qwen2-7B / OpenLLaMA2-7B</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/SassyRong/AdaKD) |
+| 🟢 [LLM-Oriented Token-Adaptive Knowledge Distillation](https://arxiv.org/abs/2510.11615) <br><sub>📐 Qwen2-1.5B / OpenLLaMA2-3B → Qwen2-7B / OpenLLaMA2-7B</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/SassyRong/AdaKD) |
 | 🟢 [SelecTKD: Selective Token-Weighted Knowledge Distillation for LLMs](https://arxiv.org/abs/2510.24021) <br><sub>📐 Qwen2-1.5B / Gemma-2-2B / Danube2-1.8B → Qwen2-7B / Gemma-2-9B / Mistral-7B</sub> | 2025 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -518,8 +518,8 @@ On-Policy Distillation (Survey V2 Structure)
 
 | Paper | Date | Resources |
 |-------|:----:|:---:|
-| 🟢 [Speculative Knowledge Distillation: Bridging the Teacher-Student Gap Through Interleaved Sampling](https://arxiv.org/abs/2410.11325) <br><sub>📐 Gemma-2B / Qwen-0.5B → Gemma-7B / Qwen-7B</sub> | 2025 |  |
-| 🟢 [DistillSpec: Improving Speculative Decoding via Knowledge Distillation](https://arxiv.org/abs/2310.08461) <br><sub>📐 T5-Small → T5-XL (on-policy KD for speculative decoding)</sub> | 2024 |  |
+| 🟢 [Speculative Knowledge Distillation: Bridging the Teacher-Student Gap Through Interleaved Sampling](https://arxiv.org/abs/2410.11325) <br><sub>📐 Gemma-2B / Qwen-0.5B → Gemma-7B / Qwen-7B</sub> | 2024 |  |
+| 🟢 [DistillSpec: Improving Speculative Decoding via Knowledge Distillation](https://arxiv.org/abs/2310.08461) <br><sub>📐 T5-Small → T5-XL (on-policy KD for speculative decoding)</sub> | 2023 |  |
 
 > 🔗 **See also**: [DeepSeek-V4 Technical Report](#81-industrial-deployment) (§8.1) — full-vocabulary multi-teacher OPD with hidden-state caching + FP4-QAT, the most detailed public account of trillion-parameter OPD systems engineering; surveyed as the canonical §8.3 system-level work.  
 > Open-source frameworks commonly integrated into OPD pipelines (not paper-indexed here): [OpenRLHF](https://github.com/OpenRLHF/OpenRLHF), [veRL](https://github.com/volcengine/verl), [vLLM](https://github.com/vllm-project/vllm), [TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM).

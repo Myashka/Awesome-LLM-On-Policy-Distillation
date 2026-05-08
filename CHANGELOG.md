@@ -17,7 +17,7 @@ All notable additions to this collection are documented here.
 - PBSD (§5.3.1 + §4.3) — Preference-based self-distillation with DPO-style reward-regularized KL objective; first to replace pure KL with preference gap in OPD
 - TT-OPD (§5.3.1 + §7.2 + §8.2) — Turn-level truncated OPD for medical agents; EMA teacher + outcome-privileged hints; first systematic agentic-OPD stability study
 - Delta-KD (§5.1) — Base-to-Instruct delta signal isolation for white-box logit distillation
-- TAID (§5.1) — Temporally adaptive interpolated distillation (ICLR 2025)
+- TAID (§5.1) — Temporally adaptive interpolated distillation (2024)
 
 ### Changed
 - Reclassified Latest Additions spotlight tags to match survey V2 fine-grained sections: CoPD §5.3.2→§5.3.3 (external feedback, mutual teacher), MAD-OPD §5.3.3→§5.1+§6.1+§8.2 (multi-teacher white-box), Uni-OPD §6→§6.2, PRISM §6→§6.2, PAINT §6.2→§5.3.2+§6.2.
