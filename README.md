@@ -113,9 +113,10 @@ New to On-Policy Distillation? Start here.
 Can you access the teacher's full logits?
 ├── Yes → White-Box Signal (§5.1)
 │   ├── Same tokenizer? → GKD / MiniLLM / DistiLLM (§4.1, §5.1)
-│   ├── Different tokenizer? → ULD / DSKD (§5.1)
-│   └── API outputs only? → Lion / GAD / OVD / PRISM (§5.2)
-└── No → Self-Distillation (§5.3)
+│   └── Different tokenizer? → ULD / DSKD (§5.1)
+├── API outputs only? → Black-Box Signal (§5.2)
+│   └── Lion / GAD / OVD / PRISM (§5.2)
+└── No teacher at all → Self-Distillation (§5.3)
     ├── Have a Verifier / RM? → SDPO / SD-ZERO / RLSD (§5.3.3)
     ├── Have privileged context? → OPSD / PAINT / PBSD / TT-OPD (§5.3.1)
     └── Pure self-iteration? → SPIN / IRIS / On-Policy SFT (§5.3.2)
@@ -135,8 +136,8 @@ Training unstable or inefficient?
 2. **The Self-Distillation Boom**: Teacher-free on-policy methods (SDPO, SDZero, SRPO) are dominating, relying on rule-based verifiers or reward models rather than white-box teacher models.
 3. **Token Importance**: Papers like TIP, SCOPE, and SelecTKD revealed that applying KD loss to 100% of tokens is inefficient. Selecting the top 20-50% high-entropy/divergence tokens achieves parity.
 4. **Agentic OPD**: Methods like TCOD and Skill-SD specifically address the massive compounding errors in multi-turn environments and long-horizon tool use.
-5. **Industrial Adoption**: The latest frontier models—DeepSeek-V4, Qwen3, Nemotron, Gemma-2, and MiMo—have fully integrated OPD into their post-training pipelines.
-6. **Diversity Collapse**: A critical finding from SCOPE: while OPD drastically improves Pass@1, it severely harms Pass@k due to diversity collapse, prompting new hybrid objective designs.
+5. **Industrial Adoption**: The latest frontier models (DeepSeek-V4, Qwen3, Nemotron, Gemma-2, and MiMo) have fully integrated OPD into their post-training pipelines.
+6. **Diversity Collapse**: A critical finding from SCOPE shows that while OPD drastically improves Pass@1, it severely harms Pass@k due to diversity collapse, prompting new hybrid objective designs.
 
 ### ⏳ Evolution Timeline
 
@@ -159,7 +160,7 @@ Training unstable or inefficient?
 | [MSD: Multilingual Self-Distillation for Safety](https://arxiv.org/abs/2605.02971) | §5.3.1 | English CoT as privileged context + Dual-Perspective Safety Weighting for cross-lingual safety transfer. |
 | [GUI-SD: On-Policy Self-Distillation for GUI Grounding](https://arxiv.org/abs/2605.00642) | §5.3.1 + §8.2 | Visual privileged context (bbox + Gaussian soft mask) + entropy-guided token weighting on screenshots. |
 | [PRISM: Pre-alignment via Black-box OPD for Multimodal RL](https://arxiv.org/abs/2604.28123) | §5.2 + §6.2 | Adversarial MoE discriminator; logit-free OPD as pre-alignment stage before RLVR. |
-| [CoPD: Co-evolution On-Policy Distillation](https://arxiv.org/abs/2604.27083) | §5.3.3 + §8.1 | Parallel RLVR expert training with interleaved bidirectional OPD — experts teach each other *during* training, not after. |
+| [CoPD: Co-evolution On-Policy Distillation](https://arxiv.org/abs/2604.27083) | §5.3.3 + §8.1 | Parallel RLVR expert training with interleaved bidirectional OPD, where experts teach each other *during* training, not after. |
 | [PAINT: Partial-solution Adaptive Interpolated Training](https://arxiv.org/abs/2604.26573) | §5.3.2 + §6.2 | Rollout-reference overlap + energy interpolation on OPSD; tackles student-teacher gap without a full teacher. |
 | [TCOD: Temporal Curriculum OPD](https://arxiv.org/abs/2604.24005) | §6.2 + §8.2 | Temporal curriculum for multi-turn agents; handles compounding errors in long-horizon tool use. |
 
@@ -171,7 +172,7 @@ Training unstable or inefficient?
 
 | Paper | § Section | Why It's Interesting |
 |-------|:---:|---|
-| [AOPD: Asymmetric On-Policy Distillation — Bridging Exploitation and Imitation at the Token Level](https://arxiv.org/abs/2605.06387) | §4.2 | Replaces ineffective negative reinforcement in OPD with localized divergence minimization in non-positive advantage regions; +4.09/+8.34 avg gains on math reasoning under strong/weak init. |
+| [AOPD: Asymmetric On-Policy Distillation — Bridging Exploitation and Imitation at the Token Level](https://arxiv.org/abs/2605.06387) | §4.2 | Replaces ineffective negative reinforcement in OPD with localized divergence minimization in non-positive advantage regions, achieving +4.09/+8.34 avg gains on math reasoning under strong/weak init. |
 | [Near-Policy Distillation: Accelerating OPD via Asynchronous Generation and Selective Packing](https://arxiv.org/abs/2605.05940) | §6.3 | Decouples student generation from training for 8.1× speedup over on-policy baselines; Δ-IFD filtering keeps optimization in a safe proximal zone despite policy lag. |
 | [OPSD Compresses What RLVR Teaches: A Post-RL Compaction Stage for Reasoning Models](https://arxiv.org/abs/2605.06188) | §7.1 + §7.2 | 📎 Analysis: OPSD in thinking-enabled math reasoning is primarily a *compression* mechanism (shortens correct traces) not a *correction* mechanism; proposes SFT→RLVR→OPSD pipeline. |
 | [VISD: Enhancing Video Reasoning via Structured Self-Distillation](https://arxiv.org/abs/2605.06094) | §5.3.1 + §8.2 | Structured privileged info (video-aware judge decomposing correctness/grounding/consistency) + direction-magnitude decoupling for VideoLLMs; 2× faster convergence than RLVR. |
@@ -476,7 +477,7 @@ On-Policy Distillation (Survey V2 Structure)
 
 ### §7.3 Unified Theoretical Perspectives
 
-> Attempts to place OPD within a coherent theoretical frame — imitation learning, RL, information geometry, statistical learning.
+> Attempts to place OPD within a coherent theoretical frame (imitation learning, RL, information geometry, statistical learning).
 
 | Paper | Date | Resources |
 |-------|:----:|:---:|
@@ -544,7 +545,7 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [Speculative Knowledge Distillation: Bridging the Teacher-Student Gap Through Interleaved Sampling](https://arxiv.org/abs/2410.11325) <br><sub>📐 Gemma-2B / Qwen-0.5B → Gemma-7B / Qwen-7B</sub> | 2024 |  |
 | 🟢 [DistillSpec: Improving Speculative Decoding via Knowledge Distillation](https://arxiv.org/abs/2310.08461) <br><sub>📐 T5-Small → T5-XL (on-policy KD for speculative decoding)</sub> | 2023 |  |
 
-> 🔗 **See also**: [DeepSeek-V4 Technical Report](#81-industrial-deployment) (§8.1) — full-vocabulary multi-teacher OPD with hidden-state caching + FP4-QAT, the most detailed public account of trillion-parameter OPD systems engineering; surveyed as the canonical §8.3 system-level work.  
+> 🔗 **See also**: [DeepSeek-V4 Technical Report](#81-industrial-deployment) (§8.1), which describes full-vocabulary multi-teacher OPD with hidden-state caching + FP4-QAT. The most detailed public account of trillion-parameter OPD systems engineering, surveyed as the canonical §8.3 system-level work.  
 > Open-source frameworks commonly integrated into OPD pipelines (not paper-indexed here): [OpenRLHF](https://github.com/OpenRLHF/OpenRLHF), [veRL](https://github.com/volcengine/verl), [vLLM](https://github.com/vllm-project/vllm), [TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -553,15 +554,15 @@ On-Policy Distillation (Survey V2 Structure)
 
 ## §9 Open Problems
 
-> Active research questions and future directions highlighted in our survey — see §9 of the paper for detailed discussion.
+> Active research questions and future directions highlighted in our survey. See §9 of the paper for detailed discussion.
 
 | # | Problem | Key Question |
 |:-:|---------|--------------|
 | 1 | **Scaling Laws** | What is the compute-optimal budget split between teacher pretraining, student rollout, and distillation steps? |
-| 2 | **Teacher Calibration on OOD** | Teacher logits may be miscalibrated on student-generated prefixes — how should we down-weight or re-calibrate them on the fly? |
+| 2 | **Teacher Calibration on OOD** | Teacher logits may be miscalibrated on student-generated prefixes. How should we down-weight or re-calibrate them on the fly? |
 | 3 | **Dynamic Curriculum** | Principled, policy-adaptive difficulty scheduling that avoids both wasted gradient (too easy) and collapse (too hard). |
 | 4 | **Cross-Architecture OPD** | Distilling across tokenizer / architecture families without hand-crafted alignment tricks. |
-| 5 | **Agentic OPD** | Multi-step, tool-using agents with delayed feedback; how to propagate credit turn-level and avoid agentic collapse. |
+| 5 | **Agentic OPD** | Multi-step, tool-using agents with delayed feedback. How to propagate credit turn-level and avoid agentic collapse. |
 | 6 | **Multimodal OPD** | General recipes for VL / VLA / speech / embodied domains, beyond ad-hoc per-modality pipelines. |
 | 7 | **KD-RL Loop** | When to alternate distillation and RL phases, and whether the two can be fused into a single unified objective. |
 | 8 | **Beyond Benchmarks** | Dynamic adversarial evaluation for true OPD generalization, not just static leaderboard gains. |
@@ -581,7 +582,7 @@ On-Policy Distillation (Survey V2 Structure)
 | [🛠️ Codebases](resources/codebases.md) | All open-source implementations, organized by method |
 | [📊 Benchmarks](resources/benchmarks.md) | Performance data, compute costs, and evaluation guides |
 | [📐 Key Equations](resources/key-equations.md) | Quick reference for core OPD loss functions |
-| [📋 Changelog](CHANGELOG.md) | What's new — paper additions by date |
+| [📋 Changelog](CHANGELOG.md) | What's new, paper additions by date |
 
 ### 📝 Blog Posts & External Essays
 
@@ -620,8 +621,8 @@ OPD is typically 3-10x more sample-efficient than RLVR because every token gets 
 
 - **Reverse-KL** (default): Best for math/code where you want the student to commit to one solution path (mode-seeking)
 - **Forward-KL**: Better for open-ended generation where diversity matters (mode-covering)
-- **JSD**: A safe middle ground; bounded gradients, symmetric
-- **Adaptive (AKL/HPD)**: Let the model switch per-token based on entropy; best overall if you have the engineering budget
+- **JSD**: A safe middle ground with bounded gradients and symmetric behavior
+- **Adaptive (AKL/HPD)**: Lets the model switch per-token based on entropy. Best overall if you have the engineering budget
 </details>
 
 <details>
