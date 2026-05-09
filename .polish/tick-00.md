@@ -1,56 +1,79 @@
-# Tick 0: Inventory
+# Tick 0: Inventory Report
 
-**Date:** 2026-05-09 03:51 UTC
+**Date**: 2026-05-09 04:08 UTC
 
-## Paper Counts by Section
+## Paper Count Summary
 
 | Section | Papers |
-|---------|--------|
-| §4.1 Fixed Divergence | 4 |
-| §4.2 Adaptive Divergence | 7 |
-| §4.3 RL-Augmented | 14 |
-| §5.1 White-Box | 8 |
-| §5.2 Black-Box | 7 |
-| §5.3.1 Privileged Info | 14 |
+|---------|:------:|
+| §4.1 Fixed Divergence Objectives | 4 |
+| §4.2 Adaptive Divergence Objectives | 8 |
+| §4.3 RL-Augmented Objectives | 14 |
+| §5.1 White-Box Logit Supervision | 8 |
+| §5.2 Black-Box and API-Constrained | 7 |
+| §5.3.1 Privileged Information | 15 |
 | §5.3.2 Self-Play | 6 |
 | §5.3.3 External Feedback | 6 |
-| §6 Training Dynamics | 12 |
-| §7.1 Success Conditions | 2 |
+| §6 Training Dynamics and Efficiency | 13 |
+| §7.1 Success Conditions | 3 |
 | §7.2 Failure Modes | 3 |
-| §7.3 Unified Theory | 3 (was 2, added f-Divergence KD) |
-| §8.1 Industrial | 8 |
-| §8.2 Emerging Domains | 12 |
-| §8.3 System-Level | 2 |
-| **Total in taxonomy** | **108** |
+| §7.3 Unified Theory | 3 |
+| §8.1 Industrial Deployment | 8 |
+| §8.2 Emerging Domains | 13 |
+| §8.3 System-Level Integration | 2 |
+| **TOTAL** | **113** |
 
 ## Badge Verification
 
-- **Papers badge:** 109 (108 unique arXiv + 1 HuggingFace PDF) ✅ correct
-- **Survey V2 badge:** Was "118 cites" → Fixed to "124 cites" (actual bib entry count)
-- **Taxonomy text:** Was "118 citations" → Fixed to "124 citations"
+- ✅ `Papers-113` badge matches actual count (113 paper rows in taxonomy)
+- ✅ `Survey-V2 124 cites` badge matches actual bib count (124 entries in `references.bib`)
 
-## Cross-Reference with Survey Bib (124 entries)
+## Cross-Reference: README vs Survey Bib
 
-- In both survey + Awesome: 103 papers
-- In survey only (not in Awesome): 7 papers — all background/foundational refs, not OPD methods:
-  - 1606.07947 (unknown)
-  - 2001.08361 (unknown)
-  - 2203.15556 (Chinchilla scaling)
-  - 2211.09110 (HELM)
-  - 2305.15717 (False Promise of Imitating)
-  - 2305.20050 (Let's Verify Step by Step)
-  - 2402.13116 (KD survey)
-- In Awesome only (not in survey): 5 papers — 1 is the survey itself + 4 are May 2026 additions post-survey
+- Unique arXiv IDs in README (all sections): **112** (+ 1 HuggingFace link for DeepSeek-V4)
+- Unique arXiv IDs in survey bib: **107**
+- Survey bib total entries: **124** (includes non-arXiv references)
 
-## Fixes Applied
+### In survey bib but NOT in README (4) — all background references, correctly excluded:
+- `2203.15556` — "Training Compute-Optimal Large Language Models" (Chinchilla, background)
+- `2305.15717` — "The False Promise of Imitating Proprietary LLMs" (motivation/critique)
+- `2305.20050` — "Let's Verify Step by Step" (PRM, background)
+- `2402.13116` — "A Survey on Knowledge Distillation of Large Language Models" (related survey)
 
-1. Updated "Survey V2 118 cites" badge → "124 cites"
-2. Updated taxonomy "118 citations" text → "124 citations"
-3. Added f-Divergence KD (2307.15190) to §7.3 — was only in Hall of Fame, not in taxonomy
+### In README but NOT in survey bib (9):
+- `2604.00626` — The survey paper itself (expected)
+- `2605.06387` — AOPD (listed in "Not Yet in Survey" section) ⚠️
+- `2605.05940` — Near-Policy Distillation (listed in "Not Yet in Survey" section) ⚠️
+- `2605.06188` — OPSD Compresses (listed in "Not Yet in Survey" section) ⚠️
+- `2605.06094` — VISD (listed in "Not Yet in Survey" section) ⚠️
+- `2605.00642` — GUI-SD (in "Recently Added" as survey-integrated)
+- `2605.02943` — TT-OPD (in "Recently Added" as survey-integrated)
+- `2605.03677` — Uni-OPD (in "Recently Added" as survey-integrated)
+- `2605.05040` — PBSD (in "Recently Added" as survey-integrated)
 
-## Notes for Future Ticks
+## Issues Found
 
-- The 7 survey-only papers are appropriate exclusions (background refs, not OPD methods)
-- "Latest Additions" table: all 10 entries are also in taxonomy sections ✅
-- Hall of Fame papers are now all also in taxonomy ✅
-- No 🟡 (pending inclusion) papers found — all are 🟢
+### Issue 1: 🟢/🟡 emoji inconsistency (CRITICAL)
+4 papers are marked 🟢 in the main taxonomy sections but listed under "Not Yet in Survey":
+- AOPD (`2605.06387`) — marked 🟢 in §4.2 (line 291)
+- VISD (`2605.06094`) — marked 🟢 in §5.3.1 (line 389) AND §8.2 (line 522)
+- Near-Policy (`2605.05940`) — marked 🟢 in §6 (line 444)
+- OPSD Compresses (`2605.06188`) — marked 🟢 in §7.1 (line 464)
+
+**Fix**: Change these from 🟢 to 🟡 in the taxonomy sections (they are NOT in the survey bib).
+
+### Issue 2: "118 citations" in Latest Additions header is outdated
+Line 151 says "already in Survey V2 (118 citations)" but the survey now has 124 citations.
+
+**Fix**: Update to "124 citations".
+
+### Issue 3: Cross-listed paper counts in badge
+VISD appears in both §5.3.1 and §8.2. The 113 badge counts it twice.
+This is a design choice (cross-listing is common in awesome lists), but should be documented.
+
+**Status**: Acceptable (cross-listing pattern used for multi-section papers).
+
+### Issue 4: DeepSeek-V4 has no arXiv link
+Line 501 links to HuggingFace. This is correct (DeepSeek-V4 tech report was released on HuggingFace, not arXiv).
+
+**Status**: Acceptable.
