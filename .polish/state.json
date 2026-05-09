@@ -1,1 +1,1 @@
-{"tick": 1, "started": "2026-05-09T03:51:00Z", "last_completed": "2026-05-09T04:12:00Z", "history": [{"tick": 0, "task": "Inventory", "fixes": ["5x emoji 🟢→🟡 for not-in-survey papers", "118→124 citations in header"], "commit": "6430e67"}]}
+{"tick": 2, "started": "2026-05-09T03:51:00Z", "last_completed": "2026-05-09T04:26:00Z", "history": [{"tick": 0, "task": "Inventory", "fixes": ["5x emoji 🟢→🟡 for not-in-survey papers", "118→124 citations in header"], "commit": "6430e67"}, {"tick": 1, "task": "arXiv IDs batch 2 (§5.3 + §6)", "fixes": [], "result": "40/40 OK"}]}
