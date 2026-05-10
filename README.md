@@ -177,6 +177,7 @@ Training unstable or inefficient?
 | [OPSD Compresses What RLVR Teaches: A Post-RL Compaction Stage for Reasoning Models](https://arxiv.org/abs/2605.06188) | §7.1 + §7.2 | 📎 Analysis: OPSD in thinking-enabled math reasoning is primarily a *compression* mechanism (shortens correct traces) not a *correction* mechanism; proposes SFT→RLVR→OPSD pipeline. |
 | [VISD: Enhancing Video Reasoning via Structured Self-Distillation](https://arxiv.org/abs/2605.06094) | §5.3.1 + §8.2 | Structured privileged info (video-aware judge decomposing correctness/grounding/consistency) + direction-magnitude decoupling for VideoLLMs; 2× faster convergence than RLVR. |
 
+| [UniSD: Towards a Unified Self-Distillation Framework for Large Language Models](https://arxiv.org/abs/2605.06597) | §5.3.2 + §6.1 | First unified framework systematically studying on-policy self-distillation in LLMs; integrates EMA teacher, multi-teacher agreement, token-level contrastive learning, divergence clipping. +5.4 over base, +2.8 over best baseline across 6 benchmarks. |
 <!-- LATEST_PENDING:END -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -405,6 +406,7 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [Embarrassingly Simple Self-Distillation Improves Code Generation](https://arxiv.org/abs/2604.01193) <br><sub>📐 Llama-3.1-8B / Qwen3-4B–30B-Instruct → Self (SSD, code generation)</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/apple/ml-ssd) |
 | 🟢 [Interpolative Rényi Iterative Self-play](https://arxiv.org/abs/2604.20933) <br><sub>📐 IRIS: Rényi divergence unified framework for SPIN/SPACE/SPIF</sub> | 2026 |  |
 | 🟢 [Self-Play Fine-Tuning Converts Weak Language Models to Strong Language Models](https://arxiv.org/abs/2401.01335) <br><sub>📐 Zephyr-7B (Mistral-7B) → Self</sub> | 2024 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/uclaml/SPIN) [![Model](https://img.shields.io/badge/Model-🤗-yellow)](https://huggingface.co/UCLA-AGI/zephyr-7b-sft-full-SPIN-iter3) |
+| 🟢 [UniSD: Towards a Unified Self-Distillation Framework for Large Language Models](https://arxiv.org/abs/2605.06597) <br><sub>📐 Llama-3.1/Qwen2.5/Phi-3 families → Self (EMA teacher + multi-teacher agreement + divergence clipping)</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
