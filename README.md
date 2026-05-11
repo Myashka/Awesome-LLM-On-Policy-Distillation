@@ -149,7 +149,7 @@ Training unstable or inefficient?
 
 > Tracks papers added by the daily OPD scout. Split into two views so readers can see both **what's already integrated** into Survey V2 and **what's queued for the next revision**. 🔍 emoji marks methods we **deeply read** (notes on file) before classification.
 
-### ✅ Recently Added — already in Survey V2 (124 citations)
+### ✅ Recently Added — already in Survey V2 (137 citations)
 
 | Paper | § Section | Why It's Interesting |
 |-------|:---:|---|
@@ -163,6 +163,16 @@ Training unstable or inefficient?
 | [CoPD: Co-evolution On-Policy Distillation](https://arxiv.org/abs/2604.27083) | §5.3.3 + §8.1 | Parallel RLVR expert training with interleaved bidirectional OPD, where experts teach each other *during* training, not after. |
 | [PAINT: Partial-solution Adaptive Interpolated Training](https://arxiv.org/abs/2604.26573) | §5.3.2 + §6.2 | Rollout-reference overlap + energy interpolation on OPSD; tackles student-teacher gap without a full teacher. |
 | [TCOD: Temporal Curriculum OPD](https://arxiv.org/abs/2604.24005) | §6.2 + §8.2 | Temporal curriculum for multi-turn agents; handles compounding errors in long-horizon tool use. |
+| [SimCT: Recovering Lost Supervision for Cross-Tokenizer On-Policy Distillation](https://arxiv.org/abs/2605.07711) | §5.1 | Multi-token continuation units for cross-tokenizer OPD; Qwen2.5-7B/Phi-4-mini → Phi-4-mini/Gemma-2-2B-IT. |
+| [ROPD: Rubric-based On-policy Distillation](https://arxiv.org/abs/2605.07396) | §5.2 | Structured semantic rubrics replace teacher logits for black-box OPD; 10× sample efficiency over logit-based methods. |
+| [SOD: Step-wise On-policy Distillation for Small Language Model Agents](https://arxiv.org/abs/2605.07725) | §6.1 | Step-level divergence reweighting for tool-integrated reasoning; Qwen3-0.6B achieves 26.13% AIME'25. |
+| [Prune-OPD: Efficient and Reliable On-Policy Distillation for Long-Horizon Reasoning](https://arxiv.org/abs/2605.07804) | §6.3 | Drift-aware dynamic truncation via top-k overlap; 37–68% training time reduction while preserving accuracy. |
+| [Flow-OPD: On-Policy Distillation for Flow Matching Models](https://arxiv.org/abs/2605.08063) | §8.2 | First OPD for continuous-output flow matching text-to-image models; GenEval 63→92, OCR 59→94. |
+| [D-OPSD: On-Policy Self-Distillation for Step-Distilled Diffusion Models](https://arxiv.org/abs/2605.05204) | §8.2 | Self-distillation preserving few-step generation during concept/style fine-tuning via multimodal encoder in-context capabilities. |
+| [LiteGUI: Distilling Compact GUI Agents with Reinforcement Learning](https://arxiv.org/abs/2605.07505) | §8.2 | Guided OPD + dual-level GRPO for 2B–3B GUI agents from Qwen3-VL-32B teacher. |
+| [KD Must Account for What It Loses](https://arxiv.org/abs/2604.25110) | §7.2 | Position paper: taxonomy of off-metric distillation losses + Distillation Loss Statement evaluation framework. |
+| [vOPD: KL for a KL — On-Policy Distillation with Control Variate Baseline](https://arxiv.org/abs/2605.07865) | §4.1 | Control variate baseline for single-sample OPD gradient; closed-form value function, +3% avg over vanilla OPD at 57.7% less compute. |
+| [UniSD: Towards a Unified Self-Distillation Framework for Large Language Models](https://arxiv.org/abs/2605.06597) | §5.3.2 + §6.1 | First unified framework for on-policy self-distillation; EMA teacher + multi-teacher agreement + contrastive learning. +5.4 over base, +2.8 over best baseline across 6 benchmarks. |
 
 ### 🚧 Not Yet in Survey — queued for the next revision
 
@@ -176,10 +186,8 @@ Training unstable or inefficient?
 | [Near-Policy Distillation: Accelerating OPD via Asynchronous Generation and Selective Packing](https://arxiv.org/abs/2605.05940) | §6.3 | Decouples student generation from training for 8.1× speedup over on-policy baselines; Δ-IFD filtering keeps optimization in a safe proximal zone despite policy lag. |
 | [OPSD Compresses What RLVR Teaches: A Post-RL Compaction Stage for Reasoning Models](https://arxiv.org/abs/2605.06188) | §7.1 + §7.2 | 📎 Analysis: OPSD in thinking-enabled math reasoning is primarily a *compression* mechanism (shortens correct traces) not a *correction* mechanism; proposes SFT→RLVR→OPSD pipeline. |
 | [VISD: Enhancing Video Reasoning via Structured Self-Distillation](https://arxiv.org/abs/2605.06094) | §5.3.1 + §8.2 | Structured privileged info (video-aware judge decomposing correctness/grounding/consistency) + direction-magnitude decoupling for VideoLLMs; 2× faster convergence than RLVR. |
-
-| [UniSD: Towards a Unified Self-Distillation Framework for Large Language Models](https://arxiv.org/abs/2605.06597) | §5.3.2 + §6.1 | First unified framework systematically studying on-policy self-distillation in LLMs; integrates EMA teacher, multi-teacher agreement, token-level contrastive learning, divergence clipping. +5.4 over base, +2.8 over best baseline across 6 benchmarks. |
-| [KL for a KL: On-Policy Distillation with Control Variate Baseline](https://arxiv.org/abs/2605.07865) | §4.1 | Control variate baseline for single-sample OPD gradient; closed-form value function (per-token negative R-KL) needs no extra critic. +3% avg over vanilla OPD, matches full-vocab OPD at 57.7% less compute. |
 <!-- LATEST_PENDING:END -->
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -343,6 +351,7 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [Delta Knowledge Distillation for Large Language Models](https://arxiv.org/abs/2509.14526) <br><sub>📐 Base-to-Instruct delta signal isolation for white-box logit distillation</sub> | 2025 |  |
 | 🟢 [TAID: Temporally Adaptive Interpolated Distillation for Efficient Knowledge Transfer in Language Models](https://arxiv.org/abs/2501.16937) <br><sub>📐 GPT-2 / Phi-3 / Llama-3 (progressive target revelation via temporal interpolation)</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/SakanaAI/TAID) |
 | 🟢 [MiniPLM: Knowledge Distillation for Pre-Training Language Models](https://arxiv.org/abs/2410.17215) <br><sub>📐 Pre-training KD via difference sampling; teacher-ref divergence selects training instances</sub> | 2024 |  |
+| 🟢 [SimCT: Recovering Lost Supervision for Cross-Tokenizer On-Policy Distillation](https://arxiv.org/abs/2605.07711) <br><sub>📐 Qwen2.5-7B-Inst / Phi-4-mini → Phi-4-mini / Gemma-2-2B-IT; multi-token continuation units for cross-tokenizer OPD</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -358,6 +367,7 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [Didactic to Constructive: Turning Expert Solutions into Learnable Reasoning](https://arxiv.org/abs/2602.02405) <br><sub>📐 Qwen2.5-7B-Instruct → Self (privileged student)</sub> | 2026 |  |
 | 🟢 [Pre-alignment via Black-box On-policy Distillation for Multimodal RL](https://arxiv.org/abs/2604.28123) <br><sub>📐 PRISM: adversarial MoE discriminator, logit-free OPD as pre-alignment before RLVR</sub> | 2026 |  |
 | 🟢 [ThinkTuning: Instilling Cognitive Reflections without Distillation](https://arxiv.org/abs/2508.07616) <br><sub>📐 Llama-3.2-3B → Self (cognitive reflection, ThinkTuning)</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/3rdAT/ThinkTuning) |
+| 🟢 [Rubric-based On-policy Distillation (ROPD)](https://arxiv.org/abs/2605.07396) <br><sub>📐 GPT-5.2 / Qwen3-30B-A3B → Qwen3-4B / Gemma3-4B; structured semantic rubrics replace teacher logits; 10× sample efficiency</sub> | 2026 |  |
 | 🟢 [ORPO-Distill: Mixed-Policy Preference Optimization for Cross-Architecture LLM Distillation](https://arxiv.org/abs/2509.25100) <br><sub>📐 Various students → InternLM-2.5-7B-Chat</sub> | 2025 |  |
 | 🟢 [Black-Box On-Policy Distillation of Large Language Models](https://arxiv.org/abs/2511.10643) <br><sub>📐 Llama-3.1-8B / Qwen2.5-3B–14B → GPT-5-Chat (black-box)</sub> | 2025 |  |
 | 🟢 [Lion: Adversarial Distillation of Proprietary Large Language Models](https://arxiv.org/abs/2305.12870) <br><sub>📐 LLaMA-7B → ChatGPT (adversarial distillation)</sub> | 2023 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/YJiangcm/Lion) |
@@ -478,6 +488,7 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [Why Does Self-Distillation (Sometimes) Degrade the Reasoning Capability of LLMs?](https://arxiv.org/abs/2603.24472) <br><sub>📐 Qwen3-8B / DeepSeek-Distill-7B / Olmo3-7B → Self</sub> | 2026 |  |
 | 🟢 [Revisiting On-Policy Distillation: Empirical Failure Modes and Simple Fixes](https://arxiv.org/abs/2603.25562) <br><sub>📐 Qwen2.5-7B-Instruct → OpenThinker3-7B / GiGPO-Qwen2.5-7B</sub> | 2026 |  |
 | 🟢 [The Illusion of Certainty: Decoupling Capability and Calibration in On-Policy Distillation](https://arxiv.org/abs/2604.16830) <br><sub>📐 Qwen3-0.6B–32B → Self (CaOPD: miscalibration scaling law + calibration-aware OPD)</sub> | 2026 |  |
+| 🟢 [Knowledge Distillation Must Account for What It Loses](https://arxiv.org/abs/2604.25110) <br><sub>📎 Position paper: taxonomy of off-metric distillation losses (calibration, reasoning trace erosion, distributional narrowing) + Distillation Loss Statement evaluation framework</sub> | 2026 |  |
 
 ### §7.3 Unified Theoretical Perspectives
 
@@ -523,6 +534,9 @@ On-Policy Distillation (Survey V2 Structure)
 | Paper | Date | Resources |
 |-------|:----:|:---:|
 | 🟢 [CORD: Bridging the Audio-Text Reasoning Gap via Weighted On-policy Cross-modal Distillation](https://arxiv.org/abs/2601.16547) <br><sub>📐 Qwen2-Audio-7B / Step-Audio2-mini → Self (cross-modal)</sub> | 2026 |  |
+| 🟢 [Flow-OPD: On-Policy Distillation for Flow Matching Models](https://arxiv.org/abs/2605.08063) <br><sub>📐 GRPO domain specialists (SD3.5) → SD 3.5 Medium; two-stage GRPO→OPD; GenEval 63→92, OCR 59→94</sub> | 2026 |  |
+| 🟢 [D-OPSD: On-Policy Self-Distillation for Continuously Tuning Step-Distilled Diffusion Models](https://arxiv.org/abs/2605.05204) <br><sub>📐 Self (multimodal-conditioned teacher / text-only student); preserves few-step inference during concept/style fine-tuning</sub> | 2026 |  |
+| 🟢 [LiteGUI: Distilling Compact GUI Agents with Reinforcement Learning](https://arxiv.org/abs/2605.07505) <br><sub>📐 Qwen3-VL-32B → 2B–3B GUI agents; guided OPD + dual-level GRPO; ScreenSpot-Pro, OS-World, Lite-Bench</sub> | 2026 |  |
 | 🟢 [Video-OPD: Efficient Post-Training of Multimodal Large Language Models for Temporal Video Grounding via On-Policy Distillation](https://arxiv.org/abs/2602.02994) <br><sub>📐 Qwen3-VL-8B → Qwen3-VL-32B (Video-OPD)</sub> | 2026 |  |
 | 🟡 [VISD: Enhancing Video Reasoning via Structured Self-Distillation](https://arxiv.org/abs/2605.06094) <br><sub>📐 VideoLLM structured self-distillation; video-aware judge + direction–magnitude decoupling; 2× faster convergence</sub> | 2026 |  |
 | 🟢 [OpenClaw-RL: Train Any Agent Simply by Talking](https://arxiv.org/abs/2603.10165) | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/Gen-Verse/OpenClaw-RL) |
