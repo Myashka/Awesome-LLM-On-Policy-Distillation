@@ -178,6 +178,7 @@ Training unstable or inefficient?
 | [VISD: Enhancing Video Reasoning via Structured Self-Distillation](https://arxiv.org/abs/2605.06094) | §5.3.1 + §8.2 | Structured privileged info (video-aware judge decomposing correctness/grounding/consistency) + direction-magnitude decoupling for VideoLLMs; 2× faster convergence than RLVR. |
 
 | [UniSD: Towards a Unified Self-Distillation Framework for Large Language Models](https://arxiv.org/abs/2605.06597) | §5.3.2 + §6.1 | First unified framework systematically studying on-policy self-distillation in LLMs; integrates EMA teacher, multi-teacher agreement, token-level contrastive learning, divergence clipping. +5.4 over base, +2.8 over best baseline across 6 benchmarks. |
+| [KL for a KL: On-Policy Distillation with Control Variate Baseline](https://arxiv.org/abs/2605.07865) | §4.1 | Control variate baseline for single-sample OPD gradient; closed-form value function (per-token negative R-KL) needs no extra critic. +3% avg over vanilla OPD, matches full-vocab OPD at 57.7% less compute. |
 <!-- LATEST_PENDING:END -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -274,6 +275,7 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [Distillation of Large Language Models via Concrete Score Matching](https://arxiv.org/abs/2509.25837) <br><sub>📐 GPT-2 0.1B–0.3B → GPT-2 1.5B / OpenLLaMA-7B</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/aailab-kaist/CSD) |
 | 🟢 [On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes](https://arxiv.org/abs/2306.13649) <br><sub>📐 T5-Small/Base/Large → T5-XL 3B</sub> | 2023 |  |
 | 🟢 [DistiLLM: Towards Streamlined Distillation for Large Language Models](https://arxiv.org/abs/2402.03898) <br><sub>📐 GPT-2 (student) → GPT-2 XL (teacher)</sub> | 2024 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/jongwooko/distillm) |
+| 🟢 [KL for a KL: On-Policy Distillation with Control Variate Baseline](https://arxiv.org/abs/2605.07865) <br><sub>📐 Qwen3-1.7B/4B-Base → Qwen3-1.7B/4B-Inst (self-distill), OLMo-3-7B</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
