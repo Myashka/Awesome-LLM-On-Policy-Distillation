@@ -17,9 +17,9 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-117-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-140-blue" alt="Papers">
   <img src="https://img.shields.io/github/last-commit/nick7nlp/Awesome-LLM-On-Policy-Distillation?label=Last%20Updated&color=green" alt="Last Updated">
-  <img src="https://img.shields.io/badge/Survey-V2%20124%20cites-orange" alt="Survey V2">
+  <img src="https://img.shields.io/badge/Survey-V2%20138%20cites-orange" alt="Survey V2 138 cites">
 </p>
 
 <p align="center">
@@ -149,7 +149,7 @@ Training unstable or inefficient?
 
 > Tracks papers added by the daily OPD scout. Split into two views so readers can see both **what's already integrated** into Survey V2 and **what's queued for the next revision**. 🔍 emoji marks methods we **deeply read** (notes on file) before classification.
 
-### ✅ Recently Added — already in Survey V2 (137 citations)
+### ✅ Recently Added — already in Survey V2 (138 citations)
 
 | Paper | § Section | Why It's Interesting |
 |-------|:---:|---|
@@ -221,7 +221,7 @@ No pending papers. All entries have been integrated into Survey V2.
 
 ## 🗺️ Taxonomy
 
-> Organized to mirror the [OPD Survey V2 (124 citations)](https://arxiv.org/abs/2604.00626) section structure.
+> Organized to mirror the [OPD Survey V2 (138 citations)](https://arxiv.org/abs/2604.00626) section structure.
 
 ### 📜 Full Tree
 
@@ -243,11 +243,11 @@ On-Policy Distillation (Survey V2 Structure)
 │   │         (verbal / score feedback, adversarial, off-policy guidance)
 │   └── §5.3 Self-Distillation
 │       ├── §5.3.1 Privileged Information
-│       │         (OPSD, GATES, OPCD, OPSDL, GUI-SD, PAINT, PBSD, TT-OPD, MSD, VISD)
+│       │         (OPSD, GATES, OPCD, OPSDL, GUI-SD, PAINT, PBSD, TT-OPD, MSD, VISD, π-Distill, OEL, HDPO)
 │       ├── §5.3.2 Self-Play
-│       │         (SPIN, IRIS, MTP, SSD, on-policy SFT)
+│       │         (SPIN, IRIS, RLRT, MTP-SD, SSD, SDFT, OPSFT, UniSD)
 │       └── §5.3.3 External Feedback
-│                 (SDPO, SD-ZERO, SRPO, RLTF, RLSD, Semantic Soft Bootstrapping)
+│                 (SDPO, SD-ZERO, SRPO, RLTF, RLSD, CoPD, Semantic Soft Bootstrapping)
 │
 ├── §6 Training Dynamics & Efficiency
 │         (token / sample weighting, curriculum, stability, compute-optimal OPD)
