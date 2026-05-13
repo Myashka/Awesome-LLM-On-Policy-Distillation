@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-161-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-165-blue" alt="Papers">
   <img src="https://img.shields.io/github/last-commit/nick7nlp/Awesome-LLM-On-Policy-Distillation?label=Last%20Updated&color=green" alt="Last Updated">
   <img src="https://img.shields.io/badge/Survey-V2%20138%20cites-orange" alt="Survey V2 138 cites">
 </p>
@@ -452,6 +452,7 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [LLM-Oriented Token-Adaptive Knowledge Distillation](https://arxiv.org/abs/2510.11615) <br><sub>📐 Qwen2-1.5B / OpenLLaMA2-3B → Qwen2-7B / OpenLLaMA2-7B</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/SassyRong/AdaKD) |
 | 🟢 [SelecTKD: Selective Token-Weighted Knowledge Distillation for LLMs](https://arxiv.org/abs/2510.24021) <br><sub>📐 Qwen2-1.5B / Gemma-2-2B / Danube2-1.8B → Qwen2-7B / Gemma-2-9B / Mistral-7B</sub> | 2025 |  |
 | 🟡 [Shadow Mask Distillation: KV Cache Compression for Memory-Efficient RL Alignment](https://arxiv.org/abs/2605.06850) <br><sub>📐 Dense-context policy → Sparse-context student; shadow mask + dual-track KL distillation ensures on-policy alignment under 50% KV compression (Yale)</sub> | 2026 |  |
+| 🟡 [TRACE: Distilling Where It Matters via Token-Routed Self On-Policy Alignment](https://arxiv.org/abs/2605.10194) <br><sub>📐 Token-routed self-OPD: FKL on key spans + optional RKL on error spans + GRPO elsewhere; solves all-token KL collapse in self-OPD; +2.76pp over GRPO on Qwen3-8B (NJU/Alibaba)</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -519,6 +520,7 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning](https://arxiv.org/abs/2501.12948) <br><sub>📐 Qwen2.5-1.5B–32B / Llama-3-8B–70B → DeepSeek-R1 671B · ⚠️ off-policy SFT baseline (OPD reference point, §7.4)</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/deepseek-ai/DeepSeek-R1) [![Model](https://img.shields.io/badge/Model-🤗-yellow)](https://huggingface.co/deepseek-ai/DeepSeek-R1) |
 | 🟢 [Qwen3 Technical Report](https://arxiv.org/abs/2505.09388) <br><sub>📐 Qwen3 series → Qwen3 (larger, on-policy logit KD)</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/QwenLM/Qwen3) [![Model](https://img.shields.io/badge/Model-🤗-yellow)](https://huggingface.co/collections/Qwen/qwen3-67dd247413f0e2e4f653967f) |
 | 🟢 [Gemma 2: Improving Open Language Models at a Practical Size](https://arxiv.org/abs/2408.00118) <br><sub>📐 Gemma-2-2B/9B → Gemma-2-27B (online KD in pre-training)</sub> | 2024 | [![Model](https://img.shields.io/badge/Model-🤗-yellow)](https://huggingface.co/google/gemma-2-27b) |
+| 🟡 [Safactory: A Scalable Agentic Infrastructure for Training Trustworthy Autonomous Intelligence](https://arxiv.org/abs/2605.06230) <br><sub>📐 Shanghai AI Lab; unified evolutionary pipeline: Parallel Simulation + Trustworthy Data + Autonomous Evolution (RL + OPD); first framework unifying agent safety evaluation with OPD training</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/AI45Lab/Safactory) |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -547,6 +549,7 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [Retaining by Doing: The Role of On-Policy Data in Mitigating Forgetting](https://arxiv.org/abs/2510.18874) <br><sub>📐 Llama-3.1-8B / Llama-3.2-1B → Llama-3.3-70B</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/princeton-pli/retaining-by-doing) |
 | 🟢 [VOLD: Reasoning Transfer from LLMs to Vision-Language Models via On-Policy Distillation](https://arxiv.org/abs/2510.23497) <br><sub>📐 Qwen2.5-VL-3B → Qwen3-8B (text reasoning teacher)</sub> | 2025 |  |
 | 🟡 [HyperEyes: Dual-Grained Efficiency-Aware Reinforcement Learning for Parallel Multimodal Search Agents](https://arxiv.org/abs/2605.07177) <br><sub>📐 External teacher → HyperEyes-30B (Qwen3-VL-30B); micro-level OPD provides dense token-level supervision on failed rollouts</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/DeepExperience/HyperEyes) |
+| 🟡 [ProteinOPD: Towards Effective and Efficient Preference Alignment for Protein Design](https://arxiv.org/abs/2605.10189) <br><sub>📐 Multi-teacher OPD for protein PLMs; geometric consensus of weighted preference-specific teachers; student generates protein sequences on-policy; 8× faster than RL (THU/IDEA/HKUST)</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/THU-AI4S/ProteinOPD) |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -558,6 +561,7 @@ On-Policy Distillation (Survey V2 Structure)
 
 | Paper | Date | Resources |
 |-------|:----:|:---:|
+| 🟡 [Test-Time Speculation](https://arxiv.org/abs/2605.09329) <br><sub>📐 Online OPD at inference-time: draft(student) generates tokens, target(teacher) provides distribution supervision, draft updates during generation; up to 72% acceptance-length gain on Qwen-3/3.5/Llama3.1 (UT Austin)</sub> | 2026 |  |
 | 🟢 [Speculative Knowledge Distillation: Bridging the Teacher-Student Gap Through Interleaved Sampling](https://arxiv.org/abs/2410.11325) <br><sub>📐 Gemma-2B / Qwen-0.5B → Gemma-7B / Qwen-7B</sub> | 2024 |  |
 | 🟢 [DistillSpec: Improving Speculative Decoding via Knowledge Distillation](https://arxiv.org/abs/2310.08461) <br><sub>📐 T5-Small → T5-XL (on-policy KD for speculative decoding)</sub> | 2023 |  |
 
