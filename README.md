@@ -263,7 +263,6 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes](https://arxiv.org/abs/2306.13649) <br><sub>📐 T5-Small/Base/Large → T5-XL 3B</sub> | 2023 |  |
 | 🟢 [DistiLLM: Towards Streamlined Distillation for Large Language Models](https://arxiv.org/abs/2402.03898) <br><sub>📐 GPT-2 (student) → GPT-2 XL (teacher)</sub> | 2024 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/jongwooko/distillm) |
 | 🟢 [KL for a KL: On-Policy Distillation with Control Variate Baseline](https://arxiv.org/abs/2605.07865) <br><sub>📐 Qwen3-1.7B/4B-Base → Qwen3-1.7B/4B-Inst (self-distill), OLMo-3-7B</sub> | 2026 |  |
-| 🟡 [Anti-Self-Distillation for Reasoning RL via Pointwise Mutual Information](https://arxiv.org/abs/2605.11609) <br><sub>📐 4B–30B models; ascends student-teacher divergence to boost deliberation tokens; entropy-triggered gate, 2–10× faster than GRPO</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -284,7 +283,6 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [ToDi: Token-wise Distillation via Fine-Grained Divergence Control](https://arxiv.org/abs/2505.16297) <br><sub>📐 GPT-2 120M / TinyLLaMA-1.1B → GPT-2 1.5B / LLaMA2-7B</sub> | 2025 |  |
 | 🟢 [Rethinking Kullback-Leibler Divergence in Knowledge Distillation for Large Language Models](https://arxiv.org/abs/2404.02657) <br><sub>📐 GPT-2 120M / TinyLLaMA → GPT-2 1.5B / LLaMA-6.7B</sub> | 2024 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/wutaiqiang/LLM_KD_AKL) |
 | 🟡 [OGLS-SD: On-Policy Self-Distillation with Outcome-Guided Logit Steering](https://arxiv.org/abs/2605.12400) <br><sub>📐 Verifiable outcome rewards contrast correct vs. failed on-policy trajectories to calibrate teacher logits in OPSD</sub> | 2026 |  |
-| 🟡 [CREDIT: From Generic Correlation to Input-Specific Credit in OPSD](https://arxiv.org/abs/2605.11613) <br><sub>📐 Decomposes OPSD token reward via pMI; batch-contrastive baseline isolates input-specific reasoning credit</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -389,7 +387,6 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [Multilingual Self-Distillation for Safety Alignment](https://arxiv.org/abs/2605.02971) <br><sub>📐 MSD: English CoT as privileged context + Dual-Perspective Safety Weighting for cross-lingual safety</sub> | 2026 |  |
 | 🟢 [Preference-Based Self-Distillation: Beyond KL Matching via Reward Regularization](https://arxiv.org/abs/2605.05040) <br><sub>📐 PBSD: reward-reweighted teacher target + preference gap optimization with on-policy student sampling</sub> | 2026 |  |
 | 🟢 [VISD: Enhancing Video Reasoning via Structured Self-Distillation](https://arxiv.org/abs/2605.06094) <br><sub>📐 VISD: video-aware judge decomposes quality (correctness/grounding/consistency) as structured privileged info; direction–magnitude decoupling for stable RL+SD integration</sub> | 2026 |  |
-| 🟡 [OGLS-SD: On-Policy Self-Distillation with Outcome-Guided Logit Steering](https://arxiv.org/abs/2605.12400) <br><sub>📐 Outcome rewards calibrate teacher logits; contrasts correct vs. failed on-policy trajectories to fix reflection-induced bias</sub> | 2026 |  |
 | 🟡 [CREDIT: From Generic Correlation to Input-Specific Credit in OPSD](https://arxiv.org/abs/2605.11613) <br><sub>📐 pMI decomposition of self-distillation reward; batch-contrastive baseline isolates input-specific credit from generic shortcuts</sub> | 2026 |  |
 | 🟡 [AntiSD: Anti-Self-Distillation for Reasoning RL via PMI](https://arxiv.org/abs/2605.11609) <br><sub>📐 Reverses divergence direction to boost deliberation tokens; entropy-triggered gate disables when teacher entropy collapses; 4B–30B</sub> | 2026 |  |
 | 🟡 [ATESD: Adaptive Teacher Exposure for Self-Distillation](https://arxiv.org/abs/2605.11458) <br><sub>📐 Learnable Beta-policy controller for teacher exposure ratio; addresses teacher-side exposure mismatch in privileged OPSD (ByteDance)</sub> | 2026 |  |
@@ -454,7 +451,6 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [Co-Evolving Policy Distillation](https://arxiv.org/abs/2604.27083) <br><sub>📐 CoPD: bidirectional parallel RLVR branches + interleaved mutual OPD co-evolution</sub> | 2026 |  |
 | 🟢 [Unifying On-Policy Distillation with a Dual-Perspective Recipe](https://arxiv.org/abs/2605.03677) <br><sub>📐 Uni-OPD: student exploration (difficulty+correctness-aware) + teacher reliability (outcome-guided margin)</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/WenjinHou/Uni-OPD) |
 | 🟢 [Near-Policy Distillation: Accelerating On-Policy Distillation via Asynchronous Generation and Selective Packing](https://arxiv.org/abs/2605.05940) <br><sub>📐 NPD: async generation + Δ-IFD filtering for 8.1× speedup; openPangu-Embedded-1B → 68.73% SOTA</sub> | 2026 |  |
-| 🟡 [EffOPD: Unveiling the Unlocking Efficiency of On-Policy Distillation](https://arxiv.org/abs/2605.11739) <br><sub>📐 Parameter-dynamics analysis: OPD’s “foresight” via early low-rank concentration + module allocation; plug-and-play 3× acceleration</sub> | 2026 |  |
 | 🟢 [AdaSwitch: Balancing Exploration and Guidance in Knowledge Distillation via Adaptive Switching](https://arxiv.org/abs/2510.07842) <br><sub>📐 Qwen2.5-0.5B / Llama-3.1-1B / Gemma-2B → Qwen2.5-3B / Llama-3.1-3B / Gemma-7B</sub> | 2025 |  |
 | 🟢 [LLM-Oriented Token-Adaptive Knowledge Distillation](https://arxiv.org/abs/2510.11615) <br><sub>📐 Qwen2-1.5B / OpenLLaMA2-3B → Qwen2-7B / OpenLLaMA2-7B</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/SassyRong/AdaKD) |
 | 🟢 [SelecTKD: Selective Token-Weighted Knowledge Distillation for LLMs](https://arxiv.org/abs/2510.24021) <br><sub>📐 Qwen2-1.5B / Gemma-2-2B / Danube2-1.8B → Qwen2-7B / Gemma-2-9B / Mistral-7B</sub> | 2025 |  |
@@ -552,12 +548,6 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [Distillation Scaling Laws](https://arxiv.org/abs/2502.08606) <br><sub>📐 143M–1.4B → 975M–12.6B (scaling law study)</sub> | 2025 |  |
 | 🟢 [Retaining by Doing: The Role of On-Policy Data in Mitigating Forgetting](https://arxiv.org/abs/2510.18874) <br><sub>📐 Llama-3.1-8B / Llama-3.2-1B → Llama-3.3-70B</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/princeton-pli/retaining-by-doing) |
 | 🟢 [VOLD: Reasoning Transfer from LLMs to Vision-Language Models via On-Policy Distillation](https://arxiv.org/abs/2510.23497) <br><sub>📐 Qwen2.5-VL-3B → Qwen3-8B (text reasoning teacher)</sub> | 2025 |  |
-| 🟡 [COPSD: Crosslingual On-Policy Self-Distillation for Multilingual Reasoning](https://arxiv.org/abs/2605.09548) <br><sub>📐 Transfers reasoning to 17 low-resource African languages via crosslingual privileged context; dense token-level supervision</sub> | 2026 |  |
-| 🟡 [TABOM: Self-Distilled Trajectory-Aware Boltzmann Modeling for Diffusion LMs](https://arxiv.org/abs/2605.11854) <br><sub>📐 Trajectory self-distillation for diffusion LLMs; Boltzmann modeling for genuine knowledge acquisition beyond step compression</sub> | 2026 |  |
-| 🟡 [TAD: Temporal-Aware Trajectory Self-Distillation for Diffusion LLMs](https://arxiv.org/abs/2605.09536) <br><sub>📐 Near/distant token partitioning; hard CE + soft KL for diffusion LLM parallel generation quality improvement</sub> | 2026 |  |
-| 🟡 [Hide to See: Reasoning-Prefix Masking for Visual-Anchored VLM Distillation](https://arxiv.org/abs/2605.11651) <br><sub>📐 Think-answer VLM distillation; masks reasoning prefixes to force visual grounding in Qwen3-VL-Thinking students</sub> | 2026 |  |
-| 🟡 [OPHSD: On-Policy Harness Self-Distillation for Complex Reasoning](https://arxiv.org/abs/2605.08741) <br><sub>📐 Internalizes inference-time harness (draft-verify / plan-solve) into standalone model; generalizability across reasoning tasks (PKU)</sub> | 2026 |  |
-| 🟡 [ListOPD: The Extrapolation Cliff in OPD of Structured Outputs](https://arxiv.org/abs/2605.08737) <br><sub>📐 First study of OPD for structured JSON outputs; closed-form safety threshold for reward extrapolation in listwise tasks (NTU)</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
