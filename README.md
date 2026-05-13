@@ -411,7 +411,6 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [Self-Play Fine-Tuning Converts Weak Language Models to Strong Language Models](https://arxiv.org/abs/2401.01335) <br><sub>📐 Zephyr-7B (Mistral-7B) → Self</sub> | 2024 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/uclaml/SPIN) [![Model](https://img.shields.io/badge/Model-🤗-yellow)](https://huggingface.co/UCLA-AGI/zephyr-7b-sft-full-SPIN-iter3) |
 | 🟢 [UniSD: Towards a Unified Self-Distillation Framework for Large Language Models](https://arxiv.org/abs/2605.06597) <br><sub>📐 Llama-3.1/Qwen2.5/Phi-3 families → Self (EMA teacher + multi-teacher agreement + divergence clipping)</sub> | 2026 |  |
 | 🟡 [TABOM: Self-Distilled Trajectory-Aware Boltzmann Modeling for Diffusion LMs](https://arxiv.org/abs/2605.11854) <br><sub>📐 Trajectory self-distillation for diffusion LLMs via Boltzmann modeling; uses inference trajectories for knowledge acquisition, not just acceleration</sub> | 2026 |  |
-| 🟡 [TAD: Temporal-Aware Trajectory Self-Distillation for Diffusion LLMs](https://arxiv.org/abs/2605.09536) <br><sub>📐 Near/distant token partitioning: hard CE for near tokens, soft KL for distant; addresses accuracy–parallelism trade-off in dLLMs</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
