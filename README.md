@@ -183,16 +183,16 @@ Training unstable or inefficient?
 
 > How the survey grew from a focused overview to a comprehensive field guide. 🌱→🌳
 
-| | 🏷️ V1 (arXiv launch, Apr 1) | 🏷️ V1.5 (arXiv revised, Apr 17) | 🚀 V2 (COLM submission, May 12) |
-|:--|:---:|:---:|:---:|
-| 📄 Pages | 39 | 53 | **68** |
-| 📚 Citations | 73 | 101 | **138** |
-| 🧩 Methods covered | 57 | 73 | **89** |
-| 🌳 Taxonomy depth | 2 levels | 3 levels | **3 levels + sub-branches** |
-| 📊 Tables | 2 | 3 | **3 (expanded)** |
-| 🎨 Figure 1 (Method Tree) | Flat leaves | Partial expansion | **Full structural expansion** |
-| ❌ Errors/Undefined | 0 | 0 | **0** |
-| 🔍 Fact-verified numbers | — | Partial | **38+ numbers vs original PDFs** |
+| | 🏷️ V1 (arXiv launch, Apr 1) | 🚀 V2 (COLM submission, May 12) |
+|:--|:---:|:---:|
+| 📄 Pages | 39 | **68** |
+| 📚 Citations | 73 | **138** |
+| 🧩 Methods covered | 57 | **89** |
+| 🌳 Taxonomy depth | 2 levels | **3 levels + sub-branches** |
+| 📊 Tables | 2 | **3 (expanded)** |
+| 🎨 Figure 1 (Method Tree) | Flat leaves | **Full structural expansion** |
+| ❌ Errors/Undefined | 0 | **0** |
+| 🔍 Fact-verified numbers | — | **38+ numbers vs original PDFs** |
 
 #### 🆕 What's new in V2 (vs V1)
 
