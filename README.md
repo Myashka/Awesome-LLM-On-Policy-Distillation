@@ -50,7 +50,6 @@ With the rise of reasoning models (System 2 thinking) in 2024–2026, long chain
     <li><a href="#-why-on-policy">Why On-Policy?</a></li>
     <li><a href="#-quick-start-guide">Quick-Start Guide</a></li>
     <li><a href="#-trends--highlights-2025-2026">Trends &amp; Highlights</a></li>
-    <li><a href="#-latest-additions-last--2-weeks">🆕 Latest Additions</a></li>
     <li><a href="#-survey-version-history--v1--v2-changelog">📋 Version History (V1 → V2)</a></li>
     <li><a href="#-teacherstudent-model-atlas">🔍 Teacher–Student Model Atlas</a></li>
     <li><a href="#-hall-of-fame--10-must-read-opd-papers">🏆 Hall of Fame</a></li>
@@ -148,79 +147,6 @@ Training unstable or inefficient?
 <p align="center">
   <img src="assets/evolution-timeline.png" alt="Evolution Timeline of On-Policy Distillation (2015 - 2026)" width="900">
 </p>
-
-## 🆕 Latest Additions (last ∼ 2 weeks)
-
-> Tracks papers added by the daily OPD scout. Split into two views so readers can see both **what's already integrated** into Survey V2 and **what's queued for the next revision**. 🔍 emoji marks methods we **deeply read** (notes on file) before classification.
-
-### ✅ Recently Added — already in Survey V2 (138 citations)
-
-| Paper | § Section | Why It's Interesting |
-|-------|:---:|---|
-| 🔍 [PBSD: Preference-Based Self-Distillation (Beyond KL Matching via Reward Regularization)](https://arxiv.org/abs/2605.05040) | §5.3.1 + §4.3 | First OPD method that replaces pure KL with a *preference gap* objective; teacher target is reward-reweighted before on-policy student sampling. Bridges reward-shaped KD and self-distillation. |
-| 🔍 [TT-OPD: Turn-level Truncated OPD for Medical Agents (Healthcare AI GYM)](https://arxiv.org/abs/2605.02943) | §5.3.1 + §7.2 + §8.2 | EMA teacher + outcome-privileged hints + **turn-level** KL truncation; first systematic study of multi-turn agentic distillation stability, with dedicated medical domain benchmark. |
-| [Uni-OPD: Unified Dual-Perspective OPD Framework](https://arxiv.org/abs/2605.03677) | §6.2 | Unifies token-level weighting and sample-level weighting under a single dual-perspective objective. |
-| [MAD-OPD: Breaking the Ceiling in On-Policy Distillation via Multi-Agent Debate](https://arxiv.org/abs/2605.01347) | §5.1 + §6.1 + §8.2 | Multi-teacher debate produces confidence-weighted token supervision (OPAD); ensembling with cheap verifiers. |
-| [MSD: Multilingual Self-Distillation for Safety](https://arxiv.org/abs/2605.02971) | §5.3.1 | English CoT as privileged context + Dual-Perspective Safety Weighting for cross-lingual safety transfer. |
-| [GUI-SD: On-Policy Self-Distillation for GUI Grounding](https://arxiv.org/abs/2605.00642) | §5.3.1 + §8.2 | Visual privileged context (bbox + Gaussian soft mask) + entropy-guided token weighting on screenshots. |
-| [PRISM: Pre-alignment via Black-box OPD for Multimodal RL](https://arxiv.org/abs/2604.28123) | §5.2 + §6.2 | Adversarial MoE discriminator; logit-free OPD as pre-alignment stage before RLVR. |
-| [CoPD: Co-evolution On-Policy Distillation](https://arxiv.org/abs/2604.27083) | §5.3.3 + §8.1 | Parallel RLVR expert training with interleaved bidirectional OPD, where experts teach each other *during* training, not after. |
-| [PAINT: Partial-solution Adaptive Interpolated Training](https://arxiv.org/abs/2604.26573) | §5.3.2 + §6.2 | Rollout-reference overlap + energy interpolation on OPSD; tackles student-teacher gap without a full teacher. |
-| [TCOD: Temporal Curriculum OPD](https://arxiv.org/abs/2604.24005) | §6.2 + §8.2 | Temporal curriculum for multi-turn agents; handles compounding errors in long-horizon tool use. |
-| [SimCT: Recovering Lost Supervision for Cross-Tokenizer On-Policy Distillation](https://arxiv.org/abs/2605.07711) | §5.1 | Multi-token continuation units for cross-tokenizer OPD; Qwen2.5-7B/Phi-4-mini → Phi-4-mini/Gemma-2-2B-IT. |
-| [ROPD: Rubric-based On-policy Distillation](https://arxiv.org/abs/2605.07396) | §5.2 | Structured semantic rubrics replace teacher logits for black-box OPD; 10× sample efficiency over logit-based methods. |
-| [SOD: Step-wise On-policy Distillation for Small Language Model Agents](https://arxiv.org/abs/2605.07725) | §6.1 | Step-level divergence reweighting for tool-integrated reasoning; Qwen3-0.6B achieves 26.13% AIME'25. |
-| [Prune-OPD: Efficient and Reliable On-Policy Distillation for Long-Horizon Reasoning](https://arxiv.org/abs/2605.07804) | §6.3 | Drift-aware dynamic truncation via top-k overlap; 37–68% training time reduction while preserving accuracy. |
-| [Flow-OPD: On-Policy Distillation for Flow Matching Models](https://arxiv.org/abs/2605.08063) | §8.2 | First OPD for continuous-output flow matching text-to-image models; GenEval 63→92, OCR 59→94. |
-| [D-OPSD: On-Policy Self-Distillation for Step-Distilled Diffusion Models](https://arxiv.org/abs/2605.05204) | §8.2 | Self-distillation preserving few-step generation during concept/style fine-tuning via multimodal encoder in-context capabilities. |
-| [LiteGUI: Distilling Compact GUI Agents with Reinforcement Learning](https://arxiv.org/abs/2605.07505) | §8.2 | Guided OPD + dual-level GRPO for 2B–3B GUI agents from Qwen3-VL-32B teacher. |
-| [KD Must Account for What It Loses](https://arxiv.org/abs/2604.25110) | §7.2 | Position paper: taxonomy of off-metric distillation losses + Distillation Loss Statement evaluation framework. |
-| [vOPD: KL for a KL — On-Policy Distillation with Control Variate Baseline](https://arxiv.org/abs/2605.07865) | §4.1 | Control variate baseline for single-sample OPD gradient; closed-form value function, +3% avg over vanilla OPD at 57.7% less compute. |
-| [UniSD: Towards a Unified Self-Distillation Framework for Large Language Models](https://arxiv.org/abs/2605.06597) | §5.3.2 + §6.1 | First unified framework for on-policy self-distillation; EMA teacher + multi-teacher agreement + contrastive learning. +5.4 over base, +2.8 over best baseline across 6 benchmarks. |
-
----
-
-### 📋 Survey Version History — V1 → V2 Changelog
-
-> How the survey grew from a focused overview to a comprehensive field guide. 🌱→🌳
-
-| | 🏷️ V1 (Apr 1) | 🚀 V2 (May 12) |
-|:--|:---:|:---:|
-| 📄 Pages | 39 | **68** |
-| 📚 Citations | 73 | **138** |
-| 🧩 Methods covered | 57 | **89** |
-| 🌳 Taxonomy depth | 2 levels | **3 levels + sub-branches** |
-
----
-
-### 🚧 Not Yet in Survey — queued for the next revision
-
-> Newly confirmed OPD papers that the scout has indexed here but that **have not yet been integrated** into the survey's LaTeX body. They'll be folded into the next Survey revision (V3). PRs welcome.
-
-| Paper | Section | Key Contribution |
-|-------|---------|------------------|
-| [Beyond GRPO and OPD](https://arxiv.org/abs/2605.12483) | §4.3 | Sparse-to-dense reward: GRPO→teacher RL, then OPD bridge to student |
-| [OGLS-SD](https://arxiv.org/abs/2605.12400) | §4.2+§5.3.1 | Outcome-guided logit steering for on-policy self-distillation |
-| [dGRPO](https://arxiv.org/abs/2605.12227) | §4.3 | GRPO + OPD dense guidance for long-context reasoning |
-| [TABOM](https://arxiv.org/abs/2605.11854) | §5.3.2+§8.2 | Trajectory self-distillation for Diffusion LMs via Boltzmann modeling |
-| [EffOPD](https://arxiv.org/abs/2605.11739) | §7.1+§6.3 | Parameter-dynamics analysis: OPD "foresight" + 3× acceleration |
-| [Hide to See](https://arxiv.org/abs/2605.11651) | §5.1+§8.2 | VLM distillation with reasoning-prefix masking (Qwen3-VL) |
-| [CREDIT](https://arxiv.org/abs/2605.11613) | §4.2+§5.3.1 | Input-specific credit assignment in OPSD via pointwise MI |
-| [AntiSD](https://arxiv.org/abs/2605.11609) | §4.1+§5.3.1 | Anti-self-distillation: ascend divergence to boost deliberation |
-| [ATESD](https://arxiv.org/abs/2605.11458) | §5.3.1 | Adaptive teacher exposure via learnable Beta-policy controller |
-| [Many Faces of OPD](https://arxiv.org/abs/2605.11182) | §7.2 | Comprehensive failure analysis: dist mismatch, biased TopK KL |
-| [Unmasking OPD](https://arxiv.org/abs/2605.10889) | §7.1+§7.2 | Training-free per-token diagnostic framework (Apple) |
-| [BRTS](https://arxiv.org/abs/2605.09725) | §5.1 | Best-of-N teacher rollout selection for OPD |
-| [COPSD](https://arxiv.org/abs/2605.09548) | §5.3.1+§8.2 | Crosslingual on-policy self-distillation for 17 languages |
-| [TAD](https://arxiv.org/abs/2605.09536) | §5.3.2+§8.2 | Trajectory self-distillation for Diffusion LLM |
-| [Rock Tokens](https://arxiv.org/abs/2605.09253) | §7.2 | Persistent high-loss tokens (~18%) as structural residuals |
-| [CoDistill-GRPO](https://arxiv.org/abs/2605.08873) | §4.3 | Bidirectional co-distillation with on-policy KD reward (Google) |
-| [MPD](https://arxiv.org/abs/2605.08776) | §5.1 | Mixed-policy distillation: teacher rewrites student traces |
-| [OPHSD](https://arxiv.org/abs/2605.08741) | §5.3.1+§8.2 | On-policy harness self-distillation with inference scaffolds (PKU) |
-| [ListOPD](https://arxiv.org/abs/2605.08737) | §7.2+§8.2 | Extrapolation cliff in OPD for structured JSON outputs (NTU) |
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔍 Teacher–Student Model Atlas
 
