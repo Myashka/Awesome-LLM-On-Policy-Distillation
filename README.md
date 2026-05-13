@@ -204,10 +204,10 @@ Training unstable or inefficient?
 > 🎯 "I have model X — what can I distill, and from whom?" This atlas maps the OPD ecosystem's model choices across 89+ papers.
 
 <p align="center">
-  <img src="assets/model-atlas-heatmap.png" alt="Teacher x Student Pair Matrix: 36 teachers (Y-axis) x 34 students (X-axis), grouped by model family" width="950">
+  <img src="assets/model-atlas-heatmap.png" alt="Teacher × Student Pair Matrix: Y-axis = teacher models, X-axis = student models, grouped by family. ①-⑤ marks frequency rank." width="960">
 </p>
 
-> 📊 **Y-axis** = specific teacher models. **X-axis** = specific student models. Both axes grouped by model family (GPT-2 → OPT → LLaMA → Gemma → Qwen2.5 → Qwen3 → DeepSeek → Self/EMA), then sorted by size within each family. **Cell** = number of papers using that exact pair. Thick lines separate families. Marginal sums on edges.
+> 📊 **Y-axis** = teacher models. **X-axis** = student models. Grouped by family, sorted by size within each family. **Cell** = papers using that (teacher → student) pair. **①-⑤** = frequency rank (most-used teachers / students). Thick lines = family boundaries. Marginal Σ on edges.
 
 ### 🎓 Student-Centric Guide — "I have this model, what are my options?"
 
