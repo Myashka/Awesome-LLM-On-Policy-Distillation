@@ -207,7 +207,7 @@ Training unstable or inefficient?
   <img src="assets/model-atlas-heatmap.png" alt="Model Atlas Heatmap: Student (left, blue) and Teacher (right, red) usage by family and size" width="900">
 </p>
 
-> 📊 **Left (blue)**: How many papers use each (family × size) as the **student**. **Right (red)**: as the **teacher**. Self-distillation (30+ papers) excluded from teacher count.
+> 📊 **Left (blue)**: papers using that (family × size) as **student**. **Right (red)**: as **teacher**. 9 size tiers × 8 model families. Self-distillation (30+ papers) excluded from teacher count. Hot cells annotated with the dominant specific model.
 
 ### 🎓 Student-Centric Guide — "I have this model, what are my options?"
 
