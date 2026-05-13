@@ -177,25 +177,6 @@ Training unstable or inefficient?
 | [KD Must Account for What It Loses](https://arxiv.org/abs/2604.25110) | §7.2 | Position paper: taxonomy of off-metric distillation losses + Distillation Loss Statement evaluation framework. |
 | [vOPD: KL for a KL — On-Policy Distillation with Control Variate Baseline](https://arxiv.org/abs/2605.07865) | §4.1 | Control variate baseline for single-sample OPD gradient; closed-form value function, +3% avg over vanilla OPD at 57.7% less compute. |
 | [UniSD: Towards a Unified Self-Distillation Framework for Large Language Models](https://arxiv.org/abs/2605.06597) | §5.3.2 + §6.1 | First unified framework for on-policy self-distillation; EMA teacher + multi-teacher agreement + contrastive learning. +5.4 over base, +2.8 over best baseline across 6 benchmarks. |
-| [Beyond GRPO and OPD: An Empirical Sparse-to-Dense Reward Principle](https://arxiv.org/abs/2605.12483) | §4.3 + §5.1 | Sparse-to-dense reward principle: GRPO trains the teacher via sparse RL, then OPD bridges dense supervision to a smaller student. Qwen3 / Llama. |
-| [OGLS-SD: On-Policy Self-Distillation with Outcome-Guided Logit Steering](https://arxiv.org/abs/2605.12400) | §5.3.1 + §4.2 | Verifiable outcome rewards contrast correct vs. failed on-policy trajectories to calibrate teacher logits, fixing reflection-induced bias in OPSD. |
-| [dGRPO: Combining On-Policy Optimization and Distillation for Long-Context Reasoning](https://arxiv.org/abs/2605.12227) | §4.3 + §6.2 | Augments GRPO with dense OPD teacher guidance for long-context reasoning; introduces LongBlocks benchmark (multi-hop, grounding, long-form). |
-| [TABOM: Self-Distilled Trajectory-Aware Boltzmann Modeling for Diffusion LMs](https://arxiv.org/abs/2605.11854) | §5.3.2 + §8.2 | Trajectory self-distillation for diffusion LLMs via Boltzmann modeling; uses inference trajectories for genuine knowledge acquisition, not just acceleration. |
-| [EffOPD: Unveiling the Unlocking Efficiency of On-Policy Distillation](https://arxiv.org/abs/2605.11739) | §7.1 + §6.3 | Parameter-dynamics analysis: OPD achieves "foresight" via early low-rank concentration and module allocation. Proposes plug-and-play 3× acceleration. |
-| [Hide to See: Reasoning-Prefix Masking for Visual-Anchored VLM Distillation](https://arxiv.org/abs/2605.11651) | §5.1 + §8.2 | Masks salient reasoning prefixes to force the student VLM to anchor thinking on visual evidence; self-paced masking budget + Qwen3-VL-Thinking distillation. |
-| [CREDIT: From Generic Correlation to Input-Specific Credit in OPSD](https://arxiv.org/abs/2605.11613) | §5.3.1 + §4.2 | Decomposes OPSD reward via pMI into input-specific vs. generic shortcut components; batch-contrastive baseline isolates genuine reasoning credit. |
-| [AntiSD: Anti-Self-Distillation for Reasoning RL via PMI](https://arxiv.org/abs/2605.11609) | §5.3.1 + §4.1 | Ascends (rather than descends) student-teacher divergence to boost deliberation tokens; entropy-triggered gate, 2–10× faster than GRPO on math. |
-| [ATESD: Adaptive Teacher Exposure for Self-Distillation](https://arxiv.org/abs/2605.11458) | §5.3.1 + §6.2 | Learnable Beta-policy controller adaptively reveals teacher exposure ratio; addresses teacher-side exposure mismatch in privileged OPSD (ByteDance). |
-| [The Many Faces of OPD: Pitfalls, Mechanisms, and Fixes](https://arxiv.org/abs/2605.11182) | §7.2 | Comprehensive failure analysis: distribution mismatch, biased TopK RKL gradients, PI aggregation collapse. When OPD/OPSD works vs. fails (UIUC). |
-| [Unmasking OPD: Where It Helps, Where It Hurts, and Why](https://arxiv.org/abs/2605.10889) | §7.1 + §7.2 | Training-free per-token diagnostic framework; ideal per-node gradient + gradient alignment score for teacher/context selection (Apple). |
-| [BRTS: On-Policy Distillation with Best-of-N Teacher Rollout Selection](https://arxiv.org/abs/2605.09725) | §5.1 + §6.1 | Samples a pool of teacher trajectories and selects via correctness-first, alignment-second priority; reduces supervision variance in OPD. |
-| [COPSD: Crosslingual On-Policy Self-Distillation for Multilingual Reasoning](https://arxiv.org/abs/2605.09548) | §5.3.1 + §8.2 | Transfers high-resource reasoning to 17 low-resource African languages via crosslingual privileged context; outperforms GRPO substantially. |
-| [TAD: Temporal-Aware Trajectory Self-Distillation for Diffusion LLMs](https://arxiv.org/abs/2605.09536) | §5.3.2 + §8.2 | Near/distant token partitioning for diffusion LLM self-distillation; hard CE for near tokens, soft KL for distant tokens. Accuracy-parallelism trade-off. |
-| [Rock Tokens: Cornerstones or Stumbling Blocks in OPD](https://arxiv.org/abs/2605.09253) | §7.2 | Discovers persistent high-loss "Rock Tokens" (~18% of tokens) that resist teacher correction yet provide negligible functional reasoning contribution. |
-| [CoDistill-GRPO: A Co-Distillation Recipe for Efficient GRPO](https://arxiv.org/abs/2605.08873) | §5.1 + §4.3 | Bidirectional co-distillation: small model uses on-policy KD reward from large model; large model uses small model's rollouts with importance reweighting (Google). |
-| [MPD: Reasoning Compression with Mixed-Policy Distillation](https://arxiv.org/abs/2605.08776) | §5.1 + §6.3 | Teacher rewrites student's verbose trajectories concisely; distills compressed reasoning behavior rather than raw teacher or student traces. |
-| [OPHSD: On-Policy Harness Self-Distillation for Complex Reasoning](https://arxiv.org/abs/2605.08741) | §5.3.1 + §8.2 | Harness-augmented model (draft-verify / plan-solve) as teacher; internalizes harness capabilities so they become unnecessary at inference (PKU). |
-| [ListOPD: The Extrapolation Cliff in OPD of Structured Outputs](https://arxiv.org/abs/2605.08737) | §7.2 + §8.2 | Derives closed-form clip-safety threshold λ* for reward extrapolation in structured JSON tasks; operating below λ* brings 1.7B to teacher parity (NTU). |
 
 ---
 
@@ -215,6 +196,29 @@ Training unstable or inefficient?
 ### 🚧 Not Yet in Survey — queued for the next revision
 
 > Newly confirmed OPD papers that the scout has indexed here but that **have not yet been integrated** into the survey's LaTeX body. They'll be folded into the next Survey revision (V3). PRs welcome.
+
+| Paper | Section | Key Contribution |
+|-------|---------|------------------|
+| [Beyond GRPO and OPD](https://arxiv.org/abs/2605.12483) | §4.3 | Sparse-to-dense reward: GRPO→teacher RL, then OPD bridge to student |
+| [OGLS-SD](https://arxiv.org/abs/2605.12400) | §4.2+§5.3.1 | Outcome-guided logit steering for on-policy self-distillation |
+| [dGRPO](https://arxiv.org/abs/2605.12227) | §4.3 | GRPO + OPD dense guidance for long-context reasoning |
+| [TABOM](https://arxiv.org/abs/2605.11854) | §5.3.2+§8.2 | Trajectory self-distillation for Diffusion LMs via Boltzmann modeling |
+| [EffOPD](https://arxiv.org/abs/2605.11739) | §7.1+§6.3 | Parameter-dynamics analysis: OPD "foresight" + 3× acceleration |
+| [Hide to See](https://arxiv.org/abs/2605.11651) | §5.1+§8.2 | VLM distillation with reasoning-prefix masking (Qwen3-VL) |
+| [CREDIT](https://arxiv.org/abs/2605.11613) | §4.2+§5.3.1 | Input-specific credit assignment in OPSD via pointwise MI |
+| [AntiSD](https://arxiv.org/abs/2605.11609) | §4.1+§5.3.1 | Anti-self-distillation: ascend divergence to boost deliberation |
+| [ATESD](https://arxiv.org/abs/2605.11458) | §5.3.1 | Adaptive teacher exposure via learnable Beta-policy controller |
+| [Many Faces of OPD](https://arxiv.org/abs/2605.11182) | §7.2 | Comprehensive failure analysis: dist mismatch, biased TopK KL |
+| [Unmasking OPD](https://arxiv.org/abs/2605.10889) | §7.1+§7.2 | Training-free per-token diagnostic framework (Apple) |
+| [BRTS](https://arxiv.org/abs/2605.09725) | §5.1 | Best-of-N teacher rollout selection for OPD |
+| [COPSD](https://arxiv.org/abs/2605.09548) | §5.3.1+§8.2 | Crosslingual on-policy self-distillation for 17 languages |
+| [TAD](https://arxiv.org/abs/2605.09536) | §5.3.2+§8.2 | Trajectory self-distillation for Diffusion LLM |
+| [Rock Tokens](https://arxiv.org/abs/2605.09253) | §7.2 | Persistent high-loss tokens (~18%) as structural residuals |
+| [CoDistill-GRPO](https://arxiv.org/abs/2605.08873) | §4.3 | Bidirectional co-distillation with on-policy KD reward (Google) |
+| [MPD](https://arxiv.org/abs/2605.08776) | §5.1 | Mixed-policy distillation: teacher rewrites student traces |
+| [OPHSD](https://arxiv.org/abs/2605.08741) | §5.3.1+§8.2 | On-policy harness self-distillation with inference scaffolds (PKU) |
+| [ListOPD](https://arxiv.org/abs/2605.08737) | §7.2+§8.2 | Extrapolation cliff in OPD for structured JSON outputs (NTU) |
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
