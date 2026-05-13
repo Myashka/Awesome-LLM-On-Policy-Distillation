@@ -203,22 +203,11 @@ Training unstable or inefficient?
 
 > 🎯 "I have model X — what can I distill, and from whom?" This atlas maps the OPD ecosystem's model choices across 89+ papers.
 
-### 🌡️ Model Heatmap — Who Gets Distilled?
+<p align="center">
+  <img src="assets/model-atlas-heatmap.png" alt="Model Atlas Heatmap: Student (left, blue) and Teacher (right, red) usage by family and size" width="900">
+</p>
 
-> Each cell shows how many papers use that (family × size) combination **as a student**. Hotter = more popular target for distillation.
-
-| Family | ≤0.5B | 1B–2B | 3B–4B | 7B–8B | 9B–14B | 32B+ |
-|--------|:------:|:------:|:------:|:------:|:-------:|:----:|
-| **Qwen3** | | 🔥🔥🔥 11 | 🔥🔥🔥🔥 16 | 🔥🔥🔥 12 | 1 | 1 |
-| **Qwen2.5** | 1 | 🔥🔥 5 | 3 | 🔥🔥 7 | | |
-| **Llama-3.x** | | 2 | 2 | 🔥🔥 6 | | |
-| **Gemma-2** | | 🔥🔥 6 | | | | |
-| **GPT-2** | 🔥🔥 7 | | | | | |
-| **DeepSeek** | | 🔥 4 | | 3 | | |
-| **Qwen3-VL** | | 1 | 1 | 3 | | 1 |
-| **T5/OPT/Pythia** | 3 | | | | | |
-
-> 💡 **Reading this**: Qwen3 at 3B–4B has 16 papers — meaning 16 different methods chose a ~4B Qwen3 model as the student to be distilled into.
+> 📊 **Left (blue)**: How many papers use each (family × size) as the **student**. **Right (red)**: as the **teacher**. Self-distillation (30+ papers) excluded from teacher count.
 
 ### 🎓 Student-Centric Guide — "I have this model, what are my options?"
 
@@ -264,7 +253,7 @@ Training unstable or inefficient?
 </details>
 
 <details>
-<summary><b>🟢 7B–8B Students</b> (37 papers) — Research workhorse</summary>
+<summary><b>🔵 7B–8B Students</b> (37 papers) — Research workhorse</summary>
 
 | Student | Teachers Used | Representative Methods |
 |---------|--------------|--------|
@@ -278,7 +267,7 @@ Training unstable or inefficient?
 </details>
 
 <details>
-<summary><b>🔵 32B+ Students</b> (4 papers) — Frontier self-improvement</summary>
+<summary><b>🟣 32B+ Students</b> (4 papers) — Frontier self-improvement</summary>
 
 | Student | Teachers Used | Representative Methods |
 |---------|--------------|--------|
@@ -289,31 +278,15 @@ Training unstable or inefficient?
 
 </details>
 
-### 🏫 Teacher Heatmap — Who Teaches?
-
-> Each cell shows how many papers use that (family × size) combination **as a teacher**.
-
-| Family | ≤0.5B | 1B–2B | 3B–4B | 7B–8B | 9B–14B | 32B+ |
-|--------|:------:|:------:|:------:|:------:|:-------:|:----:|
-| **Qwen3** | | 1 | 4 | 🔥🔥🔥🔥 17 | | 🔥🔥 6 |
-| **LLaMA/Llama** | | | 3 | 🔥🔥🔥 10 | 2 | 2 |
-| **GPT-2** | | 🔥🔥🔥 9 | | | | |
-| **Qwen2/2.5** | | 2 | 3 | 🔥🔥🔥 10 | 🔥🔥 6 | |
-| **Gemma-2** | | | | 4 | 🔥🔥 7 | 1 |
-| **OPT** | | | | 3 | 3 | |
-| **Qwen3-VL** | | | | | | 3 |
-| **QwQ** | | | | | | 2 |
-| **T5** | | 1 | 2 | | | |
-
 ### 💡 Key Takeaways
 
-- 👑 **Qwen3-8B is king** — most used as both teacher (17 papers) and student (12 papers)
+- 👑 **Qwen3-8B is king** — most used as both teacher (17) and student (12)
 - 💪 **Self-distillation dominates** — 30+ papers use the model as its own teacher
 - 🎯 **Student sweet spot = 1.7B–8B** — covers 80% of all papers
 - 🏭 **Teacher sweet spot = 7B–32B** — large enough to teach, small enough to run
-- 🌍 **Qwen3 hegemony** — appears in ~70% of methods as teacher and/or student
-- 🔄 **Clear cascade** — Qwen3-32B → 8B → 4B → 1.7B forms a natural distillation pipeline
-- 📚 **GPT-2 / T5 / OPT** still appear in 15+ papers as academic benchmarks
+- 🌍 **Qwen3 hegemony** — appears in ~70% of methods
+- 🔄 **Clear cascade** — 32B → 8B → 4B → 1.7B
+- 📚 **GPT-2 / T5 / OPT** persist in 15+ papers as academic benchmarks
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
