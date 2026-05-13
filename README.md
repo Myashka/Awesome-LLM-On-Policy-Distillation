@@ -183,44 +183,12 @@ Training unstable or inefficient?
 
 > How the survey grew from a focused overview to a comprehensive field guide. 🌱→🌳
 
-| | 🏷️ V1 (arXiv launch, Apr 1) | 🚀 V2 (COLM submission, May 12) |
+| | 🏷️ V1 (Apr 1) | 🚀 V2 (May 12) |
 |:--|:---:|:---:|
 | 📄 Pages | 39 | **68** |
 | 📚 Citations | 73 | **138** |
 | 🧩 Methods covered | 57 | **89** |
 | 🌳 Taxonomy depth | 2 levels | **3 levels + sub-branches** |
-
-#### 🆕 What's new in V2 (vs V1)
-
-**📐 Structure & Depth**
-- 🔀 Complete taxonomy restructure: §4–§8 rewritten from scratch with clearer axis separation
-- 🌿 §5.1 split into §5.1.1 Same-Family (7) + §5.1.2 Cross-Family (4)
-- 🌿 §5.3 expanded to 3 sub-branches: Privileged Info (13) / Self-Play (10) / External Feedback (6)
-- 🆕 §7.4 "On- vs Off-Policy: The DeepSeek-R1 Case" — dedicated analysis
-- 🆕 §8.5 "Distillation Tax" concept introduced
-- 🆕 §3.3 Practitioner Decision Tree added
-- 📈 §9 Future Directions: 5 → 11 open problems
-
-**📝 Content Additions (32 new papers)**
-- 🧪 9 papers from May 2026 (TCOD, PAINT, PRISM, CoPD, MSD, IRIS, GUI-SD, MAD-OPD, Uni-OPD)
-- 🧪 PBSD + TT-OPD (privileged-information OPD for medical agents)
-- 🧪 SimCT, ROPD, SOD, Prune-OPD, Flow-OPD, D-OPSD, LiteGUI, vOPD, UniSD...
-- 🏭 Industrial: Nemotron-Cascade 2, Qwen3 technical report, KAT-Coder-V2
-- 📖 Theory: "KD Must Account for What It Loses" + Distillation Scaling Laws
-
-**✨ Quality & Rigor**
-- 🔬 Every number cross-verified against original paper PDFs
-- 🧹 Full overclaim audit: all strong assertions hedged to academic neutral
-- 🧹 AI-taste words eliminated; prose colons/semicolons/em-dashes purged
-- 🔗 Figure 1 ↔ Table 2 ↔ Prose statistics guaranteed 3-way consistent
-- 📐 §2.1 Hinton τ→∞ derivation corrected (1/τ² factor)
-- 📐 Gemma-2 cascade description fixed (parallel, not sequential)
-
-**🎯 Usability**
-- 🗺️ Method Comparison Table (Table 2) expanded from 57 → 89 rows
-- 🏷️ Granularity column added (Token/Sequence/Sample/Step/Turn/...)
-- 🎨 Figure 1 tri-color depth coding for visual hierarchy
-- 📝 §3.2 承接表 linking taxonomy branches to reader goals
 
 ---
 
