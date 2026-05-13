@@ -194,14 +194,7 @@ Training unstable or inefficient?
 
 ### 🚧 Not Yet in Survey — queued for the next revision
 
-> Newly confirmed OPD papers that the scout has indexed here but that **have not yet been integrated** into the survey's LaTeX body. They'll be folded into the next Survey revision (V2.1+). PRs welcome.
-
-<!-- LATEST_PENDING:START -->
-
-No pending papers. All entries have been integrated into Survey V2.
-
-<!-- LATEST_PENDING:END -->
-
+> Newly confirmed OPD papers that the scout has indexed here but that **have not yet been integrated** into the survey's LaTeX body. They'll be folded into the next Survey revision (V3). PRs welcome.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
