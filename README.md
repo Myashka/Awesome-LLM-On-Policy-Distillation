@@ -26,7 +26,7 @@
   <img src="assets/opd-overview.png" alt="On-Policy Distillation: Teacher-Student Loop" width="640">
 </p>
 
-## 🤔 Why On-Policy?
+## 🤔 Why On-Policy? — The Core Problem
 
 Traditional off-policy distillation (e.g., SFT on teacher demonstrations) suffers from **exposure bias** and **train-test mismatch**: the student learns to predict the next token given perfect teacher prefixes, but during inference, it must condition on its own flawed generations. Errors compound rapidly.
 
@@ -51,6 +51,7 @@ With the rise of reasoning models (System 2 thinking) in 2024–2026, long chain
     <li><a href="#-quick-start-guide">Quick-Start Guide</a></li>
     <li><a href="#-trends--highlights-2025-2026">Trends &amp; Highlights</a></li>
     <li><a href="#-latest-additions-last--2-weeks">🆕 Latest Additions</a></li>
+    <li><a href="#-survey-version-history--v1--v2-changelog">📋 Version History (V1 → V2)</a></li>
     <li><a href="#-hall-of-fame--10-must-read-opd-papers">🏆 Hall of Fame</a></li>
     <li><a href="#%EF%B8%8F-taxonomy">Taxonomy</a></li>
     <li><a href="#4-objective-functions-and-optimization">§4 Objective Functions &amp; Optimization</a>
@@ -100,7 +101,7 @@ With the rise of reasoning models (System 2 thinking) in 2024–2026, long chain
 
 ## 🧭 Quick-Start Guide
 
-New to On-Policy Distillation? Start here.
+> 👋 New to On-Policy Distillation? Start here — we've got you covered.
 
 - **"If you only read 3 papers":** [GKD](https://arxiv.org/abs/2306.13649) (Foundation) + [MiniLLM](https://arxiv.org/abs/2306.08543) (Reverse-KL default) + [Rethinking OPD](https://arxiv.org/abs/2604.13016) (Field guide / failure modes).
 - **"If you need to reproduce fast":** Check out the code for [Uni-OPD](https://github.com/WenjinHou/Uni-OPD) or [MiniLLM](https://github.com/microsoft/LMOps/tree/main/minillm).
@@ -130,14 +131,16 @@ Training unstable or inefficient?
 └── Dynamics toolbox → TIP / SCOPE / TCOD / Uni-OPD / PACED / Lightning-OPD (§6)
 ```
 
-## 🔥 Trends & Highlights (2025-2026)
+## 🔥 Trends & Highlights (2025–2026)
 
-1. **From RKL to Adaptive**: The field initially defaulted to Reverse-KL (mode-seeking). Recent work shifted toward adaptive switching (AKL, HPD, token-level gates) to balance exploration and guidance.
-2. **The Self-Distillation Boom**: Teacher-free on-policy methods (SDPO, SDZero, SRPO) are dominating, relying on rule-based verifiers or reward models rather than white-box teacher models.
-3. **Token Importance**: Papers like TIP, SCOPE, and SelecTKD revealed that applying KD loss to 100% of tokens is inefficient. Selecting the top 20-50% high-entropy/divergence tokens achieves parity.
-4. **Agentic OPD**: Methods like TCOD and Skill-SD specifically address the massive compounding errors in multi-turn environments and long-horizon tool use.
-5. **Industrial Adoption**: The latest frontier models (DeepSeek-V4, Qwen3, Nemotron, Gemma-2, and MiMo) have fully integrated OPD into their post-training pipelines.
-6. **Diversity Collapse**: A critical finding from SCOPE shows that while OPD drastically improves Pass@1, it severely harms Pass@k due to diversity collapse, prompting new hybrid objective designs.
+> 💡 Six shifts defining the OPD landscape right now.
+
+1. 🎯 **From RKL to Adaptive**: The field initially defaulted to Reverse-KL (mode-seeking). Recent work shifted toward adaptive switching (AKL, HPD, token-level gates) to balance exploration and guidance.
+2. 💥 **The Self-Distillation Boom**: Teacher-free on-policy methods (SDPO, SDZero, SRPO) are dominating, relying on rule-based verifiers or reward models rather than white-box teacher models.
+3. ✂️ **Token Importance**: Papers like TIP, SCOPE, and SelecTKD revealed that applying KD loss to 100% of tokens is inefficient. Selecting the top 20-50% high-entropy/divergence tokens achieves parity.
+4. 🤖 **Agentic OPD**: Methods like TCOD and Skill-SD specifically address the massive compounding errors in multi-turn environments and long-horizon tool use.
+5. 🏭 **Industrial Adoption**: The latest frontier models (DeepSeek-V4, Qwen3, Nemotron, Gemma-2, and MiMo) have fully integrated OPD into their post-training pipelines.
+6. ⚠️ **Diversity Collapse**: A critical finding from SCOPE shows that while OPD drastically improves Pass@1, it severely harms Pass@k due to diversity collapse, prompting new hybrid objective designs.
 
 ### ⏳ Evolution Timeline
 
@@ -173,6 +176,57 @@ Training unstable or inefficient?
 | [KD Must Account for What It Loses](https://arxiv.org/abs/2604.25110) | §7.2 | Position paper: taxonomy of off-metric distillation losses + Distillation Loss Statement evaluation framework. |
 | [vOPD: KL for a KL — On-Policy Distillation with Control Variate Baseline](https://arxiv.org/abs/2605.07865) | §4.1 | Control variate baseline for single-sample OPD gradient; closed-form value function, +3% avg over vanilla OPD at 57.7% less compute. |
 | [UniSD: Towards a Unified Self-Distillation Framework for Large Language Models](https://arxiv.org/abs/2605.06597) | §5.3.2 + §6.1 | First unified framework for on-policy self-distillation; EMA teacher + multi-teacher agreement + contrastive learning. +5.4 over base, +2.8 over best baseline across 6 benchmarks. |
+
+---
+
+### 📋 Survey Version History — V1 → V2 Changelog
+
+> How the survey grew from a focused overview to a comprehensive field guide. 🌱→🌳
+
+| | 🏷️ V1 (arXiv launch, Apr 1) | 🏷️ V1.5 (arXiv revised, Apr 17) | 🚀 V2 (COLM submission, May 12) |
+|:--|:---:|:---:|:---:|
+| 📄 Pages | 39 | 53 | **68** |
+| 📚 Citations | 73 | 101 | **138** |
+| 🧩 Methods covered | 57 | 73 | **89** |
+| 🌳 Taxonomy depth | 2 levels | 3 levels | **3 levels + sub-branches** |
+| 📊 Tables | 2 | 3 | **3 (expanded)** |
+| 🎨 Figure 1 (Method Tree) | Flat leaves | Partial expansion | **Full structural expansion** |
+| ❌ Errors/Undefined | 0 | 0 | **0** |
+| 🔍 Fact-verified numbers | — | Partial | **38+ numbers vs original PDFs** |
+
+#### 🆕 What's new in V2 (vs V1)
+
+**📐 Structure & Depth**
+- 🔀 Complete taxonomy restructure: §4–§8 rewritten from scratch with clearer axis separation
+- 🌿 §5.1 split into §5.1.1 Same-Family (7) + §5.1.2 Cross-Family (4)
+- 🌿 §5.3 expanded to 3 sub-branches: Privileged Info (13) / Self-Play (10) / External Feedback (6)
+- 🆕 §7.4 "On- vs Off-Policy: The DeepSeek-R1 Case" — dedicated analysis
+- 🆕 §8.5 "Distillation Tax" concept introduced
+- 🆕 §3.3 Practitioner Decision Tree added
+- 📈 §9 Future Directions: 5 → 11 open problems
+
+**📝 Content Additions (32 new papers)**
+- 🧪 9 papers from May 2026 (TCOD, PAINT, PRISM, CoPD, MSD, IRIS, GUI-SD, MAD-OPD, Uni-OPD)
+- 🧪 PBSD + TT-OPD (privileged-information OPD for medical agents)
+- 🧪 SimCT, ROPD, SOD, Prune-OPD, Flow-OPD, D-OPSD, LiteGUI, vOPD, UniSD...
+- 🏭 Industrial: Nemotron-Cascade 2, Qwen3 technical report, KAT-Coder-V2
+- 📖 Theory: "KD Must Account for What It Loses" + Distillation Scaling Laws
+
+**✨ Quality & Rigor**
+- 🔬 Every number cross-verified against original paper PDFs
+- 🧹 Full overclaim audit: all strong assertions hedged to academic neutral
+- 🧹 AI-taste words eliminated; prose colons/semicolons/em-dashes purged
+- 🔗 Figure 1 ↔ Table 2 ↔ Prose statistics guaranteed 3-way consistent
+- 📐 §2.1 Hinton τ→∞ derivation corrected (1/τ² factor)
+- 📐 Gemma-2 cascade description fixed (parallel, not sequential)
+
+**🎯 Usability**
+- 🗺️ Method Comparison Table (Table 2) expanded from 57 → 89 rows
+- 🏷️ Granularity column added (Token/Sequence/Sample/Step/Turn/...)
+- 🎨 Figure 1 tri-color depth coding for visual hierarchy
+- 📝 §3.2 承接表 linking taxonomy branches to reader goals
+
+---
 
 ### 🚧 Not Yet in Survey — queued for the next revision
 
@@ -265,13 +319,13 @@ On-Policy Distillation (Survey V2 Structure)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## §4 Objective Functions and Optimization
+## ⚖️ §4 Objective Functions and Optimization
 
-> The student generates on-policy rollouts, and the objective function decides what divergence or reward is minimized / maximized on those rollouts. This part of the design space governs the bias-variance trade-off, mode-seeking vs mode-covering behavior, and whether the optimization stays within the KL-constrained RL regime.
+> 🎯 The student generates on-policy rollouts, and the objective function decides what divergence or reward is minimized / maximized on those rollouts. This part of the design space governs the bias-variance trade-off, mode-seeking vs mode-covering behavior, and whether the optimization stays within the KL-constrained RL regime.
 
-### §4.1 Fixed Divergence Objectives
+### 📌 §4.1 Fixed Divergence Objectives
 
-> Methods that fix a divergence (forward/reverse KL, JSD, skew-KL, concrete score) a priori and optimize it on student rollouts. Foundational OPD formulations plus contrastive and score-matching extensions.
+> 🔒 Methods that fix a divergence (forward/reverse KL, JSD, skew-KL, concrete score) a priori and optimize it on student rollouts. Foundational OPD formulations plus contrastive and score-matching extensions.
 
 | Paper | Date | Resources |
 |-------|:----:|:---:|
@@ -285,9 +339,9 @@ On-Policy Distillation (Survey V2 Structure)
 
 ---
 
-### §4.2 Adaptive Divergence Objectives
+### 🌀 §4.2 Adaptive Divergence Objectives
 
-> Methods that adapt the divergence or loss weighting during training based on token-level, position-level, or distributional signals (AKL, ToDi, DDT, DASD, EDGE, relaxed / stable targets).
+> 🧠 Methods that adapt the divergence or loss weighting during training based on token-level, position-level, or distributional signals.
 
 | Paper | Date | Resources |
 |-------|:----:|:---:|
@@ -304,9 +358,9 @@ On-Policy Distillation (Survey V2 Structure)
 
 ---
 
-### §4.3 RL-Augmented Objectives
+### 🎮 §4.3 RL-Augmented Objectives
 
-> Methods that combine distillation with reinforcement learning: KL-constrained RL, reward-augmented KD, DPO-based alignment, multi-teacher debate ensembles.
+> 🏆 Methods that combine distillation with reinforcement learning: KL-constrained RL, reward-augmented KD, DPO-based alignment, multi-teacher debate ensembles.
 
 | Paper | Date | Resources |
 |-------|:----:|:---:|
@@ -329,13 +383,13 @@ On-Policy Distillation (Survey V2 Structure)
 
 ---
 
-## §5 Signal Source and Teacher Architecture
+## 🌐 §5 Signal Source and Teacher Architecture
 
-> Who is the teacher, what can we observe from it, and how is the teacher signal produced? This dimension spans full white-box logit access, API-only black-box access, and the self-distillation regime where the model teaches itself via privileged information, self-play, or external feedback.
+> 👨‍🏫 Who is the teacher, what can we observe from it, and how is the teacher signal produced? This dimension spans full white-box logit access, API-only black-box access, and the self-distillation regime where the model teaches itself via privileged information, self-play, or external feedback.
 
-### §5.1 White-Box Logit Supervision
+### 🔬 §5.1 White-Box Logit Supervision
 
-> Methods that exploit full teacher logit access, including the foundational on-policy KD formulations and cross-tokenizer / dual-space alignment approaches.
+> 💡 Methods that exploit full teacher logit access, including the foundational on-policy KD formulations and cross-tokenizer / dual-space alignment approaches.
 
 | Paper | Date | Resources |
 |-------|:----:|:---:|
@@ -353,9 +407,9 @@ On-Policy Distillation (Survey V2 Structure)
 
 ---
 
-### §5.2 Black-Box and API-Constrained
+### 🕳️ §5.2 Black-Box and API-Constrained
 
-> Methods that operate without teacher logits, using verbal feedback, scores, preferences, or adversarial matching over sampled outputs (Lion, GAD, OVD, PRISM, ThinkTuning, DAIL, ORPO-Distill).
+> 📡 Methods that operate without teacher logits, using verbal feedback, scores, preferences, or adversarial matching over sampled outputs.
 
 | Paper | Date | Resources |
 |-------|:----:|:---:|
@@ -372,11 +426,11 @@ On-Policy Distillation (Survey V2 Structure)
 
 ---
 
-### §5.3 Self-Distillation
+### 🔁 §5.3 Self-Distillation
 
-> The student is also the teacher. Supervision arises not from a distinct model but from privileged context, self-play dynamics, or external correctness feedback that shapes the self-generated target distribution.
+> 🤹 The student is also the teacher. Supervision arises not from a distinct model but from privileged context, self-play dynamics, or external correctness feedback.
 
-#### §5.3.1 Privileged Information
+#### 💫 §5.3.1 Privileged Information
 
 > Self-distillation via privileged context: oracle answers (OPSD), documents (GATES), system prompts (OPCD), long contexts (OPSDL), visual masks (GUI-SD), partial solutions (PAINT), outcome-conditioned hints (TT-OPD), and reward-regularized teachers (PBSD).
 
@@ -402,7 +456,7 @@ On-Policy Distillation (Survey V2 Structure)
 
 ---
 
-#### §5.3.2 Self-Play
+#### ⚔️ §5.3.2 Self-Play
 
 > Self-distillation where the teacher signal emerges from self-play dynamics, iterative improvement, or on-policy SFT against the model's own previous generations.
 
@@ -421,7 +475,7 @@ On-Policy Distillation (Survey V2 Structure)
 
 ---
 
-#### §5.3.3 External Feedback
+#### 📣 §5.3.3 External Feedback
 
 > Self-distillation augmented by external feedback signals (verifiers, reward models, textual critiques, binary correctness) that shape the self-generated teacher distribution.
 
@@ -438,9 +492,9 @@ On-Policy Distillation (Survey V2 Structure)
 
 ---
 
-## §6 Training Dynamics and Efficiency
+## ⚙️ §6 Training Dynamics and Efficiency
 
-> Methods targeting the training process itself: token / sample reweighting, curriculum scheduling, stability fixes for length inflation, and compute-optimal OPD recipes.
+> 📦 Methods targeting the training process itself: token/sample reweighting, curriculum scheduling, stability fixes, and compute-optimal OPD recipes.
 
 | Paper | Date | Resources |
 |-------|:----:|:---:|
@@ -462,13 +516,13 @@ On-Policy Distillation (Survey V2 Structure)
 
 ---
 
-## §7 Understanding OPD
+## 🧠 §7 Understanding OPD
 
-> When and why on-policy distillation works (or fails). Three lenses: conditions for success, failure modes & diagnostics, and unifying theory. Aligned with Sections 7.1–7.3 of the survey.
+> 🔍 When and why on-policy distillation works (or fails). Three lenses: conditions for success, failure modes & diagnostics, and unifying theory.
 
-### §7.1 Success Conditions & Empirical Analyses
+### 🎯 §7.1 Success Conditions & Empirical Analyses
 
-> What practical regimes make OPD reliably beat SFT / off-policy KD? Scaling with teacher size, training signal density, data regime.
+> ✅ What practical regimes make OPD reliably beat SFT / off-policy KD?
 
 | Paper | Date | Resources |
 |-------|:----:|:---:|
@@ -476,7 +530,7 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [OPSD Compresses What RLVR Teaches: A Post-RL Compaction Stage for Reasoning Models](https://arxiv.org/abs/2605.06188) <br><sub>📐 Qwen3-8B / R1-Distill-7B / AceReason-7B → Self (OPSD as compression-not-correction in thinking-enabled reasoning)</sub> | 2026 |  |
 | 🟢 [Rethinking On-Policy Distillation of Large Language Models: Phenomenology, Mechanism, and Recipe](https://arxiv.org/abs/2604.13016) <br><sub>📐 Qwen3-1.7B → DeepSeek-R1-Distill-7B / Qwen3-4B etc.</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/thunlp/OPD) |
 
-### §7.2 Failure Modes & Diagnostics
+### ⚠️ §7.2 Failure Modes & Diagnostics
 
 > Characterizations of OPD pathologies (reasoning degradation, miscalibration, exposure-bias-in-disguise) and simple fixes.
 
@@ -487,7 +541,7 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [The Illusion of Certainty: Decoupling Capability and Calibration in On-Policy Distillation](https://arxiv.org/abs/2604.16830) <br><sub>📐 Qwen3-0.6B–32B → Self (CaOPD: miscalibration scaling law + calibration-aware OPD)</sub> | 2026 |  |
 | 🟢 [Knowledge Distillation Must Account for What It Loses](https://arxiv.org/abs/2604.25110) <br><sub>📎 Position paper: taxonomy of off-metric distillation losses (calibration, reasoning trace erosion, distributional narrowing) + Distillation Loss Statement evaluation framework</sub> | 2026 |  |
 
-### §7.3 Unified Theoretical Perspectives
+### 📐 §7.3 Unified Theoretical Perspectives
 
 > Attempts to place OPD within a coherent theoretical frame (imitation learning, RL, information geometry, statistical learning).
 
@@ -501,13 +555,13 @@ On-Policy Distillation (Survey V2 Structure)
 
 ---
 
-## §8 Applications, Systems, and Emerging Domains
+## 🚀 §8 Applications, Systems, and Emerging Domains
 
-> How on-policy distillation appears in production-scale systems, across modalities, and as an inference-time system component. Covers industrial tech reports, emerging application domains (multimodal, embodied, medical, privacy-preserving), and system-level uses such as speculative decoding.
+> 🌏 How on-policy distillation appears in production-scale systems, across modalities, and as an inference-time system component.
 
-### §8.1 Industrial Deployment
+### 🏭 §8.1 Industrial Deployment
 
-> Large-scale technical reports and production systems that use OPD as a core post-training component: DeepSeek-V4, DeepSeek-R1, Qwen3, Gemma 2, MiMo-V2, Nemotron-Cascade 2, KAT-Coder-V2, ORBIT.
+> 🏆 Large-scale technical reports and production systems that use OPD as a core post-training component.
 
 | Paper | Date | Resources |
 |-------|:----:|:---:|
@@ -524,7 +578,7 @@ On-Policy Distillation (Survey V2 Structure)
 
 ---
 
-### §8.2 Emerging Domains
+### 🌟 §8.2 Emerging Domains
 
 > Applications of OPD to non-text and specialized domains: vision-language, audio/speech, video, vision-language-action, embodied, differential privacy, continual learning, scaling laws, autonomous driving.
 
@@ -551,7 +605,7 @@ On-Policy Distillation (Survey V2 Structure)
 
 ---
 
-### §8.3 System-Level Integration
+### 🔧 §8.3 System-Level Integration
 
 > System-level optimization via OPD: speculative decoding, draft model training, full-vocabulary logit-caching systems that wrap distillation into end-to-end deployment stacks.
 
@@ -567,9 +621,9 @@ On-Policy Distillation (Survey V2 Structure)
 
 ---
 
-## §9 Open Problems
+## 🔮 §9 Open Problems
 
-> Active research questions and future directions highlighted in our survey. See §9 of the paper for detailed discussion.
+> 💡 Active research questions and future directions highlighted in our survey. See §9 of the paper for detailed discussion.
 
 | # | Problem | Key Question |
 |:-:|---------|--------------|
@@ -686,9 +740,9 @@ Several methods prove that combining dense teacher guidance with sparse outcome 
 
 ## 🤝 Contributing
 
-We welcome contributions! Please submit a **Pull Request** or **Issue** with:
+We welcome contributions! 🎉 Please submit a **Pull Request** or **Issue** with:
 
-### Adding a Paper
+### 📝 Adding a Paper
 
 Use this template in your PR:
 
@@ -701,7 +755,7 @@ Use this template in your PR:
 **Code:** [GitHub link] (if available)
 ```
 
-### Inclusion Criteria
+### ✅ Inclusion Criteria
 
 ✅ **Include if:**
 - The method has an explicit on-policy sampling component (student generates rollouts)
@@ -713,7 +767,7 @@ Use this template in your PR:
 - Pure RL without distillation signal (e.g., vanilla PPO/GRPO)
 - Non-LLM domains (vision-only, speech-only without language)
 
-### Other Contributions
+### 🌟 Other Contributions
 - 🐛 Bug fixes (broken links, wrong categories)
 - 📝 Improved descriptions
 - 📊 New benchmark results
