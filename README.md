@@ -52,6 +52,7 @@ With the rise of reasoning models (System 2 thinking) in 2024–2026, long chain
     <li><a href="#-trends--highlights-2025-2026">Trends &amp; Highlights</a></li>
     <li><a href="#-latest-additions-last--2-weeks">🆕 Latest Additions</a></li>
     <li><a href="#-survey-version-history--v1--v2-changelog">📋 Version History (V1 → V2)</a></li>
+    <li><a href="#-teacherstudent-model-atlas">🔍 Teacher–Student Model Atlas</a></li>
     <li><a href="#-hall-of-fame--10-must-read-opd-papers">🏆 Hall of Fame</a></li>
     <li><a href="#%EF%B8%8F-taxonomy">Taxonomy</a></li>
     <li><a href="#4-objective-functions-and-optimization">§4 Objective Functions &amp; Optimization</a>
@@ -195,6 +196,127 @@ Training unstable or inefficient?
 ### 🚧 Not Yet in Survey — queued for the next revision
 
 > Newly confirmed OPD papers that the scout has indexed here but that **have not yet been integrated** into the survey's LaTeX body. They'll be folded into the next Survey revision (V3). PRs welcome.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🔍 Teacher–Student Model Atlas
+
+> 🎯 Which models are being distilled, from whom, and how often? A bird's-eye view of the OPD ecosystem's model choices across 89+ papers.
+
+### 🌐 Distillation Flow (Major Connections)
+
+```mermaid
+flowchart LR
+    subgraph Teachers ["\ud83c\udfeb Teachers"]
+        Q3_8B["Qwen3-8B\n(9 papers)"]
+        Q3_32B["Qwen3-32B\n(2)"]
+        Q3_30B["Qwen3-30B-A3B\n(2)"]
+        Q25_14B["Qwen2.5-14B\n(2)"]
+        QwQ["QwQ-32B\n(1)"]
+        G2_9B["Gemma-2-9B\n(3)"]
+        GPT2XL["GPT-2 1.5B\n(5)"]
+        DSR1["DeepSeek-R1\n(2)"]
+        VL32B["Qwen3-VL-32B\n(2)"]
+    end
+
+    subgraph Students ["\ud83c\udf93 Students"]
+        Q3_4B["Qwen3-4B\n(9 papers)"]
+        Q3_17B["Qwen3-1.7B\n(8)"]
+        Q3_06B["Qwen3-0.6B\n(3)"]
+        Q25_15B["Qwen2.5-1.5B\n(4)"]
+        L31_8B["Llama-3.x-8B\n(5)"]
+        G2_2B["Gemma-2-2B\n(4)"]
+        GPT2S["GPT-2 120M\n(3)"]
+        DR15B["R1-Distill-1.5B\n(3)"]
+        VL8B["Qwen3-VL-8B\n(3)"]
+    end
+
+    subgraph Self ["\ud83d\udd01 Self-Distillation"]
+        SELF["Self / EMA\n(30+ papers)"]
+    end
+
+    Q3_8B --> Q3_4B
+    Q3_8B --> Q3_17B
+    Q3_8B --> Q3_06B
+    Q3_32B --> Q3_4B
+    Q3_30B --> Q3_4B
+    Q25_14B --> Q25_15B
+    G2_9B --> G2_2B
+    GPT2XL --> GPT2S
+    DSR1 --> DR15B
+    VL32B --> VL8B
+    Q3_4B --> SELF
+    Q3_8B -.-> SELF
+    L31_8B --> SELF
+```
+
+### 📊 Model Popularity Rankings
+
+<table>
+<tr>
+<td valign="top">
+
+**🏫 Most Popular Teachers**
+
+| # | Model | Papers | Size |
+|:-:|-------|:------:|:----:|
+| 1 | Qwen3-8B | 9 | 8B |
+| 2 | GPT-2 1.5B | 5 | 1.5B |
+| 3 | Qwen2-7B | 3 | 7B |
+| 4 | Gemma-2-9B | 3 | 9B |
+| 5 | Qwen3-32B | 2 | 32B |
+| 6 | Qwen3-VL-32B | 2 | 32B |
+| 7 | Qwen2.5-14B | 2 | 14B |
+| 8 | DeepSeek-R1-7B | 2 | 7B |
+| 9 | OPT-13B | 2 | 13B |
+| 10 | QwQ-32B | 1 | 32B |
+
+</td>
+<td valign="top">
+
+**🎓 Most Popular Students**
+
+| # | Model | Papers | Size |
+|:-:|-------|:------:|:----:|
+| 1 | Qwen3-8B | 12 | 8B |
+| 2 | Qwen3-4B | 9 | 4B |
+| 3 | Qwen3-1.7B | 8 | 1.7B |
+| 4 | Llama-3.x-8B | 5 | 8B |
+| 5 | Qwen2-1.5B | 4 | 1.5B |
+| 6 | Gemma-2-2B | 4 | 2B |
+| 7 | T5-Small | 4 | 60M |
+| 8 | R1-Distill-1.5B | 3 | 1.5B |
+| 9 | GPT-2 120M | 3 | 120M |
+| 10 | Qwen3-VL-8B | 3 | 8B |
+
+</td>
+</tr>
+</table>
+
+### 🏭 Model Family Landscape
+
+> How each model family participates in the OPD ecosystem (as teacher, student, or both).
+
+| Family | 🏫 As Teacher | 🎓 As Student | 💬 Primary Role |
+|--------|:-----------:|:-----------:|:-----------:|
+| **Qwen3** | 22 | 48 | 🎓 Dominant student family (also top teacher via 8B) |
+| **Qwen2.5** | 6 | 22 | 🎓 Legacy student, being replaced by Qwen3 |
+| **Llama-3.x** | 3 | 13 | 🎓 Second-most popular student family |
+| **GPT-2** | 8 | 8 | ⚖️ Balanced (academic benchmark standard) |
+| **Gemma-2** | 5 | 6 | ⚖️ Balanced (Google’s open models) |
+| **DeepSeek** | 5 | 7 | ⚖️ Teacher via R1, student via Distill variants |
+| **T5** | 4 | 5 | ⚖️ Early-era encoder-decoder baseline |
+| **LLaMA** | 5 | 7 | 🏫 Legacy teacher (ChatGPT-era) |
+| **OPT** | 3 | 2 | 🏫 Legacy teacher |
+
+### 💡 Key Insights
+
+- 👑 **Qwen3-8B** is the king of both roles — most used as teacher (9) AND most used as student (12)
+- 💪 **Self-distillation dominates**: 30+ papers use the model as its own teacher (EMA, privileged info, self-play)
+- 📈 **Size sweet spot**: 4B–8B models are the most active students; 8B–32B are the most active teachers
+- 🌍 **Qwen3 hegemony**: The Qwen3 family appears in 70+ of 89 methods as either teacher or student
+- 🔄 **Teacher→Student pipeline**: Qwen3-32B → Qwen3-8B → Qwen3-4B → Qwen3-1.7B forms a clear distillation cascade
+- 📚 **Legacy baselines** (GPT-2, T5, OPT) persist in 15+ papers for controlled academic comparisons
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
