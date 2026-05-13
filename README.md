@@ -189,10 +189,6 @@ Training unstable or inefficient?
 | 📚 Citations | 73 | **138** |
 | 🧩 Methods covered | 57 | **89** |
 | 🌳 Taxonomy depth | 2 levels | **3 levels + sub-branches** |
-| 📊 Tables | 2 | **3 (expanded)** |
-| 🎨 Figure 1 (Method Tree) | Flat leaves | **Full structural expansion** |
-| ❌ Errors/Undefined | 0 | **0** |
-| 🔍 Fact-verified numbers | — | **38+ numbers vs original PDFs** |
 
 #### 🆕 What's new in V2 (vs V1)
 
