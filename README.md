@@ -17,9 +17,9 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-142-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-146-blue" alt="Papers">
   <img src="https://img.shields.io/github/last-commit/nick7nlp/Awesome-LLM-On-Policy-Distillation?label=Last%20Updated&color=green" alt="Last Updated">
-  <img src="https://img.shields.io/badge/Survey-V2%20138%20cites-orange" alt="Survey V2 138 cites">
+  <img src="https://img.shields.io/badge/Survey-V3%20(COLM%202026)-orange" alt="Survey V3 (COLM 2026)">
 </p>
 
 <p align="center">
@@ -150,7 +150,7 @@ Training unstable or inefficient?
 
 ## 🔍 Teacher–Student Model Atlas
 
-> 🎯 "I have model X — what can I distill, and from whom?" This atlas maps the OPD ecosystem's model choices across 108+ papers.
+> 🎯 "I have model X — what can I distill, and from whom?" This atlas maps the OPD ecosystem's model choices across 146 papers.
 
 <p align="center">
   <img src="assets/model-atlas-heatmap.png" alt="Teacher × Student Pair Matrix: Y-axis = teacher models, X-axis = student models, grouped by family. ①-⑤ marks frequency rank." width="960">
@@ -160,11 +160,11 @@ Training unstable or inefficient?
 
 ### 💡 Key Takeaways
 
-- 👑 **Qwen3-8B is king** — most used as both teacher (17) and student (12)
-- 💪 **Self-distillation dominates** — 30+ papers use the model as its own teacher
-- 🎯 **Student sweet spot = 1.7B–8B** — covers 80% of all papers
-- 🏭 **Teacher sweet spot = 7B–32B** — large enough to teach, small enough to run
-- 🌍 **Qwen3 hegemony** — appears in ~70% of methods
+- 👑 **Qwen3-8B is king** — most used as both teacher (21 papers) and student (24 papers)
+- 💪 **Self-distillation dominates** — 37 papers use the model as its own teacher (Self / Self-PI / Self-EF)
+- 🎯 **Student sweet spot = 1.7B–8B** — Qwen3-1.7B (20), Qwen3-4B (15), Qwen3-8B (24) cover the majority
+- 🏭 **Teacher sweet spot = 8B–32B** — Qwen3-8B (21), Qwen3-32B (8), DeepSeek-R1-7B (5)
+- 🌍 **Qwen3 hegemony** — appears in ~75% of all teacher-student pairs
 - 🔄 **Clear cascade** — 32B → 8B → 4B → 1.7B
 - 📚 **GPT-2 / T5 / OPT** persist in 15+ papers as academic benchmarks
 
@@ -204,12 +204,12 @@ Training unstable or inefficient?
 
 ## 🗺️ Taxonomy
 
-> Organized to mirror the [OPD Survey V2 (138 citations)](https://arxiv.org/abs/2604.00626) section structure.
+> Organized to mirror the [OPD Survey V3 (COLM 2026)](https://arxiv.org/abs/2604.00626) section structure.
 
 ### 📜 Full Tree
 
 ```
-On-Policy Distillation (Survey V2 Structure)
+On-Policy Distillation (Survey V3 Structure)
 │
 ├── §4 Objective Functions & Optimization
 │   ├── §4.1 Fixed Divergence Objectives
@@ -233,7 +233,7 @@ On-Policy Distillation (Survey V2 Structure)
 │                 (SDPO, SD-ZERO, SRPO, RLTF, RLSD, CoPD, CREDIT, OGLS-SD, π-Play, PAINT, Semantic Soft Bootstrapping)
 │
 ├── §6 Training Efficiency & Stabilization
-│         (token / sample weighting, curriculum, stability, compute-optimal OPD)
+│         (token / sample weighting, curriculum, stability, compute-optimal OPD, EffOPD, Prune-OPD)
 │
 ├── §7 Understanding OPD
 │         (theory, success conditions, failure modes, calibration)
@@ -241,6 +241,7 @@ On-Policy Distillation (Survey V2 Structure)
 ├── §8 Applications, Systems & Emerging Domains
 │   ├── §8.1 Industrial Deployment
 │   ├── §8.2 Emerging Domains
+│   │         (vision-language, audio, video, VLA, embodied, protein, autonomous driving, SOD)
 │   └── §8.3 System-Level Integration
 │
 └── §9 Open Problems
@@ -263,7 +264,7 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes](https://arxiv.org/abs/2306.13649) <br><sub>📐 T5-Small/Base/Large → T5-XL 3B</sub> | 2023 |  |
 | 🟢 [DistiLLM: Towards Streamlined Distillation for Large Language Models](https://arxiv.org/abs/2402.03898) <br><sub>📐 GPT-2 (student) → GPT-2 XL (teacher)</sub> | 2024 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/jongwooko/distillm) |
 | 🟢 [KL for a KL: On-Policy Distillation with Control Variate Baseline](https://arxiv.org/abs/2605.07865) <br><sub>📐 Qwen3-1.7B/4B-Base → Qwen3-1.7B/4B-Inst (self-distill), OLMo-3-7B</sub> | 2026 |  |
-| 🟡 [AntiSD: Anti-Self-Distillation for Reasoning RL via PMI](https://arxiv.org/abs/2605.11609) <br><sub>📐 Reverses divergence direction to boost deliberation tokens via pMI sign flip; entropy-triggered gate; 4B–30B</sub> | 2026 |  |
+| 🟢 [AntiSD: Anti-Self-Distillation for Reasoning RL via PMI](https://arxiv.org/abs/2605.11609) <br><sub>📐 Reverses divergence direction to boost deliberation tokens via pMI sign flip; entropy-triggered gate; 4B–30B</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -300,9 +301,9 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [Reinforcement-aware Knowledge Distillation for LLM Reasoning](https://arxiv.org/abs/2602.22495) <br><sub>📐 Qwen3-0.6B–8B → Qwen3-8B / Qwen3-32B (RLAD)</sub> | 2026 |  |
 | 🟢 [Explain in Your Own Words: Improving Reasoning via Token-Selective Dual Knowledge Distillation](https://arxiv.org/abs/2603.13260) <br><sub>📐 Qwen2.5-1.5B / Gemma-2-2B / Qwen3-1.7B → Qwen2.5-14B / Gemma-2-9B / Qwen3-8B</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/kmswin1/TSD-KD) |
 | 🟢 [MAD-OPD: Breaking the Ceiling in On-Policy Distillation via Multi-Agent Debate](https://arxiv.org/abs/2605.01347) <br><sub>📐 Multiple teacher debate for confidence-weighted token supervision (OPAD)</sub> | 2026 |  |
-| 🟡 [Beyond GRPO and OPD: An Empirical Sparse-to-Dense Reward Principle](https://arxiv.org/abs/2605.12483) <br><sub>📐 Sparse RL on teacher (GRPO) → dense OPD bridge to student; Qwen3/Llama reward-density allocation rule</sub> | 2026 |  |
-| 🟡 [dGRPO: Combining On-Policy Optimization and Distillation for Long-Context Reasoning](https://arxiv.org/abs/2605.12227) <br><sub>📐 Augments GRPO with dense OPD teacher guidance for long-context; introduces LongBlocks benchmark</sub> | 2026 |  |
-| 🟡 [CoDistill-GRPO: A Co-Distillation Recipe for Efficient GRPO](https://arxiv.org/abs/2605.08873) <br><sub>📐 Bidirectional: small model uses on-policy KD reward from large; large uses small’s rollouts with importance reweighting (Google)</sub> | 2026 |  |
+| 🟢 [Beyond GRPO and OPD: An Empirical Sparse-to-Dense Reward Principle](https://arxiv.org/abs/2605.12483) <br><sub>📐 Sparse RL on teacher (GRPO) → dense OPD bridge to student; Qwen3/Llama reward-density allocation rule</sub> | 2026 |  |
+| 🟢 [dGRPO: Combining On-Policy Optimization and Distillation for Long-Context Reasoning](https://arxiv.org/abs/2605.12227) <br><sub>📐 Augments GRPO with dense OPD teacher guidance for long-context; introduces LongBlocks benchmark</sub> | 2026 |  |
+| 🟢 [CoDistill-GRPO: A Co-Distillation Recipe for Efficient GRPO](https://arxiv.org/abs/2605.08873) <br><sub>📐 Bidirectional: small model uses on-policy KD reward from large; large uses small’s rollouts with importance reweighting (Google)</sub> | 2026 |  |
 | 🟢 [AlignDistil: Token-Level Language Model Alignment as Adaptive Policy Distillation](https://arxiv.org/abs/2503.02832) <br><sub>📐 Qwen2-1.5B / Qwen2.5-1.5B-Instruct → Self (AlignDistil)</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/songmzhang/AlignDistil) |
 | 🟢 [Learning to Reason under Off-Policy Guidance](https://arxiv.org/abs/2504.14945) <br><sub>📐 Qwen2.5-Math-7B → Self; RM: off-policy DeepSeek-R1</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/ElliottYan/LUFFY) |
 | 🟢 [KETCHUP: K-Step Return Estimation for Sequential Knowledge Distillation](https://arxiv.org/abs/2504.19024) <br><sub>📐 T5-Base 250M → FLAN-T5-XL 3B</sub> | 2025 |  |
@@ -335,8 +336,8 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [TAID: Temporally Adaptive Interpolated Distillation for Efficient Knowledge Transfer in Language Models](https://arxiv.org/abs/2501.16937) <br><sub>📐 GPT-2 / Phi-3 / Llama-3 (progressive target revelation via temporal interpolation)</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/SakanaAI/TAID) |
 | 🟢 [MiniPLM: Knowledge Distillation for Pre-Training Language Models](https://arxiv.org/abs/2410.17215) <br><sub>📐 Pre-training KD via difference sampling; teacher-ref divergence selects training instances</sub> | 2024 |  |
 | 🟢 [SimCT: Recovering Lost Supervision for Cross-Tokenizer On-Policy Distillation](https://arxiv.org/abs/2605.07711) <br><sub>📐 Qwen2.5-7B-Inst / Phi-4-mini → Phi-4-mini / Gemma-2-2B-IT; multi-token continuation units for cross-tokenizer OPD</sub> | 2026 |  |
-| 🟡 [BRTS: On-Policy Distillation with Best-of-N Teacher Rollout Selection](https://arxiv.org/abs/2605.09725) <br><sub>📐 Samples teacher trajectory pool, selects via correctness-first / alignment-second priority; reduces supervision variance</sub> | 2026 |  |
-| 🟡 [MPD: Reasoning Compression with Mixed-Policy Distillation](https://arxiv.org/abs/2605.08776) <br><sub>📐 Teacher rewrites student’s verbose trajectories concisely; distills compressed reasoning behavior from larger model</sub> | 2026 |  |
+| 🟢 [BRTS: On-Policy Distillation with Best-of-N Teacher Rollout Selection](https://arxiv.org/abs/2605.09725) <br><sub>📐 Samples teacher trajectory pool, selects via correctness-first / alignment-second priority; reduces supervision variance</sub> | 2026 |  |
+| 🟢 [MPD: Reasoning Compression with Mixed-Policy Distillation](https://arxiv.org/abs/2605.08776) <br><sub>📐 Teacher rewrites student’s verbose trajectories concisely; distills compressed reasoning behavior from larger model</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -386,9 +387,9 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [Multilingual Self-Distillation for Safety Alignment](https://arxiv.org/abs/2605.02971) <br><sub>📐 MSD: English CoT as privileged context + Dual-Perspective Safety Weighting for cross-lingual safety</sub> | 2026 |  |
 | 🟢 [Preference-Based Self-Distillation: Beyond KL Matching via Reward Regularization](https://arxiv.org/abs/2605.05040) <br><sub>📐 PBSD: reward-reweighted teacher target + preference gap optimization with on-policy student sampling</sub> | 2026 |  |
 | 🟢 [VISD: Enhancing Video Reasoning via Structured Self-Distillation](https://arxiv.org/abs/2605.06094) <br><sub>📐 VISD: video-aware judge decomposes quality (correctness/grounding/consistency) as structured privileged info; direction–magnitude decoupling for stable RL+SD integration</sub> | 2026 |  |
-| 🟡 [ATESD: Adaptive Teacher Exposure for Self-Distillation](https://arxiv.org/abs/2605.11458) <br><sub>📐 Learnable Beta-policy controller for teacher exposure ratio; addresses teacher-side exposure mismatch in privileged OPSD (ByteDance)</sub> | 2026 |  |
-| 🟡 [COPSD: Crosslingual On-Policy Self-Distillation for Multilingual Reasoning](https://arxiv.org/abs/2605.09548) <br><sub>📐 English translation + reference solution as privileged context for 17 low-resource African languages; outperforms GRPO</sub> | 2026 |  |
-| 🟡 [OPHSD: On-Policy Harness Self-Distillation for Complex Reasoning](https://arxiv.org/abs/2605.08741) <br><sub>📐 Harness-augmented model (draft-verify / plan-solve) as teacher; internalizes scaffold capabilities; +10.83% over OPSD on HMMT25 (PKU)</sub> | 2026 |  |
+| 🟢 [ATESD: Adaptive Teacher Exposure for Self-Distillation](https://arxiv.org/abs/2605.11458) <br><sub>📐 Learnable Beta-policy controller for teacher exposure ratio; addresses teacher-side exposure mismatch in privileged OPSD (ByteDance)</sub> | 2026 |  |
+| 🟢 [COPSD: Crosslingual On-Policy Self-Distillation for Multilingual Reasoning](https://arxiv.org/abs/2605.09548) <br><sub>📐 English translation + reference solution as privileged context for 17 low-resource African languages; outperforms GRPO</sub> | 2026 |  |
+| 🟢 [OPHSD: On-Policy Harness Self-Distillation for Complex Reasoning](https://arxiv.org/abs/2605.08741) <br><sub>📐 Harness-augmented model (draft-verify / plan-solve) as teacher; internalizes scaffold capabilities; +10.83% over OPSD on HMMT25 (PKU)</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -408,6 +409,7 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [Reversing Teacher Signals for Reasoning Exploration with Self-Distilled RLVR](https://arxiv.org/abs/2605.10781) <br><sub>📐 RLRT: Inverted self-distillation signal; reinforces student's self-driven reasoning tokens via GRPO (Qwen3 base/instruct/thinking)</sub> | 2026 |  |
 | 🟢 [Self-Play Fine-Tuning Converts Weak Language Models to Strong Language Models](https://arxiv.org/abs/2401.01335) <br><sub>📐 Zephyr-7B (Mistral-7B) → Self</sub> | 2024 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/uclaml/SPIN) [![Model](https://img.shields.io/badge/Model-🤗-yellow)](https://huggingface.co/UCLA-AGI/zephyr-7b-sft-full-SPIN-iter3) |
 | 🟢 [UniSD: Towards a Unified Self-Distillation Framework for Large Language Models](https://arxiv.org/abs/2605.06597) <br><sub>📐 Llama-3.1/Qwen2.5/Phi-3 families → Self (EMA teacher + multi-teacher agreement + divergence clipping)</sub> | 2026 |  |
+| 🟢 [TABOM: Self-Distilled Trajectory-Aware Boltzmann Modeling for Diffusion Language Models](https://arxiv.org/abs/2605.11854) <br><sub>📐 Extends self-distillation to Diffusion LMs; Boltzmann ranking objective over inference denoising trajectories; bridges training-inference discrepancy</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -425,8 +427,8 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [Self-Distilled RLVR](https://arxiv.org/abs/2604.03128) <br><sub>📐 Qwen3-VL-4B / Qwen3-VL-8B → Self (RLSD)</sub> | 2026 |  |
 | 🟢 [Self-Distillation Zero: Self-Revision Turns Binary Rewards into Dense Supervision](https://arxiv.org/abs/2604.12002) <br><sub>📐 Qwen3-4B-Instruct / Olmo-3-7B-Instruct → Self</sub> | 2026 |  |
 | 🟢 [Semantic Soft Bootstrapping: Long Context Reasoning in LLMs without Reinforcement Learning](https://arxiv.org/abs/2512.05105) <br><sub>📐 Qwen2.5-3B-Instruct → Self (soft bootstrapping)</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/purbeshmitra/semantic-soft-bootstrapping) |
-| 🟡 [CREDIT: From Generic Correlation to Input-Specific Credit in OPSD](https://arxiv.org/abs/2605.11613) <br><sub>📐 pMI decomposition of self-distillation reward; batch-contrastive baseline isolates input-specific credit from generic shortcuts</sub> | 2026 |  |
-| 🟡 [OGLS-SD: On-Policy Self-Distillation with Outcome-Guided Logit Steering](https://arxiv.org/abs/2605.12400) <br><sub>📐 Outcome rewards contrast correct vs. failed on-policy trajectories to calibrate teacher logits in OPSD</sub> | 2026 |  |
+| 🟢 [CREDIT: From Generic Correlation to Input-Specific Credit in OPSD](https://arxiv.org/abs/2605.11613) <br><sub>📐 pMI decomposition of self-distillation reward; batch-contrastive baseline isolates input-specific credit from generic shortcuts</sub> | 2026 |  |
+| 🟢 [OGLS-SD: On-Policy Self-Distillation with Outcome-Guided Logit Steering](https://arxiv.org/abs/2605.12400) <br><sub>📐 Outcome rewards contrast correct vs. failed on-policy trajectories to calibrate teacher logits in OPSD</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -451,7 +453,9 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [AdaSwitch: Balancing Exploration and Guidance in Knowledge Distillation via Adaptive Switching](https://arxiv.org/abs/2510.07842) <br><sub>📐 Qwen2.5-0.5B / Llama-3.1-1B / Gemma-2B → Qwen2.5-3B / Llama-3.1-3B / Gemma-7B</sub> | 2025 |  |
 | 🟢 [LLM-Oriented Token-Adaptive Knowledge Distillation](https://arxiv.org/abs/2510.11615) <br><sub>📐 Qwen2-1.5B / OpenLLaMA2-3B → Qwen2-7B / OpenLLaMA2-7B</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/SassyRong/AdaKD) |
 | 🟢 [SelecTKD: Selective Token-Weighted Knowledge Distillation for LLMs](https://arxiv.org/abs/2510.24021) <br><sub>📐 Qwen2-1.5B / Gemma-2-2B / Danube2-1.8B → Qwen2-7B / Gemma-2-9B / Mistral-7B</sub> | 2025 |  |
-| 🟡 [TRACE: Distilling Where It Matters via Token-Routed Self On-Policy Alignment](https://arxiv.org/abs/2605.10194) <br><sub>📐 Token-routed self-OPD: FKL on key spans + optional RKL on error spans + GRPO elsewhere; solves all-token KL collapse in self-OPD; +2.76pp over GRPO on Qwen3-8B (NJU/Alibaba)</sub> | 2026 |  |
+| 🟢 [TRACE: Distilling Where It Matters via Token-Routed Self On-Policy Alignment](https://arxiv.org/abs/2605.10194) <br><sub>📐 Token-routed self-OPD: FKL on key spans + optional RKL on error spans + GRPO elsewhere; solves all-token KL collapse in self-OPD; +2.76pp over GRPO on Qwen3-8B (NJU/Alibaba)</sub> | 2026 |  |
+| 🟢 [EffOPD: Unveiling the Unlocking Efficiency of On-Policy Distillation](https://arxiv.org/abs/2605.11739) <br><sub>📐 Module-allocation + update-direction perspectives: OPD identifies critical reasoning modules early and concentrates updates there</sub> | 2026 |  |
+| 🟢 [Prune-OPD: Efficient and Reliable On-Policy Distillation for Long-Horizon Reasoning](https://arxiv.org/abs/2605.07804) <br><sub>📐 Top-k overlap drift detection for adaptive rollout truncation; 37–68% training time reduction across diverse teacher-student pairs</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -470,8 +474,7 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [Why Knowledge Distillation Works in Generative Models: A Minimal Working Explanation](https://arxiv.org/abs/2505.13111) <br><sub>📐 SmolLM2-135M → SmolLM2-360M (theory + empirical)</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/csm9493/kd-minimal-explanation) |
 | 🟢 [OPSD Compresses What RLVR Teaches: A Post-RL Compaction Stage for Reasoning Models](https://arxiv.org/abs/2605.06188) <br><sub>📐 Qwen3-8B / R1-Distill-7B / AceReason-7B → Self (OPSD as compression-not-correction in thinking-enabled reasoning)</sub> | 2026 |  |
 | 🟢 [Rethinking On-Policy Distillation of Large Language Models: Phenomenology, Mechanism, and Recipe](https://arxiv.org/abs/2604.13016) <br><sub>📐 Qwen3-1.7B → DeepSeek-R1-Distill-7B / Qwen3-4B etc.</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/thunlp/OPD) |
-| 🟡 [EffOPD: Unveiling the Unlocking Efficiency of On-Policy Distillation](https://arxiv.org/abs/2605.11739) <br><sub>📐 Module-allocation + update-direction perspectives: OPD identifies critical reasoning modules early and concentrates updates there</sub> | 2026 |  |
-| 🟡 [Unmasking OPD: Where It Helps, Where It Hurts, and Why](https://arxiv.org/abs/2605.10889) <br><sub>📐 Training-free per-token diagnostic; ideal per-node gradient + gradient alignment score for teacher/context selection (Apple)</sub> | 2026 |  |
+| 🟢 [Unmasking OPD: Where It Helps, Where It Hurts, and Why](https://arxiv.org/abs/2605.10889) <br><sub>📐 Training-free per-token diagnostic; ideal per-node gradient + gradient alignment score for teacher/context selection (Apple)</sub> | 2026 |  |
 
 ### ⚠️ §7.2 Failure Modes & Diagnostics
 
@@ -483,9 +486,9 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [Revisiting On-Policy Distillation: Empirical Failure Modes and Simple Fixes](https://arxiv.org/abs/2603.25562) <br><sub>📐 Qwen2.5-7B-Instruct → OpenThinker3-7B / GiGPO-Qwen2.5-7B</sub> | 2026 |  |
 | 🟢 [The Illusion of Certainty: Decoupling Capability and Calibration in On-Policy Distillation](https://arxiv.org/abs/2604.16830) <br><sub>📐 Qwen3-0.6B–32B → Self (CaOPD: miscalibration scaling law + calibration-aware OPD)</sub> | 2026 |  |
 | 🟢 [Knowledge Distillation Must Account for What It Loses](https://arxiv.org/abs/2604.25110) <br><sub>📎 Position paper: taxonomy of off-metric distillation losses (calibration, reasoning trace erosion, distributional narrowing) + Distillation Loss Statement evaluation framework</sub> | 2026 |  |
-| 🟡 [The Many Faces of OPD: Pitfalls, Mechanisms, and Fixes](https://arxiv.org/abs/2605.11182) <br><sub>📐 Distribution mismatch, biased TopK RKL gradients, PI aggregation collapse; comprehensive empirical study of when OPD/OPSD works vs. fails (UIUC)</sub> | 2026 |  |
-| 🟡 [Rock Tokens: Cornerstones or Stumbling Blocks in OPD](https://arxiv.org/abs/2605.09253) <br><sub>📐 Persistent high-loss tokens (~18%) that resist teacher correction yet provide negligible functional reasoning contribution; structural residuals</sub> | 2026 |  |
-| 🟡 [ListOPD: The Extrapolation Cliff in OPD of Structured Outputs](https://arxiv.org/abs/2605.08737) <br><sub>📐 Closed-form clip-safety threshold λ* for reward extrapolation in structured JSON; format-preserving vs. format-collapsing regimes (NTU)</sub> | 2026 |  |
+| 🟢 [The Many Faces of OPD: Pitfalls, Mechanisms, and Fixes](https://arxiv.org/abs/2605.11182) <br><sub>📐 Distribution mismatch, biased TopK RKL gradients, PI aggregation collapse; comprehensive empirical study of when OPD/OPSD works vs. fails (UIUC)</sub> | 2026 |  |
+| 🟢 [Rock Tokens: Cornerstones or Stumbling Blocks in OPD](https://arxiv.org/abs/2605.09253) <br><sub>📐 Persistent high-loss tokens (~18%) that resist teacher correction yet provide negligible functional reasoning contribution; structural residuals</sub> | 2026 |  |
+| 🟢 [ListOPD: The Extrapolation Cliff in OPD of Structured Outputs](https://arxiv.org/abs/2605.08737) <br><sub>📐 Closed-form clip-safety threshold λ* for reward extrapolation in structured JSON; format-preserving vs. format-collapsing regimes (NTU)</sub> | 2026 |  |
 
 ### 📐 §7.3 Unified Theoretical Perspectives
 
@@ -519,7 +522,7 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning](https://arxiv.org/abs/2501.12948) <br><sub>📐 Qwen2.5-1.5B–32B / Llama-3-8B–70B → DeepSeek-R1 671B · ⚠️ off-policy SFT baseline (OPD reference point, §7.4)</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/deepseek-ai/DeepSeek-R1) [![Model](https://img.shields.io/badge/Model-🤗-yellow)](https://huggingface.co/deepseek-ai/DeepSeek-R1) |
 | 🟢 [Qwen3 Technical Report](https://arxiv.org/abs/2505.09388) <br><sub>📐 Qwen3 series → Qwen3 (larger, on-policy logit KD)</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/QwenLM/Qwen3) [![Model](https://img.shields.io/badge/Model-🤗-yellow)](https://huggingface.co/collections/Qwen/qwen3-67dd247413f0e2e4f653967f) |
 | 🟢 [Gemma 2: Improving Open Language Models at a Practical Size](https://arxiv.org/abs/2408.00118) <br><sub>📐 Gemma-2-2B/9B → Gemma-2-27B (online KD in pre-training)</sub> | 2024 | [![Model](https://img.shields.io/badge/Model-🤗-yellow)](https://huggingface.co/google/gemma-2-27b) |
-| 🟡 [Safactory: A Scalable Agentic Infrastructure for Training Trustworthy Autonomous Intelligence](https://arxiv.org/abs/2605.06230) <br><sub>📐 Shanghai AI Lab; unified evolutionary pipeline: Parallel Simulation + Trustworthy Data + Autonomous Evolution (RL + OPD); first framework unifying agent safety evaluation with OPD training</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/AI45Lab/Safactory) |
+| 🟢 [Safactory: A Scalable Agentic Infrastructure for Training Trustworthy Autonomous Intelligence](https://arxiv.org/abs/2605.06230) <br><sub>📐 Shanghai AI Lab; unified evolutionary pipeline: Parallel Simulation + Trustworthy Data + Autonomous Evolution (RL + OPD); first framework unifying agent safety evaluation with OPD training</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/AI45Lab/Safactory) |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -547,8 +550,9 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [Distillation Scaling Laws](https://arxiv.org/abs/2502.08606) <br><sub>📐 143M–1.4B → 975M–12.6B (scaling law study)</sub> | 2025 |  |
 | 🟢 [Retaining by Doing: The Role of On-Policy Data in Mitigating Forgetting](https://arxiv.org/abs/2510.18874) <br><sub>📐 Llama-3.1-8B / Llama-3.2-1B → Llama-3.3-70B</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/princeton-pli/retaining-by-doing) |
 | 🟢 [VOLD: Reasoning Transfer from LLMs to Vision-Language Models via On-Policy Distillation](https://arxiv.org/abs/2510.23497) <br><sub>📐 Qwen2.5-VL-3B → Qwen3-8B (text reasoning teacher)</sub> | 2025 |  |
-| 🟡 [HyperEyes: Dual-Grained Efficiency-Aware Reinforcement Learning for Parallel Multimodal Search Agents](https://arxiv.org/abs/2605.07177) <br><sub>📐 External teacher → HyperEyes-30B (Qwen3-VL-30B); micro-level OPD provides dense token-level supervision on failed rollouts</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/DeepExperience/HyperEyes) |
-| 🟡 [ProteinOPD: Towards Effective and Efficient Preference Alignment for Protein Design](https://arxiv.org/abs/2605.10189) <br><sub>📐 Multi-teacher OPD for protein PLMs; geometric consensus of weighted preference-specific teachers; student generates protein sequences on-policy; 8× faster than RL (THU/IDEA/HKUST)</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/THU-AI4S/ProteinOPD) |
+| 🟢 [HyperEyes: Dual-Grained Efficiency-Aware Reinforcement Learning for Parallel Multimodal Search Agents](https://arxiv.org/abs/2605.07177) <br><sub>📐 External teacher → HyperEyes-30B (Qwen3-VL-30B); micro-level OPD provides dense token-level supervision on failed rollouts</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/DeepExperience/HyperEyes) |
+| 🟢 [ProteinOPD: Towards Effective and Efficient Preference Alignment for Protein Design](https://arxiv.org/abs/2605.10189) <br><sub>📐 Multi-teacher OPD for protein PLMs; geometric consensus of weighted preference-specific teachers; student generates protein sequences on-policy; 8× faster than RL (THU/IDEA/HKUST)</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/THU-AI4S/ProteinOPD) |
+| 🟢 [SOD: Step-wise On-policy Distillation for Small Language Model Agents](https://arxiv.org/abs/2605.07725) <br><sub>📐 Step-wise OPD for agentic tasks; progressive trajectory distillation for small model agents</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -560,7 +564,7 @@ On-Policy Distillation (Survey V2 Structure)
 
 | Paper | Date | Resources |
 |-------|:----:|:---:|
-| 🟡 [Test-Time Speculation](https://arxiv.org/abs/2605.09329) <br><sub>📐 Online OPD at inference-time: draft(student) generates tokens, target(teacher) provides distribution supervision, draft updates during generation; up to 72% acceptance-length gain on Qwen-3/3.5/Llama3.1 (UT Austin)</sub> | 2026 |  |
+| 🟢 [Test-Time Speculation](https://arxiv.org/abs/2605.09329) <br><sub>📐 Online OPD at inference-time: draft(student) generates tokens, target(teacher) provides distribution supervision, draft updates during generation; up to 72% acceptance-length gain on Qwen-3/3.5/Llama3.1 (UT Austin)</sub> | 2026 |  |
 | 🟢 [Speculative Knowledge Distillation: Bridging the Teacher-Student Gap Through Interleaved Sampling](https://arxiv.org/abs/2410.11325) <br><sub>📐 Gemma-2B / Qwen-0.5B → Gemma-7B / Qwen-7B</sub> | 2024 |  |
 | 🟢 [DistillSpec: Improving Speculative Decoding via Knowledge Distillation](https://arxiv.org/abs/2310.08461) <br><sub>📐 T5-Small → T5-XL (on-policy KD for speculative decoding)</sub> | 2023 |  |
 
