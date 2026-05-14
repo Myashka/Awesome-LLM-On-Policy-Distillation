@@ -160,11 +160,11 @@ Training unstable or inefficient?
 
 ### 💡 Key Takeaways
 
-- 👑 **Qwen3-8B is king** — most used as both teacher (21 papers) and student (24 papers)
-- 💪 **Self-distillation dominates** — 37 papers use the model as its own teacher (Self / Self-PI / Self-EF)
-- 🎯 **Student sweet spot = 1.7B–8B** — Qwen3-1.7B (20), Qwen3-4B (15), Qwen3-8B (24) cover the majority
-- 🏭 **Teacher sweet spot = 8B–32B** — Qwen3-8B (21), Qwen3-32B (8), DeepSeek-R1-7B (5)
-- 🌍 **Qwen3 hegemony** — appears in ~75% of all teacher-student pairs
+- 👑 **Qwen3-8B is king** — most used as both teacher (17) and student (12)
+- 💪 **Self-distillation dominates** — 30+ papers use the model as its own teacher
+- 🎯 **Student sweet spot = 1.7B–8B** — covers 80% of all papers
+- 🏭 **Teacher sweet spot = 7B–32B** — large enough to teach, small enough to run
+- 🌍 **Qwen3 hegemony** — appears in ~70% of methods
 - 🔄 **Clear cascade** — 32B → 8B → 4B → 1.7B
 - 📚 **GPT-2 / T5 / OPT** persist in 15+ papers as academic benchmarks
 
