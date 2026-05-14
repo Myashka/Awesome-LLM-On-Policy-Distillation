@@ -451,7 +451,6 @@ On-Policy Distillation (Survey V2 Structure)
 | 🟢 [AdaSwitch: Balancing Exploration and Guidance in Knowledge Distillation via Adaptive Switching](https://arxiv.org/abs/2510.07842) <br><sub>📐 Qwen2.5-0.5B / Llama-3.1-1B / Gemma-2B → Qwen2.5-3B / Llama-3.1-3B / Gemma-7B</sub> | 2025 |  |
 | 🟢 [LLM-Oriented Token-Adaptive Knowledge Distillation](https://arxiv.org/abs/2510.11615) <br><sub>📐 Qwen2-1.5B / OpenLLaMA2-3B → Qwen2-7B / OpenLLaMA2-7B</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/SassyRong/AdaKD) |
 | 🟢 [SelecTKD: Selective Token-Weighted Knowledge Distillation for LLMs](https://arxiv.org/abs/2510.24021) <br><sub>📐 Qwen2-1.5B / Gemma-2-2B / Danube2-1.8B → Qwen2-7B / Gemma-2-9B / Mistral-7B</sub> | 2025 |  |
-| 🟡 [Shadow Mask Distillation: KV Cache Compression for Memory-Efficient RL Alignment](https://arxiv.org/abs/2605.06850) <br><sub>📐 Dense-context policy → Sparse-context student; shadow mask + dual-track KL distillation ensures on-policy alignment under 50% KV compression (Yale)</sub> | 2026 |  |
 | 🟡 [TRACE: Distilling Where It Matters via Token-Routed Self On-Policy Alignment](https://arxiv.org/abs/2605.10194) <br><sub>📐 Token-routed self-OPD: FKL on key spans + optional RKL on error spans + GRPO elsewhere; solves all-token KL collapse in self-OPD; +2.76pp over GRPO on Qwen3-8B (NJU/Alibaba)</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
