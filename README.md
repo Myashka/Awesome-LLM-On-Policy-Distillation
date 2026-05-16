@@ -439,7 +439,7 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟢 [OGLS-SD: On-Policy Self-Distillation with Outcome-Guided Logit Steering for LLM Reasoning](https://arxiv.org/abs/2605.12400) <br><sub>📐 Qwen3-8B → Self; outcome rewards contrast correct vs. failed on-policy trajectories to calibrate teacher logits</sub> | 2026 |  |
 | 🟢 [RESD: Learning with Rare Success but Rich Feedback via Reflection-Enhanced Self-Distillation](https://arxiv.org/abs/2605.12741) <br><sub>📐 LLM agents → Self; retrospective reflection on failures generates corrective self-supervision + persistent playbook; outperforms GRPO 8× (Amazon/UCSD)</sub> | 2026 |  |
 | 🟢 [Self-Distilled Agentic Reinforcement Learning](https://arxiv.org/abs/2605.15155) <br><sub>📐 Qwen2.5/Qwen3 → Self; sigmoid-gated OPSD auxiliary with RL; asymmetric positive/negative teacher signal; +9.4%/+10.2%/+7.0% over GRPO on ALFWorld/WebShop/SearchQA</sub> | 2026 |  |
-| 🟡 [Learning from Language Feedback via Variational Policy Distillation](https://arxiv.org/abs/2605.15113) <br><sub>📐 LLM → Self (co-evolved); Variational EM co-optimizes teacher+student; adaptive trust-region teacher update from language feedback; outperforms RLVR+SDPO on code/science reasoning (Salesforce)</sub> | 2026 |  |
+| 🟢 [Learning from Language Feedback via Variational Policy Distillation](https://arxiv.org/abs/2605.15113) <br><sub>📐 LLM → Self (co-evolved); Variational EM co-optimizes teacher+student; adaptive trust-region teacher update from language feedback; outperforms RLVR+SDPO on code/science reasoning (Salesforce)</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
