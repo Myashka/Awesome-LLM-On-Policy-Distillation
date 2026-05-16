@@ -73,6 +73,22 @@ CANONICAL = {
     'OpenThinker3-7B':'OpenThinker 7B','T5-XL 3B':'T5-XL 3B','T5-Large 780M':'T5-Large',
     'FLAN-T5-XL 3B':'T5-XL 3B','PaLM-540B':'PaLM 540B','GPT-J 6B':'GPT-J 6B',
     'gpt-oss-120b':'gpt-oss 120B','Qwen-7B':'Qwen 7B','Llama-3.1-3B':'Llama3.1 3B',
+    # Additional mappings for new papers (5/15+)
+    'T5-Small':'T5-Small','T5-Base':'T5-Base','T5-Large':'T5-Large',
+    'Base':'T5-Base','Large':'T5-Large','Small':'T5-Small',
+    'T5-XL':'T5-XL 3B','TinyLlama-1.1B':'TinyLLaMA 1.1B',
+    'Multi-teacher debate':'Multi-T','Multi-teacher':'Multi-T',
+    'Llama-2-7B':'LLaMA 7B','Llama2-7B':'LLaMA 7B',
+    'Phi-3-mini':'Phi-4 mini','Phi-3':'Phi-4 mini',
+    'DeepSeekMath-7B':'DeepSeekMath 7B',
+    'DeepSeek-Distill-Qwen-1.5B':'R1-Distill 1.5B',
+    'Qwen3-4B-Thinking':'Qwen3 4B',
+    'Nemotron-7B':'Nemotron 7B','Nemotron-Cascade-2-30B-A3B':'Nemotron 30B',
+    'KAT-Coder-V2':'KAT-Coder V2','HY-Embodied-0.5':'HY-Embodied 0.5B',
+    'OpenVLA-OPD':'OpenVLA 7B','Qwen2.5-VL-72B':'Qwen2.5-VL 72B',
+    'Qwen2-Audio-7B':'Qwen2-Audio 7B','Step-Audio2-mini':'Step-Audio 2B',
+    'HyperEyes-30B':'HyperEyes 30B','Protein PLM':'Protein PLM',
+    'GPT-4o':'GPT-4o',
 }
 
 def canonicalize(raw):
