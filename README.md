@@ -150,7 +150,7 @@ Training unstable or inefficient?
 
 ## 🔍 Teacher–Student Model Atlas
 
-> 🎯 "I have model X — what can I distill, and from whom?" This atlas maps the OPD ecosystem's model choices across 146 papers.
+> 🎯 "I have model X — what can I distill, and from whom?" This atlas maps the OPD ecosystem's model choices across 154 papers.
 
 <p align="center">
   <img src="assets/model-atlas-heatmap.png" alt="Teacher × Student Pair Matrix: Y-axis = teacher models, X-axis = student models, grouped by family. ①-⑤ marks frequency rank." width="960">
@@ -160,11 +160,11 @@ Training unstable or inefficient?
 
 ### 💡 Key Takeaways
 
-- 👑 **Qwen3-8B is king** — most used as both teacher (15) and student (26)
-- 💪 **Self-distillation dominates** — 52 papers use the model as its own teacher
-- 🎯 **Student sweet spot = 1.7B–8B** — Qwen3-1.7B (21), Qwen3-4B (21), Qwen3-8B (26)
-- 🏭 **Teacher sweet spot = 8B–32B** — Self (52), Qwen3-8B (15), Qwen3-32B (11)
-- 🌍 **Qwen3 hegemony** — appears in ~75% of teacher-student pairs
+- 👑 **Qwen3-8B is king** — most used as both teacher (17) and student (47)
+- 💪 **Self-distillation dominates** — 57 papers use the model as its own teacher
+- 🎯 **Student sweet spot = 1.7B–8B** — Qwen3-1.7B (23), Qwen3-4B (34), Qwen3-8B (47)
+- 🏭 **Teacher sweet spot = 8B–32B** — Self (57), Qwen3-8B (17), Qwen3-32B (10)
+- 🌍 **Qwen3 hegemony** — appears in ~76% of teacher-student pairs
 - 🔄 **Clear cascade** — 235B → 32B → 8B → 4B → 1.7B → 0.6B
 - 📚 **GPT-2 / T5 / OPT / Llama** persist as academic benchmarks
 
