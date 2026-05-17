@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-157-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-154-blue" alt="Papers">
   <img src="https://img.shields.io/github/last-commit/nick7nlp/Awesome-LLM-On-Policy-Distillation?label=Last%20Updated&color=green" alt="Last Updated">
   <img src="https://img.shields.io/badge/Survey-V3%20(COLM%202026)-orange" alt="Survey V3 (COLM 2026)">
 </p>
@@ -160,13 +160,13 @@ Training unstable or inefficient?
 
 ### 💡 Key Takeaways
 
-- 👑 **Qwen3-8B is king** — most used as both teacher (17) and student (23)
-- 💪 **Self-distillation dominates** — 62 papers use the model as its own teacher
-- 🎯 **Student sweet spot = 1.7B–8B** — Qwen3-1.7B (18), Qwen3-4B (23), Qwen3-8B (23)
-- 🏭 **Teacher sweet spot = 8B–32B** — Self (52), Qwen3-8B (15), Qwen3-32B (11)
+- 👑 **Qwen3-8B is king** — most used teacher (102 pairs) and top-3 student (69 pairs)
+- 💪 **Self-distillation dominates** — 253 pairs (34%) use the model as its own teacher
+- 🎯 **Student sweet spot = 1.7B–8B** — Qwen3-4B (82), Qwen3-1.7B (73), Qwen3-8B (69)
+- 🏭 **Teacher sweet spot = 4B–32B** — Qwen3-8B (102), Qwen3-4B (61), Qwen2.5-7B (24)
 - 🌍 **Qwen3 hegemony** — appears in ~75% of teacher-student pairs
 - 🔄 **Clear cascade** — 235B → 32B → 8B → 4B → 1.7B → 0.6B
-- 📚 **GPT-2 / T5 / OPT / Llama** persist as academic benchmarks
+- 📚 **GPT-2 / T5 / Llama** persist as academic benchmarks
 
 
 

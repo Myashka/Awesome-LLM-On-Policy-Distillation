@@ -13,9 +13,9 @@ font_manager.fontManager.addfont('/usr/share/fonts/tex-gyre/texgyrepagella-bold.
 matplotlib.rcParams.update({
     'font.family': 'serif',
     'font.serif': ['TeX Gyre Pagella', 'Palatino', 'serif'],
-    'font.size': 38,
-    'figure.dpi': 150,
-    'savefig.dpi': 150,
+    'font.size': 32,
+    'figure.dpi': 100,
+    'savefig.dpi': 100,
     'axes.linewidth': 1.2,
 })
 
@@ -73,26 +73,39 @@ CANONICAL = {
     'OpenThinker3-7B':'OpenThinker 7B','T5-XL 3B':'T5-XL 3B','T5-Large 780M':'T5-Large',
     'FLAN-T5-XL 3B':'T5-XL 3B','PaLM-540B':'PaLM 540B','GPT-J 6B':'GPT-J 6B',
     'gpt-oss-120b':'gpt-oss 120B','Qwen-7B':'Qwen 7B','Llama-3.1-3B':'Llama3.1 3B',
-    # Additional mappings for new papers (5/15+)
+    'DeepSeek-R1-Distill-Qwen-7B':'R1-Distill 7B','DeepSeek-R1':'DeepSeek-R1 671B',
+    'Qwen3-30B-A3B-Instruct-2507':'Qwen3 30B','Qwen3-30B-A3B-Instruct':'Qwen3 30B',
+    'Qwen2.5-Coder-7B-Instruct':'Qwen2.5 7B','Qwen2.5-Coder-7B':'Qwen2.5 7B',
+    'T5-small':'T5-Small','T5-base':'T5-Base','T5-large':'T5-Large','T5-Small':'T5-Small','T5-Base':'T5-Base','T5-Large':'T5-Large',
+    'TinyLlama (1.1B)':'TinyLLaMA 1.1B','TinyLlama-1.1B':'TinyLLaMA 1.1B',
+    'o1-mini':'GPT-5','DeepSeek-Coder-6.7B-Instruct':'DeepSeek 6.7B',
+    'Qwen3-4B-Base':'Qwen3 4B','Qwen3-8B-Base':'Qwen3 8B','Qwen3-1.7B-Base':'Qwen3 1.7B',
+    'Qwen3-VL-2B-Instruct':'Qwen3-VL 2B','Qwen3-VL-30B-A3B-Instruct':'Qwen3-VL 32B',
+    'Qwen3-VL-32B-Instruct':'Qwen3-VL 32B','Qwen3-VL-8B-Instruct':'Qwen3-VL 8B',
+    'MiMo-V2-Flash':'MiMo-V2','Nemotron-Cascade-2-30B-A3B':'Nemotron 30B',
+    'DeepSeek-R1-Distill-Qwen-1.5B':'R1-Distill 1.5B',
+    'Qwen3-4B-Instruct-2507':'Qwen3 4B','Qwen3-8B-Instruct':'Qwen3 8B',
+    'T5-xl':'T5-XL 3B','T5-XL':'T5-XL 3B','FLAN-T5-XL':'T5-XL 3B','FLAN-T5-XL 3B':'T5-XL 3B',
+    'T5-large':'T5-Large','T5-base':'T5-Base','T5-small':'T5-Small',
     'T5-Small':'T5-Small','T5-Base':'T5-Base','T5-Large':'T5-Large',
-    'Base':'T5-Base','Large':'T5-Large','Small':'T5-Small',
-    'T5-XL':'T5-XL 3B','TinyLlama-1.1B':'TinyLLaMA 1.1B',
-    'Multi-teacher debate':'Multi-T','Multi-teacher':'Multi-T',
-    'Llama-2-7B':'LLaMA 7B','Llama2-7B':'LLaMA 7B',
-    'Phi-3-mini':'Phi-4 mini','Phi-3':'Phi-4 mini',
-    'DeepSeekMath-7B':'DeepSeekMath 7B',
-    'DeepSeek-Distill-Qwen-1.5B':'R1-Distill 1.5B',
-    'Qwen3-4B-Thinking':'Qwen3 4B',
-    'Nemotron-7B':'Nemotron 7B','Nemotron-Cascade-2-30B-A3B':'Nemotron 30B',
-    'KAT-Coder-V2':'KAT-Coder V2','HY-Embodied-0.5':'HY-Embodied 0.5B',
-    'OpenVLA-OPD':'OpenVLA 7B','Qwen2.5-VL-72B':'Qwen2.5-VL 72B',
-    'Qwen2-Audio-7B':'Qwen2-Audio 7B','Step-Audio2-mini':'Step-Audio 2B',
-    'HyperEyes-30B':'HyperEyes 30B','Protein PLM':'Protein PLM',
-    'GPT-4o':'GPT-4o',
+    'TinyLlama (1.1B)':'TinyLLaMA 1.1B','TinyLlama-1.1B':'TinyLLaMA 1.1B',
+    'KAT-Coder-V2 (unified student)':'Qwen2.5 7B',
+    'OPT-350m':'OPT 350M','Pythia-410m':'Pythia 410M','Bloomz-560m':'Bloomz 560M',
+    'Qwen2.5-14B-Instruct':'Qwen2.5 14B','Qwen2.5-32B':'Qwen2.5 32B',
+    'Qwen3-235B-A22B-Instruct-2507':'Qwen3 235B',
+    'GPT-5.2-chat-latest':'GPT-5',
+    'Gemini 3 Flash':'Gemini Flash',
+    'DeepSeek-chat-v3.1 (PI source, frozen)':'DeepSeek-V3',
+    'Qwen3-Coder-30B-A3B-Instruct':'Qwen3 30B',
+    'Qwen3-30B-A3B-Thinking-2507':'Qwen3 30B',
+    'Qwen3-4B-Non-Thinking-RL-Math':'Qwen3 4B',
+    'Qwen2.5-14B-Instruct-thinking':'Qwen2.5 14B',
+    'TinyLlama':'TinyLLaMA 1.1B',
 }
 
 def canonicalize(raw):
     raw = raw.strip()
+    if raw in CANONICAL: return CANONICAL[raw]  # Check before stripping parens
     raw = re.sub(r'\s*\([^)]*\)\s*$', '', raw)
     raw = re.sub(r'\s*[;·].*$', '', raw)
     if raw in CANONICAL: return CANONICAL[raw]
@@ -118,6 +131,26 @@ for title, url, config in paper_configs:
                 pair_count[(s_can, s_can)] += 1
             else:
                 t_can = canonicalize(t)
+                if not t_can: continue
+                pair_count[(t_can, s_can)] += 1
+
+# Also load pairs from deep-read DB (authoritative source with 555 pairs)
+import json, os
+db_path = '/apdcephfs_cq8/share_1324356/nickmysong/daily_research/on-policy-distillation-survey/notes/paper_notes.json'
+if os.path.exists(db_path):
+    db = json.load(open(db_path))
+    db_notes = db.get('notes', {})
+    for aid, note in db_notes.items():
+        for p in note.get('teacher_student_pairs', []):
+            t_name = p['teacher']['name']
+            s_name = p['student']['name']
+            is_self = p['teacher'].get('is_self') or t_name == s_name
+            s_can = canonicalize(s_name)
+            if not s_can: continue
+            if is_self:
+                pair_count[(s_can, s_can)] += 1
+            else:
+                t_can = canonicalize(t_name)
                 if not t_can: continue
                 pair_count[(t_can, s_can)] += 1
 
@@ -177,8 +210,8 @@ cmap_discrete = ListedColormap(colors_discrete)
 norm_d = BoundaryNorm(boundaries, cmap_discrete.N)
 
 # Figure
-cell_px = 1.55
-fig_size = n * cell_px + 6
+cell_px = 1.2
+fig_size = n * cell_px + 5
 fig, ax = plt.subplots(figsize=(fig_size, fig_size))
 fig.patch.set_facecolor('white')
 ax.set_facecolor('#fafafa')
@@ -186,12 +219,11 @@ ax.set_facecolor('#fafafa')
 im = ax.imshow(np.where(matrix > 0, matrix, np.nan), cmap=cmap_discrete, norm=norm_d,
                aspect='equal', interpolation='nearest')
 
-# Diagonal band
+# Diagonal band with 6-tier orange gradient
 for i in range(n):
     ax.add_patch(plt.Rectangle((i-0.5, i-0.5), 1, 1,
                  facecolor='#fff8e1', edgecolor='none', zorder=0))
     if matrix[i, i] > 0:
-        # 6-tier orange gradient based on self-distillation count
         _v = int(matrix[i, i])
         if _v <= 1: _fc = '#fff3e0'
         elif _v <= 2: _fc = '#ffcc80'
@@ -202,21 +234,21 @@ for i in range(n):
         ax.add_patch(plt.Rectangle((i-0.5, i-0.5), 1, 1,
                      facecolor=_fc, edgecolor='#e65100', linewidth=3, zorder=1))
 
-# Cell numbers — white on dark cells
+# Cell numbers — white text on dark cells for readability
 for i in range(n):
     for j in range(n):
         val = int(matrix[i, j])
         if val > 0:
             color = 'white' if val >= 5 else '#1a1a1a'
             ax.text(j, i, str(val), ha='center', va='center',
-                   fontsize=50 if val >= 5 else 44, fontweight='bold',
+                   fontsize=40 if val >= 5 else 34, fontweight='bold',
                    color=color, zorder=10)
 
 # Labels colored by family
 ax.set_xticks(range(n))
-ax.set_xticklabels(filtered, rotation=55, ha='left', fontsize=46, fontweight='bold')
+ax.set_xticklabels(filtered, rotation=55, ha='left', fontsize=36, fontweight='bold')
 ax.set_yticks(range(n))
-ax.set_yticklabels(filtered, fontsize=46, fontweight='bold')
+ax.set_yticklabels(filtered, fontsize=36, fontweight='bold')
 ax.xaxis.set_ticks_position('top')
 ax.xaxis.set_label_position('top')
 
@@ -253,7 +285,7 @@ for i in range(n):
 
 # Title
 ax.set_title("On-Policy Distillation — Teacher × Student Model Pair Heatmap\n"
-             "119 papers  ·  cell = co-occurrence count  ·  diagonal = self-distillation",
+             f"{len(paper_configs)} papers  ·  cell = co-occurrence count  ·  diagonal = self-distillation",
              fontsize=44, fontweight='bold', color='#212121', pad=30, linespacing=1.6)
 ax.set_xlabel('← Student Model', fontsize=48, fontweight='bold', color='#333', labelpad=22)
 ax.set_ylabel('Teacher Model →', fontsize=48, fontweight='bold', color='#333', labelpad=22)
@@ -288,10 +320,12 @@ fig.legend(handles=all_handles, loc='lower center',
           handletextpad=0.8)
 
 outpath = "/apdcephfs_cq8/share_1324356/nickmysong/daily_research/on-policy-distillation-survey/Awesome-LLM-On-Policy-Distillation/assets/model-atlas-heatmap.png"
-plt.savefig(outpath, dpi=150, bbox_inches='tight', facecolor='white', pad_inches=0.5)
+plt.savefig(outpath, dpi=100, bbox_inches='tight', facecolor='white', pad_inches=0.5)
 plt.savefig(outpath.replace('.png', '.pdf'), bbox_inches='tight', facecolor='white', pad_inches=0.5)
 plt.close()
 
 from PIL import Image; import os
+Image.MAX_IMAGE_PIXELS = None
 img = Image.open(outpath)
 print(f"✅ {img.size[0]}x{img.size[1]} px, {os.path.getsize(outpath)/1024:.0f} KB")
+print(f"Models in matrix: {n}, Total pairs: {sum(pair_count.values())}")

@@ -2,6 +2,19 @@
 
 All notable additions to this collection are documented here.
 
+## [2026-05-17]
+### Changed
+- Removed 3 non-OPD papers: HPD (off-policy), Distillation Traps (analysis), VPG-EA (variational inference)
+- Updated Key Takeaways with accurate pair statistics (83 models, 753 pairs)
+- Regenerated heatmap: 83 models, 753 pairs, 148 OPD papers
+- Fixed paper count badge (154)
+
+## [2026-05-16]
+### Added
+- Batch: TGPO, EGRSD, MOPD, GEAR, RWOPD, DAgger-LLM, Prefix-Teach
+- VPD, HyperEyes, Shadow Mask Distillation, UniSD, ProteinOPD, TRACE, TTS, Safactory
+- AOPD, NPD, OPSD-post-RL, VISD
+
 ## [2026-05-08 polish v2]
 ### Added
 - MiniPLM (§5.1) — Pre-training KD via difference sampling; discovered missing in V1.5 but covered in survey V2
