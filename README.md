@@ -50,7 +50,7 @@ With the rise of reasoning models (System 2 thinking) in 2024–2026, long chain
     <li><a href="#-why-on-policy">Why On-Policy?</a></li>
     <li><a href="#-quick-start-guide">Quick-Start Guide</a></li>
     <li><a href="#-trends--highlights-2025-2026">Trends &amp; Highlights</a></li>
-    <li><a href="#-survey-version-history--v1--v2-changelog">📋 Version History (V1 → V2)</a></li>
+    <li><a href="#-survey-version-history">📋 Survey Version History</a></li>
     <li><a href="#-teacherstudent-model-atlas">🔍 Teacher–Student Model Atlas</a></li>
     <li><a href="#-hall-of-fame--10-must-read-opd-papers">🏆 Hall of Fame</a></li>
     <li><a href="#%EF%B8%8F-taxonomy">Taxonomy</a></li>
@@ -135,7 +135,7 @@ Training unstable or inefficient?
 
 > 💡 Six shifts defining the OPD landscape right now.
 
-1. 🎯 **From RKL to Adaptive**: The field initially defaulted to Reverse-KL (mode-seeking). Recent work shifted toward adaptive switching (AKL, HPD, token-level gates) to balance exploration and guidance.
+1. 🎯 **From RKL to Adaptive**: The field initially defaulted to Reverse-KL (mode-seeking). Recent work shifted toward adaptive switching (AKL, token-level gates, entropy-weighted objectives) to balance exploration and guidance.
 2. 💥 **The Self-Distillation Boom**: Teacher-free on-policy methods (SDPO, SDZero, SRPO) are dominating, relying on rule-based verifiers or reward models rather than white-box teacher models.
 3. ✂️ **Token Importance**: Papers like TIP, SCOPE, and SelecTKD revealed that applying KD loss to 100% of tokens is inefficient. Selecting the top 20-50% high-entropy/divergence tokens achieves parity.
 4. 🤖 **Agentic OPD**: Methods like TCOD and Skill-SD specifically address the massive compounding errors in multi-turn environments and long-horizon tool use.
@@ -150,7 +150,7 @@ Training unstable or inefficient?
 
 ## 🔍 Teacher–Student Model Atlas
 
-> 🎯 "I have model X — what can I distill, and from whom?" This atlas maps the OPD ecosystem's model choices across 154 papers.
+> 🎯 "I have model X — what can I distill, and from whom?" This atlas maps the OPD ecosystem's model choices across 148 papers.
 
 <p align="center">
   <img src="assets/model-atlas-heatmap.png" alt="Teacher × Student Pair Matrix: Y-axis = teacher models, X-axis = student models, grouped by family. ①-⑤ marks frequency rank." width="960">
