@@ -272,7 +272,6 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟢 [DistiLLM: Towards Streamlined Distillation for Large Language Models](https://arxiv.org/abs/2402.03898) <br><sub>📐 GPT-2 (student) → GPT-2 XL (teacher)</sub> | 2024 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/jongwooko/distillm) |
 | 🟢 [KL for a KL: On-Policy Distillation with Control Variate Baseline](https://arxiv.org/abs/2605.07865) <br><sub>📐 Qwen3-1.7B/4B-Base → Qwen3-1.7B/4B-Inst (self-distill), OLMo-3-7B</sub> | 2026 |  |
 | 🟢 [Anti-Self-Distillation for Reasoning RL via Pointwise Mutual Information](https://arxiv.org/abs/2605.11609) <br><sub>📐 Qwen3-4B/8B/14B/30B → Self; reverses divergence direction to boost deliberation tokens via pMI sign flip; entropy-triggered gate</sub> | 2026 |  |
-| 🟡 [Hybrid Policy Distillation for LLMs](https://arxiv.org/abs/2604.20244) <br><sub>📐 Qwen2.5-1.5B → Qwen2.5-7B-Thinking; HPD: hybrid forward+reverse KL + off-policy prefix with approximate on-policy sampling; unified token-level reweighted LL view (ICML 2026)</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/zwhong714/Hybrid-Policy-Distillation) |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
