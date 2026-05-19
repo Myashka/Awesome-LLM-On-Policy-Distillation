@@ -17,9 +17,9 @@ All notable additions to this collection are documented here.
 
 ## [2026-05-08 polish v2]
 ### Added
-- MiniPLM (§5.1) — Pre-training KD via difference sampling; discovered missing in V1.5 but covered in survey V2
-- Visual upgrades: Mermaid evolution timeline, method distribution pie chart, taxonomy mindmap, OPD vs Off-Policy flowchart
-- Hall of Fame section: 10 must-read papers with recommended reading orders by background
+- MiniPLM (§5.1) — Pre-training KD via difference sampling
+- Visual upgrades: Mermaid evolution timeline, taxonomy mindmap
+- Hall of Fame section with recommended reading orders by background
 
 ### Changed
 - Paper count: 108 → 109 (107 arXiv + 2 tech reports)

@@ -106,24 +106,22 @@ With the rise of reasoning models (System 2 thinking) in 2024–2026, long chain
 
 | Paper | Section | Key Idea |
 |-------|:-------:|----------|
-| TGPO | §4.3 | Teacher-guided policy optimization for LLM distillation |
-| EGRSD | §6 | Efficient gradient-reweighted self-distillation |
-| MOPD | §6 | Memory-optimized on-policy distillation |
-| GEAR | §6 | Gradient-efficient adaptive rollout |
-| RWOPD | §8.2 | Real-world on-policy distillation |
-| DAgger-LLM | §8.2 | DAgger-style imitation learning for LLMs |
-| Prefix-Teach | §7.2 | Local teachability collapse in strong-to-weak OPD |
-| VPD | §5.1 | Variational policy distillation |
-| HyperEyes | §8.2 | Hyperspectral perception via OPD |
-| Shadow Mask | §5.1 | Shadow mask distillation |
-| UniSD | §5.3.2 | Unified self-distillation framework |
-| ProteinOPD | §8.2 | Protein structure via OPD |
-| TRACE | §5.3.1 | Training with harness self-distillation |
-| Safactory | §5.3.1 | Reducing safety tax via OPSD |
-| AOPD | §4.2 | Asymmetric on-policy distillation |
-| NPD | §5.3.1 | Nudging beyond comfort zone |
-| OPSD-post-RL | §7.1 | OPSD compresses what RLVR teaches |
-| VISD | §5.3.1 | Video reasoning via structured self-distillation |
+| [Teacher-Guided Policy Optimization](https://arxiv.org/abs/2605.13230) | §4.3 | Dense directional teacher guidance on student rollouts |
+| [Respecting Self-Uncertainty](https://arxiv.org/abs/2605.13255) | §6 | Entropy-guided confidence gate for efficient self-distillation |
+| [GEAR: Granularity-Adaptive Advantage Reweighting](https://arxiv.org/abs/2605.11853) | §6 | Adaptive segment-level advantage for agentic self-distillation |
+| [Reward-Weighted OPD for NL-to-SVA](https://arxiv.org/abs/2605.13501) | §8.2 | Verifier-reward-weighted FKL on student rollouts |
+| [Revisiting DAgger for LLM-Agents](https://arxiv.org/abs/2605.12913) | §8.2 | Turn-level student-teacher interpolation for SWE agents |
+| [Prefix Teach, Suffix Fade](https://arxiv.org/abs/2605.13643) | §7.2 | Local teachability collapse in strong-to-weak OPD |
+| [Multi-Rollout OPD via Peer Successes](https://arxiv.org/abs/2605.12652) | §5.1 | Peer-conditioned teacher signals from success/failure rollouts |
+| [HyperEyes](https://arxiv.org/abs/2605.07177) | §8.2 | Micro-level OPD for parallel multimodal search agents |
+| [UniSD](https://arxiv.org/abs/2605.08741) | §5.3.2 | Unified self-distillation framework |
+| [ProteinOPD](https://arxiv.org/abs/2605.10189) | §8.2 | Geometric multi-teacher OPD for protein design |
+| [TRACE: Token-Routed Self-OPD Alignment](https://arxiv.org/abs/2605.10194) | §6 | Token-routed FKL on key spans + RKL on error spans |
+| [Safactory](https://arxiv.org/abs/2605.06230) | §8.1 | Scalable agentic pipeline for trustworthy training |
+| [AOPD: Asymmetric On-Policy Distillation](https://arxiv.org/abs/2605.06387) | §4.2 | Localized divergence minimization replacing negative RL |
+| [Near-Policy Distillation](https://arxiv.org/abs/2605.05940) | §6 | Async generation + Δ-IFD filtering for 8.1× speedup |
+| [OPSD Compresses What RLVR Teaches](https://arxiv.org/abs/2605.06188) | §7.1 | OPSD as post-RL compression stage for reasoning models |
+| [VISD: Video Reasoning via Structured Self-Distillation](https://arxiv.org/abs/2605.06094) | §5.3.1 | Video-aware quality decomposition as privileged info |
 
 </details>
 
@@ -221,14 +219,13 @@ gantt
 
 ## 📋 Survey Version History
 
-> Version evolution of our [survey paper](https://arxiv.org/abs/2604.00626). Each revision significantly expands coverage and depth.
+> Version evolution of our [survey paper](https://arxiv.org/abs/2604.00626).
 
-| Version | Date | Pages | Citations | Highlights |
-|:-------:|:----:|:-----:|:---------:|------------|
-| V1 | 2026-04-01 | 39 | 73 | arXiv initial release |
-| V1.5 | 2026-04-17 | 53 | 101 | 送审版; full-text fact-check |
-| V2 | 2026-05-09 | 59 | 124 | Expanded version; 10-hour deep polish |
-| V3 (current) | COLM 2026 | — | 150 bib entries | Working version; new §3 Landscape, §7.4 Decision Framework |
+| Version | Date | Pages | Bib Entries | Key Changes |
+|:-------:|:----:|:-----:|:-----------:|-------------|
+| V1 | 2026-04-01 | 39 | 73 | Initial release on arXiv |
+| V2 | 2026-05-09 | 59 | 124 | Extended coverage across all sections; added §6 Training Efficiency, §8.2 Emerging Domains |
+| V3 (current) | 2026-05 | 62+ | 150 | New §3 Method Landscape & Selection; §7.4 On-Policy vs Off-Policy Decision Framework; COLM 2026 submission |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -298,11 +295,11 @@ gantt
 <details>
 <summary>📖 <b>Recommended Reading Order for Different Backgrounds</b></summary>
 
-- **ML Researcher (theory-first):** 3 → 1 → 2 → 4 → 10
-- **Practitioner (methods-first):** 1 → 5 → 8 → 7 → 9
-- **Newcomer:** 1 → 2 → 6 → 7 → 10
-- **Self-distillation focus:** 6 → 7 → 9 → 10
-- **Divergence / objective theory:** 3 → 2 → 4 → 9
+- **ML Researcher (theory-first):** f-Divergence KD → GKD → MiniLLM → AKL → Rethinking OPD
+- **Practitioner (methods-first):** GKD → DistiLLM → Speculative KD → OPSD → AlignDistil
+- **Newcomer:** GKD → MiniLLM → SPIN → OPSD → Rethinking OPD
+- **Self-distillation focus:** SPIN → OPSD → SDZero → AlignDistil → SCOPE
+- **Divergence / objective theory:** f-Divergence KD → MiniLLM → AKL → DistiLLM
 
 > Large-scale industrial reports that *use* OPD in production (DeepSeek-V4, Gemma-2, Qwen3, Nemotron-Cascade, MiMo-V2) are collected separately under **[§8.1 Industrial Deployment](#81-industrial-deployment)** since they are system papers rather than OPD method contributions. The off-policy baseline DeepSeek-R1 is discussed in **§7.4** as the counter-example that motivates OPD.
 
@@ -753,10 +750,10 @@ On-Policy Distillation (Survey V3 Structure)
 |--------|:----:|-------------|
 | [A Survey of On-Policy Distillation for Large Language Models](https://arxiv.org/abs/2604.00626) | 2026 | Our survey — the companion paper to this awesome list (V3, COLM 2026) |
 | [A Survey on Knowledge Distillation of Large Language Models](https://arxiv.org/abs/2402.13116) | 2024 | Comprehensive KD survey covering off-policy, on-policy, and task-specific distillation for LLMs |
-| [Knowledge Distillation: A Survey](https://arxiv.org/abs/2006.05525) | 2021 | Classic KD survey by Gou et al.; covers response-based, feature-based, and relation-based methods |
+| [Knowledge Distillation: A Survey](https://arxiv.org/abs/2006.05525) | 2020 | Classic KD survey by Gou et al.; covers response-based, feature-based, and relation-based methods |
 | [A Survey of Reasoning with Foundation Models](https://arxiv.org/abs/2312.11562) | 2024 | Broad reasoning survey; contextualizes why OPD is critical for chain-of-thought distillation |
 | [RLHF Workflow: From Reward Modeling to Online RLHF](https://arxiv.org/abs/2405.07863) | 2024 | Practical RLHF/alignment pipeline survey; OPD is a key component of the post-training loop |
-| [Self-Play Fine-Tuning and Self-Improvement Survey](https://arxiv.org/abs/2408.02547) | 2024 | Surveys self-play and self-improvement methods; significant overlap with self-distillation (§5.3) |
+| [A Survey on Self-Evolution of Large Language Models](https://arxiv.org/abs/2404.14387) | 2024 | Surveys self-evolution and self-improvement methods for LLMs; significant overlap with self-distillation (§5.3) |
 
 ### 📝 Blog Posts & External Essays
 

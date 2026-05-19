@@ -1,131 +1,87 @@
 # 📊 Benchmarks & Performance
 
-## Commonly Used Benchmarks
+## Commonly Used Benchmarks in OPD Papers
 
 ### Mathematical Reasoning
-| Benchmark | Description | Typical OPD Gain |
-|-----------|-------------|-----------------|
-| MATH-500 | Competition-level math | +3-8% over SFT |
-| AIME 2024/2025 | AMC/AIME problems | +5-15% over SFT |
-| GSM8K | Grade school math | +2-5% over SFT |
-| HMMT 2025 | Harvard-MIT Math Tournament | Emerging benchmark for frontier reasoning |
+| Benchmark | Description | Common in |
+|-----------|-------------|-----------|
+| MATH-500 | Competition-level math (500 problems from MATH) | OPSD, SCOPE, TIP, AKL, G-OPD, RLKD |
+| AIME 2024/2025 | AMC/AIME competition problems | SCOPE, Lightning OPD, RLKD, TRACE |
+| GSM8K | Grade school math (8.5K problems) | GKD, MiniLLM, DistiLLM, AKL |
+| HMMT 2025 | Harvard-MIT Math Tournament | TRACE |
 
 ### Code Generation
-| Benchmark | Description | Typical OPD Gain |
-|-----------|-------------|-----------------|
-| LiveCodeBench v6 | Real-time coding | +4-10% over SFT |
-| HumanEval+ | Function generation | +3-7% over SFT |
+| Benchmark | Description | Common in |
+|-----------|-------------|-----------|
+| LiveCodeBench v6 | Real-time competitive coding | SSD, RLKD, KDRL |
+| HumanEval+ | Function-level code generation | Reasoning compression methods |
 
 ### General Reasoning
-| Benchmark | Description | Typical OPD Gain |
-|-----------|-------------|-----------------|
-| MMLU / MMLU-Pro | Broad knowledge | +1-4% over SFT |
-| GPQA | Graduate-level reasoning | +3-8% over SFT |
+| Benchmark | Description | Common in |
+|-----------|-------------|-----------|
+| MMLU / MMLU-Pro | Broad multitask knowledge | DistiLLM, GKD, PromptKD |
+| GPQA | Graduate-level science QA | G-OPD, SCOPE, OPSD |
 
 ---
 
-## MATH-500 Results
+## Key Findings by Method
 
-> Key methods compared on MATH-500 (Qwen family students).
+> These are qualitative findings reported in the papers. Refer to original papers for exact numbers.
 
-| Method | Paper | Student | MATH-500 | Notes |
-|--------|-------|---------|:--------:|-------|
-| SFT (off-policy) | baseline | Qwen3-4B | 72.4 | Static teacher demonstrations |
-| GKD (RKL) | [Agarwal+ 2023](https://arxiv.org/abs/2306.13649) | Qwen3-4B | 76.1 | Canonical on-policy KD |
-| MiniLLM (RKL) | [Gu+ 2023](https://arxiv.org/abs/2306.08543) | Qwen3-4B | 75.8 | Reverse-KL mode-seeking |
-| OPSD | [Zhao+ 2026](https://arxiv.org/abs/2601.18734) | Qwen3-4B | 78.3 | Privileged oracle answer |
-| AKL | [Wen+ 2024](https://arxiv.org/abs/2404.02657) | Qwen3-4B | 77.5 | Adaptive F-KL/R-KL mixing |
-| TIP (20% tokens) | [2604.14084](https://arxiv.org/abs/2604.14084) | Qwen3-4B | 79.1 | Top entropy token selection |
-| SCOPE | [2604.10688](https://arxiv.org/abs/2604.10688) | Qwen3-4B | 80.2 | Dual-path adaptive + diversity |
-| TRACE (harness) | [2605.08741](https://arxiv.org/abs/2605.08741) | Qwen3-8B | 82.6 | +10.83% over OPSD on HMMT |
+### Token Selection (TIP, SCOPE, SelecTKD)
+- Applying KD loss to only **top 20-50% high-entropy tokens** achieves parity with full-token supervision
+- TIP reports **47% memory reduction** with comparable accuracy
+- SCOPE shows that standard OPD **degrades Pass@k** significantly (diversity collapse), while dual-path design preserves diversity
 
-*Data extracted from SCOPE, TIP, and TRACE paper tables.*
+### Self-Distillation (OPSD, SPIN, SDZero)
+- OPSD: Oracle answer as privileged context yields +5-8% on MATH-500 over SFT baseline (Qwen3-4B/8B)
+- SPIN: Self-play iterations converge after 3-4 rounds on most benchmarks
+- SDZero: Self-revision with binary reward signal matches teacher-dependent methods on math tasks
 
----
+### Adaptive Divergence (AKL, ToDi, EDGE)
+- AKL: Adaptive mixing of F-KL and R-KL outperforms either fixed divergence alone
+- ToDi: Fine-grained per-token divergence control improves over uniform KL
 
-## AIME 2024 Results
+### RL-Augmented (G-OPD, AlignDistil, RLKD)
+- G-OPD: Reward extrapolation enables student to exceed teacher on in-distribution tasks
+- RLKD: Combining RL with distillation outperforms either alone, especially on hard problems
 
-| Method | Paper | Student | AIME'24 (Pass@1) | Notes |
-|--------|-------|---------|:----------------:|-------|
-| SFT (off-policy) | baseline | Qwen3-4B | 33.3 | — |
-| GKD (RKL) | [Agarwal+ 2023](https://arxiv.org/abs/2306.13649) | Qwen3-4B | 40.0 | — |
-| OPSD | [Zhao+ 2026](https://arxiv.org/abs/2601.18734) | Qwen3-4B | 43.3 | — |
-| SCOPE | [2604.10688](https://arxiv.org/abs/2604.10688) | Qwen3-4B | 46.7 | — |
-| Lightning OPD | [2604.13010](https://arxiv.org/abs/2604.13010) | Qwen3-8B | 69.9 | In ~30 GPU hours |
+### Compute Efficiency
+- **Lightning OPD**: Achieves 4× speedup over standard OPD via teacher consistency + offline distillation
+- **TIP**: ~50% compute savings from token selection with minimal accuracy loss
+- **Standard OPD vs SFT**: Typical overhead is 3-5× due to on-policy rollout generation
 
 ---
 
-## AIME 2025 Results
+## Calibration (CaOPD, 2604.16830)
 
-| Method | Paper | Student | AIME'25 (Pass@1) | Notes |
-|--------|-------|---------|:----------------:|-------|
-| OPSD | [Zhao+ 2026](https://arxiv.org/abs/2601.18734) | Qwen3-8B | ~38 | Estimated from paper |
-| SCOPE | [2604.10688](https://arxiv.org/abs/2604.10688) | R1-Distill-1.5B | Avg@32 best | Pass@k significantly better |
-
-*Limited data available; AIME 2025 is a newer benchmark.*
+Key finding: Standard OPD produces **severely overconfident** models.
+- Models trained with vanilla OPD show ~48% overconfidence gap (accuracy 49% but confidence 97%)
+- CaOPD reduces ECE by ~45% through calibration-aware training
 
 ---
 
-## LiveCodeBench Results
+## Success Conditions (Rethinking OPD, 2604.13016)
 
-| Method | Paper | Student | LiveCodeBench v6 | Notes |
-|--------|-------|---------|:----------------:|-------|
-| SFT baseline | — | Qwen3-8B | ~32 | Off-policy |
-| SSD (self-distill) | [Apple 2604.01193](https://arxiv.org/abs/2604.01193) | Qwen3-8B | ~38 | Embarrassingly simple |
-| RLKD | [2505.16142](https://arxiv.org/abs/2505.16142) | Qwen2.5-Math-7B | ~35 | RL + distillation |
+Two **necessary conditions** for OPD to succeed:
+1. Top-k overlap between student and teacher distributions must increase during training
+2. Student must concentrate probability mass on the overlapping tokens
 
----
-
-## Diversity (Pass@k) Analysis
-
-> SCOPE (2604.10688) revealed the critical diversity collapse problem.
-
-| Method | Pass@1 | Pass@8 | Pass@64 | Notes |
-|--------|:------:|:------:|:-------:|-------|
-| Vanilla OPD | **High** | Low | Very Low | Severe diversity collapse |
-| SCOPE (dual-path) | Competitive | **High** | **High** | Alleviates collapse |
-| GRPO (RL only) | Moderate | Moderate | Moderate | No collapse but lower peak |
+When either condition fails → OPD degrades or stagnates.
 
 ---
 
-## Compute Cost Comparison
+## Diversity Collapse (SCOPE, 2604.10688)
 
-| Method | Paper | GPU Hours (8B student) | Hardware | Relative to SFT | Notes |
-|--------|-------|:----------------------:|:--------:|:----------------:|-------|
-| Off-policy SFT | — | ~4h | 8×H100 | 1× | Static data |
-| Standard OPD (GKD) | Agarwal+ 2023 | ~16h | 8×H100 | 4× | Full rollout every step |
-| Lightning OPD | 2604.13010 | ~4h | 8×H100 | 1× | Teacher consistency + offline |
-| TIP (20% tokens) | 2604.14084 | ~8h | 8×H100 | 2× | 47% memory savings |
-| DistiLLM (skew-KL) | Jongwoo+ 2024 | ~12h | 8×H100 | 3× | Careful mixing schedule |
-| OPSD (self-distill) | Zhao+ 2026 | ~10h | 8×A100 | 2.5× | No external teacher |
-| CaOPD | 2604.16830 | ~12h | 8×H100 | 3× | + calibration overhead |
+Critical finding:
+- Standard OPD dramatically improves **Pass@1** but severely harms **Pass@k** (k > 1)
+- The student distribution collapses to a narrow mode around the teacher's preferred outputs
+- SCOPE's dual-path design alleviates this by maintaining exploration
 
 ---
 
-## Calibration Results (CaOPD)
+## Notes
 
-> From "The Illusion of Certainty" (2604.16830):
-
-| Model | Accuracy | Confidence | Overconfidence Gap | ECE |
-|-------|:--------:|:----------:|:-----------------:|:---:|
-| Qwen3-8B (SDFT, before) | 49.1% | 97.2% | +48.1% | 0.486 |
-| Qwen3-8B (CaOPD, after) | 50.0% | ~70% | ~20% | 0.266 |
-
-**Key insight:** Standard OPD produces overconfident models. CaOPD reduces ECE by 45%.
-
----
-
-## Success/Failure Diagnostics (Rethinking OPD)
-
-> From "Rethinking On-Policy Distillation" (2604.13016):
-
-| Metric | Successful OPD | Failed OPD |
-|--------|:--------------:|:----------:|
-| Top-k overlap (start) | 72% | 72% |
-| Top-k overlap (end) | 91% | Stagnant |
-| Probability mass on overlap | 97-99% | < 80% |
-| Entropy mismatch | Low | High |
-
-**Two necessary conditions for OPD success:**
-1. Top-k overlap between student and teacher must increase during training
-2. Student must concentrate probability mass on overlap tokens
+- Most OPD papers evaluate on **Qwen2.5/Qwen3** family (1.5B-8B student, 7B-32B teacher) as of 2025-2026
+- Exact numbers vary significantly by model family, dataset split, and training compute — always refer to original papers
+- "Typical OPD Gain" ranges are approximate synthesis across multiple papers; not from any single controlled study
