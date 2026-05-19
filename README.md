@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-158-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-152-blue" alt="Papers">
   <img src="https://img.shields.io/github/last-commit/nick7nlp/Awesome-LLM-On-Policy-Distillation?label=Last%20Updated&color=green" alt="Last Updated">
   <img src="https://img.shields.io/badge/Survey-V3-orange" alt="Survey V3">
 </p>
@@ -410,15 +410,12 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟢 [Beyond GRPO and On-Policy Distillation: An Empirical Sparse-to-Dense Reward Principle for Language-Model Post-Training](https://arxiv.org/abs/2605.12483) <br><sub>📐 Sparse RL on teacher (GRPO) → dense OPD bridge to student; Qwen3/Llama reward-density allocation rule</sub> | 2026 |  |
 | 🟢 [Combining On-Policy Optimization and Distillation for Long-Context Reasoning in Large Language Models](https://arxiv.org/abs/2605.12227) <br><sub>📐 Qwen3-4B → Qwen3-8B; augments GRPO with dense OPD teacher guidance for long-context; introduces LongBlocks benchmark</sub> | 2026 |  |
 | 🟢 [CoDistill-GRPO: A Co-Distillation Recipe for Efficient Group Relative Policy Optimization](https://arxiv.org/abs/2605.08873) <br><sub>📐 Qwen2.5-Math-1.5B / Qwen2.5-Math-7B → Qwen2.5-Math-7B / Qwen2.5-Math-1.5B; bidirectional co-distillation (Google)</sub> | 2026 |  |
-| 🟡 [Reinforcement Learning-based Knowledge Distillation with LLM-as-a-Judge](https://arxiv.org/abs/2604.02621) <br><sub>📐 GPT-2 125M/350M / Llama-3-6.7B → Judge LLM (GPT-4); student on-policy reasoning trajectories + single-token judge reward; label-free KD via RL; 5–10pt math reasoning gain</sub> | 2026 |  |
 | 🟢 [AlignDistil: Token-Level Language Model Alignment as Adaptive Policy Distillation](https://arxiv.org/abs/2503.02832) <br><sub>📐 Qwen2-1.5B / Qwen2.5-1.5B-Instruct → Self (AlignDistil)</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/songmzhang/AlignDistil) |
 | 🟢 [Learning to Reason under Off-Policy Guidance](https://arxiv.org/abs/2504.14945) <br><sub>📐 Qwen2.5-Math-7B → Self; RM: off-policy DeepSeek-R1</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/ElliottYan/LUFFY) |
 | 🟢 [KETCHUP: K-Step Return Estimation for Sequential Knowledge Distillation](https://arxiv.org/abs/2504.19024) <br><sub>📐 T5-Base 250M → FLAN-T5-XL 3B</sub> | 2025 |  |
 | 🟢 [RLKD: Distilling LLMs' Reasoning via Reinforcement Learning](https://arxiv.org/abs/2505.16142) <br><sub>📐 Qwen2.5-Math-7B / R1-Distill-Qwen-7B → DeepSeek-R1 traces (RLKD)</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/xsc1234/RLKD) |
 | 🟢 [KDRL: Post-Training Reasoning LLMs via Unified Knowledge Distillation and Reinforcement Learning](https://arxiv.org/abs/2506.02208) <br><sub>📐 R1-Distill-Qwen-1.5B → Skywork-OR1-Math-7B (KDRL)</sub> | 2025 |  |
 | 🟢 [From Correction to Mastery: Reinforced Distillation of Large Language Model Agents](https://arxiv.org/abs/2509.14257) <br><sub>📐 Qwen2.5-7B / Qwen3-8B → Self (SCoRe, agent)</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/modelscope/easydistill) |
-| 🟡 [Online Knowledge Distillation with Reward Guidance](https://arxiv.org/abs/2505.18952) <br><sub>📐 GPT-2 125M/350M/6.7B → Teacher; reward-guided imitation learning: online min-max game between student policy and reward model; iterative preference data from student rollouts; Q-value white-box extension</sub> | 2025 |  |
-| 🟡 [More Than One Teacher: Adaptive Multi-Guidance Policy Optimization for Diverse Exploration](https://arxiv.org/abs/2510.02227) <br><sub>📐 Qwen2.5-7B-Instruct → Multi-teacher (peer-sized); AMPO: on-demand teacher guidance replaces student failures + comprehension-based selection; +4.3% math / +12.2% OOD over GRPO</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/SII-Enigma/AMPO) |
 | 🟢 [Rethinking Large Language Model Distillation: A Constrained Markov Decision Process Perspective](https://arxiv.org/abs/2509.22921) <br><sub>📐 Qwen2.5-1.5B-Math / Llama-3.2-3B → Qwen2.5-7B-Math / Llama-3.2-11B</sub> | 2025 |  |
 | 🟢 [SuperCorrect: Advancing Small LLM Reasoning with Thought Template Distillation and Self-Correction](https://arxiv.org/abs/2410.09008) <br><sub>📐 Llama-3-8B / Qwen-7B / DeepSeekMath-7B → larger teacher LLMs (thought template + DPO)</sub> | 2024 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/YangLing0818/SuperCorrect-llm) [![Model](https://img.shields.io/badge/Model-🤗-yellow)](https://huggingface.co/BitStarWalkin/SuperCorrect-7B) |
 
@@ -500,7 +497,6 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟢 [Crosslingual On-Policy Self-Distillation for Multilingual Reasoning](https://arxiv.org/abs/2605.09548) <br><sub>📐 Qwen3-8B → Self; English translation + reference solution as privileged context for 17 low-resource languages</sub> | 2026 |  |
 | 🟢 [Training with Harnesses: On-Policy Harness Self-Distillation for Complex Reasoning](https://arxiv.org/abs/2605.08741) <br><sub>📐 Qwen3-8B → Self; harness-augmented model (draft-verify / plan-solve) as teacher; +10.83% over OPSD on HMMT25 (PKU)</sub> | 2026 |  |
 | 🟡 [Reducing the Safety Tax in LLM Safety Alignment with On-Policy Self-Distillation](https://arxiv.org/abs/2605.15239) <br><sub>📐 R1-Distill-1.5B / Qwen3-0.6B–8B → Self (OPSA); frozen teacher = same model + safety privileged context; per-token KL on student rollouts; teacher flip rate for context search</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/FYYFU/OPSA) |
-| 🟡 [Nudging Beyond the Comfort Zone: Efficient Strategy-Guided Exploration for RLVR](https://arxiv.org/abs/2605.15726) <br><sub>📐 Qwen3-4B/8B → Self; NudgeRL: strategy-conditioned rollouts + distillation objective to transfer context-forced behaviors to base policy; outperforms 8× GRPO (KAIST)</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/tally0818/NudgeRL) |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -520,6 +516,7 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟢 [Rebellious Student: Reversing Teacher Signals for Reasoning Exploration with Self-Distilled RLVR](https://arxiv.org/abs/2605.10781) <br><sub>📐 Qwen3-8B → Self; RLRT: inverted self-distillation signal; reinforces student's reasoning tokens via GRPO</sub> | 2026 |  |
 | 🟢 [UniSD: Towards a Unified Self-Distillation Framework for Large Language Models](https://arxiv.org/abs/2605.06597) <br><sub>📐 Llama-3.1/Qwen2.5/Phi-3 families → Self (EMA teacher + multi-teacher agreement + divergence clipping)</sub> | 2026 |  |
 | 🟢 [Self-Distilled Trajectory-Aware Boltzmann Modeling: Bridging the Training-Inference Discrepancy in Diffusion Language Models](https://arxiv.org/abs/2605.11854) <br><sub>📐 DiffusionLM → Self; Boltzmann ranking objective over inference denoising trajectories</sub> | 2026 |  |
+| 🟡 [Efficient LLM Reasoning via Variational Posterior Guidance with Efficiency Awareness](https://arxiv.org/abs/2605.11019) <br><sub>📐 DeepSeek-R1-Distill-Qwen-1.5B/7B / DeepSeek-R1-Distill-Llama-8B → Self (dual-stream); VPG-EA: posterior (answer-conditioned) and prior streams share params; advantage-gated forward KL distillation; cross-view validation filters pseudo-efficient paths</sub> | 2026 |  |
 | 🟢 [Self-Play Fine-Tuning Converts Weak Language Models to Strong Language Models](https://arxiv.org/abs/2401.01335) <br><sub>📐 Zephyr-7B (Mistral-7B) → Self</sub> | 2024 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/uclaml/SPIN) [![Model](https://img.shields.io/badge/Model-🤗-yellow)](https://huggingface.co/UCLA-AGI/zephyr-7b-sft-full-SPIN-iter3) |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -608,7 +605,6 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟢 [Cornerstones or Stumbling Blocks? Deciphering the Rock Tokens in On-Policy Distillation](https://arxiv.org/abs/2605.09253) <br><sub>📐 Qwen3-8B → Self; persistent high-loss tokens (~18%) that resist teacher correction; structural residuals</sub> | 2026 |  |
 | 🟢 [The Extrapolation Cliff in On-Policy Distillation of Near-Deterministic Structured Outputs](https://arxiv.org/abs/2605.08737) <br><sub>📐 Qwen3-1.7B/8B → Qwen3-8B; closed-form clip-safety threshold for reward extrapolation in structured JSON (NTU)</sub> | 2026 |  |
 | 🟢 [Prefix Teach, Suffix Fade: Local Teachability Collapse in Strong-to-Weak On-Policy Distillation](https://arxiv.org/abs/2605.13643) <br><sub>📐 Qwen3-1.7B/4B/8B → Qwen3-14B; BIC change-point release rule; dense OPD supervision degrades in suffix when teacher margin vanishes</sub> | 2026 |  |
-| 🟡 [On Teacher Hacking in Language Model Distillation](https://arxiv.org/abs/2502.02671) <br><sub>📐 Controlled oracle→teacher→student setup; identifies teacher hacking (Goodhart's law for KD); online generation mitigates it; data diversity is key; polynomial convergence law detects onset (DeepMind, ICML 2026)</sub> | 2026 |  |
 
 ### 📐 §7.3 Unified Theoretical Perspectives
 
@@ -616,7 +612,6 @@ On-Policy Distillation (Survey V3 Structure)
 
 | Paper | Date | Resources |
 |-------|:----:|:---:|
-| 🟡 [$f$-Trajectory Balance: A Loss Family for Tuning GFlowNets, Generative Models, and LLMs with Off- and On-Policy Data](https://arxiv.org/abs/2605.15417) <br><sub>📐 Theoretical + LLM experiments; extends trajectory balance to all f-divergences: on-policy gradients = f-divergence, same global minimizer off-policy; mode-covering/seeking control (ICML 2026)</sub> | 2026 |  |
 | 🟢 [A Note on Hybrid Online Reinforcement and Imitation Learning for LLMs: Formulations and Algorithms](https://arxiv.org/abs/2512.23097) <br><sub>📐 Theoretical (no specific models)</sub> | 2025 |  |
 | 🟢 [f-Divergence Minimization for Sequence-Level Knowledge Distillation](https://arxiv.org/abs/2307.15190) <br><sub>📐 OPT-1.3B → OPT-6.7B / OPT-13B; unifying f-divergence framework: subsumes KL, RKL, JSD, α-divergence</sub> | 2023 |  |
 
@@ -667,7 +662,6 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟢 [SOD: Step-wise On-policy Distillation for Small Language Model Agents](https://arxiv.org/abs/2605.07725) <br><sub>📐 Qwen3-0.6B/1.7B → Qwen3-4B; step-wise OPD for agentic tasks; progressive trajectory distillation</sub> | 2026 |  |
 | 🟢 [Reward-Weighted On-Policy Distillation with an Open Property-Equivalence Verifier for NL-to-SVA Generation](https://arxiv.org/abs/2605.13501) <br><sub>📐 Qwen2.5-Coder-7B → CodeV-SVA-14B; verifier-reward-weighted FKL on student rollouts; new SOTA on NL2SVA</sub> | 2026 |  |
 | 🟢 [Revisiting DAgger in the Era of LLM-Agents](https://arxiv.org/abs/2605.12913) <br><sub>📐 Qwen3-4B/8B → GPT-4o (DAgger); turn-level student-teacher interpolation for SWE agents; +3.9pp on SWE-bench Verified</sub> | 2026 |  |
-| 🟡 [Few-Step Diffusion Language Models via Trajectory Self-Distillation](https://arxiv.org/abs/2602.12262) <br><sub>📐 SDAR / LLaDA (Diffusion LMs) → Self; trajectory-level self-distillation + DDO (reverse KL) for few-step decoding; reduces factorization error in masked diffusion LMs</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/Tyrion58/T3D) |
 | 🟢 [Retaining by Doing: The Role of On-Policy Data in Mitigating Forgetting](https://arxiv.org/abs/2510.18874) <br><sub>📐 Llama-3.1-8B / Llama-3.2-1B → Llama-3.3-70B</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/princeton-pli/retaining-by-doing) |
 | 🟢 [VOLD: Reasoning Transfer from LLMs to Vision-Language Models via On-Policy Distillation](https://arxiv.org/abs/2510.23497) <br><sub>📐 Qwen2.5-VL-3B → Qwen3-8B (text reasoning teacher)</sub> | 2025 |  |
 
@@ -719,15 +713,9 @@ On-Policy Distillation (Survey V3 Structure)
 
 | Paper | Section | Why Pending |
 |-------|:-------:|-------------|
-| [Online Knowledge Distillation with Reward Guidance](https://arxiv.org/abs/2505.18952) | §4.3 | Reward-guided imitation learning; novel min-max game formulation |
-| [RL-based KD with LLM-as-a-Judge](https://arxiv.org/abs/2604.02621) | §4.3 | Label-free KD via RL with judge reward; unique single-token signal |
-| [AMPO: Adaptive Multi-Guidance Policy Optimization](https://arxiv.org/abs/2510.02227) | §4.3 | Multi-teacher on-demand guidance; strong OOD generalization |
-| [OPSA: Reducing the Safety Tax](https://arxiv.org/abs/2605.15239) | §5.3.1 | Safety-focused OPSD variant; teacher flip rate metric |
-| [NudgeRL: Strategy-Guided Exploration](https://arxiv.org/abs/2605.15726) | §5.3.1 | Strategy-conditioned rollouts; outperforms 8× GRPO |
-| [DeltaPrompts: Zero-Delta Trap](https://arxiv.org/abs/2605.15532) | §6 | Prompt synthesis for OPD; addresses low-divergence stagnation |
-| [On Teacher Hacking in KD](https://arxiv.org/abs/2502.02671) | §7.2 | Identifies Goodhart's law analogue in KD (DeepMind, ICML 2026) |
-| [f-Trajectory Balance](https://arxiv.org/abs/2605.15417) | §7.3 | Unifies GFlowNets + f-divergence for on/off-policy LLMs (ICML 2026) |
-| [T3D: Few-Step Diffusion LMs](https://arxiv.org/abs/2602.12262) | §8.2 | Trajectory self-distillation for diffusion language models |
+| [VPG-EA: Variational Posterior Guidance for Efficient Reasoning](https://arxiv.org/abs/2605.11019) | §5.3.2 | Dual-stream self-distillation (posterior/prior streams) with advantage-gated forward KL |
+| [OPSA: Reducing the Safety Tax](https://arxiv.org/abs/2605.15239) | §8.1 | Safety alignment application of on-policy self-distillation; teacher flip rate metric |
+| [DeltaPrompts: Zero-Delta Trap](https://arxiv.org/abs/2605.15532) | §6.2 | Prompt synthesis for OPD; answer-divergence-guided curriculum (NVIDIA, NeurIPS 2025) |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
