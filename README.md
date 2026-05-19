@@ -19,7 +19,7 @@
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
   <img src="https://img.shields.io/badge/Papers-158-blue" alt="Papers">
   <img src="https://img.shields.io/github/last-commit/nick7nlp/Awesome-LLM-On-Policy-Distillation?label=Last%20Updated&color=green" alt="Last Updated">
-  <img src="https://img.shields.io/badge/Survey-V3%20(COLM%202026)-orange" alt="Survey V3 (COLM 2026)">
+  <img src="https://img.shields.io/badge/Survey-V3-orange" alt="Survey V3">
 </p>
 
 <p align="center">
@@ -225,7 +225,7 @@ gantt
 |:-------:|:----:|:-----:|:-----------:|-------------|
 | V1 | 2026-04-01 | 39 | 73 | Initial release on arXiv |
 | V2 | 2026-05-09 | 59 | 124 | Extended coverage across all sections; added §6 Training Efficiency, §8.2 Emerging Domains |
-| V3 (current) | 2026-05 | 62+ | 150 | New §3 Method Landscape & Selection; §7.4 On-Policy vs Off-Policy Decision Framework; COLM 2026 submission |
+| V3 (current) | 2026-05 | 62+ | 150 | New §3 Method Landscape & Selection; §7.4 On-Policy vs Off-Policy Decision Framework |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -309,7 +309,7 @@ gantt
 
 ## 🗺️ Taxonomy
 
-> Organized to mirror the [OPD Survey V3 (COLM 2026)](https://arxiv.org/abs/2604.00626) section structure.
+> Organized to mirror the [OPD Survey V3](https://arxiv.org/abs/2604.00626) section structure.
 
 ### 📜 Full Tree
 
@@ -748,7 +748,7 @@ On-Policy Distillation (Survey V3 Structure)
 
 | Survey | Year | Description |
 |--------|:----:|-------------|
-| [A Survey of On-Policy Distillation for Large Language Models](https://arxiv.org/abs/2604.00626) | 2026 | Our survey — the companion paper to this awesome list (V3, COLM 2026) |
+| [A Survey of On-Policy Distillation for Large Language Models](https://arxiv.org/abs/2604.00626) | 2026 | Our survey — the companion paper to this awesome list (V3) |
 | [A Survey on Knowledge Distillation of Large Language Models](https://arxiv.org/abs/2402.13116) | 2024 | Comprehensive KD survey covering off-policy, on-policy, and task-specific distillation for LLMs |
 | [Knowledge Distillation: A Survey](https://arxiv.org/abs/2006.05525) | 2020 | Classic KD survey by Gou et al.; covers response-based, feature-based, and relation-based methods |
 | [A Survey of Reasoning with Foundation Models](https://arxiv.org/abs/2312.11562) | 2024 | Broad reasoning survey; contextualizes why OPD is critical for chain-of-thought distillation |
