@@ -824,6 +824,8 @@ Use this template in your PR:
 - 📊 New benchmark results
 - 🛠️ New code implementations
 
+> 💡 **Tip:** Use the ["Add Paper" issue template](https://github.com/nick7nlp/Awesome-LLM-On-Policy-Distillation/issues/new?template=add-paper.yml) for the easiest contribution path.
+
 ---
 
 ## 📄 Citation

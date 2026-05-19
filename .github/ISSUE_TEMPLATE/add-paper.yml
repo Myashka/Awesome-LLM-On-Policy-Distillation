@@ -1,0 +1,96 @@
+name: "📝 Add Paper"
+description: "Suggest a new paper for the Awesome LLM On-Policy Distillation list"
+title: "[Paper] "
+labels: ["paper-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a paper! Please fill in the details below.
+        Make sure the paper meets our [inclusion criteria](../../README.md#-inclusion-criteria).
+
+  - type: input
+    id: title
+    attributes:
+      label: Paper Title
+      description: "Full title of the paper"
+      placeholder: "e.g., Self-Distilled Reasoner: On-Policy Self-Distillation for Large Language Models"
+    validations:
+      required: true
+
+  - type: input
+    id: arxiv_id
+    attributes:
+      label: arXiv ID
+      description: "arXiv identifier (e.g., 2601.18734)"
+      placeholder: "2601.18734"
+    validations:
+      required: true
+
+  - type: input
+    id: date
+    attributes:
+      label: Publication Date
+      description: "Year or YYYY-MM-DD"
+      placeholder: "2026"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: "Which section does this paper best fit in?"
+      options:
+        - "§4.1 Fixed Divergence Objectives"
+        - "§4.2 Adaptive Divergence Objectives"
+        - "§4.3 RL-Augmented Objectives"
+        - "§5.1 White-Box Logit Supervision"
+        - "§5.2 Black-Box & API-Constrained"
+        - "§5.3.1 Privileged Information"
+        - "§5.3.2 Pure Self-Distillation"
+        - "§5.3.3 External Feedback"
+        - "§6 Training Efficiency & Stabilization"
+        - "§7.1 Success Conditions"
+        - "§7.2 Failure Modes & Diagnostics"
+        - "§7.3 Unified Theory"
+        - "§8.1 Industrial Deployment"
+        - "§8.2 Emerging Domains"
+        - "§8.3 System-Level Integration"
+    validations:
+      required: true
+
+  - type: textarea
+    id: contribution
+    attributes:
+      label: Key Contribution
+      description: "One-line description of the paper's main contribution to OPD"
+      placeholder: "Proposes adaptive KL divergence that switches between forward and reverse KL based on token entropy"
+    validations:
+      required: true
+
+  - type: input
+    id: models
+    attributes:
+      label: "Teacher → Student"
+      description: "Model pair used in experiments"
+      placeholder: "e.g., Qwen3-32B → Qwen3-4B"
+    validations:
+      required: true
+
+  - type: input
+    id: code_link
+    attributes:
+      label: Code Link (optional)
+      description: "GitHub repository URL if available"
+      placeholder: "https://github.com/..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: "Any other relevant information (benchmarks, key results, etc.)"
+    validations:
+      required: false
