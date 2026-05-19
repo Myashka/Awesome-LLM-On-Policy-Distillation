@@ -53,7 +53,7 @@ With the rise of reasoning models (System 2 thinking) in 2024–2026, long chain
     <li><a href="#-trends--highlights-2025-2026">Trends &amp; Highlights</a></li>
     <li><a href="#-survey-version-history">📋 Survey Version History</a></li>
     <li><a href="#-teacherstudent-model-atlas">🔍 Teacher–Student Model Atlas</a></li>
-    <li><a href="#-hall-of-fame--10-must-read-opd-papers">🏆 Hall of Fame</a></li>
+    <li><a href="#-hall-of-fame--must-read-opd-papers-by-era">🏆 Hall of Fame</a></li>
     <li><a href="#%EF%B8%8F-taxonomy">Taxonomy</a></li>
     <li><a href="#4-objective-functions-and-optimization">§4 Objective Functions &amp; Optimization</a>
       <ul>
@@ -178,6 +178,45 @@ Training unstable or inefficient?
   <img src="assets/evolution-timeline.png" alt="Evolution Timeline of On-Policy Distillation (2015 - 2026)" width="900">
 </p>
 
+<details>
+<summary>📊 <b>Interactive Mermaid Timeline (click to expand)</b></summary>
+
+```mermaid
+gantt
+    title On-Policy Distillation: Key Milestones (2015–2026)
+    dateFormat  YYYY-MM
+    axisFormat  %Y
+
+    section Foundations
+    Hinton KD (off-policy baseline)        :done, 2015-03, 2015-06
+    Seq-KD (Kim & Rush)                    :done, 2016-06, 2016-09
+
+    section On-Policy Genesis
+    GKD (Agarwal et al.)                   :done, 2023-06, 2023-09
+    MiniLLM (Gu et al.)                    :done, 2023-06, 2023-09
+    f-Divergence KD                        :done, 2023-07, 2023-10
+    Lion (adversarial OPD)                 :done, 2023-05, 2023-08
+
+    section Adaptive Era
+    SPIN (self-play)                       :done, 2024-01, 2024-04
+    DistiLLM (skew-KL)                     :done, 2024-02, 2024-05
+    AKL (adaptive divergence)              :done, 2024-04, 2024-07
+    Speculative KD                         :done, 2024-10, 2025-01
+
+    section Self-Distillation Boom
+    OPSD (privileged info)                 :done, 2026-01, 2026-04
+    AlignDistil (RLHF bridge)              :done, 2025-03, 2025-06
+    SCOPE (diversity collapse fix)         :active, 2026-04, 2026-07
+    SDZero (binary→dense)                  :active, 2026-04, 2026-07
+    Rethinking OPD (field guide)           :active, 2026-04, 2026-07
+
+    section Industrial Adoption
+    DeepSeek-V4 (multi-domain OPD)         :active, 2026-05, 2026-08
+    Qwen3 / Gemma-2 / MiMo                :active, 2026-01, 2026-06
+```
+
+</details>
+
 ---
 
 ## 📋 Survey Version History
@@ -224,22 +263,37 @@ Training unstable or inefficient?
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🏆 Hall of Fame — 10 Must-Read OPD Papers
+## 🏆 Hall of Fame — Must-Read OPD Papers by Era
 
-> Start here if you're new to the field. These 10 papers focus on **OPD methodological contributions** with the highest conceptual influence: foundational formulations, representative method families, and the most cited OPD-specific theory/critique works. Industrial deployment reports (DeepSeek-V4, Gemma-2, Qwen3, etc.) and the off-policy baseline (DeepSeek-R1) are covered in their own sections.
+> Start here if you're new to the field. Organized by era to show how OPD evolved. These papers focus on **OPD methodological contributions** with the highest conceptual influence. Industrial deployment reports (DeepSeek-V4, Gemma-2, Qwen3, etc.) are in [§8.1](#81-industrial-deployment).
 
-| # | Paper | Why Read It |
-|:-:|-------|-------------|
-| 1 | [**On-Policy Distillation of Language Models** (2023, method: **GKD**)](https://arxiv.org/abs/2306.13649) | The canonical on-policy KD formulation for LLMs. DAgger analogy, unified loss over F-KL / R-KL / JSD. The starting point of modern OPD. |
-| 2 | [**MiniLLM** (2023)](https://arxiv.org/abs/2306.08543) | Shows Reverse-KL beats Forward-KL for mode-seeking small students. The paper that made RKL the default OPD objective. |
-| 3 | [**f-Divergence KD** (2023)](https://arxiv.org/abs/2307.15190) | The unifying f-divergence framework for sequence-level KD. Subsumes KL, RKL, JSD, $\alpha$-divergence under one lens. Essential theory. |
-| 4 | [**Rethinking KL for LLM KD** (2024, method: **AKL**)](https://arxiv.org/abs/2404.02657) | First principled *adaptive* divergence for LLM distillation: shows F-KL and R-KL focus on head and tail regions of the output distribution, and proposes AKL to mix them adaptively. Opens the adaptive-divergence line (§4.2). |
-| 5 | [**DistiLLM** (2024)](https://arxiv.org/abs/2402.03898) | Skew-KL + on-policy rollout scheduling. Shows that careful mixing of student and teacher trajectories is critical; a template for production OPD pipelines. |
-| 6 | [**SPIN** (2024)](https://arxiv.org/abs/2401.01335) | Self-play as OPD without an external teacher. Current model vs. previous iteration; foundation of the self-distillation (§5.3) branch. |
-| 7 | [**Self-Distilled Reasoner** (2026, method: **OPSD**)](https://arxiv.org/abs/2601.18734) | Canonical privileged-information method. Oracle answer as privileged context, KL to unprivileged student. Defines the §5.3.1 paradigm. |
-| 8 | [**Speculative KD** (2024)](https://arxiv.org/abs/2410.11325) | Interleaved teacher-student sampling bridges the exposure-bias gap elegantly. Influential design pattern for on-policy trajectory construction. |
-| 9 | [**AlignDistil** (2025)](https://arxiv.org/abs/2503.02832) | Reframes token-level alignment as adaptive OPD: reward signals become divergence weights. Key bridge between RLHF-style objectives and distillation. |
-| 10 | [**Rethinking On-Policy Distillation** (2026)](https://arxiv.org/abs/2604.13016) | Two necessary conditions for OPD to succeed plus a taxonomy of failure modes. Reads as a field guide for "what can go wrong and why." |
+### 🏛️ Foundations (2023)
+
+| Paper | Why Read It |
+|-------|-------------|
+| [**GKD: On-Policy Distillation of Language Models**](https://arxiv.org/abs/2306.13649) | The canonical on-policy KD formulation. DAgger analogy, unified loss over F-KL / R-KL / JSD. The starting point of modern OPD. |
+| [**MiniLLM**](https://arxiv.org/abs/2306.08543) | Shows Reverse-KL beats Forward-KL for mode-seeking small students. Made RKL the default OPD objective. |
+| [**f-Divergence KD**](https://arxiv.org/abs/2307.15190) | Unifying f-divergence framework for sequence-level KD. Subsumes KL, RKL, JSD, α-divergence. Essential theory. |
+| [**Lion**](https://arxiv.org/abs/2305.12870) | Adversarial distillation from proprietary LLMs. Pioneered black-box OPD with iterative refinement. |
+
+### 🔬 Evolution (2024)
+
+| Paper | Why Read It |
+|-------|-------------|
+| [**AKL: Rethinking KL for LLM KD**](https://arxiv.org/abs/2404.02657) | First principled *adaptive* divergence: F-KL and R-KL focus on head/tail respectively; AKL mixes them. Opens the adaptive line (§4.2). |
+| [**DistiLLM**](https://arxiv.org/abs/2402.03898) | Skew-KL + on-policy scheduling. Template for production OPD pipelines. |
+| [**SPIN**](https://arxiv.org/abs/2401.01335) | Self-play as OPD without external teacher. Foundation of the self-distillation (§5.3) branch. |
+| [**Speculative KD**](https://arxiv.org/abs/2410.11325) | Interleaved teacher-student sampling bridges exposure-bias elegantly. Influential trajectory construction pattern. |
+
+### 🚀 Frontier (2025–2026)
+
+| Paper | Why Read It |
+|-------|-------------|
+| [**OPSD: Self-Distilled Reasoner**](https://arxiv.org/abs/2601.18734) | Canonical privileged-information method. Oracle answer as privileged context. Defines the §5.3.1 paradigm. |
+| [**AlignDistil**](https://arxiv.org/abs/2503.02832) | Reframes token-level alignment as adaptive OPD: reward signals → divergence weights. Bridge between RLHF and distillation. |
+| [**Rethinking OPD**](https://arxiv.org/abs/2604.13016) | Two necessary conditions for OPD success + taxonomy of failure modes. Field guide for "what can go wrong." |
+| [**SCOPE**](https://arxiv.org/abs/2604.10688) | Dual-path adaptive weighting; reveals diversity collapse in OPD. Fixes Pass@k degradation. |
+| [**SDZero**](https://arxiv.org/abs/2604.12002) | Self-revision turns binary rewards into dense supervision. Teacher-free self-distillation frontier. |
 
 <details>
 <summary>📖 <b>Recommended Reading Order for Different Backgrounds</b></summary>
