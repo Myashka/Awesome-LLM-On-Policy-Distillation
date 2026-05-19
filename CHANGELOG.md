@@ -40,8 +40,8 @@ All notable additions to this collection are documented here.
 ## [2026-05-07]
 ### Added
 - DeepSeek-V4 Technical Report (§7.1) — Multi-domain OPD consolidation via reverse-KL
-- CaOPD (§6) — Discovers miscalibration scaling law in OPD
-- OPSDL (§5.1) — Short-context as privileged teacher for long-context
+- CaOPD (§7.2) — Discovers miscalibration scaling law in OPD
+- OPSDL (§5.3.1) — Short-context as privileged teacher for long-context
 
 ## [2026-05-06]
 ### Added  

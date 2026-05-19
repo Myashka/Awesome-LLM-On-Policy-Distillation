@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-160-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-158-blue" alt="Papers">
   <img src="https://img.shields.io/github/last-commit/nick7nlp/Awesome-LLM-On-Policy-Distillation?label=Last%20Updated&color=green" alt="Last Updated">
   <img src="https://img.shields.io/badge/Survey-V3%20(COLM%202026)-orange" alt="Survey V3 (COLM 2026)">
 </p>
@@ -147,6 +147,23 @@ Training unstable or inefficient?
 <p align="center">
   <img src="assets/evolution-timeline.png" alt="Evolution Timeline of On-Policy Distillation (2015 - 2026)" width="900">
 </p>
+
+---
+
+## 📋 Survey Version History
+
+> Version evolution of our [survey paper](https://arxiv.org/abs/2604.00626). Each revision significantly expands coverage and depth.
+
+| Version | Date | Pages | Citations | Highlights |
+|:-------:|:----:|:-----:|:---------:|------------|
+| V1 | 2026-04-01 | 39 | 73 | arXiv initial release |
+| V1.5 | 2026-04-17 | 53 | 101 | 送审版; full-text fact-check |
+| V2 | 2026-05-09 | 59 | 124 | Expanded version; 10-hour deep polish |
+| V3 (current) | COLM 2026 | — | 150 bib entries | Working version; new §3 Landscape, §7.4 Decision Framework |
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
 
 ## 🔍 Teacher–Student Model Atlas
 
