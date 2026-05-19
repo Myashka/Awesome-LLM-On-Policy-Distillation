@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-160-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-158-blue" alt="Papers">
   <img src="https://img.shields.io/github/last-commit/nick7nlp/Awesome-LLM-On-Policy-Distillation?label=Last%20Updated&color=green" alt="Last Updated">
   <img src="https://img.shields.io/badge/Survey-V3%20(COLM%202026)-orange" alt="Survey V3 (COLM 2026)">
 </p>
@@ -114,7 +114,7 @@ With the rise of reasoning models (System 2 thinking) in 2024–2026, long chain
 | [Prefix Teach, Suffix Fade](https://arxiv.org/abs/2605.13643) | §7.2 | Local teachability collapse in strong-to-weak OPD |
 | [Multi-Rollout OPD via Peer Successes](https://arxiv.org/abs/2605.12652) | §5.1 | Peer-conditioned teacher signals from success/failure rollouts |
 | [HyperEyes](https://arxiv.org/abs/2605.07177) | §8.2 | Micro-level OPD for parallel multimodal search agents |
-| [UniSD](https://arxiv.org/abs/2605.08741) | §5.3.2 | Unified self-distillation framework |
+| [Training with Harnesses](https://arxiv.org/abs/2605.08741) | §5.3.2 | Harness-augmented model as teacher for complex reasoning |
 | [ProteinOPD](https://arxiv.org/abs/2605.10189) | §8.2 | Geometric multi-teacher OPD for protein design |
 | [TRACE: Token-Routed Self-OPD Alignment](https://arxiv.org/abs/2605.10194) | §6 | Token-routed FKL on key spans + RKL on error spans |
 | [Safactory](https://arxiv.org/abs/2605.06230) | §8.1 | Scalable agentic pipeline for trustworthy training |
