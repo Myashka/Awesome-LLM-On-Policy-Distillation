@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-154-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-160-blue" alt="Papers">
   <img src="https://img.shields.io/github/last-commit/nick7nlp/Awesome-LLM-On-Policy-Distillation?label=Last%20Updated&color=green" alt="Last Updated">
   <img src="https://img.shields.io/badge/Survey-V3-orange" alt="Survey V3">
 </p>
@@ -370,6 +370,7 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟢 [Distillation of Large Language Models via Concrete Score Matching](https://arxiv.org/abs/2509.25837) <br><sub>📐 GPT-2 0.1B–0.3B → GPT-2 1.5B / OpenLLaMA-7B</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/aailab-kaist/CSD) |
 | 🟢 [DistiLLM: Towards Streamlined Distillation for Large Language Models](https://arxiv.org/abs/2402.03898) <br><sub>📐 GPT-2 (student) → GPT-2 XL (teacher)</sub> | 2024 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/jongwooko/distillm) |
 | 🟢 [On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes](https://arxiv.org/abs/2306.13649) <br><sub>📐 T5-Small/Base/Large → T5-XL 3B</sub> | 2023 |  |
+| 🟡 [Decoupling KL and Trajectories: A Unified Perspective for SFT, DAgger, Offline RL, and OPD in LLM Distillation](https://arxiv.org/abs/2605.16826) <br><sub>📐 Qwen3-4B → Qwen3-0.6B; Decouples prefix source and KL direction in LLM distillation, yielding four objectives with tradeoff analysis</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -519,6 +520,11 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟡 [Efficient LLM Reasoning via Variational Posterior Guidance with Efficiency Awareness](https://arxiv.org/abs/2605.11019) <br><sub>📐 DeepSeek-R1-Distill-Qwen-1.5B/7B / DeepSeek-R1-Distill-Llama-8B → Self (dual-stream); VPG-EA: posterior (answer-conditioned) and prior streams share params; advantage-gated forward KL distillation; cross-view validation filters pseudo-efficient paths</sub> | 2026 |  |
 | 🟢 [Self-Play Fine-Tuning Converts Weak Language Models to Strong Language Models](https://arxiv.org/abs/2401.01335) <br><sub>📐 Zephyr-7B (Mistral-7B) → Self</sub> | 2024 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/uclaml/SPIN) [![Model](https://img.shields.io/badge/Model-🤗-yellow)](https://huggingface.co/UCLA-AGI/zephyr-7b-sft-full-SPIN-iter3) |
 | 🟡 [Vision-OPD: Learning to See Fine Details for Multimodal LLMs via On-Policy Self-Distillation](https://arxiv.org/abs/2605.18740) <br><sub>📐 Qwen3.5-4B/9B → Self (crop→full-image); regional-to-global self-distillation with on-policy rollouts + token-level JSD; VLM self-distillation: crop-conditioned teacher distills fine-grained visual details to full-image student via on-policy JSD</sub> | 2026 |  |
+| 🟡 [Self-Supervised On-Policy Distillation for Reasoning Language Models](https://arxiv.org/abs/2605.17497) <br><sub>📐 Qwen3-8B (stop-gradient self) → Qwen3-8B; Self-supervised on-policy distillation using intra-group correct-wrong contrast as dense process supervision</sub> | 2026 |  |
+| 🟡 [SD-Search: On-Policy Hindsight Self-Distillation for Search-Augmented Reasoning](https://arxiv.org/abs/2605.18299) <br><sub>📐 Qwen2.5-3B (hindsight-conditioned) → Qwen2.5-3B; On-policy hindsight self-distillation for step-level search query supervision in RL agents</sub> | 2026 |  |
+| 🟡 [HINT-SD: Targeted Hindsight Self-Distillation for Long-Horizon Agents](https://arxiv.org/abs/2605.17873) <br><sub>📐 Qwen3-4B-Instruct-2507 (EMA + feedback-conditioned) → Qwen3-4B-Instruct-2507; Targeted self-distillation applying feedback-conditioned teacher only at failure-relevant turns in long-horizon agent tr</sub> | 2026 |  |
+| 🟡 [MIXSD: Mixed Contextual Self-Distillation for Knowledge Injection](https://arxiv.org/abs/2605.16865) <br><sub>📐 Qwen3-1.7B → Qwen3-1.7B; Self-distillation via mixed expert/naive conditionals for knowledge injection without forgetting</sub> | 2026 |  |
+| 🟡 [Roll Out and Roll Back: Diffusion LLMs are Their Own Efficiency Teachers](https://arxiv.org/abs/2605.16941) <br><sub>📐 LLaDA-8B-Instruct (WINO) → LLaDA-8B-Instruct; Revokable decoding (WINO) and trajectory injection (WINO+) for Diffusion LLMs</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -754,6 +760,12 @@ On-Policy Distillation (Survey V3 Structure)
 | [**On-Policy Distillation**](https://www.thinkingmachines.ai/blog/on-policy-distillation/) ([cited in §4](https://arxiv.org/abs/2604.00626)) | Kevin Lu / [Thinking Machines Lab](https://thinkingmachines.ai/) | 2025 | The most accessible OPD explainer written to date. Proposes per-token reverse KL using RL infrastructure (one-line change from KL-regularized RL), publishes a reference implementation in the [Tinker cookbook](https://github.com/thinking-machines-lab/tinker-cookbook), and matches Qwen3's RL result at a fraction of the GPU hours. Popularized the *"grandmaster grades each of your moves"* chess analogy that now anchors every OPD intro talk. |
 | 🟡 [Vision-OPD: Learning to See Fine Details for Multimodal LLMs via On-Policy Self-Distillation](https://arxiv.org/abs/2605.18740) | §5.3.2 | Core contribution is pure self-distillation where the same model serves as both teacher (crop-condit |
 | 🟡 [f-OPD: Stabilizing Long-Horizon On-Policy Distillation with Freshness-Aware Control](https://arxiv.org/abs/2605.17862) | §6.1 | Core contribution is freshness-aware token/sample weighting and adaptive refresh to stabilize on-pol |
+| 🟡 [Decoupling KL and Trajectories: A Unified Perspective for SFT, DAgger, Offline RL, and OPD in LLM Distillation](https://arxiv.org/abs/2605.16826) | §4.1 | The paper's core contribution is a theoretical framework decomposing distillation objectives along K |
+| 🟡 [Self-Supervised On-Policy Distillation for Reasoning Language Models](https://arxiv.org/abs/2605.17497) | §5.3.2 | Core contribution is a self-distillation method where the teacher is the same model conditioned on i |
+| 🟡 [SD-Search: On-Policy Hindsight Self-Distillation for Search-Augmented Reasoning](https://arxiv.org/abs/2605.18299) | §5.3.2 | Core contribution is self-distillation where the same policy serves as teacher under privileged hind |
+| 🟡 [HINT-SD: Targeted Hindsight Self-Distillation for Long-Horizon Agents](https://arxiv.org/abs/2605.17873) | §5.3.2 | The core contribution is self-distillation (same policy as teacher conditioned on privileged hindsig |
+| 🟡 [MIXSD: Mixed Contextual Self-Distillation for Knowledge Injection](https://arxiv.org/abs/2605.16865) | §5.3.2 | Core contribution is a self-distillation method where the base model acts as both teacher (via exper |
+| 🟡 [Roll Out and Roll Back: Diffusion LLMs are Their Own Efficiency Teachers](https://arxiv.org/abs/2605.16941) | §5.3.2 | The core contribution is self-distillation: the model generates its own verified denoising trajector |
 
 ## ❓ FAQ
 
