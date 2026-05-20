@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-160-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-162-blue" alt="Papers">
   <img src="https://img.shields.io/github/last-commit/nick7nlp/Awesome-LLM-On-Policy-Distillation?label=Last%20Updated&color=green" alt="Last Updated">
   <img src="https://img.shields.io/badge/Survey-V3-orange" alt="Survey V3">
 </p>
@@ -525,6 +525,7 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟡 [HINT-SD: Targeted Hindsight Self-Distillation for Long-Horizon Agents](https://arxiv.org/abs/2605.17873) <br><sub>📐 Qwen3-4B-Instruct-2507 (EMA + feedback-conditioned) → Qwen3-4B-Instruct-2507; Targeted self-distillation applying feedback-conditioned teacher only at failure-relevant turns in long-horizon agent tr</sub> | 2026 |  |
 | 🟡 [MIXSD: Mixed Contextual Self-Distillation for Knowledge Injection](https://arxiv.org/abs/2605.16865) <br><sub>📐 Qwen3-1.7B → Qwen3-1.7B; Self-distillation via mixed expert/naive conditionals for knowledge injection without forgetting</sub> | 2026 |  |
 | 🟡 [Roll Out and Roll Back: Diffusion LLMs are Their Own Efficiency Teachers](https://arxiv.org/abs/2605.16941) <br><sub>📐 LLaDA-8B-Instruct (WINO) → LLaDA-8B-Instruct; Revokable decoding (WINO) and trajectory injection (WINO+) for Diffusion LLMs</sub> | 2026 |  |
+| 🟡 [Preferences Order, Ratings Anchor: From Fused Expert Aesthetic Ground Truth to Self-Distillation](https://arxiv.org/abs/2605.19776) <br><sub>📐 Qwen3-VL-8B (self); PSDISTILL: fuses VLM pairwise self-judgments into calibrated pseudo-scores via Elo reference pool; self-distills VLM aesthetic scorer with confidence-weighted GRPO</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -579,6 +580,7 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟢 [LLM-Oriented Token-Adaptive Knowledge Distillation](https://arxiv.org/abs/2510.11615) <br><sub>📐 Qwen2-1.5B / OpenLLaMA2-3B → Qwen2-7B / OpenLLaMA2-7B</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/SassyRong/AdaKD) |
 | 🟢 [SelecTKD: Selective Token-Weighted Knowledge Distillation for LLMs](https://arxiv.org/abs/2510.24021) <br><sub>📐 Qwen2-1.5B / Gemma-2-2B / Danube2-1.8B → Qwen2-7B / Gemma-2-9B / Mistral-7B</sub> | 2025 |  |
 | 🟡 [f-OPD: Stabilizing Long-Horizon On-Policy Distillation with Freshness-Aware Control](https://arxiv.org/abs/2605.17862) <br><sub>📐 Qwen2.5-Math-72B → Qwen2.5-Math-7B / Qwen3-Coder-30B-A3B → Qwen3-8B; freshness-aware async OPD; Freshness-aware control for async OPD: sample-level staleness scoring + adaptive buffer refresh + rollout-anchored KL</sub> | 2026 |  |
+| 🟡 [Backtracking When It Strays: Mitigating Dual Exposure Biases in LLM Reasoning Distillation](https://arxiv.org/abs/2605.19433) <br><sub>📐 Qwen3-32B → Qwen3-4B; MOTAB: monitors student on-policy trajectories via adaptive entropy boundary; backtracks to safe state for teacher correction to mitigate dual exposure biases in reasoning distillation</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -766,6 +768,8 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟡 [HINT-SD: Targeted Hindsight Self-Distillation for Long-Horizon Agents](https://arxiv.org/abs/2605.17873) | §5.3.2 | The core contribution is self-distillation (same policy as teacher conditioned on privileged hindsig |
 | 🟡 [MIXSD: Mixed Contextual Self-Distillation for Knowledge Injection](https://arxiv.org/abs/2605.16865) | §5.3.2 | Core contribution is a self-distillation method where the base model acts as both teacher (via exper |
 | 🟡 [Roll Out and Roll Back: Diffusion LLMs are Their Own Efficiency Teachers](https://arxiv.org/abs/2605.16941) | §5.3.2 | The core contribution is self-distillation: the model generates its own verified denoising trajector |
+| 🟡 [Backtracking When It Strays: Mitigating Dual Exposure Biases in LLM Reasoning Distillation](https://arxiv.org/abs/2605.19433) | §6.2 | Core contribution is a curriculum/scheduling mechanism (adaptive boundary + backtracking) that deter |
+| 🟡 [Preferences Order, Ratings Anchor: From Fused Expert Aesthetic Ground Truth to Self-Distillation](https://arxiv.org/abs/2605.19776) | §5.3.2 | The core contribution is pure self-distillation: the same VLM generates pairwise preferences, conver |
 
 ## ❓ FAQ
 
