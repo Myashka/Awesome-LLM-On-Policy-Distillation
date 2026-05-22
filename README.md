@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-163-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-168-blue" alt="Papers">
   <img src="https://img.shields.io/github/last-commit/nick7nlp/Awesome-LLM-On-Policy-Distillation?label=Last%20Updated&color=green" alt="Last Updated">
   <img src="https://img.shields.io/badge/Survey-V3-orange" alt="Survey V3">
 </p>
@@ -390,6 +390,7 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟢 [Asymmetric On-Policy Distillation: Bridging Exploitation and Imitation at the Token Level](https://arxiv.org/abs/2605.06387) <br><sub>📐 Qwen2.5-Math-1.5B/7B → Qwen2.5-Math-7B; replaces negative RL with localized divergence minimization (AOPD)</sub> | 2026 |  |
 | 🟢 [ToDi: Token-wise Distillation via Fine-Grained Divergence Control](https://arxiv.org/abs/2505.16297) <br><sub>📐 GPT-2 120M / TinyLLaMA-1.1B → GPT-2 1.5B / LLaMA2-7B</sub> | 2025 |  |
 | 🟢 [Rethinking Kullback-Leibler Divergence in Knowledge Distillation for Large Language Models](https://arxiv.org/abs/2404.02657) <br><sub>📐 GPT-2 120M / TinyLLaMA → GPT-2 1.5B / LLaMA-6.7B</sub> | 2024 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/wutaiqiang/LLM_KD_AKL) |
+| 🟡 [Tailoring Teaching to Aptitude: Direction-Adaptive Self-Distillation for LLM Reasoning](https://arxiv.org/abs/2605.22263) <br><sub>📐 Qwen3-4B → Self (privileged); Entropy-routed direction-adaptive self-distillation reversing teacher pressure at high-entropy tokens.</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -419,6 +420,7 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟢 [From Correction to Mastery: Reinforced Distillation of Large Language Model Agents](https://arxiv.org/abs/2509.14257) <br><sub>📐 Qwen2.5-7B / Qwen3-8B → Self (SCoRe, agent)</sub> | 2025 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/modelscope/easydistill) |
 | 🟢 [Rethinking Large Language Model Distillation: A Constrained Markov Decision Process Perspective](https://arxiv.org/abs/2509.22921) <br><sub>📐 Qwen2.5-1.5B-Math / Llama-3.2-3B → Qwen2.5-7B-Math / Llama-3.2-11B</sub> | 2025 |  |
 | 🟢 [SuperCorrect: Advancing Small LLM Reasoning with Thought Template Distillation and Self-Correction](https://arxiv.org/abs/2410.09008) <br><sub>📐 Llama-3-8B / Qwen-7B / DeepSeekMath-7B → larger teacher LLMs (thought template + DPO)</sub> | 2024 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/YangLing0818/SuperCorrect-llm) [![Model](https://img.shields.io/badge/Model-🤗-yellow)](https://huggingface.co/BitStarWalkin/SuperCorrect-7B) |
+| 🟡 [OPPO: Bayesian Value Recursion for Token-Level Credit Assignment in LLM Reasoning](https://arxiv.org/abs/2605.21851) <br><sub>📐 Qwen3-32B → Qwen3-4B; Bayesian token-level credit via oracle-conditioned likelihood ratios in PPO-style update.</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -527,6 +529,8 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟡 [MIXSD: Mixed Contextual Self-Distillation for Knowledge Injection](https://arxiv.org/abs/2605.16865) <br><sub>📐 Qwen3-1.7B → Qwen3-1.7B; Self-distillation via mixed expert/naive conditionals for knowledge injection without forgetting</sub> | 2026 |  |
 | 🟡 [Roll Out and Roll Back: Diffusion LLMs are Their Own Efficiency Teachers](https://arxiv.org/abs/2605.16941) <br><sub>📐 LLaDA-8B-Instruct (WINO) → LLaDA-8B-Instruct; Revokable decoding (WINO) and trajectory injection (WINO+) for Diffusion LLMs</sub> | 2026 |  |
 | 🟡 [Preferences Order, Ratings Anchor: From Fused Expert Aesthetic Ground Truth to Self-Distillation](https://arxiv.org/abs/2605.19776) <br><sub>📐 Qwen3-VL-8B (self); PSDISTILL: fuses VLM pairwise self-judgments into calibrated pseudo-scores via Elo reference pool; self-distills VLM aesthetic scorer with confidence-weighted GRPO</sub> | 2026 |  |
+| 🟡 [Unlocking Proactivity in Task-Oriented Dialogue](https://arxiv.org/abs/2605.22240) <br><sub>📐 Qwen3-4B → Self (privileged view); Asymmetric self-distillation from privileged user-concern view plus state-transition policy gradient for proactive TOD.</sub> | 2026 |  |
+| 🟡 [Search-E1: Self-Distillation Drives Self-Evolution in Search-Augmented Reasoning](https://arxiv.org/abs/2605.22511) <br><sub>📐 Qwen2.5-7B → Self (privileged context); Alternating GRPO with offline self-distillation between rounds for search-augmented reasoning self-evolution.</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -582,6 +586,7 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟢 [SelecTKD: Selective Token-Weighted Knowledge Distillation for LLMs](https://arxiv.org/abs/2510.24021) <br><sub>📐 Qwen2-1.5B / Gemma-2-2B / Danube2-1.8B → Qwen2-7B / Gemma-2-9B / Mistral-7B</sub> | 2025 |  |
 | 🟡 [f-OPD: Stabilizing Long-Horizon On-Policy Distillation with Freshness-Aware Control](https://arxiv.org/abs/2605.17862) <br><sub>📐 Qwen2.5-Math-72B → Qwen2.5-Math-7B / Qwen3-Coder-30B-A3B → Qwen3-8B; freshness-aware async OPD; Freshness-aware control for async OPD: sample-level staleness scoring + adaptive buffer refresh + rollout-anchored KL</sub> | 2026 |  |
 | 🟡 [Backtracking When It Strays: Mitigating Dual Exposure Biases in LLM Reasoning Distillation](https://arxiv.org/abs/2605.19433) <br><sub>📐 Qwen3-32B → Qwen3-4B; MOTAB: monitors student on-policy trajectories via adaptive entropy boundary; backtracks to safe state for teacher correction to mitigate dual exposure biases in reasoning distillation</sub> | 2026 |  |
+| 🟡 [Visual-Advantage On-Policy Distillation for Vision-Language Models](https://arxiv.org/abs/2605.21924) <br><sub>📐 Qwen3-VL-8B → Qwen3-VL-2B; Visual-advantage reweighting for token-level on-policy VLM distillation with reverse KL.</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -772,6 +777,11 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟡 [Backtracking When It Strays: Mitigating Dual Exposure Biases in LLM Reasoning Distillation](https://arxiv.org/abs/2605.19433) | §6.2 | Core contribution is a curriculum/scheduling mechanism (adaptive boundary + backtracking) that deter |
 | 🟡 [Preferences Order, Ratings Anchor: From Fused Expert Aesthetic Ground Truth to Self-Distillation](https://arxiv.org/abs/2605.19776) | §5.3.2 | The core contribution is pure self-distillation: the same VLM generates pairwise preferences, conver |
 | 🟡 [AVSD: Adaptive-View Self-Distillation by Balancing Consensus and Teacher-Specific Privileged Signals](https://arxiv.org/abs/2605.20643) | §5.3.1 | Core contribution is a novel multi-view aggregation mechanism for on-policy self-distillation using  |
+| 🟡 [OPPO: Bayesian Value Recursion for Token-Level Credit Assignment in LLM Reasoning](https://arxiv.org/abs/2605.21851) | §4.3 | Core contribution is a novel token-level advantage derived from Bayesian accumulation of the OPD ora |
+| 🟡 [Visual-Advantage On-Policy Distillation for Vision-Language Models](https://arxiv.org/abs/2605.21924) | §6.1 | Core contribution is token-level visual advantage weighting for on-policy distillation in VLMs, whic |
+| 🟡 [Unlocking Proactivity in Task-Oriented Dialogue](https://arxiv.org/abs/2605.22240) | §5.3.2 | Core contribution is on-policy self-distillation from a privileged view of the same policy (no exter |
+| 🟡 [Tailoring Teaching to Aptitude: Direction-Adaptive Self-Distillation for LLM Reasoning](https://arxiv.org/abs/2605.22263) | §4.2 | Core contribution is an adaptive direction-routing objective for on-policy self-distillation that sw |
+| 🟡 [Search-E1: Self-Distillation Drives Self-Evolution in Search-Augmented Reasoning](https://arxiv.org/abs/2605.22511) | §5.3.2 | Core contribution is self-distillation where the same policy acts as teacher and student under diffe |
 
 ## ❓ FAQ
 
