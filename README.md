@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-169-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-170-blue" alt="Papers">
   <img src="https://img.shields.io/github/last-commit/nick7nlp/Awesome-LLM-On-Policy-Distillation?label=Last%20Updated&color=green" alt="Last Updated">
   <img src="https://img.shields.io/badge/Survey-V3-orange" alt="Survey V3">
 </p>
@@ -532,6 +532,7 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟡 [Unlocking Proactivity in Task-Oriented Dialogue](https://arxiv.org/abs/2605.22240) <br><sub>📐 Qwen3-4B → Self (privileged view); Asymmetric self-distillation from privileged user-concern view plus state-transition policy gradient for proactive TOD.</sub> | 2026 |  |
 | 🟡 [Search-E1: Self-Distillation Drives Self-Evolution in Search-Augmented Reasoning](https://arxiv.org/abs/2605.22511) <br><sub>📐 Qwen2.5-7B → Self (privileged context); Alternating GRPO with offline self-distillation between rounds for search-augmented reasoning self-evolution.</sub> | 2026 |  |
 | 🟡 [It Takes Two: Complementary Self-Distillation for Contextual Integrity in LLMs](https://arxiv.org/abs/2605.20258) <br><sub>📐 Qwen2.5-7B → Self; Complementary self-distillation: two feedback-conditioned self-teachers (utility / privacy) provide joint reverse-KL token-level supervision over on-policy rollouts for contextual integrity alignment</sub> | 2026 |  |
+| 🟡 [Self-Policy Distillation via Capability-Selective Subspace Projection](https://arxiv.org/abs/2605.22675) <br><sub>📐 Qwen2.5-{0.5B,7B} → Self; Self-policy distillation steered by capability-selective KV subspace projection: SVD on correctness-aligned gradients yields a subspace that hooks bias the models own on-policy generation toward target capability, then LoRA-finetunes on the steered outputs — no external teacher</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -784,6 +785,7 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟡 [Tailoring Teaching to Aptitude: Direction-Adaptive Self-Distillation for LLM Reasoning](https://arxiv.org/abs/2605.22263) | §4.2 | Core contribution is an adaptive direction-routing objective for on-policy self-distillation that sw |
 | 🟡 [Search-E1: Self-Distillation Drives Self-Evolution in Search-Augmented Reasoning](https://arxiv.org/abs/2605.22511) | §5.3.2 | Core contribution is self-distillation where the same policy acts as teacher and student under diffe |
 | 🟡 [It Takes Two: Complementary Self-Distillation for Contextual Integrity in LLMs](https://arxiv.org/abs/2605.20258) | §5.3.2 | Core contribution is pure self-distillation from feedback-conditioned self-teachers with on-policy r |
+| 🟡 [Self-Policy Distillation via Capability-Selective Subspace Projection](https://arxiv.org/abs/2605.22675) | §5.3.2 | Core contribution is a pure self-distillation method where the model generates its own training data |
 
 ## ❓ FAQ
 
