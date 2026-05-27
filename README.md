@@ -134,7 +134,9 @@ With the rise of reasoning models (System 2 thinking) in 2024–2026, long chain
 - **"If you only read 3 papers":** [GKD](https://arxiv.org/abs/2306.13649) (Foundation) + [MiniLLM](https://arxiv.org/abs/2306.08543) (Reverse-KL default) + [Rethinking OPD](https://arxiv.org/abs/2604.13016) (Field guide / failure modes).
 - **"If you need to reproduce fast":** Check out the code for [Uni-OPD](https://github.com/WenjinHou/Uni-OPD) or [MiniLLM](https://github.com/microsoft/LMOps/tree/main/minillm).
 - **"If you work on math reasoning":** Follow the trajectory: [OPSD](https://arxiv.org/abs/2601.18734) → [RLKD](https://arxiv.org/abs/2505.16142) → [SCOPE](https://arxiv.org/abs/2604.10688).
-- **"If you build multi-turn agents":** Look into [TCOD](https://arxiv.org/abs/2604.24005) (temporal curriculum) or [Skill-SD](https://arxiv.org/abs/2604.10674) (skill-conditioned self-distillation).
+- **"If you build multi-turn agents":** Look into [TCOD](https://arxiv.org/abs/2604.24005) (temporal curriculum) or [SOD](https://arxiv.org/abs/2605.07725) (step-wise reweighting to prevent error cascades in tool-integrated reasoning).
+- **"If your teacher and student use different tokenizers":** See [SimCT](https://arxiv.org/abs/2605.07711) (multi-token continuation units recover supervision lost at vocabulary boundaries).
+- **"If you only have API access to the teacher":** Try [ROPD](https://arxiv.org/abs/2605.07396) (rubric-based OPD: structured rubrics replace teacher logits, black-box compatible, up to 10x sample efficiency).
 
 ### 💡 Practitioner's Decision Tree
 
