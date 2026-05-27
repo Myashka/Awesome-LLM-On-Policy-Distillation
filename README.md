@@ -136,6 +136,7 @@ With the rise of reasoning models (System 2 thinking) in 2024–2026, long chain
 - **"If you build multi-turn agents":** Look into [TCOD](https://arxiv.org/abs/2604.24005) (temporal curriculum) or [SOD](https://arxiv.org/abs/2605.07725) (step-wise reweighting to prevent error cascades in tool-integrated reasoning).
 - **"If your teacher and student use different tokenizers":** See [SimCT](https://arxiv.org/abs/2605.07711) (multi-token continuation units recover supervision lost at vocabulary boundaries).
 - **"If you only have API access to the teacher":** Try [ROPD](https://arxiv.org/abs/2605.07396) (rubric-based OPD: structured rubrics replace teacher logits, black-box compatible, up to 10x sample efficiency).
+- **"If you want to combine RL and distillation":** Start with [SRPO](https://arxiv.org/abs/2604.02288) (sample routing between RL and OPD objectives based on per-sample teacher agreement).
 
 ### 💡 Practitioner's Decision Tree
 
