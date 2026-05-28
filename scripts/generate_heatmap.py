@@ -142,9 +142,13 @@ if os.path.exists(db_path):
     db_notes = db.get('notes', {})
     for aid, note in db_notes.items():
         for p in note.get('teacher_student_pairs', []):
-            t_name = p['teacher']['name']
-            s_name = p['student']['name']
-            is_self = p['teacher'].get('is_self') or t_name == s_name
+            if not isinstance(p, dict): continue
+            t = p.get('teacher'); s = p.get('student')
+            # Skip fuzzy string entries like "Larger LLM" that lack a concrete model name
+            if not isinstance(t, dict) or not isinstance(s, dict): continue
+            t_name = t.get('name'); s_name = s.get('name')
+            if not t_name or not s_name: continue
+            is_self = t.get('is_self') or t_name == s_name
             s_can = canonicalize(s_name)
             if not s_can: continue
             if is_self:

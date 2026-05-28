@@ -245,10 +245,10 @@ gantt
 
 ### 💡 Key Takeaways
 
-- 👑 **Qwen3-8B is king** — most used teacher (102 pairs) and top-3 student (69 pairs)
-- 💪 **Self-distillation dominates** — 253 pairs (34%) use the model as its own teacher
-- 🎯 **Student sweet spot = 1.7B–8B** — Qwen3-4B (82), Qwen3-1.7B (73), Qwen3-8B (69)
-- 🏭 **Teacher sweet spot = 4B–32B** — Qwen3-8B (102), Qwen3-4B (61), Qwen2.5-7B (24)
+- 👑 **Qwen3-8B is king** — most used teacher (111 pairs) and top-3 student (76 pairs)
+- 💪 **Self-distillation dominates** — 302 pairs (37%) use the model as its own teacher
+- 🎯 **Student sweet spot = 1.7B–8B** — Qwen3-4B (99), Qwen3-1.7B (78), Qwen3-8B (76)
+- 🏭 **Teacher sweet spot = 4B–32B** — Qwen3-8B (111), Qwen3-4B (72), Qwen2.5-7B (28)
 - 🌍 **Qwen3 hegemony** — appears in ~75% of teacher-student pairs
 - 🔄 **Clear cascade** — 235B → 32B → 8B → 4B → 1.7B → 0.6B
 - 📚 **GPT-2 / T5 / Llama** persist as academic benchmarks
