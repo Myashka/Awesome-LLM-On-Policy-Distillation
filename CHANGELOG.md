@@ -3,6 +3,9 @@
 All notable additions to this collection are documented here.
 
 ## [2026-05-29]
+### Changed
+- **Agentic OPD navigation references**: TCOD → SOD in 4 navigational locations (Quick-Start dynamics toolbox, Trends takeaway #4, `resources/method-comparison.md` decision tree, `resources/reading-order.md` Level 4). SOD (2605.07725) is the more representative agentic OPD method now (step-level divergence reweighting for tool-integrated reasoning, +20.86% over the second-best baseline). TCOD's own paper entry, codebase row, and historical changelog references are kept intact; only the high-level navigation pointers are updated.
+
 ### Reviewed (no list change)
 - Reviewed 3 candidate papers from 5/27-5/28 daily-pipeline against the 5/15 inclusion scope (text/language model output only). All 3 had not entered the Awesome list, so no removal was needed; recording the boundary review here for completeness.
   - **AnyFlow** (2605.13724) — video diffusion (Wan2.1-14B + VBench), out of scope.

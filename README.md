@@ -158,7 +158,7 @@ Which objective should the optimizer use?
 └── Reward-shaped → G-OPD / RLAD / KDRL / AlignDistil / MAD-OPD (§4.3)
 
 Training unstable or inefficient?
-└── Dynamics toolbox → TIP / SCOPE / TCOD / Uni-OPD / PACED / Lightning-OPD (§6)
+└── Dynamics toolbox → TIP / SCOPE / SOD / Uni-OPD / PACED / Lightning-OPD (§6)
 ```
 
 ## 🔥 Trends & Highlights (2025–2026)
@@ -168,7 +168,7 @@ Training unstable or inefficient?
 1. 🎯 **From RKL to Adaptive**: The field initially defaulted to Reverse-KL (mode-seeking). Recent work shifted toward adaptive switching (AKL, token-level gates, entropy-weighted objectives) to balance exploration and guidance.
 2. 💥 **The Self-Distillation Boom**: Teacher-free on-policy methods (SDPO, SDZero, SRPO) are dominating, relying on rule-based verifiers or reward models rather than white-box teacher models.
 3. ✂️ **Token Importance**: Papers like TIP, SCOPE, and SelecTKD revealed that applying KD loss to 100% of tokens is inefficient. Selecting the top 20-50% high-entropy/divergence tokens achieves parity.
-4. 🤖 **Agentic OPD**: Methods like TCOD and Skill-SD specifically address the massive compounding errors in multi-turn environments and long-horizon tool use.
+4. 🤖 **Agentic OPD**: Methods like SOD and Skill-SD address the massive compounding errors in tool-integrated reasoning and long-horizon agents through step-level divergence reweighting and skill-level decomposition.
 5. 🏭 **Industrial Adoption**: The latest frontier models (DeepSeek-V4, Qwen3, Nemotron, Gemma-2, and MiMo) have fully integrated OPD into their post-training pipelines.
 6. ⚠️ **Diversity Collapse**: A critical finding from SCOPE shows that while OPD drastically improves Pass@1, it severely harms Pass@k due to diversity collapse, prompting new hybrid objective designs.
 

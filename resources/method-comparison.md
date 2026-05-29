@@ -33,7 +33,7 @@ What's your bottleneck?
 ├── Compute → Lightning OPD (offline, 4x faster) or TIP (20% tokens)
 ├── No teacher → OPSD / SDZero / On-Policy SFT
 ├── Diversity matters → SCOPE (dual-path) or AKL (adaptive)
-├── Multi-turn / Agent → TCOD (temporal curriculum)
+├── Multi-turn / Agent → SOD (step-level divergence reweighting)
 ├── Cross-architecture → ULD / DSKD (representation alignment)
 └── Production at scale → Follow DeepSeek-V4 recipe (RKL + multi-domain)
 ```

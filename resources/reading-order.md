@@ -21,4 +21,4 @@
 12. **Lightning OPD** (2604.13010) — Offline OPD, 4x faster.
 13. **SDZero** (2604.12002) — No teacher needed, binary reward → dense signal.
 14. **Uni-OPD** (2605.03677) — Unified dual-perspective recipe.
-15. **TCOD** (2604.24005) — Agent/multi-turn OPD.
+15. **SOD** (2605.07725) — Step-level divergence reweighting for tool-integrated reasoning agents.
