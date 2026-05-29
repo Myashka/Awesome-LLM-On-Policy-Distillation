@@ -158,7 +158,7 @@ Which objective should the optimizer use?
 └── Reward-shaped → G-OPD / RLAD / KDRL / AlignDistil / MAD-OPD (§4.3)
 
 Training unstable or inefficient?
-└── Dynamics toolbox → TIP / SCOPE / SOD / Uni-OPD / PACED / Lightning-OPD (§6)
+└── Dynamics toolbox → TIP / SCOPE / TCOD / Uni-OPD / PACED / Lightning-OPD (§6)
 ```
 
 ## 🔥 Trends & Highlights (2025–2026)
