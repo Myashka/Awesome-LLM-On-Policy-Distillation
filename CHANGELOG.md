@@ -2,6 +2,18 @@
 
 All notable additions to this collection are documented here.
 
+## [2026-05-29]
+### Reviewed (no list change)
+- Reviewed 3 candidate papers from 5/27-5/28 daily-pipeline against the 5/15 inclusion scope (text/language model output only). All 3 had not entered the Awesome list, so no removal was needed; recording the boundary review here for completeness.
+  - **AnyFlow** (2605.13724) — video diffusion (Wan2.1-14B + VBench), out of scope.
+  - **Adversarial Dual OPD from Expressive Flow-based Teacher** (2605.27095) — embodied control, flow-matching policy teacher (no LLM backbone), out of scope.
+  - **SERL** (2605.19447) — 5/27 commit message labelled it as "+OPD" but `paper_notes.json` had no entry; 5/28 three-condition review judged it RL-only (GRPO + env feedback reweighting, no teacher distill term). Stub added to `paper_notes.json` referencing `papers-meta/excluded-papers.md`.
+
+## [2026-05-28]
+### Removed
+- **ThinkTuning** (2508.07616) — full-corpus audit reclassification. Paper's own title declares "without Distillation"; teacher provides text hints (opinions / reasons / phrases) appended to a fraction of student rollouts, not logit distributions. Loss is GRPO with Advantage-Aware Shaping on hint-augmented data — no KL-to-teacher term. Closer to teacher-augmented RL than distillation. Removed from Awesome List, V4 references.bib, paper_notes.json, INDEX.md; PDF moved to `pdfs/.trash-2026-05-28-thinktuning/`. Logged in `papers-meta/excluded-papers.md`.
+- Paper count badge: 176 → 175
+
 ## [2026-05-17]
 ### Changed
 - Removed 3 non-OPD papers: HPD (off-policy), Distillation Traps (analysis), VPG-EA (variational inference)
