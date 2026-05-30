@@ -53,6 +53,7 @@ With the rise of reasoning models (System 2 thinking) in 2024–2026, long chain
     <li><a href="#-trends--highlights-2025-2026">Trends &amp; Highlights</a></li>
     <li><a href="#-survey-version-history">📋 Survey Version History</a></li>
     <li><a href="#-teacherstudent-model-atlas">🔍 Teacher–Student Model Atlas</a></li>
+    <li><a href="#-loss-objective-distribution">📐 Loss-Objective Distribution</a></li>
     <li><a href="#-hall-of-fame--must-read-opd-papers-by-era">🏆 Hall of Fame</a></li>
     <li><a href="#%EF%B8%8F-taxonomy">Taxonomy</a></li>
     <li><a href="#4-objective-functions-and-optimization">§4 Objective Functions &amp; Optimization</a>
@@ -259,6 +260,29 @@ gantt
 
 
 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 📐 Loss-Objective Distribution
+
+> 🎯 "Which loss does each OPD paper actually train with?" Every paper is assigned exactly one of seven mutually-exclusive loss classes by an LLM auditor that reads its `loss_formulation` (LaTeX) end-to-end. Full per-paper assignments and evidence live in [`resources/loss-taxonomy.md`](resources/loss-taxonomy.md).
+
+<p align="center">
+  <img src="assets/loss-distribution.png" alt="Loss-objective distribution across 158 OPD papers: bar chart of FKL / RKL / Symmetric / f-Divergence / KL+RL / Preference / Other." width="900">
+</p>
+
+<p align="center">
+  <img src="assets/loss-evolution.png" alt="Stacked bar chart of OPD loss objectives by arXiv submission month, from 23-05 to 26-05." width="960">
+</p>
+
+### 💡 Loss Takeaways
+
+- 🥊 **KL+RL ties RKL at 23%** — hybrid KL-distill plus GRPO/PPO reward is now as common as pure reverse-KL, dominating papers from 26-01 onward
+- 📐 **FKL still 21%** — classical forward-KL has not gone away, especially in §5.1 white-box logit recipes
+- 🎭 **Symmetric 13%** — DistiLLM-style skewed-KL and JSD form a third visible cluster
+- 🔄 **Other 16%** — RL papers that cite teacher signals only as advantage modulation (no load-bearing KL term) cluster here
+- 🌱 **Preference (5) and f-Divergence (1) are rare** — DPO-style and α/Rényi remain niche directions
+- 🚀 **Inflection at 26-01** — the loss landscape shifts sharply from RKL-dominant to KL+RL-dominant once verifiable rewards arrive in OPD
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
