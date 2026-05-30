@@ -2,6 +2,11 @@
 
 All notable additions to this collection are documented here.
 
+## [2026-05-30]
+### Added
+- **SOD** (2605.07725) added to Hall of Fame **🚀 Frontier (2025–2026)** subsection alongside OPSD / AlignDistil / Rethinking-OPD / SCOPE / SDZero. Step-level divergence reweighting for tool-integrated reasoning agents, surfacing the step-granularity unit that sits between token-level (TIP / SCOPE) and trajectory-level (TCOD) weighting.
+- Daily pipeline cron added **2605.28791** (Skill-Conditioned Gated Self-Distillation for LLM Reasoning) to §5.3.1 (commit 9047e7c). Paper count badge: 175 → 176.
+
 ## [2026-05-29]
 ### Changed
 - **Agentic OPD navigation references**: TCOD → SOD in 3 navigational locations (Trends takeaway #4, `resources/method-comparison.md` decision tree, `resources/reading-order.md` Level 4). SOD (2605.07725) is the more representative agentic OPD method now (step-level divergence reweighting for tool-integrated reasoning, +20.86% over the second-best baseline). TCOD's own paper entry, codebase row, the §6 dynamics toolbox listing in Quick-Start (where TCOD remains the §6.2 Curriculum representative), and historical changelog references are kept intact; only the high-level agentic-OPD pointers are updated.

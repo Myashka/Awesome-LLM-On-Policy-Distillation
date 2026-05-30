@@ -293,6 +293,7 @@ gantt
 | [**Rethinking OPD**](https://arxiv.org/abs/2604.13016) | Two necessary conditions for OPD success + taxonomy of failure modes. Field guide for "what can go wrong." |
 | [**SCOPE**](https://arxiv.org/abs/2604.10688) | Dual-path adaptive weighting; reveals diversity collapse in OPD. Fixes Pass@k degradation. |
 | [**SDZero**](https://arxiv.org/abs/2604.12002) | Self-revision turns binary rewards into dense supervision. Teacher-free self-distillation frontier. |
+| [**SOD**](https://arxiv.org/abs/2605.07725) | Step-level divergence reweighting for tool-integrated reasoning agents. Attenuates teacher signal in high-divergence steps; surfaces step granularity as the missing unit between token and trajectory. |
 
 <details>
 <summary>📖 <b>Recommended Reading Order for Different Backgrounds</b></summary>
