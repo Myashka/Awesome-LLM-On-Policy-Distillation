@@ -160,27 +160,38 @@ With the rise of reasoning models (System 2 thinking) in 2024–2026, long chain
 - **"If you only have API access to the teacher":** Try [ROPD](https://arxiv.org/abs/2605.07396) (rubric-based OPD: structured rubrics replace teacher logits, black-box compatible, up to 10x sample efficiency).
 - **"If you want to combine RL and distillation":** Start with [SRPO](https://arxiv.org/abs/2604.02288) (sample routing between RL and OPD objectives based on per-sample teacher agreement).
 
-### 💡 Practitioner's Decision Tree
+### 💡 Method Selection Framework (Survey V3 §3.4)
+
+> Mirrors the four selection factors discussed in §3.4 of the survey. Use it as a top-down checklist: each axis narrows the viable method set without committing to a specific algorithm.
 
 ```text
-Can you access the teacher's full logits?
-├── Yes → White-Box Signal (§5.1)
-│   ├── Same tokenizer? → GKD / MiniLLM / DistiLLM (§4.1, §5.1)
-│   └── Different tokenizer? → ULD / DSKD (§5.1)
-├── API outputs only? → Black-Box Signal (§5.2)
-│   └── Lion / GAD / OVD / PRISM (§5.2)
-└── No teacher at all → Self-Distillation (§5.3)
-    ├── Have a Verifier / RM? → SDPO / SD-ZERO / RLSD / CREDIT / OGLS-SD (§5.3.3)
-    ├── Have privileged context? → OPSD / PAINT / PBSD / TT-OPD (§5.3.1)
-    └── Pure self-iteration? → SPIN / IRIS / On-Policy SFT (§5.3.2)
+1. Teacher Access Constraint  →  Signal Source  (§5)
+   ├── Full logit access (white-box)        → GKD, MiniLLM, DistiLLM, G-OPD
+   │   ├── Same tokenizer                   → standard logit matching
+   │   └── Cross-tokenizer                  → DSKD, ULD, SimCT
+   ├── API output only (black-box)          → OVD, GAD, ROPD, PRISM, Lion
+   └── No external teacher                  → Self-Distillation (§5.3)
+       ├── Privileged information           → OPSD, GATES, OPCD, GUI-SD, MSD, COPSD, TT-OPD
+       ├── Verifier / RM available          → SDPO, SD-ZERO, RLSD, CoPD, OGLS-SD
+       └── Pure self-iteration              → SPIN, IRIS, OPSFT, TABOM
 
-Which objective should the optimizer use?
-├── Fixed, simple baseline → Forward/Reverse KL, JSD (§4.1)
-├── Token/position adaptive → AKL / ToDi / DDT / EDGE (§4.2)
-└── Reward-shaped → G-OPD / RLAD / KDRL / AlignDistil / MAD-OPD (§4.3)
+2. Task Characteristics  →  Divergence Choice  (§4)
+   ├── Reasoning / math (peaked target)     → Reverse-KL or RL-augmented (§4.3)
+   ├── Open-ended generation (multi-modal)  → Forward-KL or adaptive (AKL, ToDi, EOPD)
+   ├── Instruction-following                → JSD with on-policy mixing (λ ≥ 0.5)
+   └── Multi-step / agentic                 → Step- or trajectory-level (SOD, MAD-OPD, Skill-SD)
 
-Training unstable or inefficient?
-└── Dynamics toolbox → TIP / SCOPE / TCOD / Uni-OPD / PACED / Lightning-OPD (§6)
+3. Compute Budget  →  Pipeline Stage  (§6)
+   ├── < 500 GPU-h    → Prefix-truncated rollouts (FOPD), offline caching, NPD async
+   ├── ~ 1-5K GPU-h   → Adaptive divergence on-policy (ToDi, AKL, AOPD, SCOPE)
+   └── > 5K GPU-h     → Hybrid pipeline: off-policy warmup → on-policy refinement → optional RL
+
+4. Stability Requirements  →  Failure Mitigation  (§7)
+   ├── Length inflation         → Reference-KL constraint, rollout mixing (RLAD)
+   ├── Flawed prefix trap       → Token-level reliability filtering (TIP, SCOPE, SelecTKD)
+   ├── Teacher-student mismatch → Off-policy cold-start phase before on-policy
+   ├── Local teachability decay → BIC-style truncation (Prefix-Teach-Suffix-Fade)
+   └── Multi-turn collapse      → EMA teacher dynamics (TT-OPD), step granularity (MAD-OPD)
 ```
 
 ## 🔥 Trends & Highlights (2025–2026)
