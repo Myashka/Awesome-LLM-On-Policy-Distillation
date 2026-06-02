@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-187-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-188-blue" alt="Papers">
   <img src="https://img.shields.io/github/last-commit/nick7nlp/Awesome-LLM-On-Policy-Distillation?label=Last%20Updated&color=green" alt="Last Updated">
   <img src="https://img.shields.io/badge/Survey-V3-orange" alt="Survey V3">
 </p>
@@ -533,6 +533,7 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟢 [Training with Harnesses: On-Policy Harness Self-Distillation for Complex Reasoning](https://arxiv.org/abs/2605.08741) <br><sub>📐 Qwen3-8B → Self; harness-augmented model (draft-verify / plan-solve) as teacher; +10.83% over OPSD on HMMT25 (PKU)</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/zzy1127/OPHSD-On-Policy-Harness-Self-Distillation) |
 | 🟡 [AVSD: Adaptive-View Self-Distillation by Balancing Consensus and Teacher-Specific Privileged Signals](https://arxiv.org/abs/2605.20643) <br><sub>📐 Self → Self (multi-view PI); Multi-view on-policy self-distillation decomposing privileged teacher signals into geometric consensus + gated residuals</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/duykhuongnguyen/AVSD) |
 | 🟡 [Skill-Conditioned Gated Self-Distillation for LLM Reasoning](https://arxiv.org/abs/2605.28791) <br><sub>📐 Qwen3-1.7B/4B/8B → Self (skill-conditioned); Skill-conditioned multi-teacher pool with outcome-validated teacher polarity; bounded gated distillation objective.</sub> | 2026 |  |
+| 🟡 [Weak Critics Make Strong Learners: On-Policy Critique Distillation for Scalable Oversight](https://arxiv.org/abs/2606.00424) <br><sub>📐 Qwen3-4B-base → Self; On-policy critique distillation using weak model critiques to improve strong models</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -817,6 +818,7 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟡 [OmniOPD: Logit-Free On-Policy Distillation via Speculative Verification](https://arxiv.org/abs/2606.01476) | §5.2 | Core contribution is enabling on-policy distillation from black-box teachers without logit access, u |
 | 🟡 [COMAP: Co-Evolving World Models and Agent Policies for LLM Agents](https://arxiv.org/abs/2606.02372) | §5.3.2 | The core contribution is on-policy self-distillation of the world model using the student's own roll |
 | 🟡 [SafeSteer: Localized On-Policy Distillation for Efficient Safety Alignment](https://arxiv.org/abs/2606.02530) | §6.1 | Core contribution is token-level weighting (restricting KL to safety tokens) within on-policy distil |
+| 🟡 [Weak Critics Make Strong Learners: On-Policy Critique Distillation for Scalable Oversight](https://arxiv.org/abs/2606.00424) | §5.3.1 | Core contribution is on-policy self-distillation where the teacher is the same strong model conditio |
 
 ## ❓ FAQ
 
