@@ -23,6 +23,16 @@
 </p>
 
 <p align="center">
+  <i>🔍 Also discoverable as</i> <b>AwesomeOPD</b> · <b>OPDHub</b> · <b>OPD-Survey</b> · <b>awesome-opd</b>
+  &nbsp;|&nbsp; <i>🌐 Companion site:</i> <a href="https://nick7nlp.github.io/OPDHub/">nick7nlp.github.io/OPDHub</a>
+</p>
+
+<p align="center">
+  <i>🔍 Also discoverable as</i> <b>AwesomeOPD</b> · <b>OPDHub</b> · <b>OPD-Survey</b> · <b>awesome-opd</b>
+  &nbsp;|&nbsp; <i>🌐 Companion site:</i> <a href="https://nick7nlp.github.io/OPDHub/">nick7nlp.github.io/OPDHub</a>
+</p>
+
+<p align="center">
   <img src="assets/opd-overview.png" alt="On-Policy Distillation: Teacher-Student Loop" width="640">
 </p>
 
