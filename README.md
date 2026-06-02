@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-186-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-187-blue" alt="Papers">
   <img src="https://img.shields.io/github/last-commit/nick7nlp/Awesome-LLM-On-Policy-Distillation?label=Last%20Updated&color=green" alt="Last Updated">
   <img src="https://img.shields.io/badge/Survey-V3-orange" alt="Survey V3">
 </p>
@@ -625,6 +625,7 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟡 [Less is More: Early Stopping Rollout for On-Policy Distillation](https://arxiv.org/abs/2605.27028) <br><sub>📐 Qwen3-32B → 8B; Early-stopped rollouts at 40-60% length for 2x efficiency with maintained RKL distillation quality</sub> | 2026 |  |
 | 🟡 [CaMOPD: Counteraction-Aware Multi-Teacher On-Policy Distillation](https://arxiv.org/abs/2605.27115) <br><sub>📐 Qwen3-8B → Qwen3-4B; Dual teacher conflict-aware distillation with 3+1 alternating schedule for domain preservation</sub> | 2026 |  |
 | 🟡 [Are Full Rollouts Necessary for On-Policy Distillation?](https://arxiv.org/abs/2605.31490) <br><sub>📐 JustRL-R1-1.5B → R1-Distill-1.5B; Horizon-control strategies (POPD, TOPD) improve OPD efficiency by truncating rollouts</sub> | 2026 |  |
+| 🟡 [SafeSteer: Localized On-Policy Distillation for Efficient Safety Alignment](https://arxiv.org/abs/2606.02530) <br><sub>📐 Qwen3-4B-Instruct → Self; Localized on-policy distillation confined to safety tokens via activation steering teacher</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -815,6 +816,7 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟡 [Trust Region On-Policy Distillation](https://arxiv.org/abs/2606.01249) | §4.2 | Core contribution is an adaptive trust-region divergence objective that selectively applies RKL in r |
 | 🟡 [OmniOPD: Logit-Free On-Policy Distillation via Speculative Verification](https://arxiv.org/abs/2606.01476) | §5.2 | Core contribution is enabling on-policy distillation from black-box teachers without logit access, u |
 | 🟡 [COMAP: Co-Evolving World Models and Agent Policies for LLM Agents](https://arxiv.org/abs/2606.02372) | §5.3.2 | The core contribution is on-policy self-distillation of the world model using the student's own roll |
+| 🟡 [SafeSteer: Localized On-Policy Distillation for Efficient Safety Alignment](https://arxiv.org/abs/2606.02530) | §6.1 | Core contribution is token-level weighting (restricting KL to safety tokens) within on-policy distil |
 
 ## ❓ FAQ
 
