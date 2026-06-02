@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-183-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-184-blue" alt="Papers">
   <img src="https://img.shields.io/github/last-commit/nick7nlp/Awesome-LLM-On-Policy-Distillation?label=Last%20Updated&color=green" alt="Last Updated">
   <img src="https://img.shields.io/badge/Survey-V3-orange" alt="Survey V3">
 </p>
@@ -419,6 +419,7 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟡 [When Are Teacher Tokens Reliable? Position-Weighted On-Policy Self-Distillation for Reasoning](https://arxiv.org/abs/2605.21606) <br><sub>📐 Qwen3-4B → Self; Position-weighted clipped FKL: later reasoning tokens get higher weight due to accumulated teacher error</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/SaFo-Lab/PW-OPSD) |
 | 🟡 [Your Teacher Can't Help You Here: Combating Supervision Fidelity Decay in On-Policy Distillation](https://arxiv.org/abs/2605.30833) <br><sub>📐 SkyWork-OR1-Math-7B → DeepSeek-R1-Distill-Qwen-1.5B; Identifies Supervision Fidelity Decay in OPD and proposes Lookahead Group Reward to combat it</sub> | 2026 |  |
 | 🟡 [RAFT: Data Refinement and Adaptive Distillation for Domain Fine-Tuning with Alleviated Forgetting](https://arxiv.org/abs/2606.00147) <br><sub>📐 SmolLM3-3B → Self; Two-stage framework coupling data refinement with on-policy distillation to mitigate forgetting in domain SFT</sub> | 2026 |  |
+| 🟡 [Trust Region On-Policy Distillation](https://arxiv.org/abs/2606.01249) <br><sub>📐 Skywork-OR1-Math-7B → DeepSeek-R1-Distill-Qwen-1.5B; Trust-region OPD with outlier estimation and off-policy guidance for stable reasoning distillation</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -809,6 +810,7 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟡 [Bridging Reasoning Trajectories in On-Policy Distillation via Near-Future Guidance](https://arxiv.org/abs/2606.00305) | §4.1 | Core contribution is a new trajectory-aware objective (OT-based loss) that augments the standard rev |
 | 🟡 [Decomposed On-Policy Distillation for Vision-Language Reasoning: Steering Gradients for Visual Grounding](https://arxiv.org/abs/2606.00564) | §4.1 | The core contribution is a new decomposed loss formulation for on-policy distillation that separates |
 | 🟡 [OPD+: Rethinking the Advantage Design for On-Policy Distillation](https://arxiv.org/abs/2606.01039) | §4.1 | Core contribution is a new corrected objective/divergence formulation for on-policy distillation, de |
+| 🟡 [Trust Region On-Policy Distillation](https://arxiv.org/abs/2606.01249) | §4.2 | Core contribution is an adaptive trust-region divergence objective that selectively applies RKL in r |
 
 ## ❓ FAQ
 
