@@ -289,7 +289,6 @@ gantt
 |-------|-------------|
 | [**GKD: On-Policy Distillation of Language Models**](https://arxiv.org/abs/2306.13649) | The canonical on-policy KD formulation. DAgger analogy, unified loss over F-KL / R-KL / JSD. The starting point of modern OPD. |
 | [**MiniLLM**](https://arxiv.org/abs/2306.08543) | Shows Reverse-KL beats Forward-KL for mode-seeking small students. Made RKL the default OPD objective. |
-| [**f-Divergence KD**](https://arxiv.org/abs/2307.15190) | Unifying f-divergence framework for sequence-level KD. Subsumes KL, RKL, JSD, α-divergence. Essential theory. |
 | [**Lion**](https://arxiv.org/abs/2305.12870) | Adversarial distillation from proprietary LLMs. Pioneered black-box OPD with iterative refinement. |
 
 ### 🔬 Evolution (2024)
@@ -665,7 +664,6 @@ On-Policy Distillation (Survey V3 Structure)
 | Paper | Date | Resources |
 |-------|:----:|:---:|
 | 🟢 [A Note on Hybrid Online Reinforcement and Imitation Learning for LLMs: Formulations and Algorithms](https://arxiv.org/abs/2512.23097) <br><sub>📐 Theoretical (no specific models)</sub> | 2025 |  |
-| 🟢 [f-Divergence Minimization for Sequence-Level Knowledge Distillation](https://arxiv.org/abs/2307.15190) <br><sub>📐 OPT-1.3B → OPT-6.7B / OPT-13B; unifying f-divergence framework: subsumes KL, RKL, JSD, α-divergence</sub> | 2023 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
