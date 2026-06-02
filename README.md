@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-178-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-179-blue" alt="Papers">
   <img src="https://img.shields.io/github/last-commit/nick7nlp/Awesome-LLM-On-Policy-Distillation?label=Last%20Updated&color=green" alt="Last Updated">
   <img src="https://img.shields.io/badge/Survey-V3-orange" alt="Survey V3">
 </p>
@@ -557,6 +557,7 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟡 [It Takes Two: Complementary Self-Distillation for Contextual Integrity in LLMs](https://arxiv.org/abs/2605.20258) <br><sub>📐 Qwen2.5-7B → Self; Complementary self-distillation: two feedback-conditioned self-teachers (utility / privacy) provide joint reverse-KL token-level supervision over on-policy rollouts for contextual integrity alignment</sub> | 2026 |  |
 | 🟡 [MAIGO: Mitigating Lost-in-Conversation with History-Cleaned On-Policy Self-Distillation](https://arxiv.org/abs/2605.27186) <br><sub>📐 Qwen2.5-3B / Qwen2.5-7B / Llama-3.1-8B → Self; EMA self-teacher + GJD/RKL for multi-turn dialogue; history-cleaned prompts prevent conversation drift</sub> | 2026 |  |
 | 🟡 [ROSD: Reflective On-Policy Self-Distillation for Language Model Reasoning across Domains](https://arxiv.org/abs/2605.28014) <br><sub>📐 Qwen3-4B/8B (self-teacher) → Qwen3-4B/8B; Error-focused reflection + quote-localized self-distillation; reflector extracts corrective idea and error span, distillation loss applied only from error onward</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/ZiqiZhao1/ROSD) |
+| 🟡 [Same Evidence, Different Answers: Canonical-Context On-Policy Distillation for Multi-Turn Language Models](https://arxiv.org/abs/2605.30251) <br><sub>📐 Qwen3-8B → Self; On-policy self-distillation aligning RAW-SHARDED multi-turn answers with FULL-context teacher behavior</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -799,6 +800,7 @@ On-Policy Distillation (Survey V3 Structure)
 | [**On-Policy Distillation**](https://www.thinkingmachines.ai/blog/on-policy-distillation/) ([cited in §4](https://arxiv.org/abs/2604.00626)) | Kevin Lu / [Thinking Machines Lab](https://thinkingmachines.ai/) | 2025 | The most accessible OPD explainer written to date. Proposes per-token reverse KL using RL infrastructure (one-line change from KL-regularized RL), publishes a reference implementation in the [Tinker cookbook](https://github.com/thinking-machines-lab/tinker-cookbook), and matches Qwen3's RL result at a fraction of the GPU hours. Popularized the *"grandmaster grades each of your moves"* chess analogy that now anchors every OPD intro talk. |
 | 🟡 [Are Full Rollouts Necessary for On-Policy Distillation?](https://arxiv.org/abs/2605.31490) | §6.3 | Core contribution is a compute-efficiency technique (horizon control) for on-policy distillation, fa |
 | 🟡 [Your Teacher Can't Help You Here: Combating Supervision Fidelity Decay in On-Policy Distillation](https://arxiv.org/abs/2605.30833) | §4.2 | Core contribution is an adaptive supervision signal (lookahead confidence reward) that addresses deg |
+| 🟡 [Same Evidence, Different Answers: Canonical-Context On-Policy Distillation for Multi-Turn Language Models](https://arxiv.org/abs/2605.30251) | §5.3.2 | Core contribution is self-distillation where the same backbone serves as both frozen FULL-context te |
 
 ## ❓ FAQ
 
