@@ -795,8 +795,6 @@ On-Policy Distillation (Survey V3 Structure)
 | Post | Author / Org | Year | Why Read It |
 |------|-------------|:---:|---|
 | [**On-Policy Distillation**](https://www.thinkingmachines.ai/blog/on-policy-distillation/) ([cited in §4](https://arxiv.org/abs/2604.00626)) | Kevin Lu / [Thinking Machines Lab](https://thinkingmachines.ai/) | 2025 | The most accessible OPD explainer written to date. Proposes per-token reverse KL using RL infrastructure (one-line change from KL-regularized RL), publishes a reference implementation in the [Tinker cookbook](https://github.com/thinking-machines-lab/tinker-cookbook), and matches Qwen3's RL result at a fraction of the GPU hours. Popularized the *"grandmaster grades each of your moves"* chess analogy that now anchors every OPD intro talk. |
-| 🟡 [ROSD: Reflective On-Policy Self-Distillation for Language Model Reasoning across Domains](https://arxiv.org/abs/2605.28014) | §5.3.2 | ROSD satisfies all 3 OPD conditions: (C1) Self-teacher provides distribution-level supervision via π |
-| 🟡 [Skill-Conditioned Gated Self-Distillation for LLM Reasoning](https://arxiv.org/abs/2605.28791) | §5.3.1 | Core contribution is a self-distillation method where privileged information (skill bank) conditions |
 
 ## ❓ FAQ
 
