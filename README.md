@@ -34,15 +34,6 @@
 * **2026.05**: 🚀 Survey **V3** released, expanded to 62+ pages with the new §3 *Method Landscape & Selection* chapter and §7.4 *On-Policy vs Off-Policy Decision Framework*. Read on [arXiv](https://arxiv.org/abs/2604.00626).
 * **2026.04**: 📝 Initial release of the survey on [arXiv](https://arxiv.org/abs/2604.00626) with the first systematic taxonomy of OPD methods covering objective design, signal source, and training stabilization.
 
-<details>
-<summary><i>🔍 Also discoverable as</i></summary>
-
-<br/>
-
-This collection is also indexed under the following names: **AwesomeOPD** · **OPDHub** · **OPD-Survey** · **awesome-opd** · **awesome-llm-opd**.
-
-</details>
-
 <p align="center">
   <img src="assets/opd-overview.png" alt="On-Policy Distillation: Teacher-Student Loop" width="640">
 </p>
