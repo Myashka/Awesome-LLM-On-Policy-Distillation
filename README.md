@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-181-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-182-blue" alt="Papers">
   <img src="https://img.shields.io/github/last-commit/nick7nlp/Awesome-LLM-On-Policy-Distillation?label=Last%20Updated&color=green" alt="Last Updated">
   <img src="https://img.shields.io/badge/Survey-V3-orange" alt="Survey V3">
 </p>
@@ -393,6 +393,7 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟢 [On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes](https://arxiv.org/abs/2306.13649) <br><sub>📐 T5-Small/Base/Large → T5-XL 3B</sub> | 2023 |  |
 | 🟡 [SPOT: Surgical Post-Training via Proximal On-Policy Distillation for Reasoning with Knowledge Retention](https://arxiv.org/abs/2603.01683) <br><sub>📐 Qwen3-8B → Self (oracle-rectified); Oracle-rectified proximal on-policy data + reward-based BCE; 4k math pairs, 16-min training on 8xH800</sub> | 2026 |  |
 | 🟡 [Bridging Reasoning Trajectories in On-Policy Distillation via Near-Future Guidance](https://arxiv.org/abs/2606.00305) <br><sub>📐 Qwen3-30B-A3B-Instruct-2507 → Qwen3-4B-Instruct-2507; Trajectory-aware OPD using OT-based near-future guidance to fix token-level reasoning correction failures</sub> | 2026 |  |
+| 🟡 [Decomposed On-Policy Distillation for Vision-Language Reasoning: Steering Gradients for Visual Grounding](https://arxiv.org/abs/2606.00564) <br><sub>📐 Qwen3-VL-8B-Instruct → Qwen3-VL-2B-Instruct; Decomposes VLM on-policy distillation into language prior and visual grounding, steering gradients toward visual subspace</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -805,6 +806,7 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟡 [Same Evidence, Different Answers: Canonical-Context On-Policy Distillation for Multi-Turn Language Models](https://arxiv.org/abs/2605.30251) | §5.3.2 | Core contribution is self-distillation where the same backbone serves as both frozen FULL-context te |
 | 🟡 [RAFT: Data Refinement and Adaptive Distillation for Domain Fine-Tuning with Alleviated Forgetting](https://arxiv.org/abs/2606.00147) | §4.2 | The core contribution is an adaptive on-policy distillation objective with answer-conditioned teache |
 | 🟡 [Bridging Reasoning Trajectories in On-Policy Distillation via Near-Future Guidance](https://arxiv.org/abs/2606.00305) | §4.1 | Core contribution is a new trajectory-aware objective (OT-based loss) that augments the standard rev |
+| 🟡 [Decomposed On-Policy Distillation for Vision-Language Reasoning: Steering Gradients for Visual Grounding](https://arxiv.org/abs/2606.00564) | §4.1 | The core contribution is a new decomposed loss formulation for on-policy distillation that separates |
 
 ## ❓ FAQ
 
