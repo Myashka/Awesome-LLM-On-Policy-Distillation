@@ -227,11 +227,11 @@ gantt
 
 > Version evolution of our [survey paper](https://arxiv.org/abs/2604.00626).
 
-| Version | Date | Pages | Bib Entries | Key Changes |
-|:-------:|:----:|:-----:|:-----------:|-------------|
-| V1 | 2026-04-01 | 39 | 73 | Initial release on arXiv |
-| V2 | 2026-05-09 | 59 | 124 | Extended coverage across all sections; added §6 Training Efficiency, §8.2 Emerging Domains |
-| V3 (current) | 2026-05 | 62+ | 150 | New §3 Method Landscape & Selection; §7.4 On-Policy vs Off-Policy Decision Framework |
+| Version | Date | Key Changes |
+|:-------:|:----:|-------------|
+| V1 | 2026-04 | Initial release on arXiv with the first systematic taxonomy of OPD methods covering objective design, signal source, and training stabilization. |
+| V2 | 2026-05 | Substantially expanded coverage across all sections; new §6 *Training Efficiency & Stabilization* and §8.2 *Emerging Domains* chapters; major bibliography refresh. |
+| V3 (current) | 2026-05 | Added §3 *Method Landscape & Selection* (a new chapter consolidating the axes of design choice) and §7.4 *On-Policy vs Off-Policy Decision Framework*; broader empirical and theoretical coverage. |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
