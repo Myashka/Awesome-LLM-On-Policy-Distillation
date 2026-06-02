@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-179-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-180-blue" alt="Papers">
   <img src="https://img.shields.io/github/last-commit/nick7nlp/Awesome-LLM-On-Policy-Distillation?label=Last%20Updated&color=green" alt="Last Updated">
   <img src="https://img.shields.io/badge/Survey-V3-orange" alt="Survey V3">
 </p>
@@ -415,6 +415,7 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟡 [Not All Disagreement Is Learnable: Token Teachability in On-Policy Distillation](https://arxiv.org/abs/2605.26844) <br><sub>📐 Qwen3-8B → 4B; Binary teachability mask selects 5-10% tokens for budgeted RKL, filtering unreliable teacher signals</sub> | 2026 |  |
 | 🟡 [When Are Teacher Tokens Reliable? Position-Weighted On-Policy Self-Distillation for Reasoning](https://arxiv.org/abs/2605.21606) <br><sub>📐 Qwen3-4B → Self; Position-weighted clipped FKL: later reasoning tokens get higher weight due to accumulated teacher error</sub> | 2026 | [![Code](https://img.shields.io/badge/Code-GitHub-blue)](https://github.com/SaFo-Lab/PW-OPSD) |
 | 🟡 [Your Teacher Can't Help You Here: Combating Supervision Fidelity Decay in On-Policy Distillation](https://arxiv.org/abs/2605.30833) <br><sub>📐 SkyWork-OR1-Math-7B → DeepSeek-R1-Distill-Qwen-1.5B; Identifies Supervision Fidelity Decay in OPD and proposes Lookahead Group Reward to combat it</sub> | 2026 |  |
+| 🟡 [RAFT: Data Refinement and Adaptive Distillation for Domain Fine-Tuning with Alleviated Forgetting](https://arxiv.org/abs/2606.00147) <br><sub>📐 SmolLM3-3B → Self; Two-stage framework coupling data refinement with on-policy distillation to mitigate forgetting in domain SFT</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -801,6 +802,7 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟡 [Are Full Rollouts Necessary for On-Policy Distillation?](https://arxiv.org/abs/2605.31490) | §6.3 | Core contribution is a compute-efficiency technique (horizon control) for on-policy distillation, fa |
 | 🟡 [Your Teacher Can't Help You Here: Combating Supervision Fidelity Decay in On-Policy Distillation](https://arxiv.org/abs/2605.30833) | §4.2 | Core contribution is an adaptive supervision signal (lookahead confidence reward) that addresses deg |
 | 🟡 [Same Evidence, Different Answers: Canonical-Context On-Policy Distillation for Multi-Turn Language Models](https://arxiv.org/abs/2605.30251) | §5.3.2 | Core contribution is self-distillation where the same backbone serves as both frozen FULL-context te |
+| 🟡 [RAFT: Data Refinement and Adaptive Distillation for Domain Fine-Tuning with Alleviated Forgetting](https://arxiv.org/abs/2606.00147) | §4.2 | The core contribution is an adaptive on-policy distillation objective with answer-conditioned teache |
 
 ## ❓ FAQ
 
