@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-176-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-177-blue" alt="Papers">
   <img src="https://img.shields.io/github/last-commit/nick7nlp/Awesome-LLM-On-Policy-Distillation?label=Last%20Updated&color=green" alt="Last Updated">
   <img src="https://img.shields.io/badge/Survey-V3-orange" alt="Survey V3">
 </p>
@@ -615,6 +615,7 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟡 [Visual-Advantage On-Policy Distillation for Vision-Language Models](https://arxiv.org/abs/2605.21924) <br><sub>📐 Qwen3-VL-8B → Qwen3-VL-2B; Visual-advantage reweighting for token-level on-policy VLM distillation with reverse KL.</sub> | 2026 |  |
 | 🟡 [Less is More: Early Stopping Rollout for On-Policy Distillation](https://arxiv.org/abs/2605.27028) <br><sub>📐 Qwen3-32B → 8B; Early-stopped rollouts at 40-60% length for 2x efficiency with maintained RKL distillation quality</sub> | 2026 |  |
 | 🟡 [CaMOPD: Counteraction-Aware Multi-Teacher On-Policy Distillation](https://arxiv.org/abs/2605.27115) <br><sub>📐 Qwen3-8B → Qwen3-4B; Dual teacher conflict-aware distillation with 3+1 alternating schedule for domain preservation</sub> | 2026 |  |
+| 🟡 [Are Full Rollouts Necessary for On-Policy Distillation?](https://arxiv.org/abs/2605.31490) <br><sub>📐 JustRL-R1-1.5B → R1-Distill-1.5B; Horizon-control strategies (POPD, TOPD) improve OPD efficiency by truncating rollouts</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -795,6 +796,7 @@ On-Policy Distillation (Survey V3 Structure)
 | Post | Author / Org | Year | Why Read It |
 |------|-------------|:---:|---|
 | [**On-Policy Distillation**](https://www.thinkingmachines.ai/blog/on-policy-distillation/) ([cited in §4](https://arxiv.org/abs/2604.00626)) | Kevin Lu / [Thinking Machines Lab](https://thinkingmachines.ai/) | 2025 | The most accessible OPD explainer written to date. Proposes per-token reverse KL using RL infrastructure (one-line change from KL-regularized RL), publishes a reference implementation in the [Tinker cookbook](https://github.com/thinking-machines-lab/tinker-cookbook), and matches Qwen3's RL result at a fraction of the GPU hours. Popularized the *"grandmaster grades each of your moves"* chess analogy that now anchors every OPD intro talk. |
+| 🟡 [Are Full Rollouts Necessary for On-Policy Distillation?](https://arxiv.org/abs/2605.31490) | §6.3 | Core contribution is a compute-efficiency technique (horizon control) for on-policy distillation, fa |
 
 ## ❓ FAQ
 
