@@ -23,14 +23,25 @@
 </p>
 
 <p align="center">
-  <i>🔍 Also discoverable as</i> <b>AwesomeOPD</b> · <b>OPDHub</b> · <b>OPD-Survey</b> · <b>awesome-opd</b>
-  &nbsp;|&nbsp; <i>🌐 Companion site:</i> <a href="https://nick7nlp.github.io/OPDHub/">nick7nlp.github.io/OPDHub</a>
+  <a href="https://nick7nlp.github.io/OPDHub/"><img src="https://img.shields.io/badge/🌐_Companion_Site-OPDHub-5698C3?style=for-the-badge" alt="OPDHub Companion Site"></a>
+  &nbsp;
+  <a href="https://arxiv.org/abs/2604.00626"><img src="https://img.shields.io/badge/📄_Survey-arXiv:2604.00626-b31b1b?style=for-the-badge" alt="arXiv"></a>
 </p>
 
-<p align="center">
-  <i>🔍 Also discoverable as</i> <b>AwesomeOPD</b> · <b>OPDHub</b> · <b>OPD-Survey</b> · <b>awesome-opd</b>
-  &nbsp;|&nbsp; <i>🌐 Companion site:</i> <a href="https://nick7nlp.github.io/OPDHub/">nick7nlp.github.io/OPDHub</a>
-</p>
+## 🔥 News
+
+* **2026.06**: 🎉🎉🎉 We launched **[OPDHub](https://nick7nlp.github.io/OPDHub/)**, a companion website with a searchable paper atlas, one-click filters across section / loss class / year, and a copy-ready BibTeX block. Browse the literature at [nick7nlp.github.io/OPDHub](https://nick7nlp.github.io/OPDHub/).
+* **2026.05**: 🚀 Survey **V3** released, expanded to 62+ pages with the new §3 *Method Landscape & Selection* chapter and §7.4 *On-Policy vs Off-Policy Decision Framework*. Read on [arXiv](https://arxiv.org/abs/2604.00626).
+* **2026.04**: 📝 Initial release of the survey on [arXiv](https://arxiv.org/abs/2604.00626) with the first systematic taxonomy of OPD methods covering objective design, signal source, and training stabilization.
+
+<details>
+<summary><i>🔍 Also discoverable as</i></summary>
+
+<br/>
+
+This collection is also indexed under the following names: **AwesomeOPD** · **OPDHub** · **OPD-Survey** · **awesome-opd** · **awesome-llm-opd**.
+
+</details>
 
 <p align="center">
   <img src="assets/opd-overview.png" alt="On-Policy Distillation: Teacher-Student Loop" width="640">
