@@ -2,6 +2,10 @@
 
 All notable additions to this collection are documented here.
 
+## [2026-06-03]
+### Added
+- **TRB** (2605.31159) added to §6 Training Efficiency and Stabilization and Pending Papers. Trust-region behavior blending for OPD rollout warmup; annealed student-centered KL trust region improves early on-policy prefixes while keeping the reverse-KL distillation loss unchanged.
+
 ## [2026-05-30]
 ### Added
 - **SOD** (2605.07725) added to Hall of Fame **🚀 Frontier (2025–2026)** subsection alongside OPSD / AlignDistil / Rethinking-OPD / SCOPE / SDZero. Step-level divergence reweighting for tool-integrated reasoning agents, surfacing the step-granularity unit that sits between token-level (TIP / SCOPE) and trajectory-level (TCOD) weighting.
