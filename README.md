@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/Papers-188-blue" alt="Papers">
+  <img src="https://img.shields.io/badge/Papers-189-blue" alt="Papers">
   <img src="https://img.shields.io/github/last-commit/nick7nlp/Awesome-LLM-On-Policy-Distillation?label=Last%20Updated&color=green" alt="Last Updated">
   <img src="https://img.shields.io/badge/Survey-V3-orange" alt="Survey V3">
 </p>
@@ -621,6 +621,7 @@ On-Policy Distillation (Survey V3 Structure)
 | 🟡 [CaMOPD: Counteraction-Aware Multi-Teacher On-Policy Distillation](https://arxiv.org/abs/2605.27115) <br><sub>📐 Qwen3-8B → Qwen3-4B; Dual teacher conflict-aware distillation with 3+1 alternating schedule for domain preservation</sub> | 2026 |  |
 | 🟡 [Are Full Rollouts Necessary for On-Policy Distillation?](https://arxiv.org/abs/2605.31490) <br><sub>📐 JustRL-R1-1.5B → R1-Distill-1.5B; Horizon-control strategies (POPD, TOPD) improve OPD efficiency by truncating rollouts</sub> | 2026 |  |
 | 🟡 [SafeSteer: Localized On-Policy Distillation for Efficient Safety Alignment](https://arxiv.org/abs/2606.02530) <br><sub>📐 Qwen3-4B-Instruct → Self; Localized on-policy distillation confined to safety tokens via activation steering teacher</sub> | 2026 |  |
+| 🟡 [Trust-Region Behavior Blending for On-Policy Distillation](https://arxiv.org/pdf/2605.31159) <br><sub>📐 Qwen3-8B → Qwen3-1.7B; Qwen3-4B → Qwen3-0.6B; TRB uses an annealed student-centered KL trust region to guide early rollouts while keeping reverse-KL OPD unchanged</sub> | 2026 |  |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -763,6 +764,7 @@ On-Policy Distillation (Survey V3 Structure)
 | [VPG-EA: Variational Posterior Guidance for Efficient Reasoning](https://arxiv.org/abs/2605.11019) | §5.3.2 | Dual-stream self-distillation (posterior/prior streams) with advantage-gated forward KL |
 | [OPSA: Reducing the Safety Tax](https://arxiv.org/abs/2605.15239) | §8.1 | Safety alignment application of on-policy self-distillation; teacher flip rate metric |
 | [DeltaPrompts: Zero-Delta Trap](https://arxiv.org/abs/2605.15532) | §6.2 | Prompt synthesis for OPD; answer-divergence-guided curriculum (NVIDIA, NeurIPS 2025) |
+| [TRB: Trust-Region Behavior Blending for On-Policy Distillation](https://arxiv.org/abs/2605.31159) | §6 | Trust-region rollout warmup for OPD; annealed behavior blending improves early on-policy prefixes while keeping reverse-KL distillation loss unchanged |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
